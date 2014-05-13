@@ -1,0 +1,54 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+\section{mQuery - Framework for
+Manialinks}\label{mquery---framework-for-manialinks}
+
+\subsection{What it is}\label{what-it-is}
+
+mQuery included the possiblitiy of formating your ManiaPlanet Manialink
+with attributes like you are used to from css. Usualy these are the
+normal Manialink element's attributes, but there are even more
+possibilities automating even more. The other point in mQuery is the
+jQuery like mQuery language giving you huge functionality in very few
+commands, saving you a lot of time and worries.
+
+\subsection{How it works}\label{how-it-works}
+
+The framework preprocesses your input, excludes unnecessary parts that
+were only used to implement your mQuery. It automatically adds necessary
+Manialink elements and adds the css formatings according to id- and
+classnotations.
+
+\subsection{How to use it}\label{how-to-use-it}
+
+First of all you need to catch your manialink, for example with
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{<?php}  
+\FunctionTok{ob_start}\OtherTok{();}  
+\KeywordTok{include}\OtherTok{(}\StringTok{'manialink.xml'}\OtherTok{);}  
+\KeywordTok{$MLData} \NormalTok{= }\FunctionTok{ob_get_contents}\OtherTok{();}    
+\FunctionTok{ob_end_clean}\OtherTok{();}  
+\KeywordTok{$MLDoc} \NormalTok{= }\KeywordTok{new} \NormalTok{ManialinkAnalysis\textbackslash{}ManialinkAnalizer}\OtherTok{(}\KeywordTok{$MLData}\OtherTok{);}  \CommentTok{// Preprocess the manialink  }
+\KeywordTok{$MLDoc}\NormalTok{->applyStyles}\OtherTok{();}                                      \CommentTok{// Apply the css styles to the manialink elements  }
+\KeywordTok{$MLDoc}\NormalTok{->output}\OtherTok{();}                                           \CommentTok{// Output formatted manialink }
+\KeywordTok{?>}
+\end{Highlighting}
+\end{Shaded}
+
+In the manialink you can declare stylesheet files with
+\texttt{\textless{}style href="*{[}filename.css{]}*" /\textgreater{}}.
+mQuery code files can be included with
+\texttt{\textless{}script src="*{[}scriptfile.whatever{]}*" /\textgreater{}}
+or written within
+\texttt{\textless{}mquery\textgreater{}\textless{}/mquery\textgreater{}}blocks.
+
+\subsection{Version}\label{version}
+
+0.4 alpha
+\end{document}
