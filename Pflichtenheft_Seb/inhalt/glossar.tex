@@ -1,0 +1,61 @@
+\chapter{Glossar}
+des ist jetzt mal der glossar von letztem jahr den können wir ja ganz schnell
+bearbeiten und unsere sachen einfügen
+\label{sec:glossar}
+\section{Allgemein}
+\begin{description}
+	\glossaryItem{API}{Application Programming Interface. Eine Schnittstelle (s. Interface), über welche andere Programme auf der Quelltextebene auf dahinter verborgene Funktionalität zugreifen können}
+	\glossaryItem{Augmented Reality}{"`Erweiterung der Realität"' durch einen Computer, etwa bei der Einblendung von Informationen in ein Bild der Umgebung, das auf einem Smartphone angezeigt wird.}
+	\glossaryItem{Bug}{Fehlerhaftes Verhalten eines Programmes.}		
+	\glossaryItem{Binärform}{Hier das Programm in für den Computer direkt verwendbarer Form im Gegensatz zum Quellcode. Anders als dort ist hier kaum sichtbar, wie das Programm genau arbeitet, weshalb bei OpenSource-Projekten gerade der Quelltext offen liegt (vgl. OpenSource).}
+	\glossaryItem{Datenstrom}{Daten, die beispielsweise während der Ausführung eines Programms fließen,	wobei das Ende dieses Flusses nicht absehbar ist.}
+	\glossaryItem{Debug-Modus}{Modus, bei dem zusätzliche Informationen angezeigt werden, um dem Programmierer das Auffinden und Beheben von Bugs (kurz \textit{Debugging} oder \textit{Debuggen}), hier insbesondere Programmierfehlern, zu erleichtern. Vgl. Release-Modus.}
+	\glossaryItem{Debug-Visualisierung}{Hier eine Visualisierung, die den Benutzer beim Debuggen unterstützt, indem sie relevante Daten zu den übergebenen Bildern anzeigt und diese damit leicht verständlich darstellt.}
+	\glossaryItem{FAQ}{Engl. für "`Häufig gestellte Fragen"' enthält sie viele Fragen, die besonders neue Benutzer sich stellen, wenn sie anfangen ein Projekt zu nutzen.}
+	\glossaryItem{Falschfarben}{Verwendung von Farben ein einem Bild, die sich von den natürlichen, erwarteten Farben stark unterscheiden, um etwa Details hervorzuheben.}
+	\glossaryItem{Filter}{In der Bildverarbeitung die Veränderung eines Bildbereiches mithilfe eines bestimmten Algorithmus.}
+	\glossaryItem{GNU/Linux}{Das GNU-Betriebssystem in Kombination mit einem Linux-Kern}
+	\glossaryItem{GNU-Projekt}{Das Projekt zur Erstellung von GNU-Betriebssystem und Software.}
+	\glossaryItem{GUI}{Graphical User Interface, zu deutsch Graphische Benutzeroberfläche. Stellt Funktionen graphisch dar, sodass der Benutzer beispielsweise per Mausklick damit interagieren kann; im Gegensatz zu textbasierten Benutzerschnittstellen (vgl. Interface).}
+	\glossaryItem{Kompilieren}{Umwandlung eines Quellcodes in eine für den Computer verständliche Form, mithilfe eines Kompiler genannten Programms.}
+	\glossaryItem{Matches}{Durch OpenCV erzeugte Verknüpfungen zwischen zwei Bildbereichen bzw. Bildpixeln, welche vom Benutzer an die API übergeben werden.}
+	\glossaryItem{Mouse over}{Information über das Element einer GUI, auf dem der Mauszeiger ruht, wird angezeigt.}
+	\glossaryItem{Parallelrechner}{Rechner, in dem mehrere Threads gleichzeitig nebeneinander ausgeführt werden können (vgl. Thread).}
+	\glossaryItem{OpenCV Test Framework}{Stellt Funktionen zum Testen zur Verfügung, etwa Überprüfungen, ob zwei Matrizen gleich sind.}
+	\glossaryItem{Open Source}{Software, bei welcher der Quellcode frei zugänglich gemacht wird.	Dies erlaubt unter anderem die Weiterverwendung und -entwicklung durch andere.} 
+	\glossaryItem{Overhead}{Zusätzlicher Speicher- oder Zeitaufwand.}
+	\glossaryItem{proprietär}{In diesem Zusammenhang Software, die nicht unter einer freien Lizenz steht.}
+	\glossaryItem{Release-Modus}{Veröffentlichungs-Modus, in dem keine zusätzlichen Debug-Informationen angezeigt werden, also der Modus, in dem das fertige Programm läuft.}
+	\glossaryItem{Resource-Leak}{Das Auftreten der Situation, dass Ressourcen irgendeiner Art (Speicher, Dateien, usw.) zwar alloziert werden, aber nach Verwendung nicht mehr an das System zurückgegeben werden.}
+	\glossaryItem{Rohdaten}{Daten, welche direkt und ohne wirkliche Aufarbeitung, aus den vom Entwickler beim API-Aufruf übergebenen Datenstrukturen stammen.}
+	\glossaryItem{Speicherleck}{\textit{engl. memory leak} Vgl. Resource-Leak; die Ressource ist in diesem Fall Speicher.}
+	\glossaryItem{Stand-Alone-Programm}{Programm, das für sich alleine funktioniert.}
+	\glossaryItem{Streaming}{Hier das Weiterlaufen des Datenstroms.}
+	\glossaryItem{Tab}{Hier ein registerkartenähnlicher Teil einer GUI.}
+	\glossaryItem{Thread}{Ausführungsstrang in einem Programm. Der Begriff wird insbesondere im Zusammenhang mit Mehrfachkernsystemen, wo mehrere Threads gleichzeitig nebeneinander laufen können, oft verwendet.}
+	\glossaryItem{thread-lokal}{Auf einen Thread beschränkt (vgl. Thread).}
+	\glossaryItem{Threadsafety}{Es ist sichergestellt, das mehrere Threads sich nicht gegenseitig stören, etwa	beim Speichern von Daten.}
+	\glossaryItem{Translation Unit}{Eine Einheit, die einzeln im Ganzen kompiliert wird (s. Kompilieren); ein Projekt teilt sich meist in mehrere solcher Einheiten auf.}
+	\glossaryItem{Undefiniertes Verhalten}{Befehle, deren Verwendung dazu führt, dass der C++-Standard \textit{keinerlei} Verhaltensgarantien irgendeiner Art für das gesamte Programm mehr gibt. Etwas Umgangssprachlich:	Der Standard untersagt die Verwendung.}
+	\glossaryItem{View}{Zusammengehörige Visualisierungen eines bestimmten OpenCV-Features (oder einer Featureart).}
+\end{description}
+
+\section{OpenCV}
+Weiterführende Informationen sind auf \href{http://docs.opencv.org}{docs.opencv.org} zu finden.
+\begin{description}
+	\glossaryItem{adaptiveThreshold}{OpenCV-Methode, die mittels eines adaptiven Threshold (s. unten) Graustufenbilder in (u.U. invertierte) Binärbilder umwandeln kann.}
+	\glossaryItem{calcHist}{Berechnet ein Histogramm.}
+	\glossaryItem{Canny}{Kantenerkennung (mithilfe des Canny86-Algorithmus).}
+	\glossaryItem{Dilatation}{Berechnung des Bereiches in einem Bild, der von einer Maske abgedeckt wird, wenn sich deren Bezugspunkt (oft der Mittelpunkt) durch den ganzen zu untersuchenden Bildbereich bewegt.}
+	\glossaryItem{DMatch}{Klasse für das Matching (vgl. Matches).}
+	\glossaryItem{Erosion}{Prüft, ob eine Maske, etwa eine geometrische Figur, vollständig in ein Bild bzw. einen Bildbereich passt und gibt u.U. ein Bild zurück, in dem nur die überdeckten Teile erhalten sind. 
+	Bildet zusammen mit der Dilatation zwei der grundlegenden Bildverarbeitungsmethoden.}
+	\glossaryItem{floodFill}{Bei dieser Methode wird ein zusammenhängender Bereich des Bildes mit der übergebenen Farbe ausgefüllt.}
+	\glossaryItem{HoughCircles}{Findet Kreise in einem Graustufenbild (unter Benutzung der Hough-Transformation).}
+	\glossaryItem{KeyPoint}{Klasse, die Daten eines Punktes (Koordinaten, Nachbarschaftsgröße etc.) enthält.}
+	\glossaryItem{morphologyEx}{diese Methode von OpenCV erlaubt fortgeschrittene morphologische Transformationen unter Benutzung und mehrfacher Anwendung von Dilatation und Erosion.}
+	\glossaryItem{ocl}{Das OCL-Modul stellt Implementierungen von OpenCV-Funktionalität für Geräte, welche die Open Computing Language (kurz OpenCL), ein Interface über Parallelrechner, benutzen, zur Verfügung.}
+	\glossaryItem{Sobel-Operator}{Ein Kantenerkennungs-Filter.}
+	\glossaryItem{Stitching}{Zusammenfügen mehrerer Bilder mit zusammenhängenden Bereichen an den Rändern zu einem großen Bild, etwa von Einzelfotografien zu einem Panorama.}
+	\glossaryItem{threshold}{Diese Methode eröffnet verschiedene Möglichkeiten, die Elemente eines Arrays auf ein bestimmtes Niveau zu trimmen, auf binäre Werte herunterzubrechen und Ähnliches.}
+\end{description}

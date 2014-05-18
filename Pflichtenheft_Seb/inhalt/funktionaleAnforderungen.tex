@@ -1,0 +1,118 @@
+\chapter{Funktionale Anforderungen}
+das sind die von der letzten gruppe 
+hab den inhalt mal drinn gelassen damit wir unser zeug einfach nur einfügen
+müssen
+
+
+Erklärungen zu den OpenCV spezifischen Begriffen werden im Glossar gegeben.
+
+\section{API \small{\textit{Pflicht}}}
+
+\subsection{Allgemein}
+\begin{description}
+	\item[/FA0100/] Globale Auswahl zwischen Debug- und Release-Modus
+	\item[/FA0200/] Auswahl der Visualisierung für jeden Operationstyp
+\end{description}
+
+\subsection{Unterstützung folgender Operationen von OpenCV}
+\begin{description}
+		\item[/FA0210/] dilate
+		\item[/FA0220/] erode
+		\item[/FA0230/] morphologyEx
+		\item[/FA0240/] Sobel\\
+
+		\item[/FA0250/] threshold
+		\item[/FA0260/] adaptiveThreshold
+		\item[/FA0270/] floodFill\\
+
+		\item[/FA0280/] KeyPoint 
+		\item[/FA0290/] DMatch
+\end{description}
+
+
+\section{API \small{\textit{Optional}}}
+
+\subsection{Allgemein}
+\begin{description}
+	\item[/FA0300/] Optionale Parameter für Einstellungen der Visualisierungen
+	\item[/FA0400/] Lokale Auswahl Debug/Release-Modus
+	\item[/FA0500/] Optionale nicht-blockierende Aufrufe für Streaming
+\end{description}
+
+\subsection{Unterstützung folgender Operationen}
+
+\begin{description}
+	\item[/FA0600/]  stitching
+	\item[/FA0610/]  ocl (OpenCL)\\
+
+ 	\item[/FA0620/] calcHist\\
+
+	\item[/FA0630/] Canny
+	\item[/FA0640/] HoughCircles
+\end{description}
+
+
+\section{GUI \small{\textit{Pflicht}}}
+\begin{description}
+	\item[/FA0700/] Eine Visualisierung pro oben gelisteter Operation (siehe API Kriterien)
+	\item[/FA0800/] Drei Visualisierungen für features2d/DMatch (drei der möglichen Wunsch-Visualisierungen, siehe unten)
+	\item[/FA0900/]  Zoomfunktion
+\end{description}
+
+\section{GUI \small{\textit{Optional}}}
+
+\begin{description}
+	\item[/FA1000/] Permanente GUI mit Historie
+	\item[/FA1200/] Möglichkeit eine Filteroperation mit geänderten Parametern erneut anzuwenden
+	\item[/FA1300/] Hohe Zoomstufen mit Zusatzinformationen (z.B. Pixelwerte)
+	\item[/FA1400/] Optionale Ausnutzung von mehreren Bildschirmen durch Fenstermodus
+	\item[/FA1500/] Interaktive Überlagerung der Bilder durch Zusatzinformationen (Mouse over)
+	\item[/FA1600/] Flexibler Umgang mit unterschiedlichen Bildschirm- und Bildauflösungen
+	\item[/FA1700/] Suchleiste für alle Tabellen (z.B. jener der Übersichtsseite oder der Rohdatendatenanzeige)
+	\item[/FA1710/] Spezielle Syntax zum Beispiel zur Gruppierung von Datensätzen
+\end{description}
+
+\section{Mögliche Visualisierungen}
+
+\subsection{Allgemein}
+\begin{description}
+	\item[/FA1800/] Darstellung von Rohdaten
+	\item[/FA1810/] Abmessungen der Bilder
+	\item[/FA1820/] Farbraum der Bilder (der in OpenCV genutzte Datentyp)
+	\item[/FA1830/] Tabellarische Darstellung, z.B. der Matches, mit Filtermöglichkeit
+	\item[/FA1840/] Diagramme (wie Histogramme)
+	\item[/FA1900/] Darstellung der Bilder nebeneinander
+\end{description}
+
+\subsection{Visualisierungen von Matches}
+\begin{description}
+	\item[/FA2010/] Einzeichnen der Keypoints in die Bilder
+	\item[/FA2020/] Verbinden der Matches durch Linien oder Pfeile
+	\item[/FA2030/] Einfärben der Linien, Pfeile oder Punkte mit Falschfarben
+	\item[/FA2040/] Ausblenden der Keypoints ohne Matches
+	\item[/FA2050/] Auswahl von Matches anhand bestimmter Kriterien (z.B. via Histogramm)
+	\item[/FA2060/] Manuelle Auswahl von Matches
+	\item[/FA2070/] Automatische Zusammenfassung von Matches zu Gruppen\\
+	
+	\item[/FA2110/] Einzeichnen von Linien / Formen
+	\item[/FA2120/] Auswählen von zugehörigen Matches
+	\item[/FA2130/] Die Linien / Formen werden auf das zweite Bild projiziert
+	\item[/FA2140/] Automatische Gruppierung der Matches zu Flächen\\
+	
+	\item[/FA2210/] Pfeillänge und Richtung entsprechen der jeweiligenTranslation\\
+	
+	\item[/FA2310/] Pixelfarbwerte entsprechen den jeweiligen Tiefenwerten
+\end{description}
+
+\subsection{Visualisierungen für Filter}
+
+\begin{description}
+	\item[/FA2400/] Differenzbilder
+	\item[/FA2500/] Überlagerungen
+	\item[/FA2600/]  Direkte Anwendung von Filtern auf ein oder zwei Bilder 
+		Beispiel: Anwendung eines Kantenfilters um die Auswirkungen z.B. einer Kantenglättung zu visualisieren
+	\item[/FA2700/] Visualisierung über die Auswirkungen auf bestimmte Bildmetriken 
+		Beispiel: Überlagerung von Histogrammen beider Bilder oder Vergleich der Kontrastwerte von bestimmten Bildbereichen
+\end{description}
+
+

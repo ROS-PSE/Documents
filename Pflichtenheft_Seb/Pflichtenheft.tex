@@ -1,0 +1,41 @@
+%Dies ist die Hauptseite des Dokumentes. Es werden u. a. alle Kapitel, Einstellung im Header eingebunden.
+%Veränderungen müssen in folgenden Dateien vorgenommen werden:
+			%- Layout.tex 
+			%- newComments.tex
+			%- Titelseite
+			%- Versionsübersicht
+			%- einzelne Kapitel (evtl. erweitern) 
+			
+			
+\input{einstellungen/newComments.tex}
+\input{einstellungen/layout.tex}					% Diese Datei enthält alle Layouteinstellungen
+
+%------Beginn des Gesamtdokumentes--------------------------------------------------------
+\begin{document}
+
+%------Eingebundene Seiten, Verzeichnisse bzw. Kapitel------------------------------------
+\include{titelseite}											% Titelseite	
+% \include{inhalt/versionsuebersicht}				% Versionsübersicht
+
+\tableofcontents													% Inhaltsverzeichnis wird automatisch generiert
+\newpage
+% \listoffigures														% ebenso das Abbildungsverzeichnis					
+
+%----Kapitel des Feinentwurfs, die mit Inhalt zu füllen sind------------------------------
+% \include{inhalt/zielbestimmung}	
+\include{inhalt/produktfunktionen}						
+\include{inhalt/produkteinsatz}		
+\include{inhalt/produktumgebung}					
+\include{inhalt/funktionaleAnforderungen}	
+\include{inhalt/nichtfunktionaleAnforderungen}			
+\include{inhalt/produktdaten}							
+\include{inhalt/systemmodell}		
+\include{inhalt/gui}		
+\include{inhalt/qualitaetsanforderungen}
+\include{inhalt/abgrenzungskriterien}	
+\include{inhalt/glossar}	
+\include{inhalt/literatur}		
+				
+
+%------Ende des Dokumentes----------------------------------------------------------------
+\end{document}
