@@ -27,8 +27,8 @@ def main():
 	output = []
 	for x in range(len(content)):
 		content[x] = content[x].rstrip()
-		m = re.search('(\s*)(.*)', content[x])
-		if len(content[x]) > 0:
+		m = re.search('(\s*)(%?)(.*)', content[x])
+		if len(content[x]) > 0 and len(m.group(2)) < 1:
 			if len(m.group(1)) == 0:
 				subcounter = 0
 				globcounter += 100
