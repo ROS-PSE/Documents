@@ -1,0 +1,11 @@
+Dezentrale Erfassung von Metadaten: Anzahl Publisher und Subscriber, Bandbreite, Frequenz, Latenz, Jitter
+Modulare Definition der Metadaten anhand von Metadaten und dem ROS-Graph
+Knoten zum zentralen Abgleich des Soll- und Ist-Zustandes
+	Warnungen und Fehlernachrichten bei maßgeblichen Abweichungen
+
+Eigenständiger Knoten zur Überwachung der Hardware des Host-Systems
+Überwachung weiterer ROS Komponenten wie Services und Parameters
+Definition und Überwachung des Empfangs- und Sendeverhaltens eines Knotens
+Festlegen des Ist-Zustandes als Soll-Definition
+Anpassung des Systems ans Netzwerkgegebenheiten
+Integration mit roswtf
