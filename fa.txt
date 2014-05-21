@@ -22,9 +22,10 @@ Knoten sind in der Lage, sich anhand ihrer Soll-Metadaten selber zu überwachen
 Das System wird auch C++-seitig implementiert
 
 % GUI Pflicht
-Die grafische Benutzeroberfläche bietet eine Visualisierung des Soll-Ist-Vergleichs von sowohl Knoten als auch Hostsystem übergreifend
+Die grafische Benutzeroberfläche bietet eine Visualisierung des Soll-Ist-Vergleichs von sowohl Knoten als auch Hostsystemen
 
 % GUI Optional
 Der Soll-Ist-Vergleich wird in einer Visualisierung des ROS Graphen dargestellt
 Es wird ein zeitlicher Verlauf der Metadaten aufgezeichnet und grafisch dargestellt
 Knoten werden im Graphen nach ihrem Host gruppiert angezeigt
+Unsere Plugins sind in der Lage untereinander zu kommunizieren
