@@ -1,23 +1,54 @@
+\newcounter{fac}
+\newcounter{facsec}
+\newcounter{temp}
+\setcounter{fac}{0}
+\setcounter{facsec}{0}
+
+\newcommand{\fa}
+{
+\addtocounter{fac}{100}
+\setcounter{facsec}{0}
+
+\ifnum\value{fac}<1000
+\item[/FA0\thefac/]
+\else
+\item[/FA\thefac/]
+\fi
+}
+
+\newcommand{\fasec}
+{
+\addtocounter{facsec}{10}
+\setcounter{temp}{\thefac}
+\addtocounter{temp}{\thefacsec}
+\ifnum\value{fac}<1000
+\item[/FA0\thetemp/]
+\else
+\item[/FA\thetemp/]
+\fi
+
+
+}
+
 \chapter{Funktionale Anforderungen}
 
 \section{Gesamtsystem}
-
 \subsection{Pflicht}
 \begin{description}
-	\item[/FA0100/] Dezentrale Erfassung von Metadaten: Anzahl Publisher und Subscriber, Bandbreite, Frequenz, Latenz, Jitter
-	\item[/FA0200/] Modulare Definition der Metadaten anhand von Metadaten und dem ROS-Graph
-	\item[/FA0300/] Knoten zum zentralen Abgleich des Soll- und Ist-Zustandes
-	\item[/FA0310/] Warnungen und Fehlernachrichten bei maßgeblichen Abweichungen
+\fa Dezentrale Erfassung von Metadaten: Anzahl Publisher und Subscriber, Bandbreite, Frequenz, Latenz, Jitter
+\fa  Modulare Definition der Metadaten anhand von Metadaten und dem ROS-Graph
+\fa Knoten zum zentralen Abgleich des Soll- und Ist-Zustandes
+\fasec Warnungen und Fehlernachrichten bei maßgeblichen Abweichungen
 \end{description}
 
 \subsection{Optional}
 \begin{description}
-	\item[/FA0400/] Eigenständiger Knoten zur Überwachung der Hardware des Host-Systems
-	\item[/FA0500/] Überwachung weiterer ROS Komponenten wie Services und Parameters
-	\item[/FA0600/] Definition und Überwachung des Empfangs- und Sendeverhaltens eines Knotens
-	\item[/FA0700/] Festlegen des Ist-Zustandes als Soll-Definition
-	\item[/FA0800/] Anpassung des Systems ans Netzwerkgegebenheiten
-	\item[/FA0900/] Integration mit roswtf
+\fa Eigenständiger Knoten zur Überwachung der Hardware des Host-Systems
+\fa Überwachung weiterer ROS Komponenten wie Services und Parameters
+\fa Definition und Überwachung des Empfangs- und Sendeverhaltens eines Knotens
+\fa Festlegen des Ist-Zustandes als Soll-Definition
+\fa Anpassung des Systems ans Netzwerkgegebenheiten
+\fa Integration mit roswtf
 \end{description}
 
 
