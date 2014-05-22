@@ -53,7 +53,7 @@
 \fa Integration mit roswtf
 \end{description}
 
-
+%todo: an richtige stelle schieben und anpassen
 \subsection{Spezifikation}
 \begin{description}
 \fa Spezifikationen in yaml speichern
@@ -66,6 +66,37 @@
 \fasec Teilsysteme können sich überlappen
 \fa Ein Überwachungsknoten für alle Teilsysteme
 \end{description}
+
+\section{API}
+\subsection{Pflicht}
+\begin{description}
+\fa Die Metadaten werden durch Hinzufügen eines Funktionsaufrufes zu bestehenden Callbacks erfasst
+\fa Die Metadaten werden auf einem Topic mit definierter Frequenz publiziert
+\fa Die Metadatenerfassung lässt sich über Parameter deaktivieren
+\end{description}
+
+
+\subsection{Optional}
+\begin{description}
+\fa Knoten sind in der Lage, sich anhand ihrer Soll-Metadaten selber zu überwachen
+\fa Das System wird auch C++-seitig implementiert
+\end{description}
+
+\section{GUI}
+\subsection{Pflicht}
+\begin{description}
+\fa Die grafische Benutzeroberfläche bietet eine Visualisierung des Soll-Ist-Vergleichs von sowohl Knoten als auch Hostsystemen
+\end{description}
+
+
+\subsection{Optional}
+\begin{description}
+\fa Der Soll-Ist-Vergleich wird in einer Visualisierung des ROS Graphen dargestellt
+\fa Es wird ein zeitlicher Verlauf der Metadaten aufgezeichnet und grafisch dargestellt
+\fa Knoten werden im Graphen nach ihrem Host gruppiert angezeigt
+Unsere Plugins sind in der Lage untereinander zu kommunizieren
+\end{description}
+
 
 \subsection{Unterstützung folgender Operationen}
 
