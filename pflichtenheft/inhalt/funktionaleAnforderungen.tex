@@ -36,9 +36,11 @@
 \subsection{Pflicht}
 \begin{description}
 \fa Dezentrale Erfassung von Metadaten: Anzahl Publisher und Subscriber, Bandbreite, Frequenz, Latenz, Jitter
-\fa  Modulare Definition der Metadaten anhand von Metadaten und dem ROS-Graph
+\fa Modulare Definition der Metadaten anhand von Metadaten und dem ROS-Graph
 \fa Knoten zum zentralen Abgleich des Soll- und Ist-Zustandes
 \fasec Warnungen und Fehlernachrichten bei maßgeblichen Abweichungen
+\fa Definition eines ROS Message Types für Metadaten
+\fa Eigenständiger Knoten zur Überwachung der Hardware des Host-Systems (CPU Auslastung, CPU Temperatur, RAM, Festplatten-Speicher)
 \end{description}
 
 \subsection{Optional}
@@ -51,6 +53,19 @@
 \fa Integration mit roswtf
 \end{description}
 
+
+\subsection{Spezifikation}
+\begin{description}
+\fa Spezifikationen in yaml speichern
+\fa Parametriesierung für Topics, Hosts und Knoten getrennt
+\fasec Bereichangabe als Soll Spezifikation
+\fa Defaultwerte für Spezifikationsparameter
+\fa Übergabe der Spezifikation bei Start des Überwachungsknotens
+\fasec Weitergabe der Soll Spezifikation an den ROS Parameter Server bei Knotenstart
+\fa Bestimmte Teilsysteme überwachen
+\fasec Teilsysteme können sich überlappen
+\fa Ein Überwachungsknoten für alle Teilsysteme
+\end{description}
 
 \subsection{Unterstützung folgender Operationen}
 
