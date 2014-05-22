@@ -2,4 +2,5 @@
 *.idx
 *.toc
 *.out
-Pflichtenheft/*.log
+*.dvi
+pflichtenheft/*.log
