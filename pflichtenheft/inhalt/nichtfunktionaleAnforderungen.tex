@@ -1,7 +1,43 @@
-\chapter{Nichtfunktionale Anforderungen}
+\newcounter{nfc}
+\newcounter{nfcsec}
+\newcounter{tempsec}
+\setcounter{nfc}{0}
+\setcounter{nfcsec}{0}
 
+\newcommand{\nf}
+{
+\addtocounter{nfc}{100}
+\setcounter{nfcsec}{0}
+
+\ifnum\value{nfc}<1000
+\item[/NF0\thenfc/]
+\else
+\item[/NF\thenfc/]
+\fi
+}
+
+\newcommand{\nfsec}
+{
+\addtocounter{nfcsec}{10}
+\setcounter{tempsec}{\thenfc}
+\addtocounter{tempsec}{\thenfcsec}
+\ifnum\value{nfc}<1000
+\item[/NF0\thetempsec/]
+\else
+\item[/NF\thetempsec/]
+\fi
+}
+
+
+
+
+
+\chapter{Nichtfunktionale Anforderungen}
 \section{Produktleistungen \small{\textit{Pflicht}}}
 \begin{description}
+\nf
+\nfsec
+\nf
 	\item[/NF0100/] Die GUI soll schnell starten und interaktiv bedienbar sein
 	\item[/NF0200/] Möglichst kein Overhead im Release-Modus
 \end{description}
