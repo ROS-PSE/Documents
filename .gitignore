@@ -4,3 +4,5 @@
 *.out
 *.dvi
 pflichtenheft/*.log
+
+Thumbs.db
