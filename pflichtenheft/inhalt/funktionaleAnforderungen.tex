@@ -36,8 +36,7 @@
 \subsection{Pflicht}
 \begin{description}
 \fa Dezentrale Erfassung von Metadaten: Anzahl Publisher und Subscriber, Bandbreite, Frequenz, Latenz, Jitter
-\fa Modulare Definition der Metadaten anhand von Metadaten und dem ROS-Graph
-\fa Knoten zum zentralen Abgleich des Soll- und Ist-Zustandes
+\fa Monitoring Knoten zum zentralen Abgleich des Soll- und Ist-Zustandes
 \fasec Warnungen und Fehlernachrichten bei maßgeblichen Abweichungen
 \fa Definition eines ROS Message Types für Metadaten
 \fa Eigenständiger Knoten zur Überwachung der Hardware des Host-Systems (CPU Auslastung, CPU Temperatur, RAM, Festplatten-Speicher)
@@ -45,32 +44,35 @@
 
 \subsection{Optional}
 \begin{description}
-\fa Eigenständiger Knoten zur Überwachung der Hardware des Host-Systems
 \fa Überwachung weiterer ROS Komponenten wie Services und Parameters
-\fa Definition und Überwachung des Empfangs- und Sendeverhaltens eines Knotens
 \fa Festlegen des Ist-Zustandes als Soll-Definition
-\fa Anpassung des Systems ans Netzwerkgegebenheiten
+\fasec Korrelationen zwischen Empfangs- und Sendeverhalten eines Knotens erkennen
+\fa Anpassung des Sendeverhaltens des Systems an Netzwerkgegebenheiten
+\fa Definiton der Netzwerktopologie sowie darstellung der Auslastung physischer Verbundungen
 \fa Integration mit roswtf
 \end{description}
 
-%todo: an richtige stelle schieben und anpassen
-\subsection{Spezifikation}
+%todo: an richtige stelle schieben?
+\section{Soll-Spezifikation}
+\subsection{Pflicht}
 \begin{description}
-\fa Spezifikationen in yaml speichern
 \fa Parametriesierung für Topics, Hosts und Knoten getrennt
-\fasec Bereichangabe als Soll Spezifikation
-\fa Defaultwerte für Spezifikationsparameter
-\fa Übergabe der Spezifikation bei Start des Überwachungsknotens
-\fasec Weitergabe der Soll Spezifikation an den ROS Parameter Server bei Knotenstart
-\fa Bestimmte Teilsysteme überwachen
+\fasec Obere und untere Schranken für Metadaten definierbar
+\fa Laden der Soll-Spezifikation einmalig bei Start des Überwachungsknotens
+\fasec Weitergabe der Soll-Spezifikation an den ROS Parameter Server bei Knotenstart
+\fa Möglichkeit nur Teile des Netzwerkes zu überwachen
 \fasec Teilsysteme können sich überlappen
-\fa Ein Überwachungsknoten für alle Teilsysteme
 \end{description}
 
+\subsection{Optional}
+\begin{description}
+\fa Ein Monitoringknoten verwaltet alle Teilsysteme
+
+\end{description}
 \section{API}
 \subsection{Pflicht}
 \begin{description}
-\fa Die Metadaten werden durch Hinzufügen eines Funktionsaufrufes zu bestehenden Callbacks erfasst
+\fa Die Metadaten werden durch Hinzufügen eines Funktionsaufrufes zu bestehenden Callbacks erfasst, alternativ durch eine geeignete Klasse, die von Subscriber erbt
 \fa Die Metadaten werden auf einem Topic mit definierter Frequenz publiziert
 \fa Die Metadatenerfassung lässt sich über Parameter deaktivieren
 \end{description}
@@ -79,7 +81,7 @@
 \subsection{Optional}
 \begin{description}
 \fa Knoten sind in der Lage, sich anhand ihrer Soll-Metadaten selber zu überwachen
-\fa Das System wird auch C++-seitig implementiert
+\fa Das System wird auch für C++ Knoten implementiert
 \end{description}
 
 \section{GUI}
@@ -92,8 +94,9 @@
 \subsection{Optional}
 \begin{description}
 \fa Der Soll-Ist-Vergleich wird in einer Visualisierung des ROS Graphen dargestellt
+\fa Geeignete Metadaten werden im ROS Graphen dargestellt
 \fa Es wird ein zeitlicher Verlauf der Metadaten aufgezeichnet und grafisch dargestellt
 \fa Knoten werden im Graphen nach ihrem Host gruppiert angezeigt
-Unsere Plugins sind in der Lage untereinander zu kommunizieren
+\fa Knoten werden als Gruppen der unterschiedlichen Soll-Spezifikationen angezeigt
 \end{description}
 
