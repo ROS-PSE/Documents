@@ -1,28 +1,28 @@
 \chapter{Zielbestimmung}
 
-Die zu entwickelnde SoftwarelÃ¶sung soll sich als Ãœberwachungsinstrument in die Robot Operating System (ROS) Middleware einfÃ¼gen. Dabei soll Ã¼berwacht werden, ob jeder Prozess, der im ROS-Netzwerk enthalten ist, definierten Sollwerten entsprechend ordnungsgemÃ¤ÃŸ Daten Ã¼bermittelt.\\
-Gerade durch die gegebene Problematik eines auf mehrere Hosts verteilten Systems, bereitet das Erfassen und Verstehen von auftretenden Problemen zum aktuellen Stand des ROS Schwierigkeiten. Das vorliegende Projekt erfasst den Ist-Zustand der Prozesse im ROS-Netzwerk ohne LeistungseinbuÃŸen kontinuierlich und visualisiert diesen im Vergleich zu definierten Soll-Werten. Auftretende Fehler und Abweichungen der von den Spezifikationen werden den Benutzer deutlich angezeigt. Es lassen sich GegenmaÃŸnahmen fÃ¼r verschiedene Fehler definieren.\\
+Die zu entwickelnde Softwarelösung soll sich als Überwachungsinstrument in die Robot Operating System (ROS) Middleware einfügen. Dabei soll überwacht werden, ob jeder Prozess, der im ROS-Netzwerk enthalten ist, definierten Sollwerten entsprechend ordnungsgemäß Daten übermittelt.\\
+Gerade durch die gegebene Problematik eines auf mehrere Hosts verteilten Systems, bereitet das Erfassen und Verstehen von auftretenden Problemen zum aktuellen Stand des ROS Schwierigkeiten. Das vorliegende Projekt erfasst den Ist-Zustand der Prozesse im ROS-Netzwerk ohne Leistungseinbußen kontinuierlich und visualisiert diesen im Vergleich zu definierten Soll-Werten. Auftretende Fehler und Abweichungen der von den Spezifikationen werden den Benutzer deutlich angezeigt. Es lassen sich Gegenmaßnahmen für verschiedene Fehler definieren.\\
 
 \section{Musskriterien}
 \begin{itemize}
-	\item Minimale Erweiterung bestehender Knoten zur Ãœbermittlung von Metadaten
+	\item Minimale Erweiterung bestehender Knoten zur Übermittlung von Metadaten
 	\item Publizierung der Metadaten mit defnierter Frequenz auf Topics
 	\item Deaktivierung der Datenerfassung einzelner Knoten
-	\item Definition von Soll-ZustÃ¤nden
-	\item Graphische Ãœbersicht Ã¼ber Abweichungen von Soll- und Ist-Zustand der Knotendaten
+	\item Definition von Soll-Zuständen
+	\item Graphische Übersicht über Abweichungen von Soll- und Ist-Zustand der Knotendaten
 	\item Statuserfassung der Host-Computer
 \end{itemize}
 
 \section{Wunschkriterien}
 \begin{itemize}
-	\item Ãœberwachung weiterer ROS Bestandteile: Service, Parameters
+	\item Überwachung weiterer ROS Bestandteile: Service, Parameters
 	\item Selbstkontrolle der Knoten
 	\item Ist-Zustand als Soll-Zustand definieren
-	\item ErgÃ¤nzende Ãœbersichten mit dem ROS Graphen und Plots Ã¼ber den zeitlichen Verlauf
+	\item Ergänzende Übersichten mit dem ROS Graphen und Plots über den zeitlichen Verlauf
 \end{itemize}
 
 \section{Abgrenzungskriterien}
 \begin{itemize}
-	\item Das Projekt wird keine vollstÃ¤ndige Automatisierung in FehlerfÃ¤llen umsetzen.
-	\item Ãœberwachung der Netzwerkinfrastruktur
+	\item Das Projekt wird keine vollständige Automatisierung in Fehlerfällen umsetzen.
+	\item Überwachung der Netzwerkinfrastruktur
 \end{itemize}
