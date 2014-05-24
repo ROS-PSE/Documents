@@ -1,1 +1,20 @@
+\newcounter{tfc}
+\setcounter{tfc}{0}
+\newcommand{\tf}{
+	\addtocounter{tfc}{10}
+	\ifnum\value{fac}<100
+		\item[/TF0\thefac/]
+	\else
+		\item[/TF\thefac/]
+	\fi
+}
+
 \chapter{Testfälle}
+\begin{itemize}
+	\tf Es wird festgestellt, dass ein Knoten keine Daten mehr sendet
+	\tf Es wird festgestellt, wenn ein Knoten langsamer oder schneller als sonst Daten sendet.\\
+		Es wird festgestellt, wenn ein Knoten maßgeblich von den Sollwerten abweicht.
+	\tf Eingelesene Konfigurationsdaten lassen sich parsen und auslesen
+	\tf Hostdaten werden übermittelt
+	\tf rqt Plugin reagiert auf Größenänderung
+\end{itemize}

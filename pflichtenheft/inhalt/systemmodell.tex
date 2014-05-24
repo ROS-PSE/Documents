@@ -1,7 +1,45 @@
 \chapter{Systemmodell}
 
-das selbe wie im kapitel davor nicht sicher was wir da genau reinschreiben
-sollen
-
 \section{Szenarien}
+
+\subsection*{Darstellung von Fehlern}
+\subsubsection*{Fehlerfeststellung durch den Benutzer}
+\begin{itemize}
+	\item Einem Benutzer ist ein Fehler aufgefallen: Der Roboter verhält sich nicht mehr, wie erwartet wird.
+	\item Er öffnet das PSE Introspection Plugin in der rqt GUI.
+	\item Sofort sieht er, dass das Plugin den Fehler erfasst hat. Es zeigt ein Problem an.
+	\item In einer Knotenübersicht fällt es dem Benutzer leicht, die farblich auffällig hinterlegten fehlerhaften Knoten auszumachen.
+	\item Er öffnet die betroffenen Knoten in der Detailansicht und sieht, in welchen Punkten das Knotenverhalten von den Spezifikationen abweicht.
+\end{itemize}
+\subsubsection*{Fehlerfeststellung über die GUI}
+\begin{itemize}
+	\item Um den Status des ROS-Netzwerkes im Auge zu behalten, hat der benutzer das PSE Introspection Plugin in der rqt GUI geöffnet.
+	\item Er stellt fest, dass die Statusanzeige nicht mehr in Grün volle Funktionalität signalisiert.
+	\item Mit einem Klick öffnet er das Fehlerlog, in dem er Einträge findet, welche Knoten von ihren Spezifikationen abweichend arbeiten und die Fehlermeldung ausgelöst haben.
+	\item Nun hat der Anwender die Möglichkeit, die Fehlerhaften Knoten aus einer Liste zu suchen und sie in einer Detailansicht zu öffnen, um sich weitere Details über die ausgefallenen Komponenten anzeigen zu lassen.
+\end{itemize}
+
+\subsection*{Knotendetail-Ansicht}
+\subsubsection*{Auswahl eines Knotens}
+\begin{itemize}
+	\item Der Benutzer möchte sich die Metadaten Informationen zu einen Knoten anzeigen.
+	\item Er wählt sich den Knoten, der ihn interessiert aus einer Liste.
+	\item Dazu besteht die Möglichkeit, diesen in einer Liste zu finden, welche sich auch über ein Suchfeld filtern lässt.
+	\item Wählt er einen Knoten aus, öffnet sich ein kleines Fenster mit den Knoteninformationen und reiht sich in die Übersicht der geöffneten Detailfenster ein.
+\end{itemize}
+\subsubsection*{Umschalten der Detailansicht am Beispiel der Topic Liste}
+\begin{itemize}
+	\item Das Detailfenster bietet für verschiedene Knotendaten Links, um die Ansicht zu erweitern.
+	\item Der Benutzer bekommtein Topic angezeigt, mit dem der Knoten in einem Publisher/Subscriber-Verhältnis steht.
+	\item Klickt der Benutzer auf eine Schaltfläche neben der Anzeige, wir die Anzeige der sonstigen Metadaten durch eine vollständige Auflistung der relevanten Topics ersetzt.
+	\item Intuitiv positioniert findet der Anwender eine Schaltfläche, um zur vorigen Ansicht zurückzukehren.
+\end{itemize}
+
+\subsection*{Dynamische GUI}
+\begin{itemize}
+	\item Der Benutzer schließt ein rqt Plugin, das er nicht mehr benötigt.
+	\item Daraufhin verschiebt sich das Layout in der rqt GUI und das PSE Introspection Plugin ändert seine Form und Größe.
+	\item Das PSE Introspection Plugin rearrangiert seine Inhalte, um sie im neuen Layout anzuzeigen.
+\end{itemize}
+
 \section{Anwenungsfälle}
