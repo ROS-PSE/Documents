@@ -1,11 +1,11 @@
 \newcounter{tfc}
 \setcounter{tfc}{0}
 \newcommand{\tf}{
-	\addtocounter{tfc}{10}
-	\ifnum\value{fac}<100
-		\item[/TF0\thefac/]
+	\addtocounter{tfc}{100}
+	\ifnum\value{tfc}<1000
+		\item[/TF0\thetfc/]
 	\else
-		\item[/TF\thefac/]
+		\item[/TF\thetfc/]
 	\fi
 }
 
