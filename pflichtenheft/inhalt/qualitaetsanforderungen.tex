@@ -2,3 +2,13 @@
 
 Wartbarkeit, Zuverlässigkeit, Erweiterbarkeit etc. anpreisen\\
 
+\section{Erweiterbarkeit}
+Um in einer erweiternden Entwicklung den Umfang der übertragenen Metadaten zu erweitern, muss zum einen der Topic-Datentyp erweitert werden, mit dem die Daten zum Monitoringknoten übermittelt werden, und zum anderen muss die die Funktion zur Erfassung der Daten ergänzt werden.\\
+% Zur Anzeige in der GUI und zum Abgleich mit Soll-Spezifikationen müssen zusätzliche Felder in einer Konfigurationsdatei hinzugefügt werden.
+
+\section{Wartbarkeit}
+Aufgrund einer transparenten Abfolge in der Übertragung der Metadaten, können die einzelnen Stationen stückweise auf Fehler untersucht werden.\\
+Da das Projekt mit dem ROS Publisher/Subscriber Prinzip die Metadaten auf Topics überträgt, ist es zudem ohne weiteres möglich, den Inhalt der übertragenen Daten mit bestehenden Mitteln einzusehen und zu kontrollieren.
+
+\section{Zuverlässigkeit}
+Die Funktionalität des ROS Netzwerkes wird durch unerheblichen Zusatzaufwand zur Verarbeitung der erhobenen Metadaten nicht weiter eingeschränkt.
