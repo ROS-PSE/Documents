@@ -33,37 +33,36 @@
 
 
 \chapter{Nichtfunktionale Anforderungen}
-\section{Produktleistungen \small{\textit{Pflicht}}}
+\section{Produktleistungen}
+\subsection{Pflicht}
 \begin{description}
-\nf
-\nfsec
-\nf
-	\item[/NF0100/] Die GUI soll schnell starten und interaktiv bedienbar sein
-	\item[/NF0200/] Möglichst kein Overhead im Release-Modus
+\nf Einfaches einbinden der Metadatenerfassung in bereits vorhandene Knoten
+\nf Geringen zusätzlichen Leistungsbedarf durch die Metadatenerfassung
+\nfsec Vernachlässigbarer Leistungsbedarf wenn die Erfassung deaktiviert ist
+\nf Stufenweise Selbstüberwachung des Gesamtsystems
+\nfsec Selbstüberwachung anhand Knoten und ihre Verbindungen
+\nfsec Selbstüberwachung durch die der Metadaten der Knoten
+\nfsec Selbstüberwachung unter Berücksichtigung von Hosts und Netwerktopologie
 \end{description}
 
-\section{Produktleistungen \small{\textit{Optional}}}
+\subsection{Optional}
 \begin{description}
-	\item[/NF0300/] Flexibler Umgang mit unterschiedlichen Bildschirm- und Bildauflösungen
-	\item[/NF0400/] Integration in das OpenCV Test Framework
+\nf Flexibles GUI Layout
 \end{description}
 
-\section{Qualitätsanforderungen \small{\textit{Pflicht}}}
+\section{Qualitätsanforderungen}
+\subsection{Pflicht}
 \begin{description}
-	\item[/NF0500/] Keine signifikanten Speicherlecks
-	\item[/NF0600/] Erweiterbarkeit um zusätzliche OpenCV Operationen und Visualisierungen
-	\item[/NF0700/] Modularer Aufbau (API und GUI)
-	\item[/NF0900/] Einhaltung der OpenCV und Qt Konventionen
-	\item[/NF1000/] Ausführliche Dokumentation der API und des GUI
+\nf Möglichkeit die Metadaten zu erweitern
+\nf Modularität der GUI
+\nf Dokumentationen in Englisch
+\nfsec Dokumentation der API
+\nfsec Dokumentation der GUI 
+\nfsec Dokumentation des Python-Codes mittels docstrings
 \end{description}
 
-\section{Qualitätsanforderungen \small{\textit{Optional}}}
+\subsection{Optional}
 \begin{description}
-	\item[/NF1100/] Dokumentation des internen Codes mit Werkzeug
-	\item[/NF1200/] OpenCV geeigneter Aufbau des Build-Systems
-	\item[/NF1300/] Abdeckung durch Tests
-	\item[/NF1400/] Keine Resource-Leaks
-	\item[/NF1500/] Threadsafety \small{\textit{Im C++11-Modus}}
-	\item[/NF1600/] Toleranz gegenüber fehlerhaften API-Aufrufen
-	\item[/NF1700/] Kein undefiniertes Verhalten
+\nf Tutorial zur Nutzung des Programmes in Englisch
+\nf Weitgehende Abdeckung durch Tests
 \end{description}
