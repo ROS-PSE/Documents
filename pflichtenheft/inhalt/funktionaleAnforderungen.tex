@@ -35,8 +35,9 @@
 \section{Gesamtsystem}
 \subsection{Pflicht}
 \begin{description}
-\fa Dezentrale Erfassung von Metadaten: Anzahl Publisher und Subscriber, Bandbreite, Frequenz, Latenz, Jitter
+\fa Dezentrale Erfassung von Metadaten: Anzahl Topics und Subscriber, Bandbreite, Frequenz, Latenz, Jitter
 \fa Monitoring Knoten zum zentralen Abgleich des Soll- und Ist-Zustandes
+\fa Countermeasure Knoten um Gegenmaßnahmen bei Fehlern ergreifen zu können
 \fasec Warnungen und Fehlernachrichten bei maßgeblichen Abweichungen
 \fa Definition eines ROS Message Types für Metadaten
 \fa Eigenständiger Knoten zur Überwachung der Hardware des Host-Systems (CPU Auslastung, CPU Temperatur, RAM, Festplatten-Speicher)
@@ -44,7 +45,11 @@
 
 \subsection{Optional}
 \begin{description}
+\fa Lebenszeichen von Subscribern und Hosts, auch wenn keine Daten Empfangen werden
 \fa Überwachung weiterer ROS Komponenten wie Services und Parameters
+\fa Überwachung der Publisher
+\fasec Erfassung der Anzahl Publisher pro Topic
+\fasec Erfassung von Lebenszeichen von Publishern
 \fa Festlegen des Ist-Zustandes als Soll-Definition
 \fasec Korrelationen zwischen Empfangs- und Sendeverhalten eines Knotens erkennen
 \fa Anpassung des Sendeverhaltens des Systems an Netzwerkgegebenheiten
@@ -52,7 +57,6 @@
 \fa Integration mit roswtf
 \end{description}
 
-%todo: an richtige stelle schieben?
 \section{Soll-Spezifikation}
 \subsection{Pflicht}
 \begin{description}
@@ -67,7 +71,7 @@
 \subsection{Optional}
 \begin{description}
 \fa Ein Monitoringknoten verwaltet alle Teilsysteme
-
+\fa Gegemaßnahmen in der Soll Spezifikation definierbar machen
 \end{description}
 \section{API}
 \subsection{Pflicht}
@@ -93,6 +97,7 @@
 
 \subsection{Optional}
 \begin{description}
+\fa Geeignete Metadaten werden in nahezu Echtzeit im Knoten-Graphen visualisiert (verfügbare Bandbreite, Datenrate, Latenz)
 \fa Der Soll-Ist-Vergleich wird in einer Visualisierung des ROS Graphen dargestellt
 \fa Geeignete Metadaten werden im ROS Graphen dargestellt
 \fa Es wird ein zeitlicher Verlauf der Metadaten aufgezeichnet und grafisch dargestellt
