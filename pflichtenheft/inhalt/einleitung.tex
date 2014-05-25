@@ -4,9 +4,9 @@
 
 Das Robot Operating System (ROS) , ist eine Middleware um flexible Robotik Software zu schreiben. 2007 begann Willow Garage mit der Entwicklung von ROS und findet Heute in der Robotik Community weit verbreitet.
  Es liefert eine Ansammlung von Tools, Libraries und Konventionen, welche das Erstellen von komplexer und robuster Robotik Software auf verschiedenen Platformen erleichtern soll.
-ROS gliedert die Algorithmen zur Realisierung intelligenter Roboter in einzelne Aufgaben, welche durch jeweils einen Prozess ( Node ,  Knoten ) dargestelt und auf mehrere Rechner ( Hosts ) verteilt sein kÃ¶nnen.
-Die Nodes verbinden sich nach dem Publisher-Subscriber Schema Ã¼ber ein Netzwerk miteinander um die DatenflÃ¼sse herzustellen ( ROS Graph ).
-Diese Grafen kÃ¶nnen aber sehr komplex werden.
+ROS gliedert die Algorithmen zur Realisierung intelligenter Roboter in einzelne Aufgaben, welche durch jeweils einen Prozess ( Node ,  Knoten ) dargestelt und auf mehrere Rechner ( Hosts ) verteilt sein können.
+Die Nodes verbinden sich nach dem Publisher-Subscriber Schema über ein Netzwerk miteinander um die Datenflüsse herzustellen ( ROS Graph ).
+Diese Grafen können aber sehr komplex werden.
 
 \begin{figure}[H]
 \centering
@@ -15,11 +15,11 @@ Diese Grafen kÃ¶nnen aber sehr komplex werden.
 		Quelle: http://www.willowgarage.com }
 \end{figure}
 
-Ein Problem stellt aber die Ãœberwachung dieses Systems dar. Zwar besteht im Moment die MÃ¶glichkeit das Gesamtsystem auf Fehler zu Ã¼berprÃ¼fen, aber es nicht mÃ¶glich zu bestimmen 
-welcher Knoten sich fehlerhaft verhaltet. Dies kann besonders bei groÃŸen System mit hunderten von Knoten zum Problem werden. Um ein schnelles Debuggen zu ermÃ¶glichen, benÃ¶tigt es
+Ein Problem stellt aber die Überwachung dieses Systems dar. Zwar besteht im Moment die Möglichkeit das Gesamtsystem auf Fehler zu überprüfen, aber es nicht möglich zu bestimmen 
+welcher Knoten sich fehlerhaft verhaltet. Dies kann besonders bei großen System mit hunderten von Knoten zum Problem werden. Um ein schnelles Debuggen zu ermöglichen, benötigt es
 eine Software zum dezentralen Erfassen.
 
 
 \vspace{0.5cm}
 
-Unser Ziel als PSE-Team ist es, ein System zur Definiton des Soll-Zustandes und der Ãœberwachen des Ist-Zustandes individueller Knoten zu erstellen.
+Unser Ziel als PSE-Team ist es, ein System zur Definiton des Soll-Zustandes und der Überwachen des Ist-Zustandes individueller Knoten zu erstellen.
