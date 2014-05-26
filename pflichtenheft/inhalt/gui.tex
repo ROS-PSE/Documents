@@ -8,10 +8,10 @@ Existierender.
 
 \section{Merkmale der graphischen Benutzeroberfläche}
 \begin{itemize}
-	\item Implementiert mit Hilfe von PyQt bzw. als rqt Widget
+	\item Implementiert mit Hilfe von PyQt\footnote{\hyperlink{http://www.riverbankcomputing.co.uk/software/pyqt}{http://www.riverbankcomputing.co.uk/software/pyqt}} bzw. als rqt\footnote{\hyperlink{http://wiki.ros.org/rqt}{http://wiki.ros.org/rqt}} Widget
 	\item Modularer Aufbau der Benutzeroberfläche in Form von Widgets, welche in die bereits bestehende rqt-Oberfläche integriert werden können
 	\item Erweiterung der Funktionalität einiger rqt Widgets, um zusätzliche Informationen anzeigen zu können
-	\item Verwendung geeigneter graphischer Bibliotheken, um eine gute Übersichtlichkeit der Daten zu gewährleisten. Erwähnenswert ist hier insbesondere Graphwiz[1] für den Graphen der Hosts/Nodes und Matplotlib[2] für die Darstellung des zeitlichen Verlaufs von beispielsweise des Netzwerk-Traffics oder der CPU-Auslastung
+	\item Verwendung geeigneter graphischer Bibliotheken, um eine gute Übersichtlichkeit der Daten zu gewährleisten. Erwähnenswert ist hier insbesondere Graphviz\footnote{\hyperlink{http://www.graphviz.org/}{http://www.graphviz.org/}} für den Graphen der Hosts/Nodes und Matplotlib\footnote{\hyperlink{http://matplotlib.org/}{http://matplotlib.org/}} für die Darstellung des zeitlichen Verlaufs von beispielsweise des Netzwerk-Traffics oder der CPU-Auslastung
 	
 \end{itemize}
 
@@ -26,7 +26,7 @@ Existierender.
 	\begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=0.6\linewidth]{gui/uebersichtsgui_final_information.png}
-	\caption{ÜbersichtsWidget - Tab Information}
+	\caption{ÜbersichtsWidget - Reiter Information}
 	\end{center}
 	Hier werden allgemeine Informationen, d.h. der Durchschnitt der Auslastung aller Knoten angezeigt und durch die grüne "Ampel" eine korrekte Funktion aller (wichtigen) Knoten signalisiert.
 	\end{figure}
@@ -34,7 +34,7 @@ Existierender.
 	\begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=0.7\linewidth]{gui/uebersichtswidget_final_progress.png}
-	\caption{ÜbersichtsWidget - Tab Progress}	
+	\caption{ÜbersichtsWidget - Reiter Progress}	
 	\end{center}
 	Die Informationen des Informations-Tabs werden hier in Form von Graphen, d.h. im zeitlichen Verlauf dargestellt. Das betrachtete Intervall kann natürlich verändert werden.
 	\end{figure}
@@ -42,7 +42,7 @@ Existierender.
 	\begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=0.7\linewidth]{gui/uebersichtswidget_final_error.png}
-	\caption{ÜbersichtsWidget - Tab Error}
+	\caption{ÜbersichtsWidget - Reiter Error}
 	\end{center}
 	
 	Im Fehlerfall ändert sich die Farbe der "Ampel", sodass der Nutzer unmissverständlich erkennt, dass ein Problem existiert, das für eine korrekte Funktionsweise behoben werden muss. Im Error-Tab findet der Benutzer dann den Log der letzten Fehler, um so schnell und einfach herauszufinden, wo das Problem liegt.
@@ -51,22 +51,21 @@ Existierender.
 	\newpage
 
 \subsection{Auswahl Widget}
-	Dieses Widget zeigt anhand des gerade ausgewählten Elements (z.B.durch Anklicken im Nodegraph oder durch Auswählen in einer Liste) detaillierte Information zu dem Element an. Element bedeutet in diesem Fall entweder Knoten oder Host. [TODO: sidn hier topics auch notwendig? glaub nicht...]
+	Dieses Widget zeigt anhand des gerade ausgewählten Elements (z.B.durch Anklicken im Nodegraph oder durch Auswählen in einer Liste) detaillierte Information zu dem Element an. Element bedeutet in diesem Fall entweder Knoten oder Host.
 	Ähnlich wie das Übersichts-Widget, ist auch dieses Widget in Tabs organisiert, wobei die Tabs Progress und Error ähnlich funktionieren, wie beim Übersichtswidget, weshalb deren Funktionalität hier nicht erneut betrachtet werden soll.
 	\vspace{0.5cm}
 	\begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=0.45\linewidth]{gui/SelectionWidget_final_info.png}
-	\caption{AuswahlWidget - Tab Information}
+	\caption{AuswahlWidget - Reiter Information}
 	\end{center}
 	Der Reiter Information bietet, wie der Name schon sagt, sehr umfangreiche Information über das spezifische, gerade ausgewählte Element. Diese können je nach Element (Knoten/Host) unterschiedlich sein, umfassen jedoch u.A. Bandbreite, Latenz, Name der Topics auf denen gesendet wird, CPU-Auslastung, Speicherauslastung und andere.
-	[TODO: Bild hier noch update, das (of what?) muss raus]
 	\end{figure}
 	
 	\begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=0.45\linewidth]{gui/SelectionWidget_final_actions.png}
-	\caption{AuswahlWidget - Tab Actions}	
+	\caption{AuswahlWidget - Reiter Actions}	
 	\end{center}
 	Als optionales Feature können die Knoten im Problemfall neugestartet werden bzw. überhaupt gestartet werden. Dies erleichtert die Problembehebung erheblich, da diese Funktion aus der Ferne ausgeführt werden kann.
 	\end{figure}
