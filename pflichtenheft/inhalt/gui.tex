@@ -1,5 +1,9 @@
 \chapter{Benutzeroberfläche}
-Um die Daten des Monitoring Knotens sinnvoll darstellen zu können soll eine graphische Oberfläche existieren, welche diese Daten übersichtlich darstellt. Hierbei gilt es, die bereits vorhandene rqt-Gui um weitere Funktionalität zu ergänzen, sei es in Form von neuen Widgets oder durch Modifikation bereits Existierender.
+Um die Daten des Monitoring Knotens sinnvoll darstellen zu können soll eine
+graphische Oberfläche existieren, welche diese Daten übersichtlich darstellt.
+Hierbei gilt es, die bereits vorhandene rqt-Gui um weitere Funktionalität zu
+ergänzen, sei es in Form von neuen Widgets oder durch Modifikation bereits
+Existierender.
 
 
 \section{Merkmale der graphischen Benutzeroberfläche}
@@ -11,35 +15,38 @@ Um die Daten des Monitoring Knotens sinnvoll darstellen zu können soll eine grap
 	
 \end{itemize}
 
+\newpage
+
 
 \section{Protoypen/Skizzen}
 \subsection{ÜbersichtsWidget}
 	Den Kern der graphischen Oberfläche bildet das ÜbersichtsWidget, welches einen Großteil der relevanten Informationen auf einer kleinen und übersichtlichen Oberfläche zusammenfasst. Hierunter fallen unter anderem Information zum aktuellen Status aller Knoten, Fehlermeldungen	 und Grafiken zum zeitlichen Verlauf der Auslastung unterschiedlicher Komponenten.
+	\\
 	
-	
-	\begin{figure}
+	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gui/uebersichtsgui_final_information.png}
 	\caption{ÜbersichtsWidget - Tab Information}
 	Hier werden allgemeine Informationen d.h. der Durchschnitt der Auslastung aller Knoten angezeigt, und durch die grüne "Ampel" eine korrekte Funktion aller (wichtigen) Knoten signalisiert.
 	\end{figure}
 	
-	\begin{figure}
+	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gui/uebersichtswidget_final_progress.png}
 	\caption{ÜbersichtsWidget - Tab Progress}	
 	Die Informationen des InformationsTabs werden hier in Form von Graphen, d.h. im zeitlichen Verlauf dargestellt. Das betrachtete Intervall kann natürlich verändert werden.
 	\end{figure}
 	
-	\begin{figure}
+	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gui/uebersichtswidget_final_error.png}
 	\caption{ÜbersichtsWidget - Tab Error}
 	Im Fehlerfall ändert sich die Farbe der "Ampel", sodass der Nutzer unmissverständlich erkennt, dass ein Problem existiert, das für eine korrekte Funktionsweise behoben werden muss. Im Tab Error findet der Benutzer dann den Log der letzten Fehler um so schnell und einfach herauszufinden, wo das Problem liegt.
 	\end{figure}
 	
+	\newpage
 
 \subsection{Auswahl Widget}
 	Dieses Widget zeigt anhand des gerade ausgewählten Elements (z.B.durch Anklicken im Nodegraph oder durch Auswählen in einer Liste) detaillierte Information zu dem Element an. Element bedeutet in diesem Fall entweder Knoten oder Host. [TODO: sidn hier topics auch notwendig? glaub nicht...]
 	Ähnlich wie das ÜbersichtsWidget ist auch dieses Widget in Tabs organisiert, wobei die Tabs Progress und Error ähnlich funktionieren wie beim Übersichtswidget, weshalb deren Funktionalität hier nicht erneut betrachtet werden soll.
-
+\\
 	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gui/SelectionWidget_final_info.png}
 	\caption{AuswahlWidget - Tab Information}	
@@ -47,7 +54,7 @@ Um die Daten des Monitoring Knotens sinnvoll darstellen zu können soll eine grap
 	[TODO: Bild hier noch update, das ("of what?") muss raus]
 	\end{figure}
 	
-	\begin{figure}
+	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gui/SelectionWidget_final_actions.png}
 	\caption{AuswahlWidget - Tab Actions}	
 	Als optionales Feature können die Knoten im Problemfall neugestartet werden bzw. überhaupt gestartet werden. Dies erleichtert die Problembehebung erheblich, da diese Funktion aus der Ferne ausgeführt werden kann.
