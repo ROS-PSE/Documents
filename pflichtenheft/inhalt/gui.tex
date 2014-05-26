@@ -1,5 +1,4 @@
 \chapter{Benutzeroberfläche}
-
 Um die Daten des Monitoring Knotens sinnvoll darstellen zu können soll eine graphische Oberfläche existieren, welche diese Daten übersichtlich darstellt. Hierbei gilt es, die bereits vorhandene rqt-Gui um weitere Funktionalität zu ergänzen, sei es in Form von neuen Widgets oder durch Modifikation bereits Existierender.
 
 
@@ -20,17 +19,17 @@ Um die Daten des Monitoring Knotens sinnvoll darstellen zu können soll eine grap
 
 \subsection{ÜbersichtsWidget}
 	Den Kern der graphischen Oberfläche bildet das ÜbersichtsWidget, welches einen Großteil der relevanten Informationen auf einer kleinen und übersichtlichen Oberfläche zusammenfasst. Hierunter fallen unter anderem Information zum aktuellen Status aller Knoten, Fehlermeldungen	 und Grafiken zum zeitlichen Verlauf der Auslastung unterschiedlicher Komponenten.
-	\includegraphics[width=\linewidth]{gui/ÜbersichtsGui_final_information.PNG}
+	\includegraphics[width=\linewidth]{gui/uebersichtsgui_final_information.png}
 	\caption{ÜbersichtsWidget - Tab Information}
 	
 	Hier werden allgemeine Informationen d.h. der Durchschnitt der Auslastung aller Knoten angezeigt, und durch die grüne "Ampel" eine korrekte Funktion aller (wichtigen) Knoten signalisiert.
 	
-	\includegraphics[width=\linewidth]{gui/ÜbersichtsWidget_final_progress.png}
+	\includegraphics[width=\linewidth]{gui/uebersichtswidget_final_progress.png}
 	\caption{ÜbersichtsWidget - Tab Progress}
 	
 	Die Informationen des InformationsTabs werden hier in Form von Graphen, d.h. im zeitlichen Verlauf dargestellt. Das betrachtete Intervall kann natürlich verändert werden.
 	
-	\includegraphics[width=\linewidth]{gui/ÜbersichtsWidget_final_error.png}
+	\includegraphics[width=\linewidth]{gui/uebersichtswidget_final_error.png}
 	\caption{ÜbersichtsWidget - Tab Error}
 	
 	Im Fehlerfall ändert sich die Farbe der "Ampel", sodass der Nutzer unmissverständlich erkennt, dass ein Problem existiert, das für eine korrekte Funktionsweise behoben werden muss. Im Tab Error findet der Benutzer dann den Log der letzten Fehler um so schnell und einfach herauszufinden, wo das Problem liegt.
