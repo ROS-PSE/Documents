@@ -1,8 +1,8 @@
 \chapter{Benutzeroberfläche}
-Um die Daten des Monitoring Knotens sinnvoll darstellen zu können soll eine
+Um die Daten des Monitoring Knotens sinnvoll darstellen zu können, soll eine
 graphische Oberfläche existieren, welche diese Daten übersichtlich darstellt.
 Hierbei gilt es, die bereits vorhandene rqt-Gui um weitere Funktionalität zu
-ergänzen, sei es in Form von neuen Widgets oder durch Modifikation bereits
+ergänzen, sei es in Form von neuen Widgets oder durch Modifikationen bereits
 Existierender.
 
 
@@ -10,8 +10,8 @@ Existierender.
 \begin{itemize}
 	\item Implementiert mit Hilfe von PyQt bzw. als rqt Widget
 	\item Modularer Aufbau der Benutzeroberfläche in Form von Widgets, welche in die bereits bestehende rqt-Oberfläche integriert werden können
-	\item Erweiterung der Funktionalität einiger rqt Widgets um zusätzliche Informationen anzeigen zu können
-	\item Verwendung geeigneter graphischer Bibliotheken um eine gute Übersichtlichkeit der Daten zu gewährleisten. Erwähnenswert ist hier insbesondere Graphwiz[1] für den Graphen der Hosts/Nodes und Matplotlib[2] für die Darstellung des zeitlichen Verlaufs von beispielsweise des Netzwerk-Traffics oder der CPU-Auslastung
+	\item Erweiterung der Funktionalität einiger rqt Widgets, um zusätzliche Informationen anzeigen zu können
+	\item Verwendung geeigneter graphischer Bibliotheken, um eine gute Übersichtlichkeit der Daten zu gewährleisten. Erwähnenswert ist hier insbesondere Graphwiz[1] für den Graphen der Hosts/Nodes und Matplotlib[2] für die Darstellung des zeitlichen Verlaufs von beispielsweise des Netzwerk-Traffics oder der CPU-Auslastung
 	
 \end{itemize}
 
@@ -20,37 +20,37 @@ Existierender.
 
 \section{Protoypen/Skizzen}
 \subsection{ÜbersichtsWidget}
-	Den Kern der graphischen Oberfläche bildet das ÜbersichtsWidget, welches einen Großteil der relevanten Informationen auf einer kleinen und übersichtlichen Oberfläche zusammenfasst. Hierunter fallen unter anderem Information zum aktuellen Status aller Knoten, Fehlermeldungen	 und Grafiken zum zeitlichen Verlauf der Auslastung unterschiedlicher Komponenten.
-	\\
+	Den Kern der graphischen Oberfläche bildet das ÜbersichtsWidget, welches einen Großteil der relevanten Informationen auf einer kleinen und übersichtlichen Oberfläche zusammenfasst. Hierunter fallen unter anderem Information zum aktuellen Status aller Knoten, Fehlermeldungen und Grafiken zum zeitlichen Verlauf der Auslastung unterschiedlicher Komponenten.
+	\vspace{0.5cm}
 	
 	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gui/uebersichtsgui_final_information.png}
 	\caption{ÜbersichtsWidget - Tab Information}
-	Hier werden allgemeine Informationen d.h. der Durchschnitt der Auslastung aller Knoten angezeigt, und durch die grüne "Ampel" eine korrekte Funktion aller (wichtigen) Knoten signalisiert.
+	Hier werden allgemeine Informationen, d.h. der Durchschnitt der Auslastung aller Knoten angezeigt und durch die grüne "Ampel" eine korrekte Funktion aller (wichtigen) Knoten signalisiert.
 	\end{figure}
 	
 	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gui/uebersichtswidget_final_progress.png}
 	\caption{ÜbersichtsWidget - Tab Progress}	
-	Die Informationen des InformationsTabs werden hier in Form von Graphen, d.h. im zeitlichen Verlauf dargestellt. Das betrachtete Intervall kann natürlich verändert werden.
+	Die Informationen des Informations-Tabs werden hier in Form von Graphen, d.h. im zeitlichen Verlauf dargestellt. Das betrachtete Intervall kann natürlich verändert werden.
 	\end{figure}
 	
 	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gui/uebersichtswidget_final_error.png}
 	\caption{ÜbersichtsWidget - Tab Error}
-	Im Fehlerfall ändert sich die Farbe der "Ampel", sodass der Nutzer unmissverständlich erkennt, dass ein Problem existiert, das für eine korrekte Funktionsweise behoben werden muss. Im Tab Error findet der Benutzer dann den Log der letzten Fehler um so schnell und einfach herauszufinden, wo das Problem liegt.
+	Im Fehlerfall ändert sich die Farbe der "Ampel", sodass der Nutzer unmissverständlich erkennt, dass ein Problem existiert, das für eine korrekte Funktionsweise behoben werden muss. Im Error-Tab findet der Benutzer dann den Log der letzten Fehler, um so schnell und einfach herauszufinden, wo das Problem liegt.
 	\end{figure}
 	
 	\newpage
 
 \subsection{Auswahl Widget}
 	Dieses Widget zeigt anhand des gerade ausgewählten Elements (z.B.durch Anklicken im Nodegraph oder durch Auswählen in einer Liste) detaillierte Information zu dem Element an. Element bedeutet in diesem Fall entweder Knoten oder Host. [TODO: sidn hier topics auch notwendig? glaub nicht...]
-	Ähnlich wie das ÜbersichtsWidget ist auch dieses Widget in Tabs organisiert, wobei die Tabs Progress und Error ähnlich funktionieren wie beim Übersichtswidget, weshalb deren Funktionalität hier nicht erneut betrachtet werden soll.
-\\
+	Ähnlich wie das Übersichts-Widget, ist auch dieses Widget in Tabs organisiert, wobei die Tabs Progress und Error ähnlich funktionieren, wie beim Übersichtswidget, weshalb deren Funktionalität hier nicht erneut betrachtet werden soll.
+	\vspace{0.5cm}
 	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gui/SelectionWidget_final_info.png}
 	\caption{AuswahlWidget - Tab Information}	
-	Der Reiter Information bietet wie der Name schon sagt sehr umfangreiche Information über das spezifische, gerade ausgewählte Element. Diese können je nach Element (Knoten/Host) unterschiedlich sein, umfassen jedoch u.A. Bandbreite, Latenz, Name der Topics auf denen gesendet wird, Cpu-Auslastung, Speicherauslastung und Andere.
+	Der Reiter Information bietet, wie der Name schon sagt, sehr umfangreiche Information über das spezifische, gerade ausgewählte Element. Diese können je nach Element (Knoten/Host) unterschiedlich sein, umfassen jedoch u.A. Bandbreite, Latenz, Name der Topics auf denen gesendet wird, CPU-Auslastung, Speicherauslastung und andere.
 	[TODO: Bild hier noch update, das ("of what?") muss raus]
 	\end{figure}
 	
