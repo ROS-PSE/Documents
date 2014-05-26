@@ -1,11 +1,14 @@
 \chapter{Produktdaten}
 
-%todo: grobe beschreibung der inhalte der metadaten
-%todo: ergÃ¤nzungen zur config 
 \section{Config}
-\begin{description}
-\item Konfigurationsdaten werden generell an den Parameterserver von ROS gesendet um diese Zentral zur VerfÃ¼gung zu stellen.
+\begin{itemize}
+\item Konfigurationsdaten werden generell an den Parameterserver von ROS gesendet um diese Zentral zur Verfügung zu stellen.
 \item Soll-Spezifizierungen werden vom Benutzer an den Parameterserver gereicht. Dort holt der Monitoring Knoten sich die Spezifizierungen ab.
-\end{description}
+\end{itemize}
 
 \section{Metadaten}
+\begin{itemize}
+\item Es wird ein eigener Metadatentyp zum Übertragen der Metadaten entworfen. Dazu gibt es noch einen eigenen Typ zur Übertragung der aufbereiteten Metadaten an die GUI.
+\item Eingehende Metadaten werden vom Monitoring Knoten erfasst und gespeichert.
+\item Der Monitoring Knoten verfügt über einen kurzzeitigen Speicher um die empfangenen Metadaten aufzubereiten und zu Publizieren.
+\end{itemize}
