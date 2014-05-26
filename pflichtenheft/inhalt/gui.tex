@@ -1,9 +1,19 @@
 \chapter{Benutzeroberfläche}
 Um die Daten des Monitoring Knotens sinnvoll darstellen zu können, soll eine
-graphische Oberfläche existieren, welche diese Daten übersichtlich darstellt.
+graphische Oberfläche existieren, welche Diese  übersichtlich darstellt.
 Hierbei gilt es, die bereits vorhandene rqt-Gui um weitere Funktionalität zu
 ergänzen, sei es in Form von neuen Widgets oder durch Modifikationen bereits
 Existierender.
+
+\begin{figure}[H]
+	\begin{center}
+	\includegraphics[width=0.7\linewidth]{gui/rqt_gui.PNG}
+	\caption{Die rqt Gui - Öffnen eines Widgets}	
+	\end{center}
+	Im Bild zu sehen ist das Öffnen eines Widgets in der rqt Gui. Durch ihre sehr modulare Bauweise können beliebig viele Widget gestartet und gemeinsam auf einer Oberfläche oder auch über mehrere Bildschirme verteilt angezeigt werden.
+	Alle nachfolgenden graphischen Elemente können mithilfe der hier gezeigten Funktionalität gestartet und auch gestoppt werden. 
+	\end{figure}
+
 
 
 \section{Merkmale der graphischen Benutzeroberfläche}
@@ -12,11 +22,11 @@ Existierender.
 	\item Modularer Aufbau der Benutzeroberfläche in Form von Widgets, welche in die bereits bestehende rqt-Oberfläche integriert werden können
 	\item Erweiterung der Funktionalität einiger rqt Widgets, um zusätzliche Informationen anzeigen zu können
 	\item Verwendung geeigneter graphischer Bibliotheken, um eine gute Übersichtlichkeit der Daten zu gewährleisten. Erwähnenswert ist hier insbesondere Graphviz\footnote{\hyperlink{http://www.graphviz.org/}{http://www.graphviz.org/}} für den Graphen der Hosts/Nodes und Matplotlib\footnote{\hyperlink{http://matplotlib.org/}{http://matplotlib.org/}} für die Darstellung des zeitlichen Verlaufs von beispielsweise des Netzwerk-Traffics oder der CPU-Auslastung
+	\item Modellierung der Gui in Form des Model/View Konzept durch Verwendung vorhandener Qt-Funktionalität\footnote{\hyperlink{http://qt-project.org/doc/qt-4.8/modelview.html}{http://qt-project.org/doc/qt-4.8/modelview.html}}
 	
 \end{itemize}
 
-\newpage
-
+\vspace{1.0cm}
 
 \section{Protoypen/Skizzen}
 \subsection{ÜbersichtsWidget}
@@ -28,7 +38,7 @@ Existierender.
 	\includegraphics[width=0.6\linewidth]{gui/uebersichtsgui_final_information.png}
 	\caption{ÜbersichtsWidget - Reiter Information}
 	\end{center}
-	Hier werden allgemeine Informationen, d.h. der Durchschnitt der Auslastung aller Knoten angezeigt und durch die grüne "Ampel" eine korrekte Funktion aller (wichtigen) Knoten signalisiert.
+	Es werden hier allgemeine Informationen, d.h. der Durchschnitt der Auslastung aller Knoten angezeigt und durch die grüne "Ampel" eine korrekte Funktion aller (relevanten) Knoten signalisiert.
 	\end{figure}
 	
 	\begin{figure}[H]
@@ -36,7 +46,7 @@ Existierender.
 	\includegraphics[width=0.7\linewidth]{gui/uebersichtswidget_final_progress.png}
 	\caption{ÜbersichtsWidget - Reiter Progress}	
 	\end{center}
-	Die Informationen des Informations-Tabs werden hier in Form von Graphen, d.h. im zeitlichen Verlauf dargestellt. Das betrachtete Intervall kann natürlich verändert werden.
+	Die Informationen des Informations-Reiters werden hier in Form von Graphen, d.h. im zeitlichen Verlauf dargestellt. Das betrachtete Intervall kann natürlich verändert werden.
 	\end{figure}
 	
 	\begin{figure}[H]
@@ -51,7 +61,7 @@ Existierender.
 	\newpage
 
 \subsection{Auswahl Widget}
-	Dieses Widget zeigt anhand des gerade ausgewählten Elements (z.B.durch Anklicken im Nodegraph oder durch Auswählen in einer Liste) detaillierte Information zu dem Element an. Element bedeutet in diesem Fall entweder Knoten oder Host.
+	Dieses Widget zeigt anhand des gerade ausgewählten Elements (z.B.durch Anklicken im NodeGraph oder durch Auswählen im Listen Widget) detaillierte Information zu dem Element an. Element bedeutet in diesem Fall entweder Knoten oder Host.
 	Ähnlich wie das Übersichts-Widget, ist auch dieses Widget in Tabs organisiert, wobei die Tabs Progress und Error ähnlich funktionieren, wie beim Übersichtswidget, weshalb deren Funktionalität hier nicht erneut betrachtet werden soll.
 	\vspace{0.5cm}
 	\begin{figure}[H]
@@ -59,12 +69,12 @@ Existierender.
 	\includegraphics[width=0.45\linewidth]{gui/SelectionWidget_final_info.png}
 	\caption{AuswahlWidget - Reiter Information}
 	\end{center}
-	Der Reiter Information bietet, wie der Name schon sagt, sehr umfangreiche Information über das spezifische, gerade ausgewählte Element. Diese können je nach Element (Knoten/Host) unterschiedlich sein, umfassen jedoch u.A. Bandbreite, Latenz, Name der Topics auf denen gesendet wird, CPU-Auslastung, Speicherauslastung und andere.
+	Der Reiter Information bietet, wie der Name schon sagt, sehr umfangreiche Information über das spezifische, gerade ausgewählte Element. Diese können je nach Element (Knoten/Host) unterschiedlich sein, umfassen jedoch u.A. Bandbreite, Latenz, Name der Topics auf denen gesendet wird, CPU-Auslastung, Speicherauslastung und Andere.
 	\end{figure}
 	
 	\begin{figure}[H]
 	\begin{center}
-	\includegraphics[width=0.45\linewidth]{gui/SelectionWidget_final_actions.png}
+	\includegraphics[width=0.55\linewidth]{gui/SelectionWidget_final_actions.png}
 	\caption{AuswahlWidget - Reiter Actions}	
 	\end{center}
 	Als optionales Feature können die Knoten im Problemfall neugestartet werden bzw. überhaupt gestartet werden. Dies erleichtert die Problembehebung erheblich, da diese Funktion aus der Ferne ausgeführt werden kann.
@@ -76,12 +86,24 @@ Ein sehr einfaches Widget, welches dazu gedacht ist, die vorhandenen Hosts und K
 
 	\begin{figure}[H]
 	\begin{center}
-	\includegraphics[width=0.7\linewidth]{gui/ListWidget.PNG}
+	\includegraphics[width=\linewidth]{gui/ListWidget.PNG}
 	\caption{List Widget - Hauptansicht}	
 	\end{center}
 	Um die Übersichtlichkeit zu erreichen werden die vorhandenen Daten zunächst hierarchisch angezeigt, was sich durch De/Aktivieren der Punkte "Show Nodes" und "Show Hosts" modifizieren lässt. Des Weiteren lassen sich die Elemente nach Suchbegriffen filtern und ermöglichen so ein schnelles Findes des gewünschtes Elements. Ein weiterer Filter ermöglicht das Anzeigen nur solcher Elemente, die derzeit in einem Fehler-Zustand sind. Eine Kombination der Filter ist natürlich möglich. 
 	\end{figure}
 
+\newpage
+
+\subsection{Node Graph}
+Der Node Graph ist ein bereits vorhandenes Widget, das bereits in rqt integriert ist und Informationen zu den Knoten in einem sehr übersichtlichen Graphen zur Verfügung stellt. 
+Dieser soll um weitere Funktionalität erweitert werden, unter Anderem um die Möglichkeit, sich auch die Hosts mit anzeigen zu lassen oder weitere Informationen zum gerade ausgewählten Element anzuzeigen.
+
+	\begin{figure}[H]
+	\begin{center}
+	\includegraphics[width=\linewidth]{gui/NodeGraph.png}
+	\caption{Node Graph Widget}	
+	\end{center}
+	\end{figure}
 
 
 
