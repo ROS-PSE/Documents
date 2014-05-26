@@ -4,10 +4,10 @@
 
 \subsection*{Definition des Soll-Zustandes}
 \begin{itemize}
-	\item Der Benutzer mochte entscheiden, welche Daten uberwacht werden sollen.
+	\item Der Benutzer möchte entscheiden, welche Daten überwacht werden sollen.
 	\item Er definiert eine Datei, welche den Namen und Typ der zu speichernden Daten beschreibt.
 	\item Er bestimmt einen Bereich in dem die Werte liegen sollen.
-	\item Die Metadaten werden uber Publisher-Subscriber an einen Monitor-Knoten geschickt.
+	\item Die Metadaten werden über Publisher-Subscriber an einen Monitor-Knoten geschickt.
 \end{itemize}
 
 \subsection*{Darstellung von Fehlern}
@@ -52,36 +52,35 @@
 
 \section{Anwendungsfälle}
 
-\subsection*{Uberwachung eines Knoten}
+\subsection*{Überwachung eines Knoten}
 \begin{itemize}
 	\item Primary Actor: Monitor
 	\item Level: User Goal
 	\item Scope: Monitor System
 \end{itemize}
 \subsubsection*{Story}
-\begin{itemize}
-	\item Der Benutzer definiert einen Soll-Zustand fur den Knoten und stellt Verbindung zum Monitor her.
-		  Der zu uberwachende Knoten sendet seinen Ist-Zustand an den Monitoring-Knoten.
+ Der Benutzer definiert einen Soll-Zustand für den Knoten und stellt Verbindung zum Monitor her.
+		  Der zu überwachende Knoten sendet seinen Ist-Zustand an den Monitoring-Knoten.
 		  Der Monitor-Knoten gleicht die Ist-Zustand mit dem vorher definiertem Soll-Zustand ab.
 		  Falls eine abweichung entdeckt wird , zeigt die rqt GUI den betroffenen Knoten an.
-		  Der Benutzer kann sich fur eine Gegenmassnahme entscheiden.
-\end{itemize}
+		  Der Benutzer kann sich fur eine Gegenmaßnahme entscheiden.
 \subsubsection*{Postcondition}
 \begin{itemize}
 	\item Fehlerzustand wurde erkannt
-	\item Angemessene Gegenmasnahmen konnten getroffen werden.
+	\item Angemessene Gegenmaßnahmen konnten getroffen werden.
 \end{itemize}
 \subsubsection*{Main Succes Scenario}
 \begin{enumerate}
 	\item Benutzer definiert Soll-Zustand
 	\item Verbindung zwischen Knoten und Monitor wird hergestellt
-	\item Monitor empfangt Meta-Daten
+	\item Monitor empfängt Meta-Daten
 	\item Monitor gleicht den Soll-Zustand mit dem Ist-Zustand ab
 	\item Diskrepanz wird festgellt
 	\item Fehlerhafter Knoten wird auf GUI angezeigt
 	\item Benutzer kann Gegenmasnahme treffen
 \end{enumerate}
-
+\subsubsection*{Frequency of Occurrence}
+ Durchläufig angewendet
 
 
 
