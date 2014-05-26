@@ -1,7 +1,13 @@
 \newcounter{tfc}
+\newcounter{tfcsec}
+\newcounter{tmpsec}
 \setcounter{tfc}{0}
+\setcounter{tfcsec}{0}
+
 \newcommand{\tf}{
 	\addtocounter{tfc}{100}
+	\setcounter{tfcsec}{0}
+	
 	\ifnum\value{tfc}<1000
 		\item[/TF0\thetfc/]
 	\else
@@ -9,12 +15,29 @@
 	\fi
 }
 
-\chapter{Testfälle}
+
+\newcommand{\tfsec}
+{
+\addtocounter{tfcsec}{10}
+\setcounter{tmpsec}{\thetfc}
+\addtocounter{tmpsec}{\thetfcsec}
+\ifnum\value{tfc}<1000
+\item[/TF0\thetmpsec/]
+\else
+\item[/TF\thetmpsec/]
+\fi
+}
+
+
+\chapter{Testfälle und Testszenarien}
+\section{Tests}
 \begin{description}
-	\tf Es wird festgestellt, dass ein Knoten keine Daten mehr sendet
-	\tf Es wird festgestellt, wenn ein Knoten langsamer oder schneller als sonst Daten sendet.\\
-		Es wird festgestellt, wenn ein Knoten maßgeblich von den Sollwerten abweicht.
+	\tf rqt Plugin öffnet und schließt ohne Fehler
+	\tf Die GUI reagiert darauf, wenn ein Knoten keine Daten mehr versendet
+	\tfsec , wenn ein Knoten langsamer oder schneller als sonst Daten sendet.
+	\tfsec , wenn ein Knoten maßgeblich von seinen Sollwerten abweicht.
 	\tf Eingelesene Konfigurationsdaten lassen sich parsen und auslesen
-	\tf Hostdaten werden übermittelt
+	\tf Hostdaten werden korrekt übermittelt
 	\tf rqt Plugin reagiert auf Größenänderung
 \end{description}
+
