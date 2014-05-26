@@ -24,20 +24,27 @@ Existierender.
 	\vspace{0.5cm}
 	
 	\begin{figure}[H]
-	\includegraphics[width=\linewidth]{gui/uebersichtsgui_final_information.png}
+	\begin{center}
+	\includegraphics[width=0.6\linewidth]{gui/uebersichtsgui_final_information.png}
 	\caption{ÜbersichtsWidget - Tab Information}
+	\end{center}
 	Hier werden allgemeine Informationen, d.h. der Durchschnitt der Auslastung aller Knoten angezeigt und durch die grüne "Ampel" eine korrekte Funktion aller (wichtigen) Knoten signalisiert.
 	\end{figure}
 	
 	\begin{figure}[H]
-	\includegraphics[width=\linewidth]{gui/uebersichtswidget_final_progress.png}
+	\begin{center}
+	\includegraphics[width=0.7\linewidth]{gui/uebersichtswidget_final_progress.png}
 	\caption{ÜbersichtsWidget - Tab Progress}	
+	\end{center}
 	Die Informationen des Informations-Tabs werden hier in Form von Graphen, d.h. im zeitlichen Verlauf dargestellt. Das betrachtete Intervall kann natürlich verändert werden.
 	\end{figure}
 	
 	\begin{figure}[H]
-	\includegraphics[width=\linewidth]{gui/uebersichtswidget_final_error.png}
+	\begin{center}
+	\includegraphics[width=0.7\linewidth]{gui/uebersichtswidget_final_error.png}
 	\caption{ÜbersichtsWidget - Tab Error}
+	\end{center}
+	
 	Im Fehlerfall ändert sich die Farbe der "Ampel", sodass der Nutzer unmissverständlich erkennt, dass ein Problem existiert, das für eine korrekte Funktionsweise behoben werden muss. Im Error-Tab findet der Benutzer dann den Log der letzten Fehler, um so schnell und einfach herauszufinden, wo das Problem liegt.
 	\end{figure}
 	
@@ -48,20 +55,33 @@ Existierender.
 	Ähnlich wie das Übersichts-Widget, ist auch dieses Widget in Tabs organisiert, wobei die Tabs Progress und Error ähnlich funktionieren, wie beim Übersichtswidget, weshalb deren Funktionalität hier nicht erneut betrachtet werden soll.
 	\vspace{0.5cm}
 	\begin{figure}[H]
-	\includegraphics[width=\linewidth]{gui/SelectionWidget_final_info.png}
-	\caption{AuswahlWidget - Tab Information}	
+	\begin{center}
+	\includegraphics[width=0.45\linewidth]{gui/SelectionWidget_final_info.png}
+	\caption{AuswahlWidget - Tab Information}
+	\end{center}
 	Der Reiter Information bietet, wie der Name schon sagt, sehr umfangreiche Information über das spezifische, gerade ausgewählte Element. Diese können je nach Element (Knoten/Host) unterschiedlich sein, umfassen jedoch u.A. Bandbreite, Latenz, Name der Topics auf denen gesendet wird, CPU-Auslastung, Speicherauslastung und andere.
-	[TODO: Bild hier noch update, das ("of what?") muss raus]
+	[TODO: Bild hier noch update, das (of what?) muss raus]
 	\end{figure}
 	
 	\begin{figure}[H]
-	\includegraphics[width=\linewidth]{gui/SelectionWidget_final_actions.png}
+	\begin{center}
+	\includegraphics[width=0.45\linewidth]{gui/SelectionWidget_final_actions.png}
 	\caption{AuswahlWidget - Tab Actions}	
+	\end{center}
 	Als optionales Feature können die Knoten im Problemfall neugestartet werden bzw. überhaupt gestartet werden. Dies erleichtert die Problembehebung erheblich, da diese Funktion aus der Ferne ausgeführt werden kann.
 	\end{figure}
 \newpage
 
+\subsection{Listen Widget}
+Ein sehr einfaches Widget, welches dazu gedacht ist, die vorhandenen Hosts und Knoten übersichtlich anzuzeigen.
 
+	\begin{figure}[H]
+	\begin{center}
+	\includegraphics[width=0.7\linewidth]{gui/ListWidget.PNG}
+	\caption{List Widget - Hauptansicht}	
+	\end{center}
+	Um die Übersichtlichkeit zu erreichen werden die vorhandenen Daten zunächst hierarchisch angezeigt, was sich durch De/Aktivieren der Punkte "Show Nodes" und "Show Hosts" modifizieren lässt. Des Weiteren lassen sich die Elemente nach Suchbegriffen filtern und ermöglichen so ein schnelles Findes des gewünschtes Elements. Ein weiterer Filter ermöglicht das Anzeigen nur solcher Elemente, die derzeit in einem Fehler-Zustand sind. Eine Kombination der Filter ist natürlich möglich. 
+	\end{figure}
 
 
 
