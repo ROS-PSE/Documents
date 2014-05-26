@@ -41,3 +41,23 @@
 	\tf rqt Plugin reagiert auf Größenänderung
 \end{description}
 
+\section{Beispielszenarien}
+
+\subsection*{Knoten exisitert nicht mehr}
+\begin{itemize}
+  \item Ein ROS-Netzwerk mit beliebig vielen Knoten wird gestartet
+  \item Der Benutzer öffnet das Plugin in der rqt GUI
+  \item Nun wird mit "Gewalt" ein Knoten vom Netzwerk getrennt
+  \item	Die GUI muss darauf reagieren und anzeigen, dass der Knoten nicht mehr
+  verfügbar ist und ein Fehler aufgetreten ist
+\end{itemize}
+
+\subsection*{Knoten weicht von seinen Sollwerten ab}
+\begin{itemize}
+  \item Wieder wird ein ROS-Netzwerk mit beliebig vielen Knoten gestartet
+  \item Es werden für einen Knoten, der stetig Daten versendet, die Sollwerte so
+  eingestellt, dass der Ist-Zustand weit von ihnen abweicht
+  \item Der Benutzer öffnet das Plugin in der rqt GUI
+  \item Es muss deutlich angezeigt werden, dass der Knoten von den
+  vordefinierten Sollwerten abweicht
+\end{itemize}
