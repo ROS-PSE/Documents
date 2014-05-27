@@ -32,32 +32,38 @@
 \chapter{Testfälle und Testszenarien}
 \section{Tests}
 \begin{description}
-	\tf rqt Plugin öffnet und schließt ohne Fehler
-	\tf Die GUI reagiert darauf, wenn ein Knoten keine Daten mehr versendet
-	\tfsec , wenn ein Knoten langsamer oder schneller als sonst Daten sendet.
-	\tfsec , wenn ein Knoten maßgeblich von seinen Sollwerten abweicht.
+	\tf Die GUI reagiert darauf, wenn ein Knoten maßgeblich von seinen Sollwerten abweicht z.B. zur eine Einfärbung des problematischen Knotens.
 	\tf Eingelesene Konfigurationsdaten lassen sich parsen und auslesen
 	\tf Hostdaten werden korrekt übermittelt
-	\tf rqt Plugin reagiert auf Größenänderung
+	\tf rqt Plugins reagieren korrekt auf Großenänderung
+	\tf Optional: Funktionsweise des Starten und Stoppens von Knoten unter Netzwerklast prüfen
+	\tf Menge der Metadaten überschreitet nicht die Netzwerkkapazität
 \end{description}
 
 \section{Beispielszenarien}
+
+\subsection*{Typische Vorgehensweise}
+\begin{itemize}
+	\item Der Benutzer startet zunächst roscore, dann neben den von ihm benötigten Knoten den Monitoring Knoten
+	\item Um den aktuellen Status seiner Knoten und des Netzwerks zu überwachen, startet er nun rqt und öffnet das Listen Widget. Falls nun Fehler auftreten wird er durch eine farbliche Veränderung auf mögliche Probleme hingewiesen.
+\end{itemize}
 
 \subsection*{Knoten exisitert nicht mehr}
 \begin{itemize}
   \item Ein ROS-Netzwerk mit beliebig vielen Knoten wird gestartet
   \item Der Benutzer öffnet das Plugin in der rqt GUI
-  \item Nun wird mit "Gewalt" ein Knoten vom Netzwerk getrennt
-  \item	Die GUI muss darauf reagieren und anzeigen, dass der Knoten nicht mehr
-  verfügbar ist und ein Fehler aufgetreten ist
+  \item Nun wird ein Knoten vom Netzwerk getrennt (z.B. durch Programmabsturz)
+  \item	Falls dieser Knoten in den Soll-Spezifkationen als wichtig definiert wurde, reagiert die GUI nun darauf reagieren und zeigt an, dass der Knoten nicht mehr
+  verfügbar ist und dass ein Fehler aufgetreten ist
+  \item Optional bietet die GUI nun die Möglichkeit den betroffenen Knoten neuzustarten
 \end{itemize}
 
 \subsection*{Knoten weicht von seinen Sollwerten ab}
 \begin{itemize}
   \item Wieder wird ein ROS-Netzwerk mit beliebig vielen Knoten gestartet
-  \item Es werden für einen Knoten, der stetig Daten versendet, die Sollwerte so
-  eingestellt, dass der Ist-Zustand weit von ihnen abweicht
-  \item Der Benutzer öffnet das Plugin in der rqt GUI
-  \item Es muss deutlich angezeigt werden, dass der Knoten von den
-  vordefinierten Sollwerten abweicht
+  \item Es werden die Soll Spezifikationen festgelegt und der Monitoring Knoten gestartet
+  \item Der Zustand eines Knotens verschlechtert sich gravierend und er überschreitet die Soll Spezifikation an mindestens einem Punkt
+  \item Der Monitoring Knoten erkennt das Überschreiten der Spezifikation und startet ggf. vordefinierte Aktionen
+    \item Der Benutzer öffnet den Node Graph in der GUI und sieht den betreffenden Knoten aufgrund der farblichen Hervorhebung sofort. Optional kann er sich auch in Form eines Graphen den Verlauf der Daten über bestimmte Zeiträume hinweg anzeigen lassen.
+  \item Der Benutzer hat nun entweder in der GUI die Möglichkeit den Knoten neuzustarten oder er nimmt manuell Reparaturen vor.
 \end{itemize}
