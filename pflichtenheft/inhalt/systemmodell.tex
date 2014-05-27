@@ -34,7 +34,7 @@
 	\item Der Benutzer möchte sich die Metadaten Informationen zu einen Knoten anzeigen.
 	\item Er wählt sich den Knoten, der ihn interessiert, aus einer Liste.
 	\item Dazu besteht die Möglichkeit, diesen in einer Liste zu finden, welche sich auch über ein Suchfeld filtern lässt.
-	\item Wählt er einen Knoten aus, öffnet sich ein kleines Fenster mit den Knoteninformationen und reiht sich in die Übersicht der geöffneten Detailfenster ein.
+	\item Wählt er einen Knoten aus, öffnet sich ein kleines Fenster mit den Knoteninformationen und reiht sich in die übersicht der geöffneten Detailfenster ein.
 \end{itemize}
 \subsubsection*{Umschalten der Detailansicht am Beispiel der Topic Liste}
 \begin{itemize}
@@ -50,25 +50,25 @@
 
 \subsection*{Überwachung eines Knoten}
 \begin{itemize}
-	\item Primary Actor: Monitor
+	\item Hauptakteur: Monitor
 	\item Level: User Goal
 	\item Scope: Monitor System
 \end{itemize}
-\subsubsection*{Story}
- Der Benutzer definiert einen Soll-Zustand für den Knoten und stellt eine
- Verbindung zum Monitor her.
-		  Der zu überwachende Knoten sendet seinen Ist-Zustand an den Monitoring-Knoten.
-		  Der Monitor-Knoten gleicht den Ist-Zustand mit dem vorher definierten
-		  Soll-Zustand ab.
-		  Falls eine Abweichung entdeckt wird, zeigt das rqt Widget den betroffenen
-		  Knoten an.
-		  Der Benutzer kann sich für eine Gegenmaßnahme entscheiden.
-\subsubsection*{Postcondition}
+\subsubsection{Beteiligte und Interessen}
 \begin{itemize}
-	\item Fehlerzustand wurde erkannt
+	\item Benutzer:	Definition eines Soll-Zustandes für einen Knoten.
+					Schnelles Treffen von Gegenmaßnahmen bei fehlerhaftem Knoten.
+	\item Monitor:  Herstellen einer Verbindung mit dem zu überwachenden Knoten.
+					Empfangen des Ist-Zustandes des zu überwachenden Knotens.
+					Abgleichen von Ist- und Soll-Zustand un Abweichungen finden.
+					Information über den Fehlerhaften Knoten an das rqt Widget senden.
+\end{itemize}
+\subsubsection*{Erfolgsgarantie}
+\begin{itemize}
+	\item Fehlerzustand wurde erkannt und angezeigt.
 	\item Angemessene Gegenmaßnahmen konnten getroffen werden.
 \end{itemize}
-\subsubsection*{Main Succes Scenario}
+\subsubsection*{Haupterfolgsszenario}
 \begin{enumerate}
 	\item Benutzer definiert Soll-Zustand
 	\item Verbindung zwischen Knoten und Monitor wird hergestellt
@@ -78,8 +78,14 @@
 	\item Fehlerhafter Knoten wird auf GUI angezeigt
 	\item Benutzer kann Gegenmaßnahme treffen
 \end{enumerate}
-\subsubsection*{Frequency of Occurrence}
- Durchläufig angewendet
+\subsubsection*{Alternative Szenarien}
+\begin{enumerate}
+	\item 	Der Monitor empfängt keine Daten. Fehlende Verbindung wird auf der GUI angezeigt, 
+			damit der Benutzer Gegenmaßnahmen treffen kann.
+	\item	Es wird keine Abweichung festgestellt.
+\end{enumerate}	
+\subsubsection*{Häufigkeit}
+ Tritt häufig auf.
 
 
 
