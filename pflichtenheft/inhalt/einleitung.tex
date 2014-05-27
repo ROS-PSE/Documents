@@ -1,23 +1,33 @@
 \chapter{Einleitung}
 
-Das Robot Operating System (ROS) ist eine Middleware um flexible Robotik Software zu schreiben. 2007 begann Willow Garage mit der Entwicklung von ROS und findet Heute in der Robotik Community weit verbreitet.
- Es liefert eine Sammlung von Tools, Libraries und Konventionen, welche das Erstellen von komplexer und robuster Robotik Software auf verschiedenen Platformen erleichtern soll.
-ROS gliedert die Algorithmen zur Realisierung intelligenter Roboter in einzelne Aufgaben, welche durch jeweils einen Prozess (Node, Knoten) dargestellt und auf mehrere Rechner (Hosts) verteilt sein können.
-Die Nodes verbinden sich nach dem Publisher-Subscriber Schema über ein Netzwerk miteinander um die Datenflüsse herzustellen (ROS Graph).
-Diese Grafen können allerdings sehr komplex werden.
+Das Robot Operating System (ROS) ist eine Middleware, um flexible Robotik
+Software zu schreiben. 2007 begann Willow Garage mit der Entwicklung von ROS,
+welches heute in der Robotik Community weit verbreitet ist.
+Es liefert eine Sammlung von Tools, Libraries und Konventionen, welche das
+Erstellen von komplexer und robuster Robotik Software auf verschiedenen
+Platformen erleichtern soll.
+ROS gliedert die Algorithmen zur Realisierung intelligenter Roboter in einzelne
+Aufgaben, welche durch jeweils einen Prozess (Node) dargestellt und auf mehrere
+Rechner (Hosts) verteilt sein können.
+Die Nodes verbinden sich nach dem Publisher-Subscriber Schema über ein Netzwerk
+miteinander, um die Datenflüsse herzustellen (ROS Graph).
+Diese Graphen können allerdings sehr komplex werden.
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{./bilder/rxgraph.png} 
-\caption{Beispiel eines ROS Graph. Nodes sind als Ellipsen, Topics als Rechtecke und Datenfluss als Pfeile dargestellt.
-		Quelle: http://www.willowgarage.com }
+\begin{figure}[H] \centering \includegraphics[scale=0.35]{./bilder/rxgraph.png}
+\caption{Beispiel eines ROS Graph. Nodes sind als Ellipsen, Topics als Rechtecke
+und Datenfluss als Pfeile dargestellt.
+Quelle: http://www.willowgarage.com }
 \end{figure}
 
-Ein Problem stellt die Überwachung dieses Systems dar. Zwar besteht im Moment die Möglichkeit, das Gesamtsystem auf Fehler zu überprüfen, jedoch ist es nicht möglich zu bestimmen, 
-welcher Knoten sich fehlerhaft verhält. Dies kann besonders bei großen System mit hunderten von Knoten zum Problem werden. Um ein schnelles Debuggen zu ermöglichen, bedarf es
-einer Software zum dezentralen Erfassen der Fehlerursachen.
+Ein Problem stellt die Überwachung dieses Systems dar. Zwar besteht im Moment
+die Möglichkeit, das Gesamtsystem auf Fehler zu überprüfen, jedoch ist es nicht
+möglich zu bestimmen, welcher Knoten sich fehlerhaft verhält. Dies kann
+besonders bei großen System mit hunderten von Knoten zum Problem werden. Um ein
+schnelles Debuggen zu ermöglichen, bedarf es einer Software zum dezentralen
+Erfassen der Fehlerursachen.
 
 
 \vspace{0.5cm}
 
-Unser Ziel als PSE-Team ist es, ein System zur Definiton des Soll-Zustandes und zum Überwachen des Ist-Zustandes individueller Knoten zu erstellen.
+Unser Ziel als PSE-Team ist es, ein System zur Definiton des Soll-Zustandes und
+zum Überwachen des Ist-Zustandes individueller Knoten zu erstellen.
