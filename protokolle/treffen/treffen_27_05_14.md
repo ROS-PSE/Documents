@@ -1,0 +1,4 @@
+- abgrenzungskriterien: paper anmerken und sachen wie diagnose abgrenzen
+- projekt vllt. arni nennen
+- 2.3 abgrenzungskriterien - Überwachung der Netzwerkinfrastruktur | ändern (unsinnig?)
+- alle sache nochmal durchlesen, rechtschreibfehler, textuelle fehler überprüfen- testfälle / testszenarien noch ergänzen
