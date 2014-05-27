@@ -6,22 +6,25 @@
 \begin{itemize}
 	\item Der Benutzer möchte entscheiden, welche Daten überwacht werden sollen.
 	\item Er definiert eine Datei, welche den Namen und Typ der zu speichernden Daten beschreibt.
-	\item Er bestimmt einen Bereich in dem die Werte liegen sollen.
+	\item Er bestimmt einen Bereich, in dem die Werte liegen sollen.
 	\item Die Metadaten werden über Publisher-Subscriber an einen Monitor-Knoten geschickt.
 \end{itemize}
 
 \subsection*{Darstellung von Fehlern}
 \subsubsection*{Fehlerfeststellung durch den Benutzer}
 \begin{itemize}
-	\item Einem Benutzer ist ein Fehler aufgefallen: Der Roboter verhält sich nicht mehr, wie erwartet wird.
+	\item Einem Benutzer ist ein Fehler aufgefallen: Der Roboter verhält sich nicht
+	mehr, wie es erwartet wird.
 	\item Er öffnet das PSE Introspection Plugin in der rqt GUI.
 	\item Sofort sieht er, dass das Plugin den Fehler erfasst hat. Es zeigt ein Problem an.
-	\item In einer Knotenübersicht fällt es dem Benutzer leicht, die farblich auffällig hinterlegten fehlerhaften Knoten auszumachen.
+	\item In einer Knotenübersicht fällt es dem Benutzer leicht, die farblich
+	auffällig hinterlegten, fehlerhaften Knoten auszumachen.
 	\item Er öffnet die betroffenen Knoten in der Detailansicht und sieht, in welchen Punkten das Knotenverhalten von den Spezifikationen abweicht.
 \end{itemize}
 \subsubsection*{Fehlerfeststellung über die GUI}
 \begin{itemize}
-	\item Um den Status des ROS-Netzwerkes im Auge zu behalten, hat der benutzer das PSE Introspection Plugin in der rqt GUI geöffnet.
+	\item Um den Status des ROS-Netzwerkes im Auge zu behalten, hat der Benutzer
+	das PSE Introspection Plugin in der rqt GUI geöffnet.
 	\item Er stellt fest, dass die Statusanzeige nicht mehr in Grün volle Funktionalität signalisiert.
 	\item Mit einem Klick öffnet er das Fehlerlog, in dem er Einträge findet, welche Knoten von ihren Spezifikationen abweichend arbeiten und die Fehlermeldung ausgelöst haben.
 	\item Nun hat der Anwender die Möglichkeit, die Fehlerhaften Knoten aus einer Liste zu suchen und sie in einer Detailansicht zu öffnen, um sich weitere Details über die ausgefallenen Komponenten anzeigen zu lassen.
@@ -31,15 +34,17 @@
 \subsubsection*{Auswahl eines Knotens}
 \begin{itemize}
 	\item Der Benutzer möchte sich die Metadaten Informationen zu einen Knoten anzeigen.
-	\item Er wählt sich den Knoten, der ihn interessiert aus einer Liste.
+	\item Er wählt sich den Knoten, der ihn interessiert, aus einer Liste.
 	\item Dazu besteht die Möglichkeit, diesen in einer Liste zu finden, welche sich auch über ein Suchfeld filtern lässt.
 	\item Wählt er einen Knoten aus, öffnet sich ein kleines Fenster mit den Knoteninformationen und reiht sich in die Übersicht der geöffneten Detailfenster ein.
 \end{itemize}
 \subsubsection*{Umschalten der Detailansicht am Beispiel der Topic Liste}
 \begin{itemize}
 	\item Das Detailfenster bietet für verschiedene Knotendaten Links, um die Ansicht zu erweitern.
-	\item Der Benutzer bekommtein Topic angezeigt, mit dem der Knoten in einem Publisher/Subscriber-Verhältnis steht.
-	\item Klickt der Benutzer auf eine Schaltfläche neben der Anzeige, wir die Anzeige der sonstigen Metadaten durch eine vollständige Auflistung der relevanten Topics ersetzt.
+	\item Der Benutzer bekommt ein Topic angezeigt, mit dem der Knoten in einem
+	Publisher-/Subscriber-Verhältnis steht.
+	\item Klickt der Benutzer auf eine Schaltfläche neben der Anzeige, wird die
+	Anzeige der sonstigen Metadaten durch eine vollständige Auflistung der relevanten Topics ersetzt.
 	\item Intuitiv positioniert findet der Anwender eine Schaltfläche, um zur vorigen Ansicht zurückzukehren.
 \end{itemize}
 
@@ -59,11 +64,14 @@
 	\item Scope: Monitor System
 \end{itemize}
 \subsubsection*{Story}
- Der Benutzer definiert einen Soll-Zustand für den Knoten und stellt Verbindung zum Monitor her.
+ Der Benutzer definiert einen Soll-Zustand für den Knoten und stellt eine
+ Verbindung zum Monitor her.
 		  Der zu überwachende Knoten sendet seinen Ist-Zustand an den Monitoring-Knoten.
-		  Der Monitor-Knoten gleicht die Ist-Zustand mit dem vorher definiertem Soll-Zustand ab.
-		  Falls eine abweichung entdeckt wird , zeigt die rqt GUI den betroffenen Knoten an.
-		  Der Benutzer kann sich fur eine Gegenmaßnahme entscheiden.
+		  Der Monitor-Knoten gleicht den Ist-Zustand mit dem vorher definierten
+		  Soll-Zustand ab.
+		  Falls eine Abweichung entdeckt wird, zeigt das rqt Widget den betroffenen
+		  Knoten an.
+		  Der Benutzer kann sich für eine Gegenmaßnahme entscheiden.
 \subsubsection*{Postcondition}
 \begin{itemize}
 	\item Fehlerzustand wurde erkannt

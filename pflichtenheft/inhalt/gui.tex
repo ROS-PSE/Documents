@@ -1,6 +1,6 @@
 \chapter{Benutzeroberfläche}
 Um die Daten des Monitoring Knotens sinnvoll darstellen zu können, soll eine
-graphische Oberfläche existieren, welche Diese  übersichtlich darstellt.
+graphische Oberfläche existieren, welche diese übersichtlich darstellt.
 Hierbei gilt es, die bereits vorhandene rqt GUI um weitere Funktionalität zu
 ergänzen, sei es in Form von neuen Widgets oder durch Modifikationen bereits
 Existierender.
@@ -10,8 +10,12 @@ Existierender.
 	\includegraphics[width=0.7\linewidth]{gui/rqt_gui.PNG}
 	\caption{Die rqt GUI - Öffnen eines Widgets}	
 	\end{center}
-	Im Bild zu sehen ist das Öffnen eines Widgets in der rqt GUI. Durch ihre sehr modulare Bauweise können beliebig viele Widget gestartet und gemeinsam auf einer Oberfläche oder auch über mehrere Bildschirme verteilt angezeigt werden.
-	Alle nachfolgenden graphischen Elemente können mithilfe der hier gezeigten Funktionalität gestartet und auch gestoppt werden. Widget sind im Allgemeinen der Grundbaustein einer graphischen Oberfläche mit Qt und können sowohl alleine als auch zusammen mit anderen Widgets in einem Fenster angezeigt werden.
+	Im Bild zu sehen ist das Öffnen eines Widgets in der rqt GUI. Durch ihre sehr
+	modulare Bauweise können beliebig viele Widget gestartet und gemeinsam, auf
+	einer Oberfläche oder auch über mehrere Bildschirme verteilt, angezeigt werden.
+	Alle nachfolgenden graphischen Elemente können mit Hilfe der hier gezeigten
+	Funktionalität gestartet und auch gestoppt werden. Widgets sind im Allgemeinen
+	der Grundbaustein einer graphischen Oberfläche mit Qt und können sowohl alleine als auch zusammen mit anderen Widgets in einem Fenster angezeigt werden.
 	\end{figure}
 
 
@@ -55,13 +59,16 @@ Existierender.
 	\caption{ÜbersichtsWidget - Reiter Error}
 	\end{center}
 	
-	Im Fehlerfall ändert sich die Farbe der "Ampel", sodass der Nutzer unmissverständlich erkennt, dass ein Problem existiert, das für eine korrekte Funktionsweise behoben werden muss. Im Error-Tab findet der Benutzer dann den Log der letzten Fehler, um so schnell und einfach herauszufinden, wo das Problem liegt.
+	Im Fehlerfall ändert sich die Farbe der "Ampel", sodass der Nutzer
+	unmissverständlich erkennt, dass ein Problem existiert, welches für eine
+	korrekte Funktionsweise behoben werden muss. Im Error-Tab findet der Benutzer dann den Log der letzten Fehler, um so schnell und einfach herauszufinden, wo das Problem liegt.
 	\end{figure}
 	
 	\newpage
 
 \subsection{Auswahl Widget}
-	Dieses Widget zeigt anhand des gerade ausgewählten Elements (z.B.durch Anklicken im NodeGraph oder durch Auswählen im Listen Widget) detaillierte Information zu dem Element an. Element bedeutet in diesem Fall entweder Knoten oder Host.
+	Dieses Widget zeigt anhand des gerade ausgewählten Elements (z.B. durch
+	Anklicken im NodeGraph oder durch Auswählen im Listen Widget) detaillierte Information zu dem Element an. Element bedeutet in diesem Fall entweder Knoten oder Host.
 	Ähnlich wie das Übersichts-Widget, ist auch dieses Widget in Tabs organisiert, wobei die Tabs Progress und Error ähnlich funktionieren, wie beim Übersichtswidget, weshalb deren Funktionalität hier nicht erneut betrachtet werden soll.
 	\vspace{0.5cm}
 	\begin{figure}[H]
@@ -89,7 +96,8 @@ Ein sehr einfaches Widget, welches dazu gedacht ist, die vorhandenen Hosts und K
 	\includegraphics[width=\linewidth]{gui/ListWidget.PNG}
 	\caption{List Widget - Hauptansicht}	
 	\end{center}
-	Um die Übersichtlichkeit zu erreichen werden die vorhandenen Daten zunächst hierarchisch angezeigt, was sich durch De/Aktivieren der Punkte "Show Nodes" und "Show Hosts" modifizieren lässt. Des Weiteren lassen sich die Elemente nach Suchbegriffen filtern und ermöglichen so ein schnelles Findes des gewünschtes Elements. Ein weiterer Filter ermöglicht das Anzeigen nur solcher Elemente, die derzeit in einem Fehler-Zustand sind. Eine Kombination der Filter ist natürlich möglich. 
+	Um die Übersichtlichkeit zu erreichen werden die vorhandenen Daten zunächst
+	hierarchisch angezeigt, was sich durch De-/Aktivieren der Punkte "Show Nodes" und "Show Hosts" modifizieren lässt. Des Weiteren lassen sich die Elemente nach Suchbegriffen filtern und ermöglichen so ein schnelles Findes des gewünschtes Elements. Ein weiterer Filter ermöglicht das Anzeigen nur solcher Elemente, die derzeit in einem Fehler-Zustand sind. Eine Kombination der Filter ist natürlich möglich.
 	\end{figure}
 
 \newpage
