@@ -61,7 +61,7 @@ Verbindungen
 \section{Soll-Spezifikation}
 \subsection{Pflicht}
 \begin{description}
-\fa Parametriesierung für Topics, Hosts und Knoten getrennt
+\fa Parametrisierung für Topics, Hosts und Knoten getrennt
 \fasec Obere und untere Schranken für Metadaten definierbar
 \fa Laden der Soll-Spezifikation einmalig bei Start des Überwachungsknotens
 \fasec Weitergabe der Soll-Spezifikation an den ROS Parameter Server bei Knotenstart
@@ -71,13 +71,13 @@ Verbindungen
 
 \subsection{Optional}
 \begin{description}
-\fa Ein Monitoringknoten verwaltet alle Teilsysteme
-\fa Gegemaßnahmen in der Soll Spezifikation definierbar machen
+\fa Ein Monitoringknoten kann unterschiedliche Soll Spezikationen verwalten, vorrausgesetz diese wiedersprechen sich nicht
+\fa Gegenmaßnahmen in der Soll Spezifikation definierbar machen
 \end{description}
 \section{API}
 \subsection{Pflicht}
 \begin{description}
-\fa Die Metadaten werden durch Hinzufügen eines Funktionsaufrufes zu bestehenden Callbacks erfasst, alternativ durch eine geeignete Klasse, die von Subscriber erbt
+\fa Die Metadaten werden durch Ableiten des Subscribers erfasst (Alle Knoten, die auf einem Topic "subscriben" wollen, müssen wiederrum von dieser abgeleiteten Klasse erben)
 \fa Die Metadaten werden auf einem Topic mit definierter Frequenz publiziert
 \fa Die Metadatenerfassung lässt sich über Parameter deaktivieren
 \end{description}
@@ -87,6 +87,7 @@ Verbindungen
 \begin{description}
 \fa Knoten sind in der Lage, sich anhand ihrer Soll-Metadaten selber zu überwachen
 \fa Das System wird auch für C++ Knoten implementiert
+\fa Metadaten können auch durch einen Funktionsaufruf erfasst werden
 \end{description}
 
 \section{GUI}
@@ -99,7 +100,6 @@ Verbindungen
 \subsection{Optional}
 \begin{description}
 \fa Geeignete Metadaten werden im Knoten-Graphen visualisiert (verfügbare Bandbreite, Datenrate, Latenz) und regelmäßig aktualisiert
-\fa Der Soll-Ist-Vergleich wird mithilfe der GUI visualisiert 
 \fa Geeignete Metadaten werden in den Widgets der graphischen Oberfläche dargestellt
 \fa Es wird ein zeitlicher Verlauf der Metadaten aufgezeichnet und grafisch dargestellt
 \fa Knoten werden (beispielsweise im Listen Widget) nach ihrem Host gruppiert angezeigt
