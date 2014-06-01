@@ -62,10 +62,21 @@
 \begin{itemize}
   \item Wieder wird ein ROS-Netzwerk mit beliebig vielen Knoten gestartet.
   \item Es werden die Soll Spezifikationen festgelegt und der Monitoring Knoten gestartet.
-  \item Der Zustand eines Knotens verschlechtert sich gravierend und er überschreitet die Soll Spezifikation an mindestens einem Punkt.
+  \item Der Zustand eines Knotens verschlechtert sich gravierend und er
+  überschreitet die Soll-Spezifikation an mindestens einem Punkt.
   \item Der Monitoring Knoten erkennt das Überschreiten der Spezifikation und startet ggf. vordefinierte Aktionen.
   \item Der Benutzer öffnet den Node Graph in der GUI und sieht den betreffenden Knoten aufgrund der farblichen Hervorhebung sofort. Optional kann er sich auch in Form eines Graphen den Verlauf der Daten über bestimmte Zeiträume hinweg anzeigen lassen.
   \item Der Benutzer hat nun entweder die Möglichkeit den Knoten aus der GUI heraus neuzustarten oder er nimmt manuell Reparaturen vor.
+\end{itemize}
+
+\subsection*{Countermeasure Knoten}
+\begin{itemize}
+  \item Vorrausgesetzt wird das vorherige Szenario, in dem ein Knoten die
+  Soll-Spezifikation überschreitet.
+  \item Nun reagiert der Countermeasure Knoten auf diese Abweichung und leitet
+  vordefinierte Gegenmaßnahmen ein.
+  \item Z.B. wird der Name des betroffenen Knotens in der Shell
+  ausgegeben.
 \end{itemize}
 
 \subsection*{Dynamische GUI}
@@ -74,3 +85,5 @@
 	\item Daraufhin verschiebt sich das Layout in der rqt GUI und das PSE Introspection Plugin ändert seine Form und Größe.
 	\item Das PSE Introspection Plugin rearrangiert seine Inhalte, um sie im neuen Layout anzuzeigen.
 \end{itemize}
+
+
