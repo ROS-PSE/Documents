@@ -110,6 +110,7 @@ Ein sehr einfaches Widget, welches dazu gedacht ist, die vorhandenen Hosts und K
 
 \subsection{Node Graph}
 Der Node Graph ist ein bereits vorhandenes Widget, das bereits in rqt integriert ist und Informationen zu den Knoten in einem sehr übersichtlichen Graphen zur Verfügung stellt. 
+
 Dieser soll um weitere Funktionalität erweitert werden, unter Anderem um die Möglichkeit, sich auch die Hosts mit anzeigen zu lassen oder weitere Informationen zum gerade ausgewählten Element anzuzeigen.
 
 	\begin{figure}[H]
@@ -119,7 +120,22 @@ Dieser soll um weitere Funktionalität erweitert werden, unter Anderem um die Mög
 	\end{center}
 	\end{figure}
 
+\newpage
 
+\subsection{Ausführlicher Node Graph}
+Eine Erweiterung des Node Graphs. Sie bietet die Funktionalität sich Metadaten von Topics direkt anzeigen zu lassen. Des weiteren werden die Kanten je nach Soll-Status gefärbt.
+
+So ist beispielsweise das Topic /voxelgrid als rot makiert, da die Latenz ausserhalb der Soll-Definition liegt. Das Topic /camera/depth/points ist dagegen orange, da die Frequenz vor kurzem ausserhalb des Soll-Wertes war, mittlerweile aber wieder im Soll-Bereich ist. Dagegen ist /camera/rgb/image\_rect\_color grün, da alle Werte dem vorgegebenen Bereich entsprechen.
+
+Des weiteren werden die Kanten unterschiedlich breit dargestellt, abhängig von der jeweiligen Datenrate.
+
+
+	\begin{figure}[H]
+	\begin{center}
+	\includegraphics[width=\linewidth]{gui/nodegraph_advanced.png}
+	\caption{Ausführlicher Node Graph}	
+	\end{center}
+	\end{figure}
 
 
 % \end{figure}
