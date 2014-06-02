@@ -3,7 +3,7 @@ Um die Daten des Monitoring Knotens sinnvoll darstellen zu können, soll eine
 graphische Oberfläche existieren, welche Diese übersichtlich darstellt.
 Hierbei gilt es, die bereits vorhandene rqt GUI um weitere Funktionalität zu
 ergänzen, sei es in Form von neuen Widgets oder durch Modifikationen bereits
-existierender.
+Existierender.
 
 \begin{figure}[H]
 	\begin{center}
@@ -47,14 +47,14 @@ existierender.
 	\begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=0.7\linewidth]{gui/uebersichtswidget_final_progress.png}
-	\caption{ÜbersichtsWidget - Reiter Progress}	
+	\caption{ÜbersichtsWidget - Reiter Graphs}	
 	\end{center}
 	Die Informationen des Informations-Reiters werden hier in Form von Graphen, d.h. im zeitlichen Verlauf dargestellt. Das betrachtete Intervall kann natürlich verändert werden.
 	\end{figure}
 	
 	\begin{figure}[H]
 	\begin{center}
-	\includegraphics[width=0.7\linewidth]{gui/uebersichtswidget_final_error.png}
+	\includegraphics[width=0.9\linewidth]{gui/uebersichtswidget_final_error.png}
 	\caption{ÜbersichtsWidget - Reiter Error}
 	\end{center}
 	
@@ -97,6 +97,13 @@ Ein sehr einfaches Widget, welches dazu gedacht ist, die vorhandenen Hosts und K
 	\end{center}
 	Um die Übersichtlichkeit zu erreichen werden die vorhandenen Daten zunächst
 	hierarchisch angezeigt, was sich durch De-/Aktivieren der Punkte "Show Nodes" und "Show Hosts" modifizieren lässt. Des Weiteren lassen sich die Elemente nach Suchbegriffen filtern und ermöglichen so ein schnelles Findes des gewünschtes Elements. Ein weiterer Filter ermöglicht das Anzeigen nur solcher Elemente, die derzeit in einem Fehler-Zustand sind. Eine Kombination der Filter ist natürlich möglich.
+	\end{figure}
+	
+	\begin{figure}[H]
+	\begin{center}
+	\includegraphics[width=\linewidth]{gui/ListWidget_Filter.PNG}
+	\caption{ListWidget - Beispielhafte Anwendung der Filter}	
+	\end{center}
 	\end{figure}
 
 \newpage
