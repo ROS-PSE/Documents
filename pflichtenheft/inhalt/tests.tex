@@ -31,13 +31,21 @@
 
 \chapter{Testfälle und Testszenarien}
 \section{Tests}
+% hier eigentlich nur automatische unittest sachen bzw. werden visuelle bestätigungen des verhaltens durch die szenarien abgedeckt?
 \begin{description}
-	\tf Die GUI reagiert darauf, wenn ein Knoten maßgeblich von seinen Sollwerten abweicht, indem z.B. der problematische Knoten eingefärbt wird.
-	\tf Eingelesene Konfigurationsdaten lassen sich parsen und auslesen
-	\tf Hostdaten werden korrekt übermittelt
-	\tf rqt Plugins reagieren korrekt auf Großenänderung
+	\tf Der Monitoring-Knoten erkennt abweichendes Verhalten und gibt diese Information an den Countermeasure-Knoten weiter.
+	\tf Eine Komponente sendet mit festgelegter Frequenz Metadaten. Sie kommen mit der selben Frequenz vollständig am Monitoring-Knoten an.
+	% erwünschtes verhalten? kann sowas überhaupt auftreten:
+	\tf Ein Metadatenpaket überschreitet auffällig das Mittel, folgende Pakete halten sich im Rahmen. Das fehlerhafte Paket wird aufgezeichnet aber ignoriert.
+	\tf Eingelesene Konfigurationsdaten lassen sich parsen und auslesen.
+	\tf Werden keine eigenen Konfigurationsdaten angegeben, werden sinnvolle Standardwerte verwendet.
+	\tf Die Hostdaten werden korrekt übermittelt.
+	\tf Optional: Ein Knoten erhält Daten von mehreren anderen Knoten. Er informiert, wenn er weniger Quellen hat, als üblich.
 	\tf Optional: Funktionsweise des Startens und Stoppens von Knoten unter Netzwerklast prüfen
-	\tf Menge der Metadaten überschreitet nicht die Netzwerkkapazität
+	% Nicht automatisiert testbar
+	% \tf Die GUI reagiert darauf, wenn ein Knoten maßgeblich von seinen Sollwerten abweicht, indem z.B. der problematische Knoten eingefärbt wird.
+	% \tf rqt Plugins reagieren korrekt auf Großenänderung
+	% \tf Menge der Metadaten überschreitet nicht die Netzwerkkapazität
 \end{description}
 
 \section{Beispielszenarien}
