@@ -22,7 +22,7 @@ Existierender.
 
 \section{Merkmale der graphischen Benutzeroberfläche}
 \begin{itemize}
-	\item Implementiert mit Hilfe von PyQt\footnote{\hyperlink{http://www.riverbankcomputing.co.uk/software/pyqt}{http://www.riverbankcomputing.co.uk/software/pyqt}} bzw. als rqt\footnote{\hyperlink{http://wiki.ros.org/rqt}{http://wiki.ros.org/rqt}} Widget
+	\item Implementiert als rqt\footnote{\hyperlink{http://wiki.ros.org/rqt}{http://wiki.ros.org/rqt}} Widget, d.h. basierend auf PyQt\footnote{\hyperlink{http://www.riverbankcomputing.co.uk/software/pyqt}{http://www.riverbankcomputing.co.uk/software/pyqt}} bzw. PySide\footnote{\hyperlink{http://qt-project.org/wiki/pyside}{http://qt-project.org/wiki/pyside}}
 	\item Modularer Aufbau der Benutzeroberfläche in Form von Widgets, welche in die bereits bestehende rqt-Oberfläche integriert werden können
 	\item Erweiterung der Funktionalität einiger rqt Widgets, um zusätzliche Informationen anzeigen zu können
 		\item Verwendung geeigneter graphischer Bibliotheken, um eine gute Übersichtlichkeit der Daten zu gewährleisten. Erwähnenswert ist hier insbesondere qt\detokenize{_}dotgraph für den Graphen der Hosts/Nodes und Matplotlib\footnote{\hyperlink{http://matplotlib.org/}{http://matplotlib.org/}} für die Darstellung des zeitlichen Verlaufs von beispielsweise des Netzwerk-Traffics oder der CPU-Auslastung
@@ -93,7 +93,7 @@ Ein sehr einfaches Widget, welches dazu gedacht ist, die vorhandenen Hosts und K
 	\begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=\linewidth]{gui/ListWidget.PNG}
-	\caption{ListWidget - Hauptansicht}	
+	\caption{Listen Widget - Hauptansicht}	
 	\end{center}
 	Um die Übersichtlichkeit zu erreichen werden die vorhandenen Daten zunächst
 	hierarchisch angezeigt, was sich durch De-/Aktivieren der Punkte "Show Nodes" und "Show Hosts" modifizieren lässt. Des Weiteren lassen sich die Elemente nach Suchbegriffen filtern und ermöglichen so ein schnelles Findes des gewünschtes Elements. Ein weiterer Filter ermöglicht das Anzeigen nur solcher Elemente, die derzeit in einem Fehler-Zustand sind. Eine Kombination der Filter ist natürlich möglich.
@@ -102,7 +102,7 @@ Ein sehr einfaches Widget, welches dazu gedacht ist, die vorhandenen Hosts und K
 	\begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=\linewidth]{gui/ListWidget_Filter.PNG}
-	\caption{ListWidget - Beispielhafte Anwendung der Filter}	
+	\caption{Listen Widget - Beispielhafte Anwendung der Filter}	
 	\end{center}
 	\end{figure}
 
@@ -111,7 +111,7 @@ Ein sehr einfaches Widget, welches dazu gedacht ist, die vorhandenen Hosts und K
 \subsection{Node Graph}
 Der Node Graph ist ein bereits vorhandenes Widget, das bereits in rqt integriert ist und Informationen zu den Knoten in einem sehr übersichtlichen Graphen zur Verfügung stellt. 
 
-Dieser soll um weitere Funktionalität erweitert werden, unter Anderem um die Möglichkeit, sich auch die Hosts mit anzeigen zu lassen oder weitere Informationen zum gerade ausgewählten Element anzuzeigen.
+%Dieser soll um weitere Funktionalität erweitert werden, unter Anderem um die Möglichkeit, sich auch die Hosts mit anzeigen zu lassen oder weitere Informationen zum gerade ausgewählten Element anzuzeigen.
 
 	\begin{figure}[H]
 	\begin{center}
@@ -120,12 +120,10 @@ Dieser soll um weitere Funktionalität erweitert werden, unter Anderem um die Mög
 	\end{center}
 	\end{figure}
 
-\newpage
+\subsubsection{Erweiterung des Node Graphs}
+Die Erweiterung des Node Graphs bietet die Funktionalität sich Metadaten von Topics direkt anzeigen zu lassen. Des Weiteren werden die Kanten je nach Soll-Status eingefärbt.
 
-\subsection{Ausführlicher Node Graph}
-Eine Erweiterung des Node Graphs. Sie bietet die Funktionalität sich Metadaten von Topics direkt anzeigen zu lassen. Des weiteren werden die Kanten je nach Soll-Status gefärbt.
-
-So ist beispielsweise das Topic /voxelgrid als rot makiert, da die Latenz ausserhalb der Soll-Definition liegt. Das Topic /camera/depth/points ist dagegen orange, da die Frequenz vor kurzem ausserhalb des Soll-Wertes war, mittlerweile aber wieder im Soll-Bereich ist. Dagegen ist /camera/rgb/image\_rect\_color grün, da alle Werte dem vorgegebenen Bereich entsprechen.
+So ist beispielsweise das Topic /voxelgrid als rot makiert, da die Latenz außerhalb der Soll-Definition liegt. Das Topic /camera/depth/points ist dagegen orange, da die Frequenz vor kurzem außerhalb des Soll-Wertes war, mittlerweile aber wieder im Soll-Bereich ist. Dagegen ist /camera/rgb/image\_rect\_color grün, da alle Werte im vorgegebenen Bereich liegen.
 
 Des weiteren werden die Kanten unterschiedlich breit dargestellt, abhängig von der jeweiligen Datenrate.
 
@@ -133,7 +131,7 @@ Des weiteren werden die Kanten unterschiedlich breit dargestellt, abhängig von d
 	\begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=\linewidth]{gui/nodegraph_advanced.png}
-	\caption{Ausführlicher Node Graph}	
+	\caption{Erweiterter Node Graph}	
 	\end{center}
 	\end{figure}
 
