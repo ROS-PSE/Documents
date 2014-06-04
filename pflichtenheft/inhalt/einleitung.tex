@@ -11,7 +11,6 @@ Aufgaben, welche durch jeweils einen Prozess (Node) dargestellt und auf mehrere
 Rechner (Hosts) verteilt sein können.
 Die Nodes verbinden sich nach dem Publisher-Subscriber Schema über ein Netzwerk
 miteinander, um die Datenflüsse herzustellen (ROS Graph).
-Diese Graphen können allerdings sehr komplex werden.
 
 \begin{figure}[H] \centering \includegraphics[scale=0.35]{./bilder/rxgraph.png}
 \caption{Beispiel eines ROS Graph. Nodes sind als Ellipsen, Topics als Rechtecke
@@ -25,9 +24,6 @@ möglich zu bestimmen, welcher Knoten sich fehlerhaft verhält. Dies kann
 besonders bei großen System mit hunderten von Knoten zum Problem werden. Um ein
 schnelles Debuggen zu ermöglichen, bedarf es einer Software zum dezentralen
 Erfassen der Fehlerursachen.
-
-
-\vspace{0.5cm}
 
 Unser Ziel als PSE-Team ist es, ein System zur Definiton des Soll-Zustandes und
 zum Überwachen des Ist-Zustandes individueller Knoten zu erstellen.
