@@ -5,6 +5,13 @@ Namen für bewertete Metadaten: RatedMetaData - RMD
 
 Zeitplan
 ----
+
+###Allgemeines Vorgehen
+- Architekturentwurf / Nachrichtendaten
+- Netzwerkentwurf (Topic Kommunikation sichtbar machen, Datentypen erläutern)
+- Klassendiagramm
+- Sequenzdiagram
+
 ###bis 09.06.:  
 
 * Paper lesen
@@ -27,7 +34,8 @@ Zeitplan
 - Sequenzdiagramm  
 - Farbkonvenstionen überlegen und **von Anfang an einhalten!**  
 
-- Kennt der Host seine Nodes?
+
+
 
 Überlegungen
 ----
@@ -56,6 +64,40 @@ Farbkonventionen
 * M:
 * V:
 * C:
+
+Bzgl. Netzwerk/Metadaten: Übersicht über unsere Topics soweit
+----
+###/metadata/raw/ (rmd1)
+alle host und node knoten
+vollstöndige node infos
+
+Identifizierung (z.B. IP)
+Menge an Ausgehendem traffic
+Anzahl ausgehender Nachrichten
+optional: CPU-Last, Speicherauslastung vom Knoten
+
+//bewertete Metadaten
+###/metadata/rated/ (rmd2)
+node
+bewertete Metadaten
+
+###/metadata/host/ (hmd)
+ip
+cpu
+speicher
+auslaustung festplatte
+temperatur :)
+Gesamte Netzwerkauslastung
+Latenz
+
+TODO: hier noch die Datentypen jeweils erweitern(in Form von structs/primitiven Datentypen, weitere Themen ergänzen, usw.)
+
+Weitere Offene Punkte:
+- Kennt der Host seine Nodes?
+- Wie erkennnen wir Netzwerkprobleme?
+- Wie erkennen wir die Latenz/Last?
+- optional: größe der Netzwerkverbindung erkennen?
+- immer noch unklar: Speicherung der Daten im Monitoring Knoten (rrd?)
 
 
 [psutil]:https://github.com/giampaolo/psutil
