@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>340</x>
+      <y>520</y>
+      <w>420</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>overview
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>10</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>100%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>380</x>
+      <y>570</y>
+      <w>320</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>OverviewPlugin
+--
++ OverviewWidget: QWidget
++ verticalLayoutWidget: QVBoxLayout
++ horizontalSpacer: Spacer
++ status_light_label: QLabel
++ status_text_line_edit: QLineEdit
++ tab_widget: QTabWidget
++ information_tab: QWidget
++ information_tab_text_browser: QTextBrowser
++ graphs_tab: QWidget
++ verticalLayoutGraphsTab: QVBoxLayout
++ horizontalLayoutRange: QHBoxLayout
++ range_label: QLabel
++ log_tab: QWidget
++ log_tab_tree_widget: QTreeWidget
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>1290</x>
+      <y>520</y>
+      <w>370</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>qt_gui.plugin
+bg=orange
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1310</x>
+      <y>570</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Plugin
+fg=black
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>670</x>
+      <y>550</y>
+      <w>660</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;640;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>340</x>
+      <y>910</y>
+      <w>420</w>
+      <h>470</h>
+    </coordinates>
+    <panel_attributes>selection
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>380</x>
+      <y>960</y>
+      <w>320</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>SelectionPlugin
+
+--
++ SelectionWidget: QWidget
++ verticalLayoutWidget: QVBoxLayout
++ horizontalLayoutStatus: QHBoxLayout
++ verticalLayoutLabels: QVBoxLayout
++ current_status_label: QLabel
++ host_node_label: QLabel
++ horizontalSpacer: Spacer
++ status_light_label: QLAbel
++ tab_Widget: QTabWidget
++ information_tab: QWidget
++ information_tab_text_browser
++ graphs_tab: QWidget
++ horizontalLayoutRange: QHBoxLayout
++ range_combo_box: QComboBox
++ range_label: QLabel
++ log_tab: QWidget
++ log_tab_list_widget: QListWidget
++ actions_tab: QWidget
++ restart_push_button: QPushButton
++ start_push_button: QPushButton
++ stop_push_button: QPushButton</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>670</x>
+      <y>560</y>
+      <w>660</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;410;240;410;240;30;640;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>340</x>
+      <y>1420</y>
+      <w>420</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>tree
+bg=light_gray
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>380</x>
+      <y>1470</y>
+      <w>320</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>TreePlugin
+--
++ TreeWidget: QWidget
++ verticalLayoutWidget: QVBoxLayout
++ horizontalLayout: QHBoxLayout
++ erroneous_check_box: QCheckBox
++ horizontalSpacer: Spacer
++ minus_push_buton: QPushButton
++ plus_push_button: QPushButton
++ show_nodes_check_box: QCheckBox
++ show_hosts_check_box: QCheckBox
++ horizontalLayoutFilter: QHBoxLayout
++ apply_push_button: QPushButton
++ filter_label: QLabel
++ filter_line_edit
++ treeWidget_tree_widget: QTreeWidget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>670</x>
+      <y>570</y>
+      <w>660</w>
+      <h>930</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;910;250;910;250;30;640;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>270</x>
+      <y>450</y>
+      <w>560</w>
+      <h>1370</h>
+    </coordinates>
+    <panel_attributes>view
+bg=orange
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>270</x>
+      <y>80</y>
+      <w>560</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>model
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>230</x>
+      <y>30</y>
+      <w>640</w>
+      <h>1830</h>
+    </coordinates>
+    <panel_attributes>EmptyPackage
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
