@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>100%</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.PackageAggregationHierarchy</type>
+    <coordinates>
+      <x>130</x>
+      <y>130</y>
+      <w>260</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>rqt_widgets
+	model
+	view
+		OverviewWidget
+		TreeWidget
+		SelectionWidget
+[external] NodeGraph</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
