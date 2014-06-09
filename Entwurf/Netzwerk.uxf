@@ -99,18 +99,6 @@ m2=1</panel_attributes>
     <additional_attributes>310;230;30;230;30;30</additional_attributes>
   </element>
   <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>1150</x>
-      <y>320</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>Monitor
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>580</x>
@@ -186,6 +174,19 @@ GUI</panel_attributes>
       <h>30</h>
     </coordinates>
     <panel_attributes>100%</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>1150</x>
+      <y>280</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>--
+Monitor
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
