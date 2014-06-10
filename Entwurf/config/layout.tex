@@ -1,0 +1,96 @@
+%Hier sind alle Einstellungen enthalten, die sich auf das Seiten- und Dokumentenlayout beziehen
+
+\documentclass[
+	11pt,								% Schriftgröße
+	DIV12,
+	german,							% für Umlaute, Silbentrennung etc.
+	oneside,						% einseitiges Dokument
+	titlepage,					% es wird eine Titelseite verwendet
+	halfparskip,				% Abstand zwischen Absätzen (halbe Zeile)
+	normalheadings,			% Größe der Überschriften verkleinern
+	tablecaptionabove,	% Beschriftung von Tabellen unterhalb ausgeben
+	final								% Status des Dokuments (final/draft)
+]{scrreprt}						% 
+
+\makeatletter
+\def\@makechapterhead#1{%
+  %%%%\vspace*{50\p@}% %%% removed!
+  { \parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \Huge\bfseries  \thechapter
+        \space\nobreak
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 20\p@
+  }}
+\def\@makeschapterhead#1{%
+  %%%%%\vspace*{50\p@}% %%% removed!
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 20\p@
+  }}
+\makeatother
+
+\include{config/packages}			% enthält eingebundene Packete
+
+%------Seitenränder-------------------------------------------------------------
+\geometry{verbose, 										% zeigt die eingestellten Parameter beim Latexlauf an
+			paper=a4paper, 									% Papierformat			
+			top=25mm, 											% Rand oben
+			left=25mm, 											% Rand links
+			right=25mm, 										% Rand rechts
+			bottom=45mm, 										% Rand unten
+			pdftex													% schreibt das Papierformat in dei Ausgabe damit Ausgabeprogramm Papiergröße erkennt		
+	} 
+	
+%Seitenlayout
+\onehalfspace        % 1,5-facher Abstand  
+
+%------Kopf- und Fußzeilen ------------------------------------------------------
+\pagestyle{scrheadings}
+
+%------Kopf- und Fußzeile auch auf Kapitelanfangsseiten -------------------------
+\renewcommand*{\chapterpagestyle}{scrheadings}
+
+%------Schriftform der Kopfzeile ------------------------------------------------
+\renewcommand{\headfont}{\normalfont}
+
+%------Kopfzeile-----------------------------------------------------------------
+\setlength{\headheight}{21mm}				% Höhe der Kopfzeile
+\ihead{\large{\textsc{\praktikumTitel}}\\		% Text in der linken Box
+			 \small{\projektTitel}}
+\chead{}														% Text in der mittleren Box
+
+%----Fusszeile
+\cfoot{}														% Text in mittlerer Box
+\ofoot{\pagemark}										% Seitenzahl in rechter Box			
+
+
+% \begin{scetch}{title}{img file}
+\newenvironment{sketch}[2][\skip]{
+	\subsection{#1}
+	\sketchImg{#1}{#2}	
+	\label{#2}
+	
+}
+
+\newcommand{\sketchref}[1]{
+	\textsc{\nameref{#1}}
+}
+
+\newcommand{\glossaryItem}[2]{
+	\item[#1] \label{#1} #2
+}
+
+% \scetchImg{title}{file name}
+\newcommand{\sketchImg}[2]{
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\linewidth]{Bilder/#2}
+		\caption{#1}
+	\end{figure}
+}
+

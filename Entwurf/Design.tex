@@ -1,0 +1,32 @@
+%Dies ist die Hauptseite des Dokumentes. Es werden u. a. alle Kapitel, Einstellung im Header eingebunden.
+%Ver�nderungen m�ssen in folgenden Dateien vorgenommen werden:
+			%- Layout.tex 
+			%- newComments.tex
+			%- Titelseite
+			%- Versions�bersicht
+			%- einzelne Kapitel (evtl. erweitern) 
+			
+\input{config/newComments.tex}
+\input{config/layout.tex}					% Diese Datei enth�lt alle Layouteinstellungen
+
+%------Beginn des Gesamtdokumentes--------------------------------------------------------
+\usepackage[ngerman]{babel}
+\usepackage{hyperref}
+\begin{document}
+\shorthandoff{"}
+%------Eingebundene Seiten, Verzeichnisse bzw. Kapitel------------------------------------
+\include{frontpage}											% Titelseite	
+\tableofcontents													% Inhaltsverzeichnis wird automatisch generiert
+\newpage
+% \listoffigures														% ebenso das Abbildungsverzeichnis
+
+\include{content/introduction}
+\include{content/composition}	
+\include{content/classesdescription}
+\include{content/sequences}
+\include{content/designdata}
+\include{content/index}
+\include{content/attachment}
+\include{content/glossary}
+
+\end{document}

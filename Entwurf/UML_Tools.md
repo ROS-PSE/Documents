@@ -17,7 +17,7 @@ Die KDE-Lösung für UML Diagramme, scheint sehr umfangreich und vollständig zu
 Visual Studio Lösung
 ----
 Scheint auch recht gut zu sein, ist halt Microsoft. D.h. kein Export in andere Formate (soweit gesehen), Ansicht fest vorgegeben (siehe Screenshot)  
-![VS Screenshot](Bilder/test_visual_studio_plugin.PNG)
+![VS Screenshot](bilder/test_visual_studio_plugin.PNG)
 
 + [das muss doch nicht](http://msdn.microsoft.com/en-us/library/ff469815.aspx)
 + (IMHO - emka) typisches VS Verhalten, sprich Einarbeitungszeit für *flüssiges* Arbeiten vorausgesetzt :D
