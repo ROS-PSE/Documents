@@ -9,17 +9,17 @@ d = True
 
 def writeToFile(data):
 	with open(outputfile, "a") as myfile:
-		myfile.write("\section " + data["classname"] + "\n")
+		myfile.write("\subsection " + data["classname"] + "\n")
 		myfile.write(data["description"] + "\n")
 		myfile.write("\n")
 		if "attributes" in data.keys() and len(data["attributes"]) > 0:
-			myfile.write("\subsection Attributes\n")
+			myfile.write("\subsubsection Attributes\n")
 			myfile.write("\\begin{itemize}\n")
 			for a in data["attributes"]:
 				myfile.write("\\item " + a["visibility"] + " " + a["type"] + " " + a["name"] + "\nTODO: Description\n")
 			myfile.write("\\end{itemize}\n")
 		if "methods" in data.keys() and len(data["methods"]) > 0:
-			myfile.write("\subsection Methods\n")
+			myfile.write("\subsubsection Methods\n")
 			myfile.write("\\begin{itemize}\n")
 			for a in data["methods"]:
 				myfile.write("\\item " + a["visibility"] + " " + a["type"] + " " + a["name"] + "\nTODO: Description\n")
