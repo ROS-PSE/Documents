@@ -199,4 +199,27 @@ accordingly</panel_attributes>
     <panel_attributes>100%</panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>50</x>
+      <y>190</y>
+      <w>320</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>bt=.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>280</x>
+      <y>160</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Monitoring</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
