@@ -3,6 +3,7 @@
 *.toc
 *.out
 *.dvi
+Entwurf/*.log
 pflichtenheft/*.log
 
 Thumbs.db
