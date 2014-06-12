@@ -15,18 +15,18 @@
   <element>
     <type>com.umlet.element.custom.PackageAggregationHierarchy</type>
     <coordinates>
-      <x>130</x>
-      <y>130</y>
+      <x>150</x>
+      <y>150</y>
       <w>260</w>
       <h>240</h>
     </coordinates>
     <panel_attributes>rqt_widgets
 	model
 	view
-		OverviewWidget
-		TreeWidget
-		SelectionWidget
-[external] NodeGraph</panel_attributes>
+		overview_widget
+		tree_widget
+		selection_widget
+[external] rxgraph</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

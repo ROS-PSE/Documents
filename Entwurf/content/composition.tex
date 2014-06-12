@@ -3,7 +3,7 @@
 \section{Architecture}
 
 \begin{figure}[here]
-\includegraphics[scale=0.5]{./bilder/architektur.png}
+\includegraphics[width=\linewidth]{./bilder/architektur.png}
 \caption{architecture}
 \label{fig:architecture}
 \end{figure}
@@ -15,7 +15,7 @@ The left part depicts the monitoring aspect. It consists of three elements : Nod
 \subsection{Monitoring}
 
 \begin{description}
-	\item[NodeInterface]
+	\item[NodeInterface] 
 		\begin{itemize}
 			\item Retrieves and sends metadata from hosts and nodes
 			\item Interface to manage nodes
@@ -27,7 +27,17 @@ The left part depicts the monitoring aspect. It consists of three elements : Nod
 \subsection{GUI}
 
 \begin{description}
-	\item[Model]
-	\item[Controller]
+	\item[Model]	
+		\begin{itemize}
+		\item Represents the incoming data as classes
+		\item Emits signals when data is changed so the view can be updated
+		\item Buffers the incoming data so the GUI gets only updated every specified timeunit
+		\end{itemize}
 	\item[View]
+		\begin{itemize}
+		\item Consists of many rqt-Widgets
+		\item Also contains the controller (via Qt's signal/slot mechanism)
+		\item Shows the data of the model
+		\item Uses Qt's Model/View interface to display the data
+		\end{itemize}
 \end{description}

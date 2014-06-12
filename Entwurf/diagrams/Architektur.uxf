@@ -54,62 +54,6 @@ accordingly</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>490</x>
-      <y>310</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>Model
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>710</x>
-      <y>310</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>Controller</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>920</x>
-      <y>310</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>View</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>560</x>
-      <y>300</y>
-      <w>170</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-&gt;</panel_attributes>
-    <additional_attributes>30;30;150;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>780</x>
-      <y>300</y>
-      <w>160</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-&gt;</panel_attributes>
-    <additional_attributes>30;30;140;30</additional_attributes>
-  </element>
-  <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>140</x>
@@ -147,28 +91,28 @@ accordingly</panel_attributes>
     <coordinates>
       <x>320</x>
       <y>210</y>
-      <w>190</w>
-      <h>130</h>
+      <w>210</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>170;110;30;30</additional_attributes>
+    <additional_attributes>190;150;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>320</x>
-      <y>300</y>
-      <w>190</w>
-      <h>130</h>
+      <y>350</y>
+      <w>210</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>170;30;30;110</additional_attributes>
+    <additional_attributes>190;30;30;60</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>970</x>
-      <y>260</y>
+      <x>940</x>
+      <y>230</y>
       <w>50</w>
       <h>30</h>
     </coordinates>
@@ -179,9 +123,9 @@ accordingly</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>490</x>
-      <y>290</y>
-      <w>530</w>
-      <h>70</h>
+      <y>260</y>
+      <w>500</w>
+      <h>230</h>
     </coordinates>
     <panel_attributes>bt=.
 
@@ -220,6 +164,56 @@ accordingly</panel_attributes>
       <h>30</h>
     </coordinates>
     <panel_attributes>Monitoring</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>660</x>
+      <y>260</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;</panel_attributes>
+    <additional_attributes>30;30;80;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>740</x>
+      <y>280</y>
+      <w>220</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>View
+--
++ consists of many rqt-Widgets
++ also contains the controller 
+   (via Qt's signal/slot mechanism)
++ shows the data of the model
++ uses Qt's Model/View interface
+   to display the data</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>510</x>
+      <y>280</y>
+      <w>180</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Model
+--
++ represents the incoming 
+   data as classes
++ emits signals when data 
+   is changed so the view 
+   can be updated
++ buffers the incoming data 
+   so the GUI gets only 
+   updated every specified
+   timeunit</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
