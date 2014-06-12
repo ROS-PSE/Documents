@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="12.2">
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
   <zoom_level>10</zoom_level>
   <element>
     <type>com.umlet.element.Class</type>
@@ -58,7 +57,7 @@ m2=1</panel_attributes>
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=.
-/metadata/rated
+/statistics/rated
 
 </panel_attributes>
     <additional_attributes/>
@@ -72,7 +71,7 @@ m2=1</panel_attributes>
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=.
-/metadata/host
+/statistics/host
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -185,7 +184,8 @@ m2=1</panel_attributes>
       <w>180</w>
       <h>50</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
+    <panel_attributes>lt=&lt;.
+fg=green</panel_attributes>
     <additional_attributes>30;30;160;30</additional_attributes>
   </element>
   <element>

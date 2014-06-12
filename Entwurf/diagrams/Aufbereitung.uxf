@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="12.2">
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
   <zoom_level>10</zoom_level>
   <element>
     <type>com.umlet.element.Class</type>
@@ -38,12 +37,12 @@ monitoring node</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>20</x>
+      <x>0</x>
       <y>120</y>
-      <w>100</w>
+      <w>120</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>Subscriber
+    <panel_attributes>rospy.Subscriber
 see ros</panel_attributes>
     <additional_attributes/>
   </element>
@@ -237,7 +236,7 @@ which can be an monitoring moint or the bounds
       <w>100</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;extern&gt;&gt;
+    <panel_attributes>&lt;&lt;network&gt;&gt;
 model
 </panel_attributes>
     <additional_attributes/>
@@ -257,12 +256,12 @@ model
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>20</x>
+      <x>0</x>
       <y>210</y>
-      <w>100</w>
+      <w>120</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>Publisher
+    <panel_attributes>rospy.Publisher
 see ros</panel_attributes>
     <additional_attributes/>
   </element>
