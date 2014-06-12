@@ -1,0 +1,34 @@
+##Treffen 12.06
+
+
+- Vorhandene Metadaten-Analyse verwenden --> Klassendiagramme sind schon darauf ausgerichtet
+- *Fehlender Pfeil Architektur Übersicht* (von Model zu NodeInterface und Processing)
+- Historienfunktion --> brauch Verbindungen
+- **Cache in der Gui fehlt noch** (ieine Form der Fifo) [ev. im Thread integrieren] 
+- Pfeile in Archtitektur ein Pfeil pro Richtung mit kurzer Information was übertragen wird.
+- Aufbereitung (model: anstatt von `<<extern>>` vielleicht `<<network>>`)
+- ev die publisher/subsriber in eigenen Arbeitsraum packen
+- `docs.ros.org/indigo/api/` --> die neue API
+- `docs.ros.org/indigo/api/std_msgs/html/msg/Header.html`
+- std_msgs/Header header (StandartHeader, wird mitgesendet, soweit so eingefügt)
+- ev *TopicStatistics um weitere Sachen ergänzen* (soweit die Sachen Sinn machen)
+- **klassisches Design vs. python design?**
+- vermutlich eher klassisch --> und dann protected/private über die naming conventions realisieren
+- Python: offizielle Setter/Getter verwenden?
+- `plugins/introspection/process monitor` erkennt ros prozesse auf dem lokalen rechner (und nicht dezentral --> das sollten wir dann machen!)
+- im **reaktor Bereich noch überlegen**: CM bekommt bewertete Metadaten und muss Regeln ausführen. Mechanismus (Unterklassen erstellen?): Wenn ein Objekt registriert wurde und ein Alarm ankommt, dann liest er eine Liste von Gegenmaßnahme und wählt die richtige aus. Entweder: Konfigurationsdatei (counermeasure config) --> nicht schreiben tue das oder tue das, sondern durch Anwender erweiterbar, als Aktion bestimmte Programmaufrufe hinterlegen (z.B. Shellscript ausführen oder rosrun auf dem Rechner machen). --> nicht über Aktionen gedanken machen, sondern eher die Frage lösen, wie man möglichst flexibel als *Reaktion bestimmte Sachen starten kann bzw. drauf reagieren kann*
+- ev. als Plugins lösen oder halt als Aktionen auch umfangreichere Sachen erlauben (über roslaunch könnten z.B. c++ starten) (vermutlich einfach Programme starten)
+-  ohne den Quellcode zu modifizieren.
+- **Knoten beenen (kill), Knoten neustarten** (Aufrufparameter zuerst kopieren und dann erneut starten [über rosrun])
+- überlegen: in der config Datei ein paar Standartwerte ausführen, einfach ein paar vordefinierte Aktionen definieren (und dann halt eben noch Programme ausführen) --> Countermeasure Knoten sollte es später sozusagen egal sein, was er macht
+- Countermeasure Knoten: Bedingungen angeben für bewertete Metadaten --> und, oder verknüpfen (über xml lösen oder yaml) --> seit mindestens so und so lange trifft die bedingung zu (**Angegeben: Bedingungen logisch verknüpft, Dauer des Fehlers, Reaktion**)
+- Empfangen von falschen Daten prinzipiell annehmen und entsprechend reagieren/abfangen (Implementierung!)
+- Nicht für security sondern für safety sorgen --> ROS Netzwerk im Normalfall nach außen abgeschirmt, aber natürlich nicht gefeiht vor falschen Daten
+- Frequenz des Aktualisierens iwo festlegen
+- pep8 befolgen
+- an Nagios orientieren (bzgl. Metadaten)
+- Metadaten: es fehlt noch **GPU** (Array, da oft Mehrere), **Cpu Temp pro Core**, ev. die drei Werte: Mittelwert, Standartabweichung, Maximum mit übertragen _pro Wert?!?!_, **Auslastung der Netzwerkinterfaces**, Frequenz/Periode Netzwerkcalls? 
+- ev. Stati überlegen für rated metadaten *( ok, low, high, not avaiable, ...?)* --> **ein paar logische / sybmolische Zustände wären schon gut**, grade auch für den Countermeasure Knoten)
+- nachrichtentyp rated_single o.Ä. definieren und dann metadata rated enthält viele rated_single Elemente
+- lieber metadata rated sofort nach der verarbeitung jedes packets weitersenden
+- Übersichtswidget: ev noch topics als Element integrieren
