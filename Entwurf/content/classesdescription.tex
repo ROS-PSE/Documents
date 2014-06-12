@@ -59,6 +59,15 @@ Handles incoming information about malfunctioning nodes and reacts according to 
 \end{figure}
 
 \subsubsection{BufferThread}
+This thrad should buffer the incoming data and regulary update the model and hence also the model.
+\subsubsection{ROSModel}
+Represents the data as a QtModel. This enables automated updates of the View.
+\subsubsection{ItemInterface}
+Provides a unified interface to access the items of a model.
+\subsubsection{HostItem}
+A HostItem represents a host with all its data.
+\subsubsection{NodeItem}
+ A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
 
 \subsection{View}
 
@@ -68,3 +77,6 @@ Handles incoming information about malfunctioning nodes and reacts according to 
 \caption{The view class diagram}
 \end{center}
 \end{figure}
+\subsubsection{OverviewPlugin}
+\subsubsection{TreePlugin}
+\subsubsection{SelectionPlugin}
