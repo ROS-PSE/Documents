@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.25)  12 JUN 2014 02:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.25)  12 JUN 2014 02:34
 entering extended mode
 **C:/Users/AlexW/Documents/GitHub/Documents/Entwurf/Design.tex
 (C:/Users/AlexW/Documents/GitHub/Documents/Entwurf/Design.tex
@@ -627,25 +627,25 @@ Class scrreprt Warning: \float@addtolists detected!
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
-<./bilder/architektur.png, id=114, 1063.975pt x 572.1375pt>
+<./bilder/architektur.png, id=114, 1013.7875pt x 411.5375pt>
 File: ./bilder/architektur.png Graphic file (type png)
 
 <use ./bilder/architektur.png>
-Package pdftex.def Info: ./bilder/architektur.png used on input line 7.
-(pdftex.def)             Requested size: 531.9862pt x 286.06804pt.
+Package pdftex.def Info: ./bilder/architektur.png used on input line 6.
+(pdftex.def)             Requested size: 506.89252pt x 205.76825pt.
 
-Overfull \hbox (76.7421pt too wide) in paragraph at lines 7--8
- [][] 
+Overfull \hbox (51.6484pt too wide) in paragraph at lines 6--7
+[][] 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 16.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 15.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 20.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 20.
  [3
 
 
@@ -697,7 +697,7 @@ Here is how much of TeX's memory you used:
  12250 multiletter control sequences out of 15000+200000
  27131 words of font info for 45 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 45i,11n,57p,424b,1782s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,11n,57p,424b,1792s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.
 enc} <C:\Users\AlexW\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi12
 44\ecbx1200.pk> <C:\Users\AlexW\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
@@ -709,7 +709,7 @@ TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi657\ecrm1000.pk> <C:\Users\AlexW\AppData
 xW\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi1136\ecxc1200.pk><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on Design.pdf (6 pages, 133290 bytes).
+Output written on Design.pdf (6 pages, 131307 bytes).
 PDF statistics:
  326 PDF objects out of 1000 (max. 8388607)
  27 named destinations out of 1000 (max. 500000)
