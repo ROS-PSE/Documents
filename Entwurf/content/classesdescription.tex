@@ -41,7 +41,7 @@ Handles incoming information about malfunctioning nodes and reacts according to 
 
 % -----------------------------------------------------------------------------------
 \section{GUI}
-\begin{figure}[here]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale=1.0]{./bilder/package_structure_gui.png}
 \caption{The package structure of the GUI}
@@ -49,9 +49,11 @@ Handles incoming information about malfunctioning nodes and reacts according to 
 \end{center}
 \end{figure}
 
+\mbox{}
+
 \subsection{Model}
 
-\begin{figure}[here]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.0\linewidth]{./bilder/model.png}
 \caption{The model class diagram}
@@ -59,7 +61,8 @@ Handles incoming information about malfunctioning nodes and reacts according to 
 \end{figure}
 
 \subsubsection{BufferThread}
-This thrad should buffer the incoming data and regulary update the model and hence also the model.
+This thread should buffer the incoming data and regulary update the model and
+hence also the model.
 \subsubsection{ROSModel}
 Represents the data as a QtModel. This enables automated updates of the View.
 \subsubsection{ItemInterface}
@@ -81,8 +84,8 @@ A HostItem represents a host with all its data.
 The class OverviewPlugin is the core of the graphical user interface, which
 contains most of the relevant information in a small and fancy area.
 \subsubsection{TreePlugin}
-The class TreePlugin is very simply and shows only the actual active hosts
+TreePlugin is very simply and shows only the actual active hosts
 and nodes.
 \subsubsection{SelectionPlugin}
-The class SelectionPlugin shows detailed information about the currently
+A class which shows detailed information in a Tree-Layout about the currently
 selected host or node.
