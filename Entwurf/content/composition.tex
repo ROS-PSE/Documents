@@ -15,25 +15,29 @@ The left part depicts the monitoring aspect. It consists of three elements : Nod
 \subsection{Monitoring}
 
 \begin{description}
-	\item[NodeInterface] 
+	\item[NodeInterface] \mbox{}
 		\begin{itemize}
 			\item Retrieves and sends metadata from hosts and nodes
 			\item Interface to manage nodes
 		\end{itemize}
-	\item[Processing] Compares Metadata to predefined specifications and rates the accordingly
-	\item[Countermeasures] Reacts according to rated metadata and predefined actions	
+	\item[Processing] \mbox{} 
+	Compares Metadata to predefined specifications and
+	rates the accordingly
+	\item[Countermeasures] \mbox{} 
+	Reacts according to rated metadata and
+	predefined actions
 \end{description}
 
 \subsection{GUI}
 
 \begin{description}
-	\item[Model]	
+	\item[Model] \mbox{}	
 		\begin{itemize}
 		\item Represents the incoming data as classes
 		\item Emits signals when data is changed so the view can be updated
 		\item Buffers the incoming data so the GUI gets only updated every specified timeunit
 		\end{itemize}
-	\item[View]
+	\item[View] \mbox{}
 		\begin{itemize}
 		\item Consists of many rqt-Widgets
 		\item Also contains the controller (via Qt's signal/slot mechanism)
