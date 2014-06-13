@@ -4,7 +4,7 @@
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>350</x>
+      <x>340</x>
       <y>690</y>
       <w>420</w>
       <h>350</h>
@@ -16,7 +16,7 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>10</x>
+      <x>0</x>
       <y>180</y>
       <w>100</w>
       <h>30</h>
@@ -28,7 +28,7 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>390</x>
+      <x>380</x>
       <y>740</y>
       <w>320</w>
       <h>270</h>
@@ -55,7 +55,7 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>1180</x>
+      <x>1170</x>
       <y>690</y>
       <w>370</w>
       <h>120</h>
@@ -70,7 +70,7 @@ bg=orange
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>680</x>
+      <x>670</x>
       <y>720</y>
       <w>530</w>
       <h>50</h>
@@ -81,7 +81,7 @@ bg=orange
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>350</x>
+      <x>340</x>
       <y>1080</y>
       <w>420</w>
       <h>470</h>
@@ -93,7 +93,7 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>390</x>
+      <x>380</x>
       <y>1130</y>
       <w>320</w>
       <h>390</h>
@@ -127,7 +127,7 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>680</x>
+      <x>670</x>
       <y>730</y>
       <w>530</w>
       <h>430</h>
@@ -138,7 +138,7 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>350</x>
+      <x>340</x>
       <y>1590</y>
       <w>420</w>
       <h>350</h>
@@ -151,7 +151,7 @@ bg=light_gray
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>390</x>
+      <x>380</x>
       <y>1640</y>
       <w>320</w>
       <h>270</h>
@@ -170,14 +170,14 @@ bg=light_gray
 + horizontalLayoutFilter: QHBoxLayout
 + apply_push_button: QPushButton
 + filter_label: QLabel
-+ filter_line_edit
++ filter_line_edit: QLineEdit
 + treeWidget_tree_widget: QTreeWidget</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>680</x>
+      <x>670</x>
       <y>740</y>
       <w>530</w>
       <h>930</h>
@@ -188,7 +188,7 @@ bg=light_gray
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>280</x>
+      <x>270</x>
       <y>620</y>
       <w>730</w>
       <h>1370</h>
@@ -201,7 +201,7 @@ bg=orange
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>280</x>
+      <x>270</x>
       <y>240</y>
       <w>740</w>
       <h>350</h>
@@ -213,7 +213,7 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>240</x>
+      <x>230</x>
       <y>200</y>
       <w>800</w>
       <h>1830</h>
@@ -224,7 +224,7 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>1160</x>
+      <x>1150</x>
       <y>230</y>
       <w>370</w>
       <h>270</h>
@@ -239,7 +239,7 @@ bg=orange
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1200</x>
+      <x>1190</x>
       <y>450</y>
       <w>150</w>
       <h>30</h>
@@ -251,17 +251,18 @@ bg=orange
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>370</x>
-      <y>440</y>
-      <w>850</w>
-      <h>160</h>
+      <y>430</y>
+      <w>842</w>
+      <h>200</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;120;30;140;550;140;830;140;830;30</additional_attributes>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>30;130;30;180;790;180;790;30;820;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>300</x>
+      <x>290</x>
       <y>430</y>
       <w>210</w>
       <h>130</h>
@@ -274,7 +275,7 @@ bg=orange
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>560</x>
+      <x>550</x>
       <y>290</y>
       <w>260</w>
       <h>120</h>
@@ -287,7 +288,7 @@ bg=orange
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>560</x>
+      <x>550</x>
       <y>440</y>
       <w>260</w>
       <h>120</h>
@@ -299,21 +300,9 @@ bg=orange
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>690</x>
-      <y>0</y>
-      <w>280</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>Uses pfeile richtig modelliert????
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>870</x>
+      <x>860</x>
       <y>290</y>
       <w>130</w>
       <h>280</h>
@@ -327,7 +316,7 @@ bg=orange
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>790</x>
+      <x>780</x>
       <y>330</y>
       <w>100</w>
       <h>50</h>
@@ -338,7 +327,7 @@ bg=orange
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>790</x>
+      <x>780</x>
       <y>470</y>
       <w>100</w>
       <h>50</h>
@@ -349,7 +338,7 @@ bg=orange
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>300</x>
+      <x>290</x>
       <y>280</y>
       <w>210</w>
       <h>110</h>
@@ -364,7 +353,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>370</x>
+      <x>360</x>
       <y>360</y>
       <w>50</w>
       <h>90</h>
@@ -375,7 +364,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1200</x>
+      <x>1190</x>
       <y>400</y>
       <w>150</w>
       <h>30</h>
@@ -386,7 +375,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>370</x>
+      <x>360</x>
       <y>110</y>
       <w>850</w>
       <h>320</h>
@@ -397,7 +386,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>300</x>
+      <x>290</x>
       <y>530</y>
       <w>70</w>
       <h>370</h>
@@ -408,7 +397,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>290</x>
+      <x>280</x>
       <y>530</y>
       <w>80</w>
       <h>650</h>
@@ -419,7 +408,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>280</x>
+      <x>270</x>
       <y>530</y>
       <w>90</w>
       <h>1160</h>
@@ -430,7 +419,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>480</x>
+      <x>470</x>
       <y>400</y>
       <w>410</w>
       <h>50</h>
@@ -441,7 +430,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>460</x>
+      <x>450</x>
       <y>330</y>
       <w>120</w>
       <h>120</h>
@@ -452,7 +441,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>480</x>
+      <x>470</x>
       <y>480</y>
       <w>100</w>
       <h>50</h>
@@ -463,7 +452,7 @@ publish/subscribe?]</panel_attributes>
   <element>
     <type>com.umlet.element.Note</type>
     <coordinates>
-      <x>1030</x>
+      <x>1020</x>
       <y>0</y>
       <w>240</w>
       <h>60</h>
@@ -475,7 +464,7 @@ Trennung host/nodeitem sinnvoll?</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1190</x>
+      <x>1180</x>
       <y>740</y>
       <w>100</w>
       <h>40</h>
