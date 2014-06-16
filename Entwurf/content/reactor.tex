@@ -7,120 +7,143 @@
 % 		Unique entity identifier. Identifies an unique Entity
 % 		within the ROS network
 \subsection{ConstraintHandler}
-	- constraint[]: Constraint
-		contains a list of all constraints
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  Constraint constraint[]\\
+	contains a list of all constraints
+	\item private  RatedStatistic rated\_statistic\\
+	contains all incoming rated statistic
+	\item private  int global\_constraint\_level\\
+	only constraints with an constraint\_level <= current\_constraint level get evaluated
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public addConstraint(Constraint) \\
+	adds an constraint to this list
+	\item public setStatistic(RatedStatistic) \\
+	sets the Statistic to use. Should only be needed on initialisation
+	\item public evaluateConstraints() \\
+	evaluates every constraint
+	\item public executeReactions() \\
+	checks if there are any new reactions to do and executes them.
+	\item private reactToConstraint(Constraint) \\
+	executes an single Reaction and updates the attributes of the Constraint
+\end{itemize}
 
-	- rated\_statistic: RatedStatistic
-		contains all incoming rated statistic
+\subsection{Constraint }
+TODO: Description
 
-	- global\_constraint\_level: int
-		only constraints with an constraint\_level <= current\_constraint level get evaluated
-
-
-	+ addConstraint(Constraint)
-		adds an constraint to this list
-
-	+ setStatistic(RatedStatistic)
-		sets the Statistic to use. Should only be needed on initialisation
-
-	+ evaluateConstraints()
-		evaluates every constraint
-
-	+ executeReactions()
-		checks if there are any new reactions to do and executes them.
-
-	- reactToConstraint(Constraint)
-		executes an single Reaction and updates the attributes of the Constraint
-
-
-
-\subsection{Constraint}
-	- constraint: ConstraintItem
-		first constraint in the chain of ConstraintItems.
-	
-	- true\_since: int
-		epoch time in milliseconds since the constraint is true,
-		if the constraint is not true it is 0
-	
-	- planned\_reaction: Reaction
-		the reaction that should be executed if the constraint has been true longer than min\_reaction\_interval milliseconds
-	
-	- min\_reaction\_interval: int
-		the minimum time needed in ms that the constraint needs to be true to execute the planned\_reaction
-
-	- last\_reaction: int
-		contains the epoch time in ms when the reaction corresponding to this constraint has been executed for the last time.
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  ConstraintItem constraint\\
+	first constraint in the chain of ConstraintItems.
+	\item private  int true\_since\\
+	epoch time in milliseconds since the constraint is true,
+	if the constraint is not true it is 0
+	\item private  Reaction planned\_reaction\\
+	the reaction that should be executed if the constraint has been true longer than min\_reaction\_interval milliseconds
+	\item private  int min\_reaction\_interval\\
+	the minimum time needed in ms that the constraint needs to be true to execute the planned\_reaction
+	\item private  int last\_reaction\\
+	contains the epoch time in ms when the reaction corresponding to this constraint has been executed for the last time.
 		is 0 if it has never been executed
-
-	- reaction\_timeout: int
-		minimum durotation in ms needed before an reaction can happen again
-
-	- constraint\_level: int
-		this constraint only gets evaluatet if the global constraint level is >= constraint\_level
-
-
-	+evaluateConstraint(RatedStatistic)
-		evaluates this constraint and sets the attributes according to the result of the evaluation
+	\item private  int reaction\_timeout\\
+	minimum durotation in ms needed before an reaction can happen again
+	\item private  int constraint\_level\\
+	this constraint only gets evaluatet if the global constraint level is >= constraint\_level
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public evaluateConstraint(RatedStatistic) \\
+	evaluates this constraint and sets the attributes according to the result of the evaluation
+\end{itemize}
 
 
 
 \subsection{ConstraintItem}
 	Abstract description of a Constraint, can be an logical operation on constraints or an actual constraint
-
-	+evaluateConstraint(RatedStatistic): boolean
-		evaluates if this constraint, given the available RatedStatistic, is true. 
-
-
-
-\subsection{ConstraintLeaf}
-	Contains an actual constraint.
-
-	-name: String
-		contains the name of the statistic data
-
-	-outcome: Outcome
-		contains the outcome needed for this constraint to be true
-
-	-seuid: String
-		contains the unique identifier of the corresponding StatisticEntity
+\subsubsection{Attributes}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public abstract boolean evaluateConstraint(RatedStatistic)\\
+	evaluates if this constraint, given the available RatedStatistic, is true. 
+\end{itemize}		
 
 
-	+evaluateConstraint(RatedStatistic): boolean
-		@return returns true if this constrain is true for the RatedStatistic
+\subsection{ConstraintLeaf }
+Contains an actual constraint.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  String name\\
+	contains the name of the statistic data
+	\item private  Outcome outcome\\
+	contains the outcome needed for this constraint to be true
+	\item private  String seuid\\
+	contains the unique identifier of the corresponding StatisticEntity
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public abstract boolean evaluateConstraint(RatedStatistic)\\
+	returns true if this constrain is true for the RatedStatistic
+\end{itemize}
 
 
+\subsection{ConstraintAnd }
+TODO: Description
 
-\subsection{ConstraintAnd}
-	-constraint[2]: Constraint
-		contains the two constraints to be evaluated with an logical and
-	
-	+evaluateConstraint(RatedStatistic): boolean
-		returns true if the evaluation of both constains returns true
-
-
-
-\subsection{ConstraintOr}
-	-constraint[2]: Constraint
-		contains the two constraints to be evaluated with an logical or
-	
-	+evaluateConstraint(RatedStatistic): boolean
-		returns true if the evaluation of at least one constraint returns true
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  Constraint constraint[2]\\
+	contains the two constraints to be evaluated with a logical and	
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public boolean evaluateConstraint(RatedStatistic)\\
+	returns true if the evaluation of both constains returns true
+\end{itemize}
 
 
+\subsection{ConstraintOr }
+TODO: Description
 
-\subsection{ConstraintNot}
-	-constraint: Constraint
-		the constraint to be evaluated negated
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private Constraint constraint[2]\\
+	contains the two constraints to be evaluated with an logical or
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public boolean evaluateConstraint(RatedStatistic)\\
+	returns true if the evaluation of at least one constraint returns true
+\end{itemize}
 
-	+evaluateConstraint(RatedStatistic): boolean
-		returns true if the evaluation of the constraint returns false
 
+\subsection{ConstraintNot }
+TODO: Description
 
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private constraint: Constraint\\
+	the constraint to be evaluated negated
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public boolean evaluateConstraint(RatedStatistic)\\
+	returns true if the evaluation of the constraint returns false
+\end{itemize}
 
-\subsection{Outcome}
-	Enum, represents all possible outcomes
+\subsection{Enum Outcome }
+TODO: Description
 
-	-high: data value is too high
-	-low: data value is too low
-	-unknown: data value is unknown
-	-out\_of\_bounds: data value is either too high or too low
+\subsubsection{Types}
+\begin{itemize}
+	\item high\\
+	data value is too high
+	\item low\\
+	data value is too low
+	\item unknown\\
+	data value is unknown
+	\item out\_of\_bounds\\
+	data value is either too high or too low
+\end{itemize}
