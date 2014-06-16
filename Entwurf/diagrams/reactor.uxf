@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>100</x>
+      <y>0</y>
+      <w>120</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>reactor
+--
+look to your
+right
+(and a bit down)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>100%</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1480</x>
+      <y>670</y>
+      <w>320</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>*CountermeasureNode*
+
+ros node, subscribes to statistics</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1560</x>
+      <y>1710</y>
+      <w>340</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>/ConstraintItem/
+--
+--
+/+evaluateConstraint(RatedStatistic): boolean/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1850</x>
+      <y>1980</y>
+      <w>170</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>ConstraintLeaf
+--
+- name: String
+- outcome: Outcome
+- seuid: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>2150</x>
+      <y>1920</y>
+      <w>200</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+Outcome
+--
+high
+low
+unknown
+out_of_bounds
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1990</x>
+      <y>1960</y>
+      <w>180</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1630</x>
+      <y>1830</y>
+      <w>340</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;320;150</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1580</x>
+      <y>2060</y>
+      <w>220</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ConstraintAnd
+--
+- constraint[2]: Constraint</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1300</x>
+      <y>2060</y>
+      <w>220</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>ConstraintOr
+--
+- constraint[2]:Constraint</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1050</x>
+      <y>2030</y>
+      <w>190</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ConstraintNot
+--
+-constraint: Constraint</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1620</x>
+      <y>1830</y>
+      <w>50</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;230</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1410</x>
+      <y>1830</y>
+      <w>170</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150;30;30;230</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1090</x>
+      <y>1790</y>
+      <w>490</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>470;30;30;240</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>2010</x>
+      <y>870</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>RatedStatistic
+--
+- 
+--
+*#todo:illustrate the rated *
+*statistics in a nice way*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1490</x>
+      <y>1060</y>
+      <w>280</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>ConstraintHandler
+--
+- constraint[]: Constraint
+- rated_statistic: RatedStatistic
+- global_constraint_level: int
+--
++ addConstraint(Constraint)
++ setStatistic(RatedStatistic)
++ evaluateConstraints()
++ executeReactions()
+- reactToConstraint(Constraint)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1580</x>
+      <y>880</y>
+      <w>50</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;180;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1740</x>
+      <y>920</y>
+      <w>290</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>270;30;30;180</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1770</x>
+      <y>750</y>
+      <w>260</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>240;170;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>2000</x>
+      <y>1320</y>
+      <w>220</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>/Reaction/
+--
+- host_id: string
+--
++ executeReaction()
+*#todo: think about how to *
+*implement reactions*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1510</x>
+      <y>1370</y>
+      <w>270</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Constraint
+--
+- constraint: ConstraintItem
+- true_since: int
+- planned_reaction: Reaction
+- min_reaction_interval: int
+- last_reaction: int
+- reaction_timeout: int
+- constraint_level: int
+--
++ evaluateConstraint(RatedStatistic)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1620</x>
+      <y>1530</y>
+      <w>50</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;180;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1570</x>
+      <y>1250</y>
+      <w>50</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;120;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1750</x>
+      <y>1400</y>
+      <w>270</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>250;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>380</x>
+      <y>140</y>
+      <w>450</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>430;270;30;30</additional_attributes>
+  </element>
+</diagram>
