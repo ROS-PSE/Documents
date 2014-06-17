@@ -7,7 +7,7 @@
       <x>340</x>
       <y>700</y>
       <w>420</w>
-      <h>350</h>
+      <h>390</h>
     </coordinates>
     <panel_attributes>overview
 bg=light_gray</panel_attributes>
@@ -31,21 +31,24 @@ bg=light_gray</panel_attributes>
       <x>380</x>
       <y>750</y>
       <w>320</w>
-      <h>270</h>
+      <h>310</h>
     </coordinates>
     <panel_attributes>OverviewPlugin
 --
-+ OverviewWidget: QWidget
-+ verticalLayoutWidget: QVBoxLayout
-+ horizontalSpacer: Spacer
+ 
+--
++ overview_widget: QWidget
++ widget_vertical_layout: QVBoxLayout
++ status_horizontal_layout: QHBoxLayout
++ horizontal_spacer: Spacer
 + status_light_label: QLabel
 + status_text_line_edit: QLineEdit
 + tab_widget: QTabWidget
 + information_tab: QWidget
 + information_tab_text_browser: QTextBrowser
 + graphs_tab: QWidget
-+ verticalLayoutGraphsTab: QVBoxLayout
-+ horizontalLayoutRange: QHBoxLayout
++ graphs_tab_vertical_layout: QVBoxLayout
++ range_horizontal_layout: QHBoxLayout
 + range_label: QLabel
 + log_tab: QWidget
 + log_tab_tree_widget: QTreeWidget
@@ -82,9 +85,9 @@ bg=orange
     <type>com.umlet.element.Package</type>
     <coordinates>
       <x>340</x>
-      <y>1070</y>
+      <y>1110</y>
       <w>420</w>
-      <h>470</h>
+      <h>490</h>
     </coordinates>
     <panel_attributes>selection
 bg=light_gray</panel_attributes>
@@ -94,26 +97,27 @@ bg=light_gray</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>380</x>
-      <y>1120</y>
+      <y>1160</y>
       <w>320</w>
-      <h>390</h>
+      <h>410</h>
     </coordinates>
     <panel_attributes>SelectionPlugin
-
 --
-+ SelectionWidget: QWidget
-+ verticalLayoutWidget: QVBoxLayout
-+ horizontalLayoutStatus: QHBoxLayout
-+ verticalLayoutLabels: QVBoxLayout
+ 
+--
++ selection_widget: QWidget
++ widget_vertical_layout: QVBoxLayout
++ status_horizontal_layout: QHBoxLayout
++ labels_vertical_layout: QVBoxLayout
 + current_status_label: QLabel
 + host_node_label: QLabel
-+ horizontalSpacer: Spacer
-+ status_light_label: QLAbel
++ horizontal_spacer: Spacer
++ status_light_label: QLabel
 + tab_Widget: QTabWidget
 + information_tab: QWidget
-+ information_tab_text_browser
++ information_tab_text_browser: QTextBrowser
 + graphs_tab: QWidget
-+ horizontalLayoutRange: QHBoxLayout
++ range_horizontal_layout: QHBoxLayout
 + range_combo_box: QComboBox
 + range_label: QLabel
 + log_tab: QWidget
@@ -130,18 +134,18 @@ bg=light_gray</panel_attributes>
       <x>670</x>
       <y>740</y>
       <w>750</w>
-      <h>410</h>
+      <h>450</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;390;120;390;120;30;730;30</additional_attributes>
+    <additional_attributes>30;430;120;430;120;30;730;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
       <x>340</x>
-      <y>1560</y>
+      <y>1620</y>
       <w>420</w>
-      <h>350</h>
+      <h>370</h>
     </coordinates>
     <panel_attributes>tree
 bg=light_gray
@@ -152,26 +156,28 @@ bg=light_gray
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>380</x>
-      <y>1610</y>
+      <y>1670</y>
       <w>320</w>
-      <h>270</h>
+      <h>290</h>
     </coordinates>
     <panel_attributes>TreePlugin
 --
-+ TreeWidget: QWidget
-+ verticalLayoutWidget: QVBoxLayout
-+ horizontalLayout: QHBoxLayout
+ 
+--
++ tree_widget: QWidget
++ widget_vertical_layout: QVBoxLayout
++ horizontal_layout: QHBoxLayout
 + erroneous_check_box: QCheckBox
-+ horizontalSpacer: Spacer
++ horizontal_spacer: Spacer
 + minus_push_buton: QPushButton
 + plus_push_button: QPushButton
 + show_nodes_check_box: QCheckBox
 + show_hosts_check_box: QCheckBox
-+ horizontalLayoutFilter: QHBoxLayout
++ filter_horizontal_layout: QHBoxLayout
 + apply_push_button: QPushButton
 + filter_label: QLabel
 + filter_line_edit: QLineEdit
-+ treeWidget_tree_widget: QTreeWidget</panel_attributes>
++ tree_widget_tree_widget: QTreeWidget</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -180,10 +186,10 @@ bg=light_gray
       <x>670</x>
       <y>750</y>
       <w>750</w>
-      <h>890</h>
+      <h>950</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;870;140;870;140;30;730;30</additional_attributes>
+    <additional_attributes>30;930;140;930;140;30;730;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
@@ -191,7 +197,7 @@ bg=light_gray
       <x>270</x>
       <y>660</y>
       <w>730</w>
-      <h>1280</h>
+      <h>1360</h>
     </coordinates>
     <panel_attributes>view
 bg=orange
@@ -216,7 +222,7 @@ bg=orange</panel_attributes>
       <x>230</x>
       <y>0</y>
       <w>1120</w>
-      <h>1970</h>
+      <h>2050</h>
     </coordinates>
     <panel_attributes>gui_widgets</panel_attributes>
     <additional_attributes/>
@@ -421,10 +427,10 @@ publish/subscribe?]
       <x>290</x>
       <y>570</y>
       <w>70</w>
-      <h>600</h>
+      <h>640</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;580;50;580</additional_attributes>
+    <additional_attributes>30;30;30;620;50;620</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -432,10 +438,10 @@ publish/subscribe?]
       <x>280</x>
       <y>570</y>
       <w>80</w>
-      <h>1090</h>
+      <h>1150</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;1070;60;1070</additional_attributes>
+    <additional_attributes>30;30;30;1130;60;1130</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
