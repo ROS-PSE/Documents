@@ -44,16 +44,12 @@ float32 ram_usage_stddev
 float32 ram_usage_max
   
 \# network load of the host  
+
 int32 network_load 
 int32 network_load_avg
 int32 network_load_stddev
 int32 network_load_max
  
-int32 latency    			//macht das überhaupt sinn?
-int32 latency_avg
-int32 latency_stddev
-int32 latency_max
-
 int32 message_frequency
 int32 message_frequency_avg
 int32 message_frequency_stddev
