@@ -50,42 +50,42 @@ hence also the model.
 Represents the data as a QtModel. This enables automated updates of the View.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item private item\_list: list\\
+  \item \textit{private item\_list: list}
   ..
-  \item private monitoring\_proxy: rospy.ServiceProxy\\
+  \item \textit{private monitoring\_proxy: rospy.ServiceProxy}
   ..
-  \item private host\_proxy: rospy.ServiceProxy\\
+  \item \textit{private host\_proxy: rospy.ServiceProxy}
   ..  
-  \item private model\_lock: threading.Lock\\
+  \item \textit{private model\_lock: threading.Lock}
   ..
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-  \item public \_\_init\_\_()\\
+  \item \textit{public \_\_init\_\_()}
   ..
-  \item public QVariant data(QModelIndex, int)\\
+  \item \textit{public QVariant data(QModelIndex, int)}
   ..
-  \item public ItemFlags flags(const QModelIndex)\\
+  \item \textit{public ItemFlags flags(const QModelIndex)}
   ..
-  \item public QVariant headerData(int, Orientation, int)\\
+  \item \textit{public QVariant headerData(int, Orientation, int)}
   ..
-  \item public QModelIndex index(int, int, QModelIndex)\\
+  \item \textit{public QModelIndex index(int, int, QModelIndex)}
   ..
-  \item public QModelIndex parent(QModelIndex)\\
+  \item \textit{public QModelIndex parent(QModelIndex)}
   ..
-  \item public int rowCount(QModelIndex)\\
+  \item \textit{public int rowCount(QModelIndex)}
   ..
-  \item public int columnCount(QModelIndex)\\
+  \item \textit{public int columnCount(QModelIndex)}
   ..
-  \item public update\_model(data:list)\\
+  \item \textit{public update\_model(data:list)}
   ..
-  \item public transform\_data(AbstractItem)\\
+  \item \textit{public transform\_data(AbstractItem)}
   ..
-  \item public transform\_data(statistics)\\
+  \item \textit{public transform\_data(statistics)}
   ..
-  \item public transform\_data(statistics/host)\\
+  \item \textit{public transform\_data(statistics/host)}
   ..
-  \item public transform\_data(statistics/rated)\\
+  \item \textit{public transform\_data(statistics/rated)}
   ..
   \end{itemize}
 
@@ -93,32 +93,32 @@ Represents the data as a QtModel. This enables automated updates of the View.
 Provides a unified interface to access the items of a model.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item private data\_list: list<TimeStampedData>\\
+  \item \textit{private data\_list: list<TimeStampedData>}
   ..
-  \item private child\_items: list<AbstractItem>\\
+  \item \textit{private child\_items: list<AbstractItem>}
   ..
-  \item private parent\_item: AbstractItem\\
+  \item \textit{private parent\_item: AbstractItem}
   ..
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-  \item public \_\_init(list, parent=None)\_\_\\
+  \item \textit{public \_\_init(list, parent=None)\_\_}
   ..
-  \item public append\_child(AbstractItem)\\
+  \item \textit{public append\_child(AbstractItem)}
   ..
-  \item public append\_data(TimeStampedData)\\
+  \item \textit{public append\_data(TimeStampedData)}
   ..
-  \item public AbstractItem get\_child(int)\\
+  \item \textit{public AbstractItem get\_child(int)}
   ..
-  \item public TimeStampedData get\_latest\_data()\\
+  \item \textit{public TimeStampedData get\_latest\_data()}
   ..
-  \item public AbstractItem parent()\\
+  \item \textit{public AbstractItem parent()}
   ..
-  \item public AbstractItem get\_oldest\_item()\\
+  \item \textit{public AbstractItem get\_oldest\_item()}
   ..
-  \item public delete\_oldest\_item()\\
+  \item \textit{public delete\_oldest\_item()}
   ..
-  \item public abstract execute\_action(RemoteAction)\\
+  \item \textit{public abstract execute\_action(RemoteAction)}
   ..  
 \end{itemize}
 
@@ -126,9 +126,9 @@ Provides a unified interface to access the items of a model.
 A HostItem represents a host with all its data.
 \subsubsection{Methods}
 \begin{itemize}
-  \item public \_\_init(list, parent=None)\_\_\\
+  \item \textit{public \_\_init(list, parent=None)\_\_}
   ..
-  \item public execute\_action(RemoteAction)\\
+  \item \textit{public execute\_action(RemoteAction)}
   ..
 \end{itemize}
 
@@ -136,9 +136,9 @@ A HostItem represents a host with all its data.
  A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
 \subsubsection{Methods}
 \begin{itemize}
-  \item public \_\_init(list, parent=None)\_\_\\
+  \item \textit{public \_\_init(list, parent=None)\_\_}
   ..
-  \item public execute\_action(RemoteAction)\\
+  \item \textit{public execute\_action(RemoteAction)}
   ..
 \end{itemize}
 
@@ -146,9 +146,9 @@ A HostItem represents a host with all its data.
 ..
 \subsubsection{Methods}
 \begin{itemize}
-  \item public \_\_init(list, parent=None)\_\_\\
+  \item \textit{public \_\_init(list, parent=None)\_\_}
   ..
-  \item public execute\_action(RemoteAction)\\
+  \item \textit{public execute\_action(RemoteAction)}
   ..
 \end{itemize}
 
@@ -156,9 +156,9 @@ A HostItem represents a host with all its data.
  A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
 \subsubsection{Methods}
 \begin{itemize}
-  \item public \_\_init(list, parent=None)\_\_\\
+  \item \textit{public \_\_init(list, parent=None)\_\_}
   ..
-  \item public execute\_action(RemoteAction)\\
+  \item \textit{public execute\_action(RemoteAction)}
   ..
 \end{itemize}
 
@@ -166,18 +166,18 @@ A HostItem represents a host with all its data.
 ..
 \subsubsection{Attributes}
 \begin{itemize}
-  \item private data: object\\
+  \item \textit{private data: object}
   ..
-  \item private time\_stamp: datetime.time\\
+  \item \textit{private time\_stamp: datetime.time}
   ..
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-  \item public \_\_init(object, datetime.time)\_\_\\
+  \item \textit{public \_\_init(object, datetime.time)\_\_}
   ..
-  \item public datetime.time get\_time\_stamp()\\
+  \item \textit{public datetime.time get\_time\_stamp()}
   ..
-  \item public object get\_data()\\
+  \item \textit{public object get\_data()}
   ..
 \end{itemize}
 
@@ -185,9 +185,9 @@ A HostItem represents a host with all its data.
 TODO: Description
 \subsubsection{Types}
 \begin{itemize}
-	\item e\_action\_stop\\
+	\item \textit{e\_action\_stop}
 	..
-	\item e\_action\_restart\\
+	\item \textit{e\_action\_restart}
 	..
 \end{itemize}
 
@@ -204,21 +204,21 @@ The class OverviewPlugin is the core of the graphical user interface, which
 contains most of the relevant information in a small and fancy area.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item public overview\_widget: QWidget\\
+  \item \textit{public overview\_widget: QWidget}
   the object wich holds the widget
-  \item public status\_light\_label: QLabel\\
+  \item \textit{public status\_light\_label: QLabel}
   shows the actual status of the host/node
-  \item public tab\_widget: QTabWidget\\
+  \item \textit{public tab\_widget: QTabWidget}
   the object wich holds the different tabs of the widget
-  \item public information\_tab: QWidget\\
+  \item \textit{public information\_tab: QWidget}
   a tab wich gives general information about the network 
-  \item public graphs\_tab: QWidget\\
+  \item \textit{public graphs\_tab: QWidget}
   shows the actual Network- and CPU-Load
-  \item public range\_combo\_box: QComboBox\\
+  \item \textit{public range\_combo\_box: QComboBox}
   makes it possible to set the range of the graphs
-  \item public log\_tab: QWidget\\
+  \item \textit{public log\_tab: QWidget}
   shows actual errors and warnings
-  \item public log\_tab\_tree\_widget: QTreeWidget\\
+  \item \textit{public log\_tab\_tree\_widget: QTreeWidget}
   the structure of the log-messages  
 \end{itemize}
 
@@ -227,25 +227,24 @@ A class which shows detailed information in a Tree-Layout about the currently
 selected host or node.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item public selection\_widget: QWidget\\
+  \item \textit{public selection\_widget: QWidget}
   the object wich holds the widget
-  \item public host\_node\_label: QLabel\\
+  \item \textit{public host\_node\_label: QLabel}
   shows the name of the actual selected host or node
-  \item public status\_light\_label: QLabel\\
+  \item \textit{public status\_light\_label: QLabel}
   shows the status of the host or node
-  \item public tab\_widget: QTabWidget\\
+  \item \textit{public tab\_widget: QTabWidget}
   the object wich holds the different tabs of the widget
-  \item public information\_tab: QWidget\\
+  \item \textit{public information\_tab: QWidget}
   a tab wich gives general information about host or node 
-  \item public graphs\_tab: QWidget\\
+  \item \textit{public graphs\_tab: QWidget}
   shows the actual Network- and CPU-Load
-  \item public range\_combo\_box: QComboBox\\
+  \item \textit{public range\_combo\_box: QComboBox}
   makes it possible to set the range of the graphs
-  \item public log\_tab: QWidget\\
+  \item \textit{public log\_tab: QWidget}
   shows actual errors and warnings
-  \item public actions\_tab: QWidget\\
-  includes buttons to start/restart/stop nodes
-  
+  \item \textit{public actions\_tab: QWidget}
+  includes buttons to start/restart/stop nodes  
 \end{itemize}
 
 \subsection{TreePlugin}
@@ -253,19 +252,19 @@ TreePlugin is very simply and shows only the actual active hosts
 and nodes.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item public tree\_widget: QWidget\\
+  \item \textit{public tree\_widget: QWidget}
   the object wich holds the widget
-  \item public erroneous\_check\_box: QCheckBox\\
+  \item \textit{public erroneous\_check\_box: QCheckBox}
   displays only erroneous hosts and nodes
-  \item public show\_node\_check\_box: QCheckBox\\
+  \item \textit{public show\_node\_check\_box: QCheckBox}
   displays nodes
-  \item public show\_host\_check\_box: QCheckBox\\
+  \item \textit{public show\_host\_check\_box: QCheckBox}
   ..hosts
-  \item public minus\_push\_button: QPushButton\\
+  \item \textit{public minus\_push\_button: QPushButton}
   makes it possible to zoom out
-  \item public plus\_push\_button: QPushButton\\
+  \item \textit{public plus\_push\_button: QPushButton}
   ..zoom in
-  \item public filter\_line\_edit: QLineEdit\\
+  \item \textit{public filter\_line\_edit: QLineEdit}
   a textfield where you can filter the output
 \end{itemize}
 
