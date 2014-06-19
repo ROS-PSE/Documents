@@ -1,0 +1,36 @@
+# configuration for exact edges in the node graph
+connections:
+    publisher\\topic\\subscriber:
+        # fields could be bandwidth, latency etc.
+        field1:
+            # limit values are given with a minimum and maximum value
+            - min
+            - max
+        field2:
+            # limit values may also be given with a desired value + an accepted variance
+            - value
+            - variance
+            - "relative"
+
+# configuration for system load due to nodes
+nodes:
+    node_name:
+        field1:
+            - min
+            - max
+        field2:
+            - value
+            - variance
+            - "relative"
+
+# configuration for host machines
+hosts:
+    host1:
+        # fields could be cpu_temp, ram_usage etc.
+        field1:
+            - min
+            - max
+        field2:
+            - value
+            - variance
+            - "relative"

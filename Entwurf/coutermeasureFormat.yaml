@@ -1,0 +1,22 @@
+# configuration for exact edges in the node graph
+connections:
+    publisher\\topic\\subscriber:
+        - # condition to trigger the countermeasure
+          condition: "measurement1 > value1 || measurement2 > value2"
+          # executed if global configured constraint level is at or below the given one
+          constraint_level: 2
+          # minimal duration of time (in ms) the condition has to be fulfilled
+          min_reaction_interval: 800
+          # minimal duration of time (in ms) before the countermeasure will be executed again
+          reaction_timeout: 5000
+          # list of commands executed as countermeasure
+          reaction:
+            - "kill publisher"
+
+# configuration for system load due to nodes
+nodes:
+    node_name:
+
+# configuration for host machines
+hosts:
+    host1:
