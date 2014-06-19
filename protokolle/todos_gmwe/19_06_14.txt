@@ -1,0 +1,10 @@
+schnittstelle hoststatistics:
+	- annahme von reaktion und ausführen dieser (+ messagetypes dafür)
+
+
+
+zu nodeStatistics und ratedNodeStatistics:
+- immer host_id mitschicken, damit der countermeasure und die gui eine zuordnung von node-host haben (für das abschiessen von knoten usw)
+
+zu ratedstatistics allgemein:
+- auch "leere" statistiken schicken, (bei denen alles okay ist), damit man weiß das alles okay ist. (für die gui und den ctm gut)
