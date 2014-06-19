@@ -23,15 +23,173 @@
 \subsection{BufferThread}
 This thread should buffer the incoming data and regulary update the model and
 hence also the model.
+\subsubsection{Attributes}
+\begin{itemize}
+  \item private buffer\_lock: threading.Lock\\
+  ..
+  \item private model: ROSModel\\
+  ..
+  \item private timer: rospy.Timer\\
+  ..
+  \item private buffer: list<TimeStampedData>\\
+  ..
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+  \item public \_\_init\_\_()\\
+  ..
+  \item public start()\\
+  ..
+  \item public update\_model()\\
+  ..
+  \item public add\_buffer\_ite(object)\\
+  ..
+\end{itemize}
+
 \subsection{ROSModel}
 Represents the data as a QtModel. This enables automated updates of the View.
-\subsection{ItemInterface}
+\subsubsection{Attributes}
+\begin{itemize}
+  \item private item\_list: list\\
+  ..
+  \item private monitoring\_proxy: rospy.ServiceProxy\\
+  ..
+  \item private host\_proxy: rospy.ServiceProxy\\
+  ..  
+  \item private model\_lock: threading.Lock\\
+  ..
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+  \item public \_\_init\_\_()\\
+  ..
+  \item public QVariant data(QModelIndex, int)\\
+  ..
+  \item public ItemFlags flags(const QModelIndex)\\
+  ..
+  \item public QVariant headerData(int, Orientation, int)\\
+  ..
+  \item public QModelIndex index(int, int, QModelIndex)\\
+  ..
+  \item public QModelIndex parent(QModelIndex)\\
+  ..
+  \item public int rowCount(QModelIndex)\\
+  ..
+  \item public int columnCount(QModelIndex)\\
+  ..
+  \item public update\_model(data:list)\\
+  ..
+  \item public transform\_data(AbstractItem)\\
+  ..
+  \item public transform\_data(statistics)\\
+  ..
+  \item public transform\_data(statistics/host)\\
+  ..
+  \item public transform\_data(statistics/rated)\\
+  ..
+  \end{itemize}
+
+\subsection{AbstractItem}
 Provides a unified interface to access the items of a model.
+\subsubsection{Attributes}
+\begin{itemize}
+  \item private data\_list: list<TimeStampedData>\\
+  ..
+  \item private child\_items: list<AbstractItem>\\
+  ..
+  \item private parent\_item: AbstractItem\\
+  ..
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+  \item public \_\_init(list, parent=None)\_\_\\
+  ..
+  \item public append\_child(AbstractItem)\\
+  ..
+  \item public append\_data(TimeStampedData)\\
+  ..
+  \item public AbstractItem get\_child(int)\\
+  ..
+  \item public TimeStampedData get\_latest\_data()\\
+  ..
+  \item public AbstractItem parent()\\
+  ..
+  \item public AbstractItem get\_oldest\_item()\\
+  ..
+  \item public delete\_oldest\_item()\\
+  ..
+  \item public abstract execute\_action(RemoteAction)\\
+  ..  
+\end{itemize}
+
 \subsection{HostItem}
 A HostItem represents a host with all its data.
+\subsubsection{Methods}
+\begin{itemize}
+  \item public \_\_init(list, parent=None)\_\_\\
+  ..
+  \item public execute\_action(RemoteAction)\\
+  ..
+\end{itemize}
+
 \subsection{NodeItem}
  A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
+\subsubsection{Methods}
+\begin{itemize}
+  \item public \_\_init(list, parent=None)\_\_\\
+  ..
+  \item public execute\_action(RemoteAction)\\
+  ..
+\end{itemize}
 
+\subsection{TopicItem}
+..
+\subsubsection{Methods}
+\begin{itemize}
+  \item public \_\_init(list, parent=None)\_\_\\
+  ..
+  \item public execute\_action(RemoteAction)\\
+  ..
+\end{itemize}
+
+\subsection{ConnectionItem}
+ A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
+\subsubsection{Methods}
+\begin{itemize}
+  \item public \_\_init(list, parent=None)\_\_\\
+  ..
+  \item public execute\_action(RemoteAction)\\
+  ..
+\end{itemize}
+
+\subsection{TimeStampedData}
+..
+\subsubsection{Attributes}
+\begin{itemize}
+  \item private data: object\\
+  ..
+  \item private time\_stamp: datetime.time\\
+  ..
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+  \item public \_\_init(object, datetime.time)\_\_\\
+  ..
+  \item public datetime.time get\_time\_stamp()\\
+  ..
+  \item public object get\_data()\\
+  ..
+\end{itemize}
+
+\subsection{Enum RemoteAction}
+TODO: Description
+\subsubsection{Types}
+\begin{itemize}
+	\item e\_action\_stop\\
+	..
+	\item e\_action\_restart\\
+	..
+\end{itemize}
 
 \section{GUI - View}
 \begin{figure}[!ht]
