@@ -1,0 +1,121 @@
+
+\subsection{MonitoringNode}
+Main Class wrapping the processing functionality.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  MetadataStorage storage
+	\item private  SpecificationHandler specHandler
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item private  Metadata receiveData()\\
+	Receives data incoming from the Subscriber and converts them to Metadata objects.
+	\item private  ComparisonResult processData(Metadata)\\
+	Returns the specHandler's compare result
+	\item private  void publishData(ComparisonResult)\\
+	Publishes results of the comparison as rated Metadata
+	\item private  MetadataStorageResponse storageServer(MetadataStorageRequest)\\
+	Listen for the GUI Model service calls and returns requested metadata from the storage
+\end{itemize}
+
+
+\subsection{MetadataStorage}
+Saves recieved metadata packages for a given period of time and can provide them on request.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  dict(string, dict(int, Metadata[])) storage\\
+	Datastructure to store Packages by key and timestamp
+	\item private  int duration\\
+	Duration in seconds for data to be stored
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item private  void cleanUp()\\
+	Seletes Metadata exceeding the duration to store
+	\item public  boolean store(Metadata)\\
+	Stores a given Metadata
+	\item public  Metadata[] get(string, int)\\
+	Returns all Metadata packages for the given connection/host of the given amount of time.
+	\item public  boolean clear()\\
+	Clears the whole storage
+\end{itemize}
+
+
+\subsection{Metadata}
+Wraps metadata of exactly one host or node, a topic or a node-topic-combination.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  MetadataTuple[] values\\
+	Collection of Metadata regarding multiple meassurements.
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public  void addTuple(MetadataTuple)\\
+	Add a MetadataTuple of information to the bundle.
+	\item public  object get(String)\\
+	Returns the value of the MetadataTuple with the given key. False, if the key does not exist.
+\end{itemize}
+
+
+\subsection{Specification}
+TODO: Description
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  MetadataTuple[] values\\
+	Collection of MetadataTuple objects providing limits for multiple fields.
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public  void addTuple(MetadataTuple)\\
+	Adds a MetadataTuple to the bundle
+	\item public  Object get(String)\\
+	Returns the value of the MetadataTuple with the given key. The returned value would be a list containing limit values for the most measured fields. False, if the key does not exist.
+\end{itemize}
+
+
+\subsection{SpecificationHandler}
+Loads the specifications from the parameter server and compares them to the actual metadata.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  Specification[] specifications\\
+	Datastructure to keep all loaded Specification objects
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item private  void loadSpecifications()\\
+	Loads the specifications from configuration files into Specification objects and stores them
+	\item public  ComparisonResult compare(Metadata, Specification)\\
+	Compares a given Metadata object with a given Specification object regarding all available fields. Returns a ComparisonResult object wrapping potential divergences.
+\end{itemize}
+
+
+\subsection{ComparisonResult}
+Wraps the result of the comparison between the actual metadata and the specificaton.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item public  string ident\\
+	Identifies the connection or the host
+	\item public  data[dict(string, object)] \\
+	Contains an dictionaries with objects wrapping actual value, specification value and violation level
+\end{itemize}
+
+
+\subsection{MetadataTuple}
+Stores any kind of value for a certain key. Specifications storing values indicating limits, Metadata storing absolute actual values.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private  String key
+	\item private  Object value
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public  String getKey()
+	\item public  Object getValue()
+\end{itemize}

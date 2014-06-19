@@ -33,12 +33,17 @@
     </coordinates>
     <panel_attributes>MonitoringNode
 --
-- storage: MetaDataStorage
+- storage: MetadataStorage
 - specHandler: SpecificationHandler
 --
+// Receives data incoming from the Subscriber and converts them to Metadata objects.
 - receiveData(): Metadata
+// Returns the specHandler's compare result
 - processData(Metadata): ComparisonResult
-- publishData(ComparisonResult): void</panel_attributes>
+// Publishes results of the comparison as rated Metadata
+- publishData(ComparisonResult): void
+// Listen for the GUI Model service calls and returns requested metadata from the storage
+- storageServer(MetadataStorageRequest): MetadataStorageResponse</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -72,14 +77,21 @@ see ros</panel_attributes>
       <w>200</w>
       <h>140</h>
     </coordinates>
-    <panel_attributes>MetaDataStorage
+    <panel_attributes>// Saves recieved metadata packages for a given period of time and can provide them on request.
+MetadataStorage
 --
-- storage: Metadata[]
+// Datastructure to store Packages by key and timestamp
+- storage: dict(string, dict(int, Metadata[]))
+// Duration in seconds for data to be stored
 - duration: int
 --
+// Seletes Metadata exceeding the duration to store
 - cleanUp(): void
+// Stores a given Metadata
 + store(Metadata): boolean
+// Returns all Metadata packages for the given connection/host of the given amount of time.
 + get(string, int): Metadata[]
+// Clears the whole storage
 + clear(): boolean</panel_attributes>
     <additional_attributes/>
   </element>
@@ -91,11 +103,15 @@ see ros</panel_attributes>
       <w>220</w>
       <h>90</h>
     </coordinates>
-    <panel_attributes>Metadata
+    <panel_attributes>// Wraps metadata of exactly one host or node, a topic or a node-topic-combination.
+Metadata
 --
+// Collection of Metadata regarding multiple meassurements.
 - values: MetadataTuple[]
 --
+// Add a MetadataTuple of information to the bundle.
 + addTuple(MetadataTuple): void
+// Returns the value of the MetadataTuple with the given key. False, if the key does not exist.
 + get(String): object</panel_attributes>
     <additional_attributes/>
   </element>
@@ -120,9 +136,12 @@ see ros</panel_attributes>
     </coordinates>
     <panel_attributes>Specification
 --
+// Collection of MetadataTuple objects providing limits for multiple fields.
 - values: MetadataTuple[]
 --
+// Adds a MetadataTuple to the bundle
 + addTuple(MetadataTuple): void
+// Returns the value of the MetadataTuple with the given key. The returned value would be a list containing limit values for the most measured fields. False, if the key does not exist.
 + get(String): Object</panel_attributes>
     <additional_attributes/>
   </element>
@@ -134,11 +153,15 @@ see ros</panel_attributes>
       <w>240</w>
       <h>90</h>
     </coordinates>
-    <panel_attributes>SpecificationHandler
+    <panel_attributes>// Loads the specifications from the parameter server and compares them to the actual metadata.
+SpecificationHandler
 --
+// Datastructure to keep all loaded Specification objects
 - specifications: Specification[]
 --
+// Loads the specifications from configuration files into Specification objects and stores them
 - loadSpecifications(): void
+// Compares a given Metadata object with a given Specification object regarding all available fields. Returns a ComparisonResult object wrapping potential divergences.
 + compare(Metadata, Specification): ComparisonResult</panel_attributes>
     <additional_attributes/>
   </element>
@@ -169,15 +192,18 @@ m1= </panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>320</x>
+      <x>290</x>
       <y>460</y>
-      <w>140</w>
+      <w>200</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>ComparisonResult
+    <panel_attributes>// Wraps the result of the comparison between the actual metadata and the specificaton.
+ComparisonResult
 --
-contains the result of the comparison between
-the actual metadata and the specificaton</panel_attributes>
+// Identifies the connection or the host
++ ident: string
+// Contains an dictionaries with objects wrapping actual value, specification value and violation level
++ data[dict(string, object)]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -199,7 +225,8 @@ the actual metadata and the specificaton</panel_attributes>
       <w>140</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>MetadataTuple
+    <panel_attributes>// Stores any kind of value for a certain key. Specifications storing values indicating limits, Metadata storing absolute actual values.
+MetadataTuple
 --
 - key: String
 - value: Object

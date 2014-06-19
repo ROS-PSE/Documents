@@ -1,27 +1,7 @@
 \chapter{Classes Description}
 
 \section{Processing}
-
-\subsection{MonitoringNode}
-Main Class wrapping the processing functionality.
-
-\subsection{Metadata}
-Wraps metadata of exactly one host or node, a topic or a node-topic-combination
-
-\subsection{MetadataTuple}
-Contains the name of a metadata field and an object which can be a monitoring point or the bounds as a tuple.
-
-\subsection{MetaDataStorage}
-Saves recieved metadata packages for a given period of time and can provide them on request.
-
-\subsection{Specification}
-Wraps specification fields. Can contain multiple MetadataTuple objects from exactly one host or node
-
-\subsection{SpecificationHandler}
-Loads the specifications from the parameter server and compares them to the actual metadata.
-
-\subsection{ComparisonResult}
-Wraps the result of the comparison between the actual metadata and the specificaton.
+\input{content/processing.tex}
 
 % -----------------------------------------------------------------------------------
 \section{NodesInterface}
