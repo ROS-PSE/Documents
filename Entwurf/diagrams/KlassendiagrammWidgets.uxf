@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="12.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>340</x>
-      <y>700</y>
-      <w>420</w>
-      <h>390</h>
+      <x>1704</x>
+      <y>272</y>
+      <w>336</w>
+      <h>312</h>
     </coordinates>
     <panel_attributes>overview
 bg=light_gray</panel_attributes>
@@ -17,21 +17,21 @@ bg=light_gray</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>0</x>
-      <y>110</y>
-      <w>100</w>
-      <h>30</h>
+      <y>0</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
-    <panel_attributes>100%
+    <panel_attributes>80%
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>380</x>
-      <y>750</y>
-      <w>320</w>
-      <h>310</h>
+      <x>1728</x>
+      <y>304</y>
+      <w>256</w>
+      <h>248</h>
     </coordinates>
     <panel_attributes>OverviewPlugin
 --
@@ -52,16 +52,17 @@ bg=light_gray</panel_attributes>
 + range_label: QLabel
 + log_tab: QWidget
 + log_tab_tree_widget: QTreeWidget
++ range_combo_box: QComboBox
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>1380</x>
-      <y>710</y>
-      <w>370</w>
-      <h>100</h>
+      <x>184</x>
+      <y>640</y>
+      <w>296</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>qt_gui.plugin
 bg=orange
@@ -73,21 +74,21 @@ bg=orange
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>670</x>
-      <y>730</y>
-      <w>750</w>
-      <h>50</h>
+      <x>240</x>
+      <y>536</y>
+      <w>1480</w>
+      <h>456</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;30;730;30</additional_attributes>
+    <additional_attributes>1464;24;1400;24;1400;432;24;440;24;168</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>340</x>
-      <y>1110</y>
-      <w>420</w>
-      <h>490</h>
+      <x>1704</x>
+      <y>600</y>
+      <w>296</w>
+      <h>384</h>
     </coordinates>
     <panel_attributes>selection
 bg=light_gray</panel_attributes>
@@ -96,10 +97,10 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>380</x>
-      <y>1160</y>
-      <w>320</w>
-      <h>410</h>
+      <x>1720</x>
+      <y>632</y>
+      <w>256</w>
+      <h>328</h>
     </coordinates>
     <panel_attributes>SelectionPlugin
 --
@@ -131,21 +132,21 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>670</x>
-      <y>740</y>
-      <w>750</w>
-      <h>450</h>
+      <x>232</x>
+      <y>680</y>
+      <w>1488</w>
+      <h>296</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;430;120;430;120;30;730;30</additional_attributes>
+    <additional_attributes>1472;248;1280;280;24;280;24;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>340</x>
-      <y>1620</y>
-      <w>420</w>
-      <h>370</h>
+      <x>1704</x>
+      <y>1024</y>
+      <w>336</w>
+      <h>296</h>
     </coordinates>
     <panel_attributes>tree
 bg=light_gray
@@ -155,10 +156,10 @@ bg=light_gray
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>380</x>
-      <y>1670</y>
-      <w>320</w>
-      <h>290</h>
+      <x>1728</x>
+      <y>1056</y>
+      <w>256</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes>TreePlugin
 --
@@ -183,21 +184,21 @@ bg=light_gray
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>670</x>
-      <y>750</y>
-      <w>750</w>
-      <h>950</h>
+      <x>224</x>
+      <y>680</y>
+      <w>1496</w>
+      <h>528</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;930;140;930;140;30;730;30</additional_attributes>
+    <additional_attributes>1480;512;24;512;24;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>270</x>
-      <y>660</y>
-      <w>730</w>
-      <h>1360</h>
+      <x>1664</x>
+      <y>208</y>
+      <w>424</w>
+      <h>1144</h>
     </coordinates>
     <panel_attributes>view
 bg=orange
@@ -207,10 +208,10 @@ bg=orange
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>270</x>
-      <y>40</y>
-      <w>1060</w>
-      <h>590</h>
+      <x>568</x>
+      <y>208</y>
+      <w>888</w>
+      <h>744</h>
     </coordinates>
     <panel_attributes>model
 bg=orange</panel_attributes>
@@ -219,10 +220,10 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>230</x>
-      <y>0</y>
-      <w>1120</w>
-      <h>2050</h>
+      <x>560</x>
+      <y>176</y>
+      <w>1552</w>
+      <h>1200</h>
     </coordinates>
     <panel_attributes>gui_widgets</panel_attributes>
     <additional_attributes/>
@@ -230,10 +231,10 @@ bg=orange</panel_attributes>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>1380</x>
-      <y>350</y>
-      <w>350</w>
-      <h>90</h>
+      <x>184</x>
+      <y>496</y>
+      <w>280</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>python_qt_binding
 bg=orange
@@ -245,10 +246,10 @@ bg=orange
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1400</x>
-      <y>390</y>
-      <w>150</w>
-      <h>30</h>
+      <x>312</x>
+      <y>528</y>
+      <w>120</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>/QAbstractItemModel/</panel_attributes>
     <additional_attributes/>
@@ -256,14 +257,19 @@ bg=orange
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>300</x>
-      <y>370</y>
-      <w>510</w>
-      <h>250</h>
+      <x>592</x>
+      <y>712</y>
+      <w>440</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes>ROSModel
 --
 //Represents the data as a QtModel. This enables automated updates of the View.
+- item_list:list
+- monitoring_proxy: rospy.ServiceProxy
+- host_proxy: rospy.ServiceProxy
+--
+__init__()
 + data(QModelIndex index, int role ):QVariant
 + ItemFlags flags(const QModelIndex index):ItemFlags
 + headerData(int section,Orientation orientation, int role):QVariant
@@ -275,132 +281,132 @@ bg=orange
 + transform_data(AbstractItem)
 + transform_data(statistics)
 + transform_data(statistics/hosts)
-+ transform_data(statistics/rated)
---
-- item_list:list
-- monitoring_proxy: rospy.ServiceProxy
-- host_proxy: rospy.ServiceProxy</panel_attributes>
++ transform_data(statistics/rated)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>620</x>
-      <y>90</y>
-      <w>260</w>
-      <h>130</h>
+      <x>840</x>
+      <y>240</y>
+      <w>208</w>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>HostItem
+    <panel_attributes>TopicItem
 --
-//A HostItem represents a host with all its data.</panel_attributes>
+//A HostItem represents a host with all its data.
++ __init__(list, parent=None)
++ execute_action(action: RemoteAction)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>620</x>
-      <y>230</y>
-      <w>260</w>
-      <h>130</h>
+      <x>840</x>
+      <y>600</y>
+      <w>208</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>NodeItem
 --
 // A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
-[missing dependency to the nodes]</panel_attributes>
++ __init__(list, parent=None)
++ execute_action(action: RemoteAction)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>950</x>
-      <y>90</y>
-      <w>260</w>
-      <h>250</h>
+      <x>1136</x>
+      <y>240</y>
+      <w>208</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>/AbstractItem/
 --
 //Provides a simplified interface to acces the data of an 
+data_list:list&lt;TimeStampedData&gt;
+child_items:list&lt;AbstractItem&gt;
+parent_item: AbstractItem
+--
 __init__(list, parent=None)
-+ append_child(child:AbstractItem)
-/+ append_data()/
++ append_child(child: AbstractItem)
++ append_data(data: TimeStampedData)
 + get_child(int row)
-/+ latest_data()/
++ get_latest_data()
 + parent()
 + get_oldest_item()
 + delete_oldest_item()
-/+ execute_action(action:RemoteAction)/
---
-data_list:list
-child_items:list
-parent_item: AbstractItem</panel_attributes>
+/+ execute_action(action: RemoteAction)/
+
++ __init__(list, parent=None)
++ execute_action(action: RemoteAction)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>850</x>
-      <y>130</y>
-      <w>120</w>
-      <h>50</h>
+      <x>1024</x>
+      <y>272</y>
+      <w>128</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>100;30;30;30</additional_attributes>
+    <additional_attributes>112;24;24;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>850</x>
-      <y>260</y>
-      <w>120</w>
-      <h>50</h>
+      <x>1024</x>
+      <y>320</y>
+      <w>128</w>
+      <h>344</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>100;30;30;30</additional_attributes>
+    <additional_attributes>112;24;80;24;80;328;24;328</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>300</x>
-      <y>80</y>
-      <w>260</w>
-      <h>260</h>
+      <x>576</x>
+      <y>240</y>
+      <w>208</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes>BufferThread
 --
 //This thrad should buffer the incoming data and regulary update the model and hence also the model.
-[missing dependency to 
-publish/subscribe?]
-+ __init__()
-+ start()
-+ update_model()
-+ add_statistics_item(
---
 - info_lock:threading.Lock
 - model_lock:threading.Lock
 - model:ROSModel
-- info:None
+- info:object
 - timer:rospy.Timer
-- buffer:list</panel_attributes>
+- buffer:list&lt;TimeStampedData&gt;
+--
++ __init__()
++ start()
++ update_model()
++ add_buffer_item(object)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>370</x>
-      <y>310</y>
-      <w>50</w>
-      <h>80</h>
+      <x>648</x>
+      <y>448</y>
+      <w>40</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;60;30;30</additional_attributes>
+    <additional_attributes>24;264;24;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1400</x>
-      <y>250</y>
-      <w>150</w>
-      <h>30</h>
+      <x>200</x>
+      <y>328</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Thread</panel_attributes>
     <additional_attributes/>
@@ -408,89 +414,89 @@ publish/subscribe?]
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>370</x>
-      <y>0</y>
-      <w>1050</w>
-      <h>280</h>
+      <x>216</x>
+      <y>176</y>
+      <w>456</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;80;30;30;970;30;970;260;1030;260</additional_attributes>
+    <additional_attributes>440;64;440;56;440;24;24;24;24;152</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>300</x>
-      <y>590</y>
-      <w>60</w>
-      <h>320</h>
+      <x>592</x>
+      <y>400</y>
+      <w>1128</w>
+      <h>760</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;300;40;300</additional_attributes>
+    <additional_attributes>24;544;24;744;1056;744;1056;24;1112;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>290</x>
-      <y>590</y>
-      <w>70</w>
-      <h>620</h>
+      <x>584</x>
+      <y>920</y>
+      <w>1128</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;600;50;600</additional_attributes>
+    <additional_attributes>24;24;24;232;1048;232;1048;64;1120;32</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>280</x>
-      <y>590</y>
-      <w>80</w>
-      <h>1130</h>
+      <x>576</x>
+      <y>920</y>
+      <w>1136</w>
+      <h>256</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;1110;60;1110</additional_attributes>
+    <additional_attributes>24;24;24;240;1128;248</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>780</x>
-      <y>290</y>
-      <w>190</w>
-      <h>140</h>
+      <x>1008</x>
+      <y>400</y>
+      <w>144</w>
+      <h>360</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>170;30;130;30;130;120;30;120</additional_attributes>
+    <additional_attributes>128;24;72;24;72;304;72;344;24;344</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>520</x>
-      <y>110</y>
-      <w>120</w>
-      <h>280</h>
+      <x>752</x>
+      <y>256</y>
+      <w>104</w>
+      <h>472</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>100;50;60;50;60;260</additional_attributes>
+    <additional_attributes>88;40;48;40;48;456</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>540</x>
-      <y>240</y>
-      <w>110</w>
-      <h>150</h>
+      <x>776</x>
+      <y>608</y>
+      <w>94</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>80;50;60;50;60;130</additional_attributes>
+    <additional_attributes>64;40;48;40;48;104</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1400</x>
-      <y>750</y>
-      <w>100</w>
-      <h>40</h>
+      <x>208</x>
+      <y>672</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Plugin
 fg=black
@@ -500,10 +506,10 @@ fg=black
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>1380</x>
-      <y>110</y>
-      <w>350</w>
-      <h>190</h>
+      <x>184</x>
+      <y>296</y>
+      <w>216</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>threading
 bg=orange
@@ -515,10 +521,10 @@ bg=orange
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1180</x>
-      <y>480</y>
-      <w>120</w>
-      <h>80</h>
+      <x>1256</x>
+      <y>488</y>
+      <w>96</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
 RemoteAction
@@ -531,30 +537,228 @@ e_action_restart</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>380</x>
-      <y>380</y>
-      <w>1040</w>
-      <h>280</h>
+      <x>400</x>
+      <y>528</y>
+      <w>296</w>
+      <h>472</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>1020;30;960;30;960;260;30;260;30;240</additional_attributes>
+    <additional_attributes>24;24;24;456;280;456;280;416</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1120</x>
+      <y>560</y>
+      <w>248</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>TimeStampedData
+--
+- data: object
+- time_stamp: datetime.time
+--
+__init__(date: object, time_stamp: datetime.time)
+get_time_stamp()
+get_data()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>840</x>
+      <y>360</y>
+      <w>208</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>ConnectionItem
+--
+//A HostItem represents a host with all its data.
++ __init__(list, parent=None)
++ execute_action(action: RemoteAction)</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>840</x>
       <y>480</y>
-      <w>310</w>
-      <h>120</h>
+      <w>208</w>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>TimeStampedData
+    <panel_attributes>HostItem
 --
-__init__(date:object, time_stamp:datetime.time)
-get_time_stamp()
-get_data()
---
-- data:object
-- time_stamp:datetime.time</panel_attributes>
+//A HostItem represents a host with all its data.
++ __init__(list, parent=None)
++ execute_action(action: RemoteAction)</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>768</x>
+      <y>520</y>
+      <w>94</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>72;40;48;40;48;192</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1024</x>
+      <y>304</y>
+      <w>128</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>112;24;72;24;72;216;24;216</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>760</x>
+      <y>376</y>
+      <w>96</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>80;40;48;40;48;336</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>184</x>
+      <y>1064</y>
+      <w>328</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>Nachrichtentypen als Klasssen!!!
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>184</x>
+      <y>776</y>
+      <w>296</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>std_msgs
+bg=orange
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1024</x>
+      <y>288</y>
+      <w>128</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>112;24;56;24;56;120;24;120</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1248</x>
+      <y>432</y>
+      <w>94</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>48;56;48;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1144</x>
+      <y>432</y>
+      <w>94</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>48;128;48;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>288</x>
+      <y>328</y>
+      <w>72</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Lock</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>272</x>
+      <y>248</y>
+      <w>320</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>304;40;48;40;48;80</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>384</x>
+      <y>800</y>
+      <w>224</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>24;40;208;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>384</x>
+      <y>816</y>
+      <w>224</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>24;40;208;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>384</x>
+      <y>832</y>
+      <w>224</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>24;40;208;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>664</x>
+      <y>448</y>
+      <w>472</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>456;144;48;144;48;24</additional_attributes>
   </element>
 </diagram>
