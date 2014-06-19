@@ -21,29 +21,20 @@
 \end{figure}
 
 \subsection{BufferThread}
-This thread should buffer the incoming data and regulary update the model and
-hence also the model.
+This thread should buffer the incoming data from the topics and regulary update the model.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item private buffer\_lock: threading.Lock\\
-  ..
-  \item private model: ROSModel\\
-  ..
-  \item private timer: rospy.Timer\\
-  ..
-  \item private buffer: list<TimeStampedData>\\
-  ..
+  \item \textit{private buffer\_lock: threading.Lock} the lock that guards the buffer from getting modified parallely
+  \item \textit{private model: ROSModel} the model of the hosts/nodes/topics/connections 
+  \item \textit{private timer: rospy.Timer} ROS Timer which regularily calls update\_model(). Btw Micha ist ...
+  \item \textit{private buffer: list<TimeStampedData>} buffers the tons of incomming data by simply storing it here together with a timestamp for later usage
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-  \item public \_\_init\_\_()\\
-  ..
-  \item public start()\\
-  ..
-  \item public update\_model()\\
-  ..
-  \item public add\_buffer\_ite(object)\\
-  ..
+%  \item \textit{public \_\_init\_\_()} 
+  \item \textit{public start()} starts the thread and also the timer for regulary updates of the model
+  \item \textit{public update\_model()} starts the update of the model. Will be called regulary by the timer.
+  \item \textit{public add\_buffer\_item(object)} adds an item to the buffer list. Will be called whenever data from the topics is avaiable.
 \end{itemize}
 
 \subsection{ROSModel}
