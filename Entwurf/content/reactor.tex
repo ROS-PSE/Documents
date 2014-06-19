@@ -19,19 +19,40 @@
 \subsubsection{Methods}
 \begin{itemize}
 	\item public addConstraint(Constraint) \\
-	adds an constraint to this list
+		adds an constraint to this list
 	\item public setStatistic(RatedStatistic) \\
-	sets the Statistic to use. Should only be needed on initialisation
+		sets the Statistic to use. Should only be needed on initialisation
 	\item public evaluateConstraints() \\
-	evaluates every constraint
+		evaluates every constraint
 	\item public executeReactions() \\
-	checks if there are any new reactions to do and executes them.
+		checks if there are any new reactions to do and executes them.
 	\item private reactToConstraint(Constraint) \\
-	executes an single Reaction and updates the attributes of the Constraint
+		executes an single Reaction and updates the attributes of the Constraint
+\end{itemize}
+
+
+\subsection{RatedStatistic}
+A database which contains the current state of all rated statistics.
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private statistic\_dict: dict\{seuid: string - dict\{statistic\_type: string - tuple\{outcome: Outcome, timestamp: date.timestamp\}\}\} \\
+		a dictionary containing all rated statistic information with their outcome and an timestamp when they got added / updated to the dictionary.
+	\item private timeout: int\\
+		the timeout after which an item in ratedstatistic is declared too old and should be removed from the dict.
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item  public clean\_old\_statistic()\\
+		checks the complete dictionary for statistics older than x seconds and removes the too old ones.
+	\item public callback\_rated\_statistic(msg: MessageType)\\
+		callback for incoming rated statistics. adds them to the dictionary or removes items from the dictionary if the rated statistic says that its within bounds again. 
+	\item public Outcome get\_outcome(seuid: string, statistic\_type: string)\\
+		returns the outcome of the specific seuid and statistic\_type.
 \end{itemize}
 
 \subsection{Constraint }
 TODO: Description
+
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -75,11 +96,11 @@ Contains an actual constraint.
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private  String name\\
+	\item private  string name\\
 	contains the name of the statistic data
 	\item private  Outcome outcome\\
 	contains the outcome needed for this constraint to be true
-	\item private  String seuid\\
+	\item private  string seuid\\
 	contains the unique identifier of the corresponding StatisticEntity
 \end{itemize}
 \subsubsection{Methods}
@@ -146,4 +167,96 @@ TODO: Description
 	data value is unknown
 	\item out\_of\_bounds\\
 	data value is either too high or too low
+\end{itemize}
+
+
+\subsection{Reaction}
+	Abstract Reaction to an Constraint
+\subsubsection{Attributes}
+\begin{itemize}
+	\item host\_id: string \\
+		contains the host on which the node is run on.
+	\item node\_id: string \\
+		the id of the node the reaction is ment to act upon. 
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public \_\_init\_\_(node\_id: string)
+		initializes the reaction. sets the node to execute the reaction on. finds the corresponding host to the given node.
+	\item public executeReaction()\\
+		executes the reaction as a service call to the HostStatistic Node.
+\end{itemize}
+
+
+\subsection{ReactionRun}
+	An Reaction which runs a command as action 
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private string[] command\_args
+	\\ contains the command as first entry, and its arguments as the next entries
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public \_\_init\_\_(node\_id: string, command\_args: string[])
+		initializes the reaction. set the command and its arguments to be executed.
+	\item public executeReaction()\\
+	\item private parseArguments()\\
+		parses the command\_args and changes placeholders to actual values. this method should be called only at initialization
+	\item 
+\end{itemize}
+
+
+\subsection{ReactionDefault}
+\subsubsection{attributes}
+\begin{itemize}
+	\item protected reactionType: ReactionDefaultType\\
+		containts the type this reaction is of.
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public \_\_init\_\_(node\_id: string, reactionType: string)\\
+		initializes the reaction. sets the reactiontype of this reaction.
+	\item public exececuteReaction()\\
+	\item private restartNode()\\
+		restarts the Node
+	\item private stopNode()\\
+		stops the Node
+	\item private publishOnRosout(verbosity: string)\\
+		publishes the cause of the reaction on rosout. publishes with the specified verbosity level 
+\end{itemize}
+
+
+\subsection{Enum ReactionDefaultType}
+\subsubsection{Types}
+\begin{itemize}
+	\item restart\\
+		reaction is a restart of an entity
+	\item stop\\
+		reaction is stopping an entity
+	\item output\\
+		reaction is publishing the reaction on rosout
+\end{itemize}
+
+
+\subsection{HostLookUp}
+Singleton. Contains a dictionary of all nodes which are on an host who has an HostStatisticNode running and the hosts they run on.
+\subsubsection{Attributes}
+\begin{itemize}
+	\item private node\_dict: dict\{node: string - host: string\} \\
+		Contains all nodes which are on an host who has an HostStatisticNode running. Host is the host the node runs on.
+	\item static HostLookUp: instance\\
+		the singleton instance
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item public string get\_host(node: string)\\
+		returns the host the node runs on
+	\item public add\_node(node: string, host: string)\\
+		adds an node - host tuple to the dictionary
+	\item get\_node\_list(host\_id: string)\\
+		returns all nodes of a specifid host
+	\item public remove\_node(node: string)\\
+		removes an node from the dictionary
+	\item public static HostLookUp get\_instance()\\
+		returns the instance of HostLookUp
 \end{itemize}
