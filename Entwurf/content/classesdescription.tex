@@ -44,54 +44,6 @@ Handles incoming information about malfunctioning nodes and reacts according to 
 
 
 
-
+\newpage
 % -----------------------------------------------------------------------------------
-\section{GUI}
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[scale=1.0]{./bilder/package_structure_gui.png}
-\caption{The package structure of the GUI}
-\label{The package structure of the GUI}
-\end{center}
-\end{figure}
-
-\mbox{}
-
-\subsection{Model}
-
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.0\linewidth]{./bilder/model.png}
-\caption{The model class diagram}
-\end{center}
-\end{figure}
-
-\subsubsection{BufferThread}
-This thread should buffer the incoming data and regulary update the model and
-hence also the model.
-\subsubsection{ROSModel}
-Represents the data as a QtModel. This enables automated updates of the View.
-\subsubsection{ItemInterface}
-Provides a unified interface to access the items of a model.
-\subsubsection{HostItem}
-A HostItem represents a host with all its data.
-\subsubsection{NodeItem}
- A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
-
-\subsection{View}
-
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=\linewidth]{./bilder/view.png}
-\caption{The view class diagram}
-\end{center}
-\end{figure}
-\subsubsection{OverviewPlugin}
-The class OverviewPlugin is the core of the graphical user interface, which
-contains most of the relevant information in a small and fancy area.
-\subsubsection{TreePlugin}
-TreePlugin is very simply and shows only the actual active hosts
-and nodes.
-\subsubsection{SelectionPlugin}
-A class which shows detailed information in a Tree-Layout about the currently
-selected host or node.
+\input{content/gui}
