@@ -41,116 +41,85 @@ This thread should buffer the incoming data from the topics and regulary update 
 Represents the data as a QtModel. This enables automated updates of the View.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item \textit{private item\_list: list}
-  ..
-  \item \textit{private monitoring\_proxy: rospy.ServiceProxy}
-  ..
-  \item \textit{private host\_proxy: rospy.ServiceProxy}
-  ..  
-  \item \textit{private model\_lock: threading.Lock}
-  ..
+ % \item \textit{private item\_list: list}
+  \item \textit{private log: list<TimeStampedData<list<string>>>} global log of all the events having occured in the past
+  \item \textit{private monitoring\_proxy: rospy.ServiceProxy} the proxy to the monitoring node for obtaining statistics and rated statistics of the past minutes. To be called only once when the GUI started and the MonitoringNode has been running for a while 
+  \item \textit{private host\_proxy: rospy.ServiceProxy} the proxy to a host for sending signals like stop or restart
+  \item \textit{private model\_lock: threading.Lock} protects the model from parallel modification
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-  \item \textit{public \_\_init\_\_()}
-  ..
-  \item \textit{public QVariant data(QModelIndex, int)}
-  ..
+%  \item \textit{public \_\_init\_\_()}
+  \item \textit{public object data(QModelIndex, int)}
   \item \textit{public ItemFlags flags(const QModelIndex)}
-  ..
-  \item \textit{public QVariant headerData(int, Orientation, int)}
-  ..
+  \item \textit{public object headerData(int, Orientation, int)}
   \item \textit{public QModelIndex index(int, int, QModelIndex)}
-  ..
   \item \textit{public QModelIndex parent(QModelIndex)}
-  ..
   \item \textit{public int rowCount(QModelIndex)}
-  ..
   \item \textit{public int columnCount(QModelIndex)}
-  ..
   \item \textit{public update\_model(data:list)}
-  ..
   \item \textit{public transform\_data(AbstractItem)}
-  ..
   \item \textit{public transform\_data(statistics)}
-  ..
   \item \textit{public transform\_data(statistics/host)}
-  ..
   \item \textit{public transform\_data(statistics/rated)}
-  ..
   \end{itemize}
 
 \subsection{AbstractItem}
 Provides a unified interface to access the items of a model.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item \textit{private data\_list: list<TimeStampedData>}
-  ..
-  \item \textit{private child\_items: list<AbstractItem>}
-  ..
-  \item \textit{private parent\_item: AbstractItem}
-  ..
+  \item \textit{private data\_list: list<TimeStampedData>} contains the data of the abstract item represented as TimeStampedItems so that the progress in time can be shown
+  \item \textit{private child\_items: list<AbstractItem>} the child of this item
+  \item \textit{private parent\_item: AbstractItem} the parent of this item
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-  \item \textit{public \_\_init(list, parent=None)\_\_}
-  ..
-  \item \textit{public append\_child(AbstractItem)}
-  ..
-  \item \textit{public append\_data(TimeStampedData)}
-  ..
-  \item \textit{public AbstractItem get\_child(int)}
-  ..
-  \item \textit{public TimeStampedData get\_latest\_data()}
-  ..
-  \item \textit{public AbstractItem parent()}
-  ..
-  \item \textit{public AbstractItem get\_oldest\_item()}
-  ..
-  \item \textit{public delete\_oldest\_item()}
-  ..
-  \item \textit{public abstract execute\_action(RemoteAction)}
-  ..  
+%  \item \textit{public \_\_init(list, parent=None)\_\_}
+   \item \textit{public append\_child(AbstractItem)} append a child to the list of childs
+  \item \textit{public append\_data(TimeStampedData)} append data to the data\_list of the AbstractItem
+  \item \textit{public AbstractItem get\_child(row: int)} return the child at the position row
+  \item \textit{public TimeStampedData get\_latest\_data()} return the latest data of the data\_list
+  \item \textit{public AbstractItem parent()} returns the parent of this or None if there is none (TODO:is that correct)
+  \item \textit{public AbstractItem get\_oldest\_item()} return the oldest data item in data\_list
+  \item \textit{public delete\_oldest\_item((age:int))} delets the oldest item in data\_list. Optional if age is set: if the age of the oldest data item is greater equal to the age definded it will be deleted
+  \item \textit{public abstract execute\_action(RemoteAction)} executes a action on the current item like stop or restart. Calls to this method should be redirected to the remote host on executed there.
 \end{itemize}
 
 \subsection{HostItem}
 A HostItem represents a host with all its data.
+The data\_list will contain TimeStampedData whereas the data is a dict containing ...
 \subsubsection{Methods}
 \begin{itemize}
-  \item \textit{public \_\_init(list, parent=None)\_\_}
-  ..
+%  \item \textit{public \_\_init(list, parent=None)\_\_}
   \item \textit{public execute\_action(RemoteAction)}
   ..
 \end{itemize}
 
 \subsection{NodeItem}
  A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
+ The data\_list will contain TimeStampedData whereas the data is a dict containing ...
 \subsubsection{Methods}
 \begin{itemize}
-  \item \textit{public \_\_init(list, parent=None)\_\_}
-  ..
+ % \item \textit{public \_\_init(list, parent=None)\_\_}
   \item \textit{public execute\_action(RemoteAction)}
-  ..
 \end{itemize}
 
 \subsection{TopicItem}
-..
+A ConnectionItem reprensents the connection between a publisher and a subscriber and the topic they are puglishing / listenening on.
+The data\_list will contain TimeStampedData whereas the data is a dict containing ...
 \subsubsection{Methods}
 \begin{itemize}
-  \item \textit{public \_\_init(list, parent=None)\_\_}
-  ..
-  \item \textit{public execute\_action(RemoteAction)}
-  ..
+%  \item \textit{public \_\_init(list, parent=None)\_\_}
+  \item \textit{public execute\_action(RemoteAction)} not senseful, throws an exception
 \end{itemize}
 
 \subsection{ConnectionItem}
  A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
+ The data\_list will contain TimeStampedData whereas the data is a dict containing ...
 \subsubsection{Methods}
 \begin{itemize}
-  \item \textit{public \_\_init(list, parent=None)\_\_}
-  ..
-  \item \textit{public execute\_action(RemoteAction)}
-  ..
+%  \item \textit{public \_\_init(list, parent=None)\_\_}
+  \item \textit{public execute\_action(RemoteAction)} not senseful, throws an exception
 \end{itemize}
 
 \subsection{TimeStampedData}

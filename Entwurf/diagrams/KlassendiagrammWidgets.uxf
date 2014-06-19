@@ -202,9 +202,9 @@ bg=orange
     <type>com.umlet.element.Package</type>
     <coordinates>
       <x>568</x>
-      <y>208</y>
+      <y>216</y>
       <w>848</w>
-      <h>744</h>
+      <h>840</h>
     </coordinates>
     <panel_attributes>model
 bg=orange</panel_attributes>
@@ -214,9 +214,9 @@ bg=orange</panel_attributes>
     <type>com.umlet.element.Package</type>
     <coordinates>
       <x>552</x>
-      <y>176</y>
+      <y>184</y>
       <w>1448</w>
-      <h>1096</h>
+      <h>1088</h>
     </coordinates>
     <panel_attributes>gui_widgets</panel_attributes>
     <additional_attributes/>
@@ -253,18 +253,20 @@ bg=orange
       <x>584</x>
       <y>664</y>
       <w>440</w>
-      <h>272</h>
+      <h>304</h>
     </coordinates>
     <panel_attributes>ROSModel
 --
 //Represents the data as a QtModel. This enables automated updates of the View.
-- item_list:list
+//- item_list:list
 - monitoring_proxy: rospy.ServiceProxy
 - host_proxy: rospy.ServiceProxy
 - model_lock:threading.Lock
+- log:list&lt;TimeStampedData&lt;list&lt;string&gt;&gt;&gt;
 --
 + __init__()
 + get_instace():ROSModel
++ get_log():list&lt;TimeStampedData&lt;list&lt;string&gt;&gt;&gt;
 + data(QModelIndex index, int role ):QVariant
 + ItemFlags flags(const QModelIndex index):ItemFlags
 + headerData(int section,Orientation orientation, int role):QVariant
@@ -276,7 +278,8 @@ bg=orange
 + transform_data(AbstractItem)
 + transform_data(statistics)
 + transform_data(statistics/hosts)
-+ transform_data(statistics/rated)</panel_attributes>
++ transform_data(statistics/rated)
++ proxy_action()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -323,11 +326,12 @@ bg=orange
 - data_list:list&lt;TimeStampedData&lt;dict&gt;&gt;
 - child_items:list&lt;AbstractItem&gt;
 - parent_item: AbstractItem
+- log:list&lt;TimeStampedData&lt;list&lt;string&gt;&gt;&gt;
 --
 + __init__(list, parent=None)
 + append_child(child: AbstractItem)
 + append_data(data: TimeStampedData)
-+ get_child(int row): AbstractItem
++ get_child(row: int): AbstractItem
 + get_latest_data(): TimeStampedData
 + parent(): AbstractItem
 + get_oldest_item(): AbstractItem
@@ -418,10 +422,10 @@ bg=orange
       <x>1392</x>
       <y>480</y>
       <w>304</w>
-      <h>432</h>
+      <h>440</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;416;256;416;256;24;288;24</additional_attributes>
+    <additional_attributes>24;424;256;416;256;24;288;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -429,10 +433,10 @@ bg=orange
       <x>1392</x>
       <y>880</y>
       <w>304</w>
-      <h>40</h>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;24;288;24</additional_attributes>
+    <additional_attributes>24;32;288;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -443,7 +447,7 @@ bg=orange
       <h>328</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;24;256;24;256;312;288;312</additional_attributes>
+    <additional_attributes>24;32;256;24;256;312;288;312</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -617,18 +621,6 @@ e_action_restart</panel_attributes>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
     <additional_attributes>80;40;48;40;48;304</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>216</x>
-      <y>1000</y>
-      <w>184</w>
-      <h>168</h>
-    </coordinates>
-    <panel_attributes>Nachrichtentypen als Klasssen!!!
-</panel_attributes>
-    <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
