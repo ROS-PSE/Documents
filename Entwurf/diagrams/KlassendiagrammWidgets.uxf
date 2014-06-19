@@ -257,20 +257,25 @@ bg=orange
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>300</x>
-      <y>380</y>
+      <y>370</y>
       <w>510</w>
-      <h>220</h>
+      <h>250</h>
     </coordinates>
     <panel_attributes>ROSModel
 --
 //Represents the data as a QtModel. This enables automated updates of the View.
-data(QModelIndex index, int role ):QVariant
-ItemFlags flags(const QModelIndex &amp;index):ItemFlags
-headerData(int section,Orientation orientation, int role):QVariant
-index(int row, int column, QModelIndex &amp;parent = QModelIndex()):QModelIndex
-parent(QModelIndex index):QModelIndex
-rowCount(QModelIndex parent):int
-columnCount(QModelIndex parent):int
++ data(QModelIndex index, int role ):QVariant
++ ItemFlags flags(const QModelIndex index):ItemFlags
++ headerData(int section,Orientation orientation, int role):QVariant
++ index(int row, int column, QModelIndex parent):QModelIndex
++ parent(QModelIndex index):QModelIndex
++ rowCount(QModelIndex parent):int
++ columnCount(QModelIndex parent):int
++ update_model(data:list)
++ transform_data(AbstractItem)
++ transform_data(statistics)
++ transform_data(statistics/hosts)
++ transform_data(statistics/rated)
 --
 - item_list:list
 - monitoring_proxy: rospy.ServiceProxy
@@ -356,9 +361,9 @@ parent_item: AbstractItem</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>300</x>
-      <y>90</y>
+      <y>80</y>
       <w>260</w>
-      <h>240</h>
+      <h>260</h>
     </coordinates>
     <panel_attributes>BufferThread
 --
@@ -368,6 +373,7 @@ publish/subscribe?]
 + __init__()
 + start()
 + update_model()
++ add_statistics_item(
 --
 - info_lock:threading.Lock
 - model_lock:threading.Lock
@@ -381,12 +387,12 @@ publish/subscribe?]
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>370</x>
-      <y>300</y>
+      <y>310</y>
       <w>50</w>
-      <h>100</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;80;30;30</additional_attributes>
+    <additional_attributes>30;60;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -408,40 +414,40 @@ publish/subscribe?]
       <h>280</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;90;30;30;970;30;970;260;1030;260</additional_attributes>
+    <additional_attributes>30;80;30;30;970;30;970;260;1030;260</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>300</x>
-      <y>570</y>
+      <y>590</y>
       <w>60</w>
-      <h>340</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;320;40;320</additional_attributes>
+    <additional_attributes>30;30;30;300;40;300</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>290</x>
-      <y>570</y>
+      <y>590</y>
       <w>70</w>
-      <h>640</h>
+      <h>620</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;620;50;620</additional_attributes>
+    <additional_attributes>30;30;30;600;50;600</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>280</x>
-      <y>570</y>
+      <y>590</y>
       <w>80</w>
-      <h>1150</h>
+      <h>1130</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;1130;60;1130</additional_attributes>
+    <additional_attributes>30;30;30;1110;60;1110</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -449,32 +455,34 @@ publish/subscribe?]
       <x>780</x>
       <y>290</y>
       <w>190</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>170;30;130;30;130;100;30;100</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>550</x>
-      <y>130</y>
-      <w>90</w>
-      <h>270</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>70;30;30;30;30;250</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>570</x>
-      <y>260</y>
-      <w>70</w>
       <h>140</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>50;30;30;30;30;120</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>170;30;130;30;130;120;30;120</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>520</x>
+      <y>110</y>
+      <w>120</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>100;50;60;50;60;260</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>540</x>
+      <y>240</y>
+      <w>110</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>80;50;60;50;60;130</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -493,9 +501,9 @@ fg=black
     <type>com.umlet.element.Package</type>
     <coordinates>
       <x>1380</x>
-      <y>210</y>
+      <y>110</y>
       <w>350</w>
-      <h>90</h>
+      <h>190</h>
     </coordinates>
     <panel_attributes>threading
 bg=orange
@@ -529,7 +537,7 @@ e_action_restart</panel_attributes>
       <h>280</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>1020;30;960;30;960;260;30;260;30;220</additional_attributes>
+    <additional_attributes>1020;30;960;30;960;260;30;260;30;240</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
