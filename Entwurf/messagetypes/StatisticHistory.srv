@@ -1,0 +1,16 @@
+# get all statistics where timestamp in ms is > than timestamp
+int32 timestamp
+---
+# each statistic has its own rated statistic with the time stamp at which the timestamp arrived at the monitoring node
+
+HostStatistics[] host_statistics
+RatedStatistics[] rated_host_statistics
+int32[] hoststatistics_timestamp
+
+NodeStatistics[] nodestatistics
+RatedStatistics[] ratednodestatistics
+int32[] nodestatistics_timestamp
+
+TopicStatistics[] topic_statistics
+RatedStatistics[] rated_topic_statistics
+int32[] nodestatistics_timestamp
