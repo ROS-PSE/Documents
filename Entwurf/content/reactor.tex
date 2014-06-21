@@ -11,7 +11,7 @@
 \begin{itemize}
 	\item private  Constraint constraint[]\\
 	contains a list of all constraints
-	\item private  RatedStatistic rated\_statistic\\
+	\item private  RatedStatisticStorage rated\_statistic\_storage\\
 	contains all incoming rated statistic
 	\item private  int global\_constraint\_level\\
 	only constraints with an constraint\_level <= current\_constraint level get evaluated
@@ -20,7 +20,7 @@
 \begin{itemize}
 	\item public addConstraint(Constraint) \\
 		adds an constraint to this list
-	\item public setStatistic(RatedStatistic) \\
+	\item public setStatistic(RatedStatisticStorage) \\
 		sets the Statistic to use. Should only be needed on initialisation
 	\item public evaluateConstraints() \\
 		evaluates every constraint
@@ -31,7 +31,7 @@
 \end{itemize}
 
 
-\subsection{RatedStatistic}
+\subsection{RatedStatisticStorage}
 A database which contains the current state of all rated statistics.
 \subsubsection{Attributes}
 \begin{itemize}
@@ -43,8 +43,8 @@ A database which contains the current state of all rated statistics.
 \subsubsection{Methods}
 \begin{itemize}
 	\item  public clean\_old\_statistic()\\
-		checks the complete dictionary for statistics older than x seconds and removes the too old ones.
-	\item public callback\_rated\_statistic(msg: MessageType)\\
+		checks the complete dictionary for statistics older than timeout seconds and removes them.
+	\item public callback\_rated\_statistic(msg: RatedStatistics)\\
 		callback for incoming rated statistics. adds them to the dictionary or removes items from the dictionary if the rated statistic says that its within bounds again. 
 	\item public Outcome get\_outcome(seuid: string, statistic\_type: string)\\
 		returns the outcome of the specific seuid and statistic\_type.
@@ -75,7 +75,7 @@ TODO: Description
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public evaluateConstraint(RatedStatistic) \\
+	\item public evaluateConstraint(RatedStatisticStorage) \\
 	evaluates this constraint and sets the attributes according to the result of the evaluation
 \end{itemize}
 
@@ -86,8 +86,8 @@ TODO: Description
 \subsubsection{Attributes}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public abstract boolean evaluateConstraint(RatedStatistic)\\
-	evaluates if this constraint, given the available RatedStatistic, is true. 
+	\item public abstract boolean evaluateConstraint(RatedStatisticStorage)\\
+	evaluates if this constraint, given the available RatedStatisticStorage, is true. 
 \end{itemize}		
 
 
@@ -105,8 +105,8 @@ Contains an actual constraint.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public abstract boolean evaluateConstraint(RatedStatistic)\\
-	returns true if this constrain is true for the RatedStatistic
+	\item public abstract boolean evaluateConstraint(RatedStatisticStorage)\\
+	returns true if this constrain is true for the RatedStatisticStorage
 \end{itemize}
 
 
@@ -120,7 +120,7 @@ TODO: Description
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public boolean evaluateConstraint(RatedStatistic)\\
+	\item public boolean evaluateConstraint(RatedStatisticStorage)\\
 	returns true if the evaluation of both constains returns true
 \end{itemize}
 
@@ -135,7 +135,7 @@ TODO: Description
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public boolean evaluateConstraint(RatedStatistic)\\
+	\item public boolean evaluateConstraint(RatedStatisticStorage)\\
 	returns true if the evaluation of at least one constraint returns true
 \end{itemize}
 
@@ -150,7 +150,7 @@ TODO: Description
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public boolean evaluateConstraint(RatedStatistic)\\
+	\item public boolean evaluateConstraint(RatedStatisticStorage)\\
 	returns true if the evaluation of the constraint returns false
 \end{itemize}
 
