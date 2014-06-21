@@ -1,0 +1,14 @@
+#ServiceType: reaction
+#request fields
+# ip of the affected host
+string ip
+# identifier of the affected node
+string nodeID
+# action  [restart, stop, command]
+string action
+# command-line arguments
+string[] args
+---
+#response
+# message returned upon completion
+string msg
