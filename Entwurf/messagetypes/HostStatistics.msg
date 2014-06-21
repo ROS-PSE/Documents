@@ -1,9 +1,7 @@
-MessageType: /metadata/host/
-====
-\# ip of the host  
+# ip of the host  
 string host
 
-\# cpu  
+# cpu  
 float32 cpu_temp  
 float32 cpu_temp_avg
 float32 cpu_temp_stddev
@@ -25,7 +23,7 @@ float32[] cpu_temp_core_stddev
 float32[] cpu_temp_core_max
 
 
-\# gpu
+# gpu
 float32[] gpu_temp
 float32[] gpu_temp_avg
 float32[] gpu_temp_stddev
@@ -37,13 +35,13 @@ float32[] gpu_usage_stddev
 float32[] gpu_usage_max
  
 
-\# ram  
+# ram  
 float32 ram_usage  
 float32 ram_usage_avg
 float32 ram_usage_stddev
 float32 ram_usage_max
   
-\# network load of the host  
+# network load of the host  
 
 int32 network_load 
 int32 network_load_avg
@@ -62,10 +60,10 @@ int32 bandwith_max
 
 time uptime
 
-\# drive  
+# drive  
 string[] drive_name  
 int32[] drive_free_space  
   
-\# input output operations on a specific drive in the last x seconds  
+# input output operations on a specific drive in the last x seconds  
 int32[] drive_read  
 int32[] drive_write  
