@@ -5,12 +5,12 @@ int32 timestamp
 
 HostStatistics[] host_statistics
 RatedStatistics[] rated_host_statistics
-int32[] hoststatistics_timestamp
+int32[] host_statistics_timestamp
 
-NodeStatistics[] nodestatistics
-RatedStatistics[] ratednodestatistics
-int32[] nodestatistics_timestamp
+NodeStatistics[] node_statistics
+RatedStatistics[] rated_node_statistics
+int32[] node_statistics_timestamp
 
 TopicStatistics[] topic_statistics
 RatedStatistics[] rated_topic_statistics
-int32[] nodestatistics_timestamp
+int32[] topic_statistics_timestamp
