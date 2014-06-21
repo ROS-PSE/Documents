@@ -81,16 +81,16 @@ see ros</panel_attributes>
 MetadataStorage
 --
 // Datastructure to store Packages by key and timestamp
-- storage: dict(string, dict(int, Metadata[]))
+- storage: dict(string, dict(int, StorageContainer[]))
 // Duration in seconds for data to be stored
 - duration: int
 --
 // Seletes Metadata exceeding the duration to store
 - cleanUp(): void
 // Stores a given Metadata
-+ store(Metadata): boolean
++ store(StorageContainer): boolean
 // Returns all Metadata packages for the given connection/host of the given amount of time.
-+ get(string, int): Metadata[]
++ get(string, int): StorageContainer[]
 // Clears the whole storage
 + clear(): boolean</panel_attributes>
     <additional_attributes/>
@@ -98,8 +98,8 @@ MetadataStorage
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>840</x>
-      <y>150</y>
+      <x>820</x>
+      <y>280</y>
       <w>220</w>
       <h>90</h>
     </coordinates>
@@ -120,11 +120,11 @@ Metadata
     <coordinates>
       <x>750</x>
       <y>140</y>
-      <w>110</w>
+      <w>90</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>90;30;30;30</additional_attributes>
+    <additional_attributes>70;30;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -210,18 +210,18 @@ ComparisonResult
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>480</x>
-      <y>210</y>
-      <w>390</w>
-      <h>150</h>
+      <y>310</y>
+      <w>360</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>370;30;370;130;30;130</additional_attributes>
+    <additional_attributes>340;30;340;30;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>820</x>
-      <y>390</y>
+      <y>420</y>
       <w>140</w>
       <h>100</h>
     </coordinates>
@@ -239,12 +239,12 @@ MetadataTuple
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>850</x>
-      <y>210</y>
+      <y>340</y>
       <w>50</w>
-      <h>200</h>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;180</additional_attributes>
+    <additional_attributes>30;30;30;80</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -326,5 +326,26 @@ see ros</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>30;80;100;80;100;30;160;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>820</x>
+      <y>110</y>
+      <w>160</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>// Wraps Metadata in raw and rated form with an identifier and a timestamp. Object to be returned on request by the GUI model.
+StorageContainer
+--
+// Time when the data came from the subscriber
++ timestamp: int
+// Host/Node/Connection identifier
++ identifier: string
+// The data as it reaches the subscriber from nodes and hosts.
++ data_raw: MsgTypeRaw
+// The data like it would be published after being rated.
++ data_rated: MsgTypeRatedSingle</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
