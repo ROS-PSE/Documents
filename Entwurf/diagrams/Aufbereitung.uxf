@@ -72,9 +72,9 @@ see ros</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>580</x>
-      <y>110</y>
-      <w>200</w>
+      <x>540</x>
+      <y>140</y>
+      <w>260</w>
       <h>140</h>
     </coordinates>
     <panel_attributes>// Saves recieved metadata packages for a given period of time and can provide them on request.
@@ -98,8 +98,8 @@ MetadataStorage
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>820</x>
-      <y>280</y>
+      <x>840</x>
+      <y>320</y>
       <w>220</w>
       <h>90</h>
     </coordinates>
@@ -118,8 +118,8 @@ Metadata
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>750</x>
-      <y>140</y>
+      <x>770</x>
+      <y>150</y>
       <w>90</w>
       <h>50</h>
     </coordinates>
@@ -130,7 +130,7 @@ Metadata
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>540</x>
-      <y>420</y>
+      <y>460</y>
       <w>220</w>
       <h>90</h>
     </coordinates>
@@ -161,8 +161,8 @@ SpecificationHandler
 --
 // Loads the specifications from configuration files into Specification objects and stores them
 - loadSpecifications(): void
-// Compares a given Metadata object with a given Specification object regarding all available fields. Returns a ComparisonResult object wrapping potential divergences.
-+ compare(Metadata, Specification): ComparisonResult</panel_attributes>
+// Compares a given Metadata object with a given Specification object regarding all available fields. Returns a RatedStatistics object wrapping potential divergences.
++ compare(Metadata, Specification): RatedStatistics</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -171,11 +171,11 @@ SpecificationHandler
       <x>480</x>
       <y>350</y>
       <w>210</w>
-      <h>90</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1= </panel_attributes>
-    <additional_attributes>190;70;190;30;30;30</additional_attributes>
+    <additional_attributes>190;110;190;30;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -192,18 +192,24 @@ m1= </panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>290</x>
+      <x>270</x>
       <y>460</y>
-      <w>200</w>
-      <h>70</h>
+      <w>240</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>// Wraps the result of the comparison between the actual metadata and the specificaton.
-ComparisonResult
+RatedStatistics
 --
-// Identifies the connection or the host
-+ ident: string
-// Contains an dictionaries with objects wrapping actual value, specification value and violation level
-+ data[dict(string, object)]</panel_attributes>
+// Identifies the node/host/connection
++ seuid: string
+// The metadata that was out of bounds
++ metatype: string[]
+// The actual values
++ actual: string[]
+// The expected values
++ expected: string[]
+// State of the metadata from the node/host/connection : state: { 0 = high ; 1 = low ; 2 = unknown}
++ state: int[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -211,17 +217,17 @@ ComparisonResult
     <coordinates>
       <x>480</x>
       <y>310</y>
-      <w>360</w>
+      <w>380</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>340;30;340;30;30;30</additional_attributes>
+    <additional_attributes>360;30;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>820</x>
-      <y>420</y>
+      <x>840</x>
+      <y>460</y>
       <w>140</w>
       <h>100</h>
     </coordinates>
@@ -238,8 +244,8 @@ MetadataTuple
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>850</x>
-      <y>340</y>
+      <x>870</x>
+      <y>380</y>
       <w>50</w>
       <h>100</h>
     </coordinates>
@@ -250,12 +256,12 @@ MetadataTuple
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>730</x>
-      <y>410</y>
-      <w>110</w>
+      <y>450</y>
+      <w>130</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;30;90;30</additional_attributes>
+    <additional_attributes>30;30;110;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -273,11 +279,11 @@ MetadataTuple
     <coordinates>
       <x>480</x>
       <y>150</y>
-      <w>120</w>
+      <w>80</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>100;30;30;30</additional_attributes>
+    <additional_attributes>60;30;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -330,9 +336,9 @@ see ros</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>820</x>
-      <y>110</y>
-      <w>160</w>
+      <x>840</x>
+      <y>140</y>
+      <w>240</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>// Wraps Metadata in raw and rated form with an identifier and a timestamp. Object to be returned on request by the GUI model.
@@ -343,9 +349,9 @@ StorageContainer
 // Host/Node/Connection identifier
 + identifier: string
 // The data as it reaches the subscriber from nodes and hosts.
-+ data_raw: MsgTypeRaw
++ data_raw: object
 // The data like it would be published after being rated.
-+ data_rated: MsgTypeRatedSingle</panel_attributes>
++ data_rated: object</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

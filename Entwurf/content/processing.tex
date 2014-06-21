@@ -25,7 +25,7 @@ Saves recieved metadata packages for a given period of time and can provide them
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private  dict(string, dict(int, Metadata[])) storage\\
+	\item private  dict(string, dict(int, StorageContainer[])) storage\\
 	Datastructure to store Packages by key and timestamp
 	\item private  int duration\\
 	Duration in seconds for data to be stored
@@ -34,12 +34,28 @@ Saves recieved metadata packages for a given period of time and can provide them
 \begin{itemize}
 	\item private  void cleanUp()\\
 	Seletes Metadata exceeding the duration to store
-	\item public  boolean store(Metadata)\\
+	\item public  boolean store(StorageContainer)\\
 	Stores a given Metadata
-	\item public  Metadata[] get(string, int)\\
+	\item public  StorageContainer[] get(string, int)\\
 	Returns all Metadata packages for the given connection/host of the given amount of time.
 	\item public  boolean clear()\\
 	Clears the whole storage
+\end{itemize}
+
+
+\subsection{StorageContainer}
+Wraps Metadata in raw and rated form with an identifier and a timestamp. Object to be returned on request by the GUI model.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item public  int timestamp\\
+	Time when the data came from the subscriber
+	\item public  string identifier\\
+	Host/Node/Connection identifier
+	\item public  object data\_raw\\
+	The data as it reaches the subscriber from nodes and hosts.
+	\item public  object data\_rated\\
+	The data like it would be published after being rated.
 \end{itemize}
 
 
@@ -89,20 +105,26 @@ Loads the specifications from the parameter server and compares them to the actu
 \begin{itemize}
 	\item private  void loadSpecifications()\\
 	Loads the specifications from configuration files into Specification objects and stores them
-	\item public  ComparisonResult compare(Metadata, Specification)\\
-	Compares a given Metadata object with a given Specification object regarding all available fields. Returns a ComparisonResult object wrapping potential divergences.
+	\item public  RatedStatistics compare(Metadata, Specification)\\
+	Compares a given Metadata object with a given Specification object regarding all available fields. Returns a RatedStatistics object wrapping potential divergences.
 \end{itemize}
 
 
-\subsection{ComparisonResult}
+\subsection{RatedStatistics}
 Wraps the result of the comparison between the actual metadata and the specificaton.
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item public  string ident\\
-	Identifies the connection or the host
-	\item public  data[dict(string, object)] \\
-	Contains an dictionaries with objects wrapping actual value, specification value and violation level
+	\item public  string seuid\\
+	Identifies the node/host/connection
+	\item public  string[] metatype\\
+	The metadata that was out of bounds
+	\item public  string[] actual\\
+	The actual values
+	\item public  string[] expected\\
+	The expected values
+	\item public  int[] state\\
+	State of the metadata from the node/host/connection : state: { 0 = high ; 1 = low ; 2 = unknown}
 \end{itemize}
 
 
