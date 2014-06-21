@@ -1,16 +1,13 @@
 # get all statistics where timestamp in ms is > than timestamp
-int32 timestamp
+time timestamp
 ---
-# each statistic has its own rated statistic with the time stamp at which the timestamp arrived at the monitoring node
+# each statistic has its own rated statistic. timestamps can be found at the time windows of each statistic
 
 HostStatistics[] host_statistics
 RatedStatistics[] rated_host_statistics
-int32[] host_statistics_timestamp
 
 NodeStatistics[] node_statistics
 RatedStatistics[] rated_node_statistics
-int32[] node_statistics_timestamp
 
 TopicStatistics[] topic_statistics
 RatedStatistics[] rated_topic_statistics
-int32[] topic_statistics_timestamp
