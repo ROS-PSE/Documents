@@ -9,13 +9,13 @@ Main Class wrapping the processing functionality.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item private Metadata receive_data()\\
+	\item private Metadata receive\_data()\\
 	Receives data incoming from the Subscriber and converts them to Metadata objects.
-	\item private ComparisonResult process_data(Metadata)\\
+	\item private ComparisonResult process\_data(Metadata)\\
 	Returns the specHandler's compare result
-	\item private void publish_data(ComparisonResult)\\
+	\item private void publish\_data(ComparisonResult)\\
 	Publishes results of the comparison as rated Metadata
-	\item private MetadataStorageResponse storage_server(MetadataStorageRequest)\\
+	\item private MetadataStorageResponse storage\_server(MetadataStorageRequest)\\
 	Listen for the GUI Model service calls and returns requested metadata from the storage
 \end{itemize}
 
@@ -32,7 +32,7 @@ Saves recieved metadata packages for a given period of time and can provide them
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item private void clean_up()\\
+	\item private void clean\_up()\\
 	Deletes Metadata exceeding the duration to store
 	\item public boolean store(StorageContainer)\\
 	Stores a given Metadata
@@ -69,7 +69,7 @@ Wraps metadata of exactly one host or node, a topic or a node-topic-combination.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public void add_tuple(MetadataTuple)\\
+	\item public void add\_tuple(MetadataTuple)\\
 	Add a MetadataTuple of information to the bundle.
 	\item public object get(String)\\
 	Returns the value of the MetadataTuple with the given key. False, if the key does not exist.
@@ -86,7 +86,7 @@ TODO: Description
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public void add_tuple(MetadataTuple)\\
+	\item public void add\_tuple(MetadataTuple)\\
 	Adds a MetadataTuple to the bundle
 	\item public Object get(String)\\
 	Returns the value of the MetadataTuple with the given key. The returned value would be a list containing limit values for the most measured fields. False, if the key does not exist.
@@ -103,7 +103,7 @@ Loads the specifications from the parameter server and compares them to the actu
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item private void load_specifications()\\
+	\item private void load\_specifications()\\
 	Loads the specifications from configuration files into Specification objects and stores them
 	\item public RatedStatistics compare(Metadata, Specification)\\
 	Compares a given Metadata object with a given Specification object regarding all available fields. Returns a RatedStatistics object wrapping potential divergences.
@@ -138,6 +138,6 @@ Stores any kind of value for a certain key. Specifications storing values indica
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public String get_dey()
-	\item public Object get_value()
+	\item public String get\_dey()
+	\item public Object get\_value()
 \end{itemize}
