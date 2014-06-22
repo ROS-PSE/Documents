@@ -1,20 +1,30 @@
-% StatisticEntity
-% 	Represents a number of constraints for a given entity.
-% 	An Entity is either an host or an touple of an subscriber,
-% 	an publisher and an topic.
+\subsection{CountermeasureNode}
+\subsubsection{Attributes}
+\begin{itemize}
+	\item  private constraint\_handler: ConstraintHandler\\
+		the handler for all constraints
+	\item  private rated\_statistic\_storage: RatedStatisticStorage\\
+		the storage of all incoming rated statistic
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item  public __main__()\\
+		periodically evaluates the constraints and cleans old statistics
+	\item private registerSubscriber()\\
+		registers to the rated statistics
+\end{itemize}
 
-% 	-ueid
-% 		Unique entity identifier. Identifies an unique Entity
-% 		within the ROS network
+
+
 \subsection{ConstraintHandler}
 \subsubsection{Attributes}
 \begin{itemize}
 	\item private  Constraint constraint[]\\
-	contains a list of all constraints
+		contains a list of all constraints
 	\item private  RatedStatisticStorage rated\_statistic\_storage\\
-	contains all incoming rated statistic
-	\item private  int global\_constraint\_level\\
-	only constraints with an constraint\_level <= current\_constraint level get evaluated
+		contains all incoming rated statistic
+	\item private  int reaction\_autonomy\_level\\
+		only reactions with an autonomy\_level <= reaction\_autonomy\_level get executed
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -28,6 +38,10 @@
 		checks if there are any new reactions to do and executes them.
 	\item private reactToConstraint(Constraint) \\
 		executes an single Reaction and updates the attributes of the Constraint
+	\item private readParamConstraints() \\
+		reads all constraints from the parameter server
+	\item private readParamReactionAutonomyLevel() \\
+		reads the reaction\_autonomy\_level from the parameter server
 \end{itemize}
 
 
@@ -61,8 +75,8 @@ TODO: Description
 	\item private  int true\_since\\
 	epoch time in milliseconds since the constraint is true,
 	if the constraint is not true it is 0
-	\item private  Reaction planned\_reaction\\
-	the reaction that should be executed if the constraint has been true longer than min\_reaction\_interval milliseconds
+	\item private  Reaction[] planned\_reaction\\
+	an array of reactions that should be executed if the constraint has been true longer than min\_reaction\_interval milliseconds
 	\item private  int min\_reaction\_interval\\
 	the minimum time needed in ms that the constraint needs to be true to execute the planned\_reaction
 	\item private  int last\_reaction\\
@@ -70,8 +84,6 @@ TODO: Description
 		is 0 if it has never been executed
 	\item private  int reaction\_timeout\\
 	minimum durotation in ms needed before an reaction can happen again
-	\item private  int constraint\_level\\
-	this constraint only gets evaluatet if the global constraint level is >= constraint\_level
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -177,7 +189,10 @@ TODO: Description
 	\item host\_id: string \\
 		contains the host on which the node is run on.
 	\item node\_id: string \\
-		the id of the node the reaction is ment to act upon. 
+		the id of the node the reaction is ment to act upon.
+	\item private  int autonomy\_level\\
+		this constraint only gets evaluatet if 
+		the autonomy\_level is <= reaction\_autonomy\_level
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}

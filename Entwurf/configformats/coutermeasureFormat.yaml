@@ -1,22 +1,34 @@
-# configuration for exact edges in the node graph
-connections:
-    publisher\\topic\\subscriber:
-        - # condition to trigger the countermeasure
-          condition: "measurement1 > value1 || measurement2 > value2"
-          # executed if global configured constraint level is at or below the given one
-          constraint_level: 2
-          # minimal duration of time (in ms) the condition has to be fulfilled
-          min_reaction_interval: 800
-          # minimal duration of time (in ms) before the countermeasure will be executed again
-          reaction_timeout: 5000
-          # list of commands executed as countermeasure
-          reaction:
-            - "kill publisher"
+---
+# name, just for logging, the name must be unique
+name: "myCounterAction"
 
-# configuration for system load due to nodes
-nodes:
-    node_name:
+# the actual constraint
+constraint_code:
+  and: {
+    or: {
+      seuid4.type: low,
+      seuid2.type: unknown
+    },
+    seuid2.type: high,
+    seuid10.type: low
+    not: { seuid3.type: low}
+  }
 
-# configuration for host machines
-hosts:
-    host1:
+# the constraint has to be true for at least this time till the reaction gets executed
+min_reaction_interval: 800
+
+# time after which an reaction can happen again
+reaction_timeout: 5000
+
+# the reactions if this constraint gets executed
+# only reactions with autonomy_level <= reaction_autonomy_level get executed 
+reaction:
+  - 
+    node: nodeid
+    action: command
+    command: "echo -n bla"
+    autonomy_level: 4
+  -
+    node: another_nodeid
+    action: stop
+    autonomy_level: 2
