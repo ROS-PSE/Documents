@@ -41,7 +41,7 @@ right
 - rated_statistic_storage: RatedStatisticStorage
 --
 + __main__()
-- registerSubscriber()
+- register_subscriber()
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -56,7 +56,7 @@ right
     <panel_attributes>/ConstraintItem/
 --
 --
-/+evaluateConstraint(RatedStatisticStorage): boolean/</panel_attributes>
+/+evaluate_constraint(RatedStatisticStorage): boolean/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -217,17 +217,17 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
     </coordinates>
     <panel_attributes>ConstraintHandler
 --
-- constraint[]: Constraint
+- constraint: list&lt;Constraint&gt;
 - rated_statistic_storage: RatedStatisticStorage
 - reaction_autonomy_level: int
 --
-+ addConstraint(Constraint)
-+ setStatisticStorage(RatedStatisticStorage)
-+ evaluateConstraints()
-+ executeReactions()
-- reactToConstraint(Constraint)
-- readParamConstraints()
-- readParamReactionAutonomyLevel()</panel_attributes>
++ add_constraint(Constraint)
++ set_statistic_storage(RatedStatisticStorage)
++ evaluate_constraints()
++ execute_reactions()
+- react_to_constraint(Constraint)
+- read_param_constraints()
+- read_param_reaction_autonomy_level()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -235,8 +235,8 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
     <coordinates>
       <x>1580</x>
       <y>850</y>
-      <w>50</w>
-      <h>230</h>
+      <w>40</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>30;210;30;30</additional_attributes>
@@ -278,7 +278,7 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
 - autonomy_level: int
 --
 + __init__(node_id: string)
-/+ executeReaction()/</panel_attributes>
+/+ execute_reaction()/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -293,12 +293,12 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
 --
 - constraint: ConstraintItem
 - true_since: int
-- planned_reaction: Reaction[]
+- planned_reaction: list&lt;Reaction&gt;
 - min_reaction_interval: int
 - last_reaction: int
 - reaction_timeout: int
 --
-+ evaluateConstraint(RatedStatisticStorage)</panel_attributes>
++ evaluate_constraint(RatedStatisticStorage)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -350,10 +350,13 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
     <coordinates>
       <x>1110</x>
       <y>1150</y>
-      <w>140</w>
-      <h>40</h>
+      <w>170</w>
+      <h>60</h>
     </coordinates>
-    <panel_attributes>ros master</panel_attributes>
+    <panel_attributes>rospy
+--
++ get_param(string)
+...</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -389,12 +392,11 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
     </coordinates>
     <panel_attributes>ReactionRun
 --
-- command_args: string[]
+- command: string
 --
 + __init__(node_id: string, 
-command_args: string[])
-+ executeReaction()
-- parseArguments()</panel_attributes>
+command: string)
++ execute_reaction()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -429,15 +431,15 @@ command_args: string[])
     </coordinates>
     <panel_attributes>ReactionDefault
 --
-# reactionType: string
+# reaction_type: string
 
 --
 + __init__(node_id:
- string, reactionType: string)
-+ executeReaction()
-- restartNode()
-- stopNode()
-- publishOnRosout()</panel_attributes>
+ string, reaction_type: string)
++ execute_reaction()
+- restart_node()
+- stop_node()
+- publish_on_rosout()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -540,13 +542,13 @@ _+ get_instance(): HostLookUp_</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1220</x>
-      <y>1120</y>
-      <w>290</w>
-      <h>70</h>
+      <x>1250</x>
+      <y>1130</y>
+      <w>260</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>30;50;270;50</additional_attributes>
+    <additional_attributes>30;40;240;40</additional_attributes>
   </element>
 </diagram>
