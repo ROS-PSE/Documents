@@ -9,13 +9,13 @@ Main Class wrapping the processing functionality.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item private Metadata receive\_data()\\
+	\item \textit{private Metadata receive\_data()}
 	Receives data incoming from the Subscriber and converts them to Metadata objects.
-	\item private ComparisonResult process\_data(Metadata)\\
+	\item \textit{private ComparisonResult process\_data(Metadata)}
 	Returns the specHandler's compare result
-	\item private void publish\_data(ComparisonResult)\\
+	\item \textit{private void publish\_data(ComparisonResult)}
 	Publishes results of the comparison as rated Metadata
-	\item private MetadataStorageResponse storage\_server(MetadataStorageRequest)\\
+	\item \textit{private MetadataStorageResponse storage\_server(MetadataStorageRequest)}
 	Listen for the GUI Model service calls and returns requested metadata from the storage
 \end{itemize}
 
@@ -25,20 +25,20 @@ Saves recieved metadata packages for a given period of time and can provide them
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private dict(string, dict(int, StorageContainer[])) storage\\
+	\item \textit{private dict(string, dict(int, StorageContainer[])) storage}
 	Datastructure to store Packages by key and timestamp
-	\item private int duration\\
+	\item \textit{private int duration}
 	Duration in seconds for data to be stored
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item private void clean\_up()\\
+	\item \textit{private void clean\_up()}
 	Deletes Metadata exceeding the duration to store
-	\item public boolean store(StorageContainer)\\
+	\item \textit{public boolean store(StorageContainer)}
 	Stores a given Metadata
-	\item public StorageContainer[] get(string, int)\\
+	\item \textit{public StorageContainer[] get(string, int)}
 	Returns all Metadata packages for the given connection/host of the given amount of time.
-	\item public boolean clear()\\
+	\item \textit{public boolean clear()}
 	Clears the whole storage
 \end{itemize}
 
@@ -48,13 +48,13 @@ Wraps Metadata in raw and rated form with an identifier and a timestamp. Object 
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item public int timestamp\\
+	\item \textit{public int timestamp}
 	Time when the data came from the subscriber
-	\item public string identifier\\
+	\item \textit{public string identifier}
 	Host/Node/Connection identifier
-	\item public object data\_raw\\
+	\item \textit{public object data\_raw}
 	The data as it reaches the subscriber from nodes and hosts.
-	\item public object data\_rated\\
+	\item \textit{public object data\_rated}
 	The data like it would be published after being rated.
 \end{itemize}
 
@@ -64,14 +64,14 @@ Wraps metadata of exactly one host or node, a topic or a node-topic-combination.
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private MetadataTuple[] values\\
+	\item \textit{private MetadataTuple[] values}
 	Collection of Metadata regarding multiple meassurements.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public void add\_tuple(MetadataTuple)\\
+	\item \textit{public void add\_tuple(MetadataTuple)}
 	Add a MetadataTuple of information to the bundle.
-	\item public object get(String)\\
+	\item \textit{public object get(String)}
 	Returns the value of the MetadataTuple with the given key. False, if the key does not exist.
 \end{itemize}
 
@@ -81,14 +81,14 @@ An object loaded from the specification configurations and basis for comparison 
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private MetadataTuple[] values\\
+	\item \textit{private MetadataTuple[] values}
 	Collection of MetadataTuple objects providing limits for multiple fields.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public void add\_tuple(MetadataTuple)\\
+	\item \textit{public void add\_tuple(MetadataTuple)}
 	Adds a MetadataTuple to the bundle
-	\item public Object get(String)\\
+	\item \textit{public Object get(String)}
 	Returns the value of the MetadataTuple with the given key. The returned value would be a list containing limit values for the most measured fields. False, if the key does not exist.
 \end{itemize}
 
@@ -98,14 +98,14 @@ Loads the specifications from the parameter server and compares them to the actu
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private Specification[] specifications\\
+	\item \textit{private Specification[] specifications}
 	Datastructure to keep all loaded Specification objects
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item private void load\_specifications()\\
+	\item \textit{private void load\_specifications()}
 	Loads the specifications from configuration files into Specification objects and stores them
-	\item public RatedStatistics compare(Metadata, Specification)\\
+	\item \textit{public RatedStatistics compare(Metadata, Specification)}
 	Compares a given Metadata object with a given Specification object regarding all available fields. Returns a RatedStatistics object wrapping potential divergences.
 \end{itemize}
 
@@ -115,15 +115,15 @@ Wraps the result of the comparison between the actual metadata and the specifica
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item public string seuid\\
+	\item \textit{public string seuid}
 	Identifies the node/host/connection
-	\item public string[] metatype\\
+	\item \textit{public string[] metatype}
 	The metadata that was out of bounds
-	\item public string[] actual\\
+	\item \textit{public string[] actual}
 	The actual values
-	\item public string[] expected\\
+	\item \textit{public string[] expected}
 	The expected values
-	\item public int[] state\\
+	\item \textit{public int[] state}
 	State of the metadata from the node/host/connection : state: { 0 = high ; 1 = low ; 2 = unknown}
 \end{itemize}
 
