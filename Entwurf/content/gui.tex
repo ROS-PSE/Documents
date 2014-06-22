@@ -167,71 +167,71 @@ TODO: Description
 \end{figure}
 
 \subsection{OverviewPlugin}
-The class OverviewPlugin is the core of the graphical user interface, which
+The OverviewPlugin is the core of the graphical user interface, which
 contains most of the relevant information in a small and fancy area.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item \textit{public overview\_widget: QWidget}
+  \item \textit{public overview\_widget: QWidget}\\
   the object wich holds the widget
-  \item \textit{public status\_light\_label: QLabel}
-  shows the actual status of the host/node
-  \item \textit{public tab\_widget: QTabWidget}
+  \item \textit{public status\_light\_label: QLabel}\\
+  a status ligth wich shows if everything is ok or not
+  \item \textit{public tab\_widget: QTabWidget}\\
   the object wich holds the different tabs of the widget
-  \item \textit{public information\_tab: QWidget}
+  \item \textit{public information\_tab: QWidget}\\
   a tab wich gives general information about the network 
-  \item \textit{public graphs\_tab: QWidget}
-  shows the actual Network- and CPU-Load
-  \item \textit{public range\_combo\_box: QComboBox}
+  \item \textit{public graphs\_tab: QWidget}\\
+  displays graphs about the network
+  \item \textit{public range\_combo\_box: QComboBox}\\
   makes it possible to set the range of the graphs
-  \item \textit{public log\_tab: QWidget}
-  shows actual errors and warnings
-  \item \textit{public log\_tab\_tree\_widget: QTreeWidget}
-  the structure of the log-messages  
+  \item \textit{public log\_tab: QWidget}\\
+  shows actual errors and warnings 
 \end{itemize}
 
 \subsection{SelectionPlugin}
-A class which shows detailed information in a Tree-Layout about the currently
+A Plugin which shows detailed information in different tabs about the currently
 selected host or node.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item \textit{public selection\_widget: QWidget}
+  \item \textit{public selection\_widget: QWidget}\\
   the object wich holds the widget
-  \item \textit{public host\_node\_label: QLabel}
-  shows the name of the actual selected host or node
-  \item \textit{public status\_light\_label: QLabel}
-  shows the status of the host or node
-  \item \textit{public tab\_widget: QTabWidget}
+  \item \textit{public host\_node\_label: QLabel}\\
+  the name of the actual selected host or node
+  \item \textit{public status\_light\_label: QLabel}\\
+  a status-light about the status of the current host or node
+  \item \textit{public tab\_widget: QTabWidget}\\
   the object wich holds the different tabs of the widget
-  \item \textit{public information\_tab: QWidget}
-  a tab wich gives general information about host or node 
-  \item \textit{public graphs\_tab: QWidget}
-  shows the actual Network- and CPU-Load
-  \item \textit{public range\_combo\_box: QComboBox}
+  \item \textit{public information\_tab: QWidget}\\
+  a tab wich gives general information about hosts or nodes 
+  \item \textit{public graphs\_tab: QWidget}\\
+  displays graphs about the actual selected host or node, e.g the Network- and
+  CPU-Load
+  \item \textit{public range\_combo\_box: QComboBox}\\
   makes it possible to set the range of the graphs
-  \item \textit{public log\_tab: QWidget}
+  \item \textit{public log\_tab: QWidget}\\
   shows actual errors and warnings
-  \item \textit{public actions\_tab: QWidget}
-  includes buttons to start/restart/stop nodes  
+  \item \textit{public actions\_tab: QWidget}\\
+  includes buttons to restart and stop nodes  
 \end{itemize}
 
 \subsection{TreePlugin}
 TreePlugin is very simply and shows only the actual active hosts
-and nodes.
+and nodes. It is possible to filter the output, e.g. only erroneus hosts or
+nodes are displayed.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item \textit{public tree\_widget: QWidget}
+  \item \textit{public tree\_widget: QWidget}\\
   the object wich holds the widget
-  \item \textit{public erroneous\_check\_box: QCheckBox}
-  displays only erroneous hosts and nodes
-  \item \textit{public show\_node\_check\_box: QCheckBox}
-  displays nodes
-  \item \textit{public show\_host\_check\_box: QCheckBox}
-  ..hosts
-  \item \textit{public minus\_push\_button: QPushButton}
-  makes it possible to zoom out
-  \item \textit{public plus\_push\_button: QPushButton}
-  ..zoom in
-  \item \textit{public filter\_line\_edit: QLineEdit}
-  a textfield where you can filter the output
+  \item \textit{public erroneous\_check\_box: QCheckBox}\\
+  only erroneous hosts and nodes will be displayed
+  \item \textit{public show\_node\_check\_box: QCheckBox}\\
+  displays the activ nodes
+  \item \textit{public show\_host\_check\_box: QCheckBox}\\
+  displays the activ hosts
+  \item \textit{public plus\_push\_button: QPushButton}\\
+  makes it for, a better clarity, possible to zoom in  
+  \item \textit{public minus\_push\_button: QPushButton}\\
+  and zoom out
+  \item \textit{public filter\_line\_edit: QLineEdit}\\
+  a textfield where you can define a filter for the output
 \end{itemize}
 

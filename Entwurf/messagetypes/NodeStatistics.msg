@@ -9,10 +9,6 @@ time window_start
 time window_stop
 
 #CPU
- 
-float32 node_cpu_temp_mean
-float32 node_cpu_temp_stddev
-float32 node_cpu_temp_max
 
 float32 node_cpu_usage_mean
 float32 node_cpu_usage_stddev
@@ -22,15 +18,8 @@ float32[] node_cpu_usage_core_mean
 float32[] node_cpu_usage_core_stddev
 float32[] node_cpu_usage_core_max
 
-float32[] node_cpu_temp_core_mean
-float32[] node_cpu_temp_core_stddev
-float32[] node_cpu_temp_core_max
 
 #GPU 
-
-float32[] node_gpu_temp_mean
-float32[] node_gpu_temp_stddev
-float32[] node_gpu_temp_max
 
 float32[] node_gpu_usage_mean
 float32[] node_gpu_usage_stddev

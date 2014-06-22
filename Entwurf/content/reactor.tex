@@ -1,33 +1,47 @@
-% StatisticEntity
-% 	Represents a number of constraints for a given entity.
-% 	An Entity is either an host or an touple of an subscriber,
-% 	an publisher and an topic.
-
-% 	-ueid
-% 		Unique entity identifier. Identifies an unique Entity
-% 		within the ROS network
-\subsection{ConstraintHandler}
+\subsection{CountermeasureNode}
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private  Constraint constraint[]\\
-	contains a list of all constraints
-	\item private  RatedStatisticStorage rated\_statistic\_storage\\
-	contains all incoming rated statistic
-	\item private  int global\_constraint\_level\\
-	only constraints with an constraint\_level <= current\_constraint level get evaluated
+	\item \textit{ private ConstraintHandler constraint\_handler}
+		the handler for all constraints
+	\item \textit{ private RatedStatisticStorage rated\_statistic\_storage}
+		the storage of all incoming rated statistic
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public addConstraint(Constraint) \\
+	\item \textit{ public void \_\_main\_\_() }
+		periodically (threads) evaluates the constraints and cleans old statistics
+	\item \textit{ private void register\_subscriber() }
+		registers to the rated statistics
+\end{itemize}
+
+
+
+\subsection{ConstraintHandler}
+\subsubsection{Attributes}
+\begin{itemize}
+	\item \textit{ private list<Constraint> constraint }
+		contains a list of all constraints
+	\item \textit{ private  RatedStatisticStorage rated\_statistic\_storage }
+		contains all incoming rated statistic
+	\item \textit{ private  int reaction\_autonomy\_level }
+		only reactions with an autonomy\_level <= reaction\_autonomy\_level get executed
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+	\item \textit{ public void add\_constraint(Constraint)  }
 		adds an constraint to this list
-	\item public setStatistic(RatedStatisticStorage) \\
+	\item \textit{ public void set\_statistic(RatedStatisticStorage)  }
 		sets the Statistic to use. Should only be needed on initialisation
-	\item public evaluateConstraints() \\
+	\item \textit{ public void evaluate\_constraints()  }
 		evaluates every constraint
-	\item public executeReactions() \\
+	\item \textit{ public void execute\_reactions()  }
 		checks if there are any new reactions to do and executes them.
-	\item private reactToConstraint(Constraint) \\
+	\item \textit{ private void react\_to\_constraint(Constraint)  }
 		executes an single Reaction and updates the attributes of the Constraint
+	\item \textit{ private void read\_param\_constraints()  }
+		reads all constraints from the parameter server
+	\item \textit{ private void read\_param\_reaction\_autonomy\_level()  }
+		reads the reaction\_autonomy\_level from the parameter server
 \end{itemize}
 
 
@@ -35,18 +49,18 @@
 A database which contains the current state of all rated statistics.
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private statistic\_dict: dict\{seuid: string - dict\{statistic\_type: string - tuple\{outcome: Outcome, timestamp: date.timestamp\}\}\} \\
+	\item \textit{ private dict\{string seuid - dict\{string statistic\_type - tuple\{Outcome outcome,date.timestamp timestamp\}\}\} statistic\_dict }
 		a dictionary containing all rated statistic information with their outcome and an timestamp when they got added / updated to the dictionary.
-	\item private timeout: int\\
+	\item \textit{ private int timeout }
 		the timeout after which an item in ratedstatistic is declared too old and should be removed from the dict.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item  public clean\_old\_statistic()\\
+	\item \textit{ public void clean\_old\_statistic() }
 		checks the complete dictionary for statistics older than timeout seconds and removes them.
-	\item public callback\_rated\_statistic(msg: RatedStatistics)\\
+	\item \textit{ public void callback\_rated\_statistic(RatedStatistics msg) }
 		callback for incoming rated statistics. adds them to the dictionary or removes items from the dictionary if the rated statistic says that its within bounds again. 
-	\item public Outcome get\_outcome(seuid: string, statistic\_type: string)\\
+	\item \textit{ public Outcome get\_outcome(string seuid, string statistic\_type) }
 		returns the outcome of the specific seuid and statistic\_type.
 \end{itemize}
 
@@ -56,26 +70,24 @@ TODO: Description
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private  ConstraintItem constraint\\
+	\item \textit{ private ConstraintItem constraint }
 	first constraint in the chain of ConstraintItems.
-	\item private  int true\_since\\
+	\item \textit{ private int true\_since }
 	epoch time in milliseconds since the constraint is true,
 	if the constraint is not true it is 0
-	\item private  Reaction planned\_reaction\\
-	the reaction that should be executed if the constraint has been true longer than min\_reaction\_interval milliseconds
-	\item private  int min\_reaction\_interval\\
+	\item \textit{ private list<Reaction> planned\_reaction }
+	an list of reactions that should be executed if the constraint has been true longer than min\_reaction\_interval milliseconds
+	\item \textit{ private int min\_reaction\_interval }
 	the minimum time needed in ms that the constraint needs to be true to execute the planned\_reaction
-	\item private  int last\_reaction\\
+	\item \textit{ private int last\_reaction }
 	contains the epoch time in ms when the reaction corresponding to this constraint has been executed for the last time.
 		is 0 if it has never been executed
-	\item private  int reaction\_timeout\\
+	\item \textit{ private int reaction\_timeout }
 	minimum durotation in ms needed before an reaction can happen again
-	\item private  int constraint\_level\\
-	this constraint only gets evaluatet if the global constraint level is >= constraint\_level
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public evaluateConstraint(RatedStatisticStorage) \\
+	\item \textit{ public void evaluate\_constraint(RatedStatisticStorage)  }
 	evaluates this constraint and sets the attributes according to the result of the evaluation
 \end{itemize}
 
@@ -86,7 +98,7 @@ TODO: Description
 \subsubsection{Attributes}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public abstract boolean evaluateConstraint(RatedStatisticStorage)\\
+	\item \textit{ public abstract boolean evaluate\_constraint(RatedStatisticStorage) }
 	evaluates if this constraint, given the available RatedStatisticStorage, is true. 
 \end{itemize}		
 
@@ -96,16 +108,16 @@ Contains an actual constraint.
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private  string name\\
+	\item \textit{ private string name }
 	contains the name of the statistic data
-	\item private  Outcome outcome\\
+	\item \textit{ private Outcome outcome }
 	contains the outcome needed for this constraint to be true
-	\item private  string seuid\\
+	\item \textit{ private string seuid }
 	contains the unique identifier of the corresponding StatisticEntity
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public abstract boolean evaluateConstraint(RatedStatisticStorage)\\
+	\item \textit{ public abstract boolean evaluate\_constraint(RatedStatisticStorage) }
 	returns true if this constrain is true for the RatedStatisticStorage
 \end{itemize}
 
@@ -115,12 +127,12 @@ TODO: Description
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private  Constraint constraint[2]\\
-	contains the two constraints to be evaluated with a logical and	
+	\item \textit{ private Constraint[] constraint }
+	contains constraints to be evaluated with a logical and	
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public boolean evaluateConstraint(RatedStatisticStorage)\\
+	\item \textit{ public boolean evaluate\_constraint(RatedStatisticStorage) }
 	returns true if the evaluation of both constains returns true
 \end{itemize}
 
@@ -130,12 +142,12 @@ TODO: Description
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private Constraint constraint[2]\\
-	contains the two constraints to be evaluated with an logical or
+	\item \textit{ private Constraint[] constraint }
+	contains constraints to be evaluated with an logical or
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public boolean evaluateConstraint(RatedStatisticStorage)\\
+	\item \textit{ public boolean evaluate\_constraint(RatedStatisticStorage) }
 	returns true if the evaluation of at least one constraint returns true
 \end{itemize}
 
@@ -145,12 +157,12 @@ TODO: Description
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private constraint: Constraint\\
+	\item \textit{ private Constraint constraint }
 	the constraint to be evaluated negated
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public boolean evaluateConstraint(RatedStatisticStorage)\\
+	\item \textit{ public boolean evaluate\_constraint(RatedStatisticStorage) }
 	returns true if the evaluation of the constraint returns false
 \end{itemize}
 
@@ -159,13 +171,13 @@ TODO: Description
 
 \subsubsection{Types}
 \begin{itemize}
-	\item high\\
+	\item \textit{ high }
 	data value is too high
-	\item low\\
+	\item \textit{ low }
 	data value is too low
-	\item unknown\\
+	\item \textit{ unknown }
 	data value is unknown
-	\item out\_of\_bounds\\
+	\item \textit{ out\_of\_bounds }
 	data value is either too high or too low
 \end{itemize}
 
@@ -174,16 +186,19 @@ TODO: Description
 	Abstract Reaction to an Constraint
 \subsubsection{Attributes}
 \begin{itemize}
-	\item host\_id: string \\
+	\item \textit{ private string host\_id }
 		contains the host on which the node is run on.
-	\item node\_id: string \\
-		the id of the node the reaction is ment to act upon. 
+	\item \textit{ private string node\_id }
+		the id of the node the reaction is ment to act upon.
+	\item \textit{ private int autonomy\_level }
+		this constraint only gets evaluatet if 
+		the autonomy\_level is <= reaction\_autonomy\_level
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public \_\_init\_\_(node\_id: string)
+	\item public void \_\_init\_\_(string node\_id)
 		initializes the reaction. sets the node to execute the reaction on. finds the corresponding host to the given node.
-	\item public executeReaction()\\
+	\item \textit{ public void execute\_reaction() }
 		executes the reaction as a service call to the HostStatistic Node.
 \end{itemize}
 
@@ -192,48 +207,45 @@ TODO: Description
 	An Reaction which runs a command as action 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private string[] command\_args
-	\\ contains the command as first entry, and its arguments as the next entries
+	\item private string command
+	\\ contains the command
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public \_\_init\_\_(node\_id: string, command\_args: string[])
-		initializes the reaction. set the command and its arguments to be executed.
-	\item public executeReaction()\\
-	\item private parseArguments()\\
-		parses the command\_args and changes placeholders to actual values. this method should be called only at initialization
-	\item 
+	\item public \_\_init\_\_(string node\_id,string command)
+		initializes the reaction. set the command to be executed.
+	\item \textit{ public void executeReaction() }
 \end{itemize}
 
 
 \subsection{ReactionDefault}
 \subsubsection{attributes}
 \begin{itemize}
-	\item protected reactionType: ReactionDefaultType\\
+	\item \textit{ protected ReactionDefaultType reaction\_type}
 		containts the type this reaction is of.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public \_\_init\_\_(node\_id: string, reactionType: string)\\
+	\item \textit{ public void \_\_init\_\_(string node\_id, string reactionType) }
 		initializes the reaction. sets the reactiontype of this reaction.
-	\item public exececuteReaction()\\
-	\item private restartNode()\\
+	\item \textit{ public void exececute\_reaction() }
+	\item \textit{ private void restart\_node() }
 		restarts the Node
-	\item private stopNode()\\
+	\item \textit{ private void stop\_node() }
 		stops the Node
-	\item private publishOnRosout(verbosity: string)\\
-		publishes the cause of the reaction on rosout. publishes with the specified verbosity level 
+	\item \textit{ private void publish\_on\_rosout() }
+		publishes the cause of the reaction on rosout.
 \end{itemize}
 
 
 \subsection{Enum ReactionDefaultType}
 \subsubsection{Types}
 \begin{itemize}
-	\item restart\\
+	\item \textit{ restart }
 		reaction is a restart of an entity
-	\item stop\\
+	\item \textit{ stop }
 		reaction is stopping an entity
-	\item output\\
+	\item \textit{ output }
 		reaction is publishing the reaction on rosout
 \end{itemize}
 
@@ -242,21 +254,21 @@ TODO: Description
 Singleton. Contains a dictionary of all nodes which are on an host who has an HostStatisticNode running and the hosts they run on.
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private node\_dict: dict\{node: string - host: string\} \\
+	\item \textit{ private dict\{string node - string host\} node\_dict }
 		Contains all nodes which are on an host who has an HostStatisticNode running. Host is the host the node runs on.
-	\item static HostLookUp: instance\\
+	\item \textit{ private static HostLookUp instance }
 		the singleton instance
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public string get\_host(node: string)\\
+	\item \textit{ public string get\_host(string node) }
 		returns the host the node runs on
-	\item public add\_node(node: string, host: string)\\
+	\item \textit{ public void add\_node(string node, string host) }
 		adds an node - host tuple to the dictionary
-	\item get\_node\_list(host\_id: string)\\
+	\item \textit{ public list<string> get\_node\_list(string host\_id) }
 		returns all nodes of a specifid host
-	\item public remove\_node(node: string)\\
+	\item \textit{ public void remove\_node(string node) }
 		removes an node from the dictionary
-	\item public static HostLookUp get\_instance()\\
+	\item \textit{ public static HostLookUp get\_instance() }
 		returns the instance of HostLookUp
 \end{itemize}

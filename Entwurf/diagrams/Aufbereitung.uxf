@@ -34,16 +34,16 @@
     <panel_attributes>MonitoringNode
 --
 - storage: MetadataStorage
-- specHandler: SpecificationHandler
+- spec_handler: SpecificationHandler
 --
 // Receives data incoming from the Subscriber and converts them to Metadata objects.
-- receiveData(): Metadata
+- receive_data(): Metadata
 // Returns the specHandler's compare result
-- processData(Metadata): ComparisonResult
+- process_data(Metadata): ComparisonResult
 // Publishes results of the comparison as rated Metadata
-- publishData(ComparisonResult): void
+- publish_data(ComparisonResult): void
 // Listen for the GUI Model service calls and returns requested metadata from the storage
-- storageServer(MetadataStorageRequest): MetadataStorageResponse</panel_attributes>
+- storage_server(MetadataStorageRequest): MetadataStorageResponse</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -85,8 +85,8 @@ MetadataStorage
 // Duration in seconds for data to be stored
 - duration: int
 --
-// Seletes Metadata exceeding the duration to store
-- cleanUp(): void
+// Deletes Metadata exceeding the duration to store
+- clean_up(): void
 // Stores a given Metadata
 + store(StorageContainer): boolean
 // Returns all Metadata packages for the given connection/host of the given amount of time.
@@ -110,7 +110,7 @@ Metadata
 - values: MetadataTuple[]
 --
 // Add a MetadataTuple of information to the bundle.
-+ addTuple(MetadataTuple): void
++ add_tuple(MetadataTuple): void
 // Returns the value of the MetadataTuple with the given key. False, if the key does not exist.
 + get(String): object</panel_attributes>
     <additional_attributes/>
@@ -140,7 +140,7 @@ Metadata
 - values: MetadataTuple[]
 --
 // Adds a MetadataTuple to the bundle
-+ addTuple(MetadataTuple): void
++ add_tuple(MetadataTuple): void
 // Returns the value of the MetadataTuple with the given key. The returned value would be a list containing limit values for the most measured fields. False, if the key does not exist.
 + get(String): Object</panel_attributes>
     <additional_attributes/>
@@ -160,7 +160,7 @@ SpecificationHandler
 - specifications: Specification[]
 --
 // Loads the specifications from configuration files into Specification objects and stores them
-- loadSpecifications(): void
+- load_Specifications(): void
 // Compares a given Metadata object with a given Specification object regarding all available fields. Returns a RatedStatistics object wrapping potential divergences.
 + compare(Metadata, Specification): RatedStatistics</panel_attributes>
     <additional_attributes/>
@@ -237,8 +237,8 @@ MetadataTuple
 - key: String
 - value: Object
 --
-+ getKey(): String
-+ getValue(): Object</panel_attributes>
++ get_key(): String
++ get_value(): Object</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

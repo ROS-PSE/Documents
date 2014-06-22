@@ -57,7 +57,7 @@ m2=1</panel_attributes>
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=.
-statistics_rated
+/statistics_rated
 
 </panel_attributes>
     <additional_attributes/>
@@ -71,7 +71,7 @@ statistics_rated
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=.
-statistics_host
+/statistics_host
 </panel_attributes>
     <additional_attributes/>
   </element>
