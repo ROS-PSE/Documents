@@ -26,8 +26,10 @@ This thread should buffer the incoming data from the topics and regulary update 
 \begin{itemize}
   \item \textit{private buffer\_lock: threading.Lock} the lock that guards the buffer from getting modified parallely
   \item \textit{private model: ROSModel} the model of the hosts/nodes/topics/connections 
-  \item \textit{private timer: rospy.Timer} ROS Timer which regularily calls update\_model(). Btw Micha ist ...
+  \item \textit{private timer: rospy.Timer} ROS Timer which regularily calls update\_model()
   \item \textit{private buffer: list<TimeStampedData>} buffers the tons of incomming data by simply storing it here together with a timestamp for later usage
+  \item \textit{private okcdob_oqq:rospy.OkcdobOqq} Drsc sc kx okcdob oqq. Myxqbkdevkdsyxc.
+  \item \textit{private list rated_buffer\\} A list for the incoming RatedStatistics items, stored here for later processing.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -35,6 +37,7 @@ This thread should buffer the incoming data from the topics and regulary update 
   \item \textit{public start()} starts the thread and also the timer for regulary updates of the model
   \item \textit{public update\_model()} starts the update of the model. Will be called regulary by the timer.
   \item \textit{public add\_buffer\_item(object)} adds an item to the buffer list. Will be called whenever data from the topics is avaiable.
+  \item \textit{public add\_buffer\_item(RatedStatistics)} adds an RatedStatistics item to the rated_buffer
 \end{itemize}
 
 \subsection{ROSModel}
@@ -46,22 +49,25 @@ Represents the data as a QtModel. This enables automated updates of the View.
   \item \textit{private monitoring\_proxy: rospy.ServiceProxy} the proxy to the monitoring node for obtaining statistics and rated statistics of the past minutes. To be called only once when the GUI started and the MonitoringNode has been running for a while 
   \item \textit{private host\_proxy: rospy.ServiceProxy} the proxy to a host for sending signals like stop or restart
   \item \textit{private model\_lock: threading.Lock} protects the model from parallel modification
+  \item \textit{private root\_item: AbstractItem} 
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-%  \item \textit{public \_\_init\_\_()}
-  \item \textit{public object data(QModelIndex, int)}
-  \item \textit{public ItemFlags flags(const QModelIndex)}
-  \item \textit{public object headerData(int, Orientation, int)}
-  \item \textit{public QModelIndex index(int, int, QModelIndex)}
-  \item \textit{public QModelIndex parent(QModelIndex)}
-  \item \textit{public int rowCount(QModelIndex)}
-  \item \textit{public int columnCount(QModelIndex)}
-  \item \textit{public update\_model(data:list)}
-  \item \textit{public transform\_data(AbstractItem)}
-  \item \textit{public transform\_data(statistics)}
-  \item \textit{public transform\_data(statistics/host)}
-  \item \textit{public transform\_data(statistics/rated)}
+  \item \textit{public \_\_init\_\_()} defines the class attributes especially the root\_item which later contains the list of headers e.g. for a TreeView representation
+  \item \textit{public object data(index:QModelIndex, role:int)} returns the data of an item at the given index
+  \item \textit{public ItemFlags flags(index:QModelIndex)} returns the flags of the item at the given index (like Qt::ItemIsEnabled)
+  \item \textit{public object headerData(section:int, orientation:Orientation, role:int)} returns the headerData  at the given section
+  \item \textit{public QModelIndex index(row:int, column:int, parent:QModelIndex)} returns the index of an item at the given column/row
+  \item \textit{public QModelIndex parent(index:QModelIndex)} returns the QModelIndex of the parent of the child item specified via its index
+  \item \textit{public int rowCount(QModelIndex)} returns the amount of rows in the model
+  \item \textit{public int columnCount(QModelIndex)} returns the amount of columns in the model
+  \item \textit{public update\_model(data:list)} updates the model by using the items of the list. The items will be of the message types 
+  \item \textit{public transform\_data(TopicStatistics)} integrates a TopicStatistics in the model by modifing its item/s by adding a new dict to the corresponding item (especially the TopicItem and the ConnectionItem)
+  \item \textit{public transform\_data(NodeStatistics)} integrates a NodeStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
+  \item \textit{public transform\_data(HostStatistics)} integrates a HostStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
+  \item \textit{public transform\_data(RatedStatistics)} add the rating to an existing entry by modifing the dict of the corresponding item/s
+  \item \textit{public transform\_data(StatisticHistory)} When using the monitor\_proxy to receive about the last minutes from the monitoring node
+  it returns a StaticHistory item which can then be integrated in the model via this method
   \end{itemize}
 
 \subsection{AbstractItem}
@@ -122,24 +128,24 @@ The data\_list will contain TimeStampedData whereas the data is a dict containin
   \item \textit{public execute\_action(RemoteAction)} not senseful, throws an exception
 \end{itemize}
 
-\subsection{TimeStampedData}
-..
-\subsubsection{Attributes}
-\begin{itemize}
-  \item \textit{private data: object}
-  ..
-  \item \textit{private time\_stamp: datetime.time}
-  ..
-\end{itemize}
-\subsubsection{Methods}
-\begin{itemize}
-  \item \textit{public \_\_init(object, datetime.time)\_\_}
-  ..
-  \item \textit{public datetime.time get\_time\_stamp()}
-  ..
-  \item \textit{public object get\_data()}
-  ..
-\end{itemize}
+% \subsection{TimeStampedData}
+% ..
+% \subsubsection{Attributes}
+% \begin{itemize}
+%   \item \textit{private data: object}
+%   ..
+%   \item \textit{private time\_stamp: datetime.time}
+%   ..
+% \end{itemize}
+% \subsubsection{Methods}
+% \begin{itemize}
+%   \item \textit{public \_\_init(object, datetime.time)\_\_}
+%   ..
+%   \item \textit{public datetime.time get\_time\_stamp()}
+%   ..
+%   \item \textit{public object get\_data()}
+%   ..
+% \end{itemize}
 
 \subsection{Enum RemoteAction}
 TODO: Description
