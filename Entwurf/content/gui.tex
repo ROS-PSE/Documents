@@ -24,20 +24,31 @@
 This thread should buffer the incoming data from the topics and regulary update the model.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item \textit{private buffer\_lock: threading.Lock} the lock that guards the buffer from getting modified parallely
-  \item \textit{private model: ROSModel} the model of the hosts/nodes/topics/connections 
-  \item \textit{private timer: rospy.Timer} ROS Timer which regularily calls update\_model()
-  \item \textit{private buffer: list<TimeStampedData>} buffers the tons of incomming data by simply storing it here together with a timestamp for later usage
-  \item \textit{private okcdob_oqq:rospy.OkcdobOqq} Drsc sc kx okcdob oqq. Myxqbkdevkdsyxc.
-  \item \textit{private list rated_buffer\\} A list for the incoming RatedStatistics items, stored here for later processing.
+  \item \textit{private buffer\_lock: threading.Lock} \\
+  the lock that guards the buffer from getting modified parallely
+  \item \textit{private model: ROSModel}\\ 
+  the model of the hosts/nodes/topics/connections
+  \item \textit{private timer: rospy.Timer} \\
+  ROS Timer which regularily calls update\_model()
+  \item \textit{private buffer: list}\\
+  buffers the tons of incomming data by
+  simply storing it here together with a timestamp for later usage
+  \item \textit{private okcdob\_oqq:rospy.OkcdobOqq}\\ 
+  Drsc sc kx okcdob oqq. Myxqbkdevkdsyxc.
+  \item \textit{private rated\_buffer: list<RatedStatistics>}\\ A list for
+  the incoming RatedStatistics items, stored here for later processing.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textit{public \_\_init\_\_()} 
-  \item \textit{public start()} starts the thread and also the timer for regulary updates of the model
-  \item \textit{public update\_model()} starts the update of the model. Will be called regulary by the timer.
-  \item \textit{public add\_buffer\_item(object)} adds an item to the buffer list. Will be called whenever data from the topics is avaiable.
-  \item \textit{public add\_buffer\_item(RatedStatistics)} adds an RatedStatistics item to the rated_buffer
+  \item \textit{public start()}\\
+  starts the thread and also the timer for regulary updates of the model
+  \item \textit{public update\_model()}\\ 
+  starts the update of the model. Will be called regulary by the timer.
+  \item \textit{public add\_buffer\_item(object)}\\ 
+  adds an item to the buffer list. Will be called whenever data from the topics is avaiable.
+  \item \textit{public add\_buffer\_item(RatedStatistics)}\\
+  adds an RatedStatistics item to the rated\_buffer
 \end{itemize}
 
 \subsection{ROSModel}
@@ -45,50 +56,97 @@ Represents the data as a QtModel. This enables automated updates of the View.
 \subsubsection{Attributes}
 \begin{itemize}
  % \item \textit{private item\_list: list}
-  \item \textit{private log: list<TimeStampedData<list<string>>>} global log of all the events having occured in the past
-  \item \textit{private monitoring\_proxy: rospy.ServiceProxy} the proxy to the monitoring node for obtaining statistics and rated statistics of the past minutes. To be called only once when the GUI started and the MonitoringNode has been running for a while 
-  \item \textit{private host\_proxy: rospy.ServiceProxy} the proxy to a host for sending signals like stop or restart
-  \item \textit{private model\_lock: threading.Lock} protects the model from parallel modification
-  \item \textit{private root\_item: AbstractItem} 
+  \item \textit{private monitoring\_proxy: rospy.ServiceProxy}\\ 
+  the proxy to the monitoring node for obtaining statistics and rated statistics of the past minutes. To be called only once when the GUI started and the MonitoringNode has been running for a while
+  \item \textit{private host\_proxy: rospy.ServiceProxy}\\ 
+  the proxy to a host for sending signals like stop or restart
+  \item \textit{private model\_lock: threading.Lock}\\ 
+  protects the model from parallel modification
+  \item \textit{private log: list<list<string>>}\\ 
+  global log of all the events having occured in the past  
+  \item \textit{private root\_item: AbstractItem}\\
+  
+  \item \textit{private item\_delegate: SizeDelegate}\\
+  
+  \item \textit{private log\_model: QStandardItemModel}\\
+   
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-  \item \textit{public \_\_init\_\_()} defines the class attributes especially the root\_item which later contains the list of headers e.g. for a TreeView representation
-  \item \textit{public object data(index:QModelIndex, role:int)} returns the data of an item at the given index
-  \item \textit{public ItemFlags flags(index:QModelIndex)} returns the flags of the item at the given index (like Qt::ItemIsEnabled)
-  \item \textit{public object headerData(section:int, orientation:Orientation, role:int)} returns the headerData  at the given section
-  \item \textit{public QModelIndex index(row:int, column:int, parent:QModelIndex)} returns the index of an item at the given column/row
-  \item \textit{public QModelIndex parent(index:QModelIndex)} returns the QModelIndex of the parent of the child item specified via its index
-  \item \textit{public int rowCount(QModelIndex)} returns the amount of rows in the model
-  \item \textit{public int columnCount(QModelIndex)} returns the amount of columns in the model
-  \item \textit{public update\_model(data:list)} updates the model by using the items of the list. The items will be of the message types 
-  \item \textit{public transform\_data(TopicStatistics)} integrates a TopicStatistics in the model by modifing its item/s by adding a new dict to the corresponding item (especially the TopicItem and the ConnectionItem)
-  \item \textit{public transform\_data(NodeStatistics)} integrates a NodeStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
-  \item \textit{public transform\_data(HostStatistics)} integrates a HostStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
-  \item \textit{public transform\_data(RatedStatistics)} add the rating to an existing entry by modifing the dict of the corresponding item/s
-  \item \textit{public transform\_data(StatisticHistory)} When using the monitor\_proxy to receive about the last minutes from the monitoring node
+  \item \textit{public \_\_init\_\_()}\\ 
+  defines the class attributes especially the root\_item which later contains the list of headers e.g. for a TreeView representation
+  \item \textit{public ROSModel get\_instance()}\\
+  
+  \item \textit{public list<list<string>> get\_log()}\\
+  
+  \item \textit{public QVariant data(index:QModelIndex, role:int)}\\
+  returns the data of an item at the given index
+  \item \textit{public ItemFlags flags(index:QModelIndex)}\\
+  returns the flags of the item at the given index (like Qt::ItemIsEnabled)
+  \item \textit{public QVariant headerData(section:int, orientation:Orientation,
+  role:int)}\\ 
+  returns the headerData  at the given section
+  \item \textit{public QModelIndex index(row:int, column:int,
+  parent:QModelIndex)}\\
+  returns the index of an item at the given column/row
+  \item \textit{public QModelIndex parent(index:QModelIndex)}\\ 
+  returns the QModelIndex of the parent of the child item specified via its index
+  \item \textit{public int rowCount(QModelIndex)}\\ 
+  returns the amount of rows in the model
+  \item \textit{public int columnCount(QModelIndex)}\\
+  returns the amount of columns in the model
+  \item \textit{public update\_model(data:list)}\\ 
+  updates the model by using the items of the list. The items will be of the message types 
+  \item \textit{public transform\_data(AbstractItem)}\\ 
+  integrates a TopicStatistics in the model by modifing its item/s by adding a new dict to the corresponding item (especially the TopicItem and the ConnectionItem)
+  \item \textit{public transform\_data(statistics)}\\ 
+  integrates a NodeStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
+  \item \textit{public transform\_data(HostStatistics)}\\ 
+  integrates a HostStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
+  \item \textit{public transform\_data(RatedStatistics)}\\ 
+  add the rating to an existing entry by modifing the dict of the corresponding
+  item/s
+  \item \textit{public transform\_data(StatisticHistory)}\\ 
+  When using the monitor\_proxy to receive about the last minutes from the monitoring node
   it returns a StaticHistory item which can then be integrated in the model via this method
+  \item \textit{public void proxy\_action\_or\_not()}\\
+  
   \end{itemize}
 
 \subsection{AbstractItem}
 Provides a unified interface to access the items of a model.
 \subsubsection{Attributes}
 \begin{itemize}
-  \item \textit{private data\_list: list<TimeStampedData>} contains the data of the abstract item represented as TimeStampedItems so that the progress in time can be shown
-  \item \textit{private child\_items: list<AbstractItem>} the child of this item
-  \item \textit{private parent\_item: AbstractItem} the parent of this item
+  \item \textit{private data\_list: list<dict>}\\ 
+  contains the data of the abstract item including a time stamp so that
+  the progress in time can be shown
+  \item \textit{private child\_items: list<AbstractItem>}\\ 
+  the child of this item
+  \item \textit{private parent\_item: AbstractItem}\\ 
+  the parent of this item
+  \item \textit{private log: list<list<string>>}\\
+  contains the logs of the item
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textit{public \_\_init(list, parent=None)\_\_}
-   \item \textit{public append\_child(AbstractItem)} append a child to the list of childs
-  \item \textit{public append\_data(TimeStampedData)} append data to the data\_list of the AbstractItem
-  \item \textit{public AbstractItem get\_child(row: int)} return the child at the position row
-  \item \textit{public TimeStampedData get\_latest\_data()} return the latest data of the data\_list
-  \item \textit{public AbstractItem parent()} returns the parent of this or None if there is none (TODO:is that correct)
-  \item \textit{public AbstractItem get\_oldest\_item()} return the oldest data item in data\_list
-  \item \textit{public delete\_oldest\_item((age:int))} delets the oldest item in data\_list. Optional if age is set: if the age of the oldest data item is greater equal to the age definded it will be deleted
-  \item \textit{public abstract execute\_action(RemoteAction)} executes a action on the current item like stop or restart. Calls to this method should be redirected to the remote host on executed there.
+   \item \textit{public void append\_child(AbstractItem)}\\ 
+   append a child to the list of childs
+  \item \textit{public void append\_data(oject)}\\ 
+  append data to the data\_list of the AbstractItem
+  \item \textit{public AbstractItem get\_child(row: int)}\\ 
+  return the child at the position row
+  \item \textit{public TimeStampedData get\_latest\_data()}\\ 
+  return the latest data of the data\_list
+  \item \textit{public AbstractItem parent()}\\ 
+  returns the parent of this or None if there is none (TODO:is that correct)
+  \item \textit{public AbstractItem get\_oldest\_item()}\\ 
+  return the oldest data item in data\_list
+  \item \textit{public void delete\_oldest\_item((age:int))}\\ 
+  delets the oldest item in data\_list. Optional if age is set: if the age of the oldest data item is greater equal to the age definded it will be deleted
+  \item \textit{public abstract void execute\_action(RemoteAction)}\\ 
+  executes a action on the current item like stop or restart. Calls to this
+  method should be redirected to the remote host on executed there.
 \end{itemize}
 
 \subsection{HostItem}
@@ -97,8 +155,8 @@ The data\_list will contain TimeStampedData whereas the data is a dict containin
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textit{public \_\_init(list, parent=None)\_\_}
-  \item \textit{public execute\_action(RemoteAction)}
-  ..
+  \item \textit{public execute\_action(RemoteAction)}\\
+  
 \end{itemize}
 
 \subsection{NodeItem}
@@ -107,7 +165,8 @@ The data\_list will contain TimeStampedData whereas the data is a dict containin
 \subsubsection{Methods}
 \begin{itemize}
  % \item \textit{public \_\_init(list, parent=None)\_\_}
-  \item \textit{public execute\_action(RemoteAction)}
+  \item \textit{public execute\_action(RemoteAction)}\\
+  
 \end{itemize}
 
 \subsection{TopicItem}
@@ -116,7 +175,8 @@ The data\_list will contain TimeStampedData whereas the data is a dict containin
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textit{public \_\_init(list, parent=None)\_\_}
-  \item \textit{public execute\_action(RemoteAction)} not senseful, throws an exception
+  \item \textit{public execute\_action(RemoteAction)}\\ 
+  not senseful, throws an exception
 \end{itemize}
 
 \subsection{ConnectionItem}
@@ -125,7 +185,8 @@ The data\_list will contain TimeStampedData whereas the data is a dict containin
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textit{public \_\_init(list, parent=None)\_\_}
-  \item \textit{public execute\_action(RemoteAction)} not senseful, throws an exception
+  \item \textit{public execute\_action(RemoteAction)}\\ 
+  not senseful, throws an exception
 \end{itemize}
 
 % \subsection{TimeStampedData}
@@ -151,10 +212,58 @@ The data\_list will contain TimeStampedData whereas the data is a dict containin
 TODO: Description
 \subsubsection{Types}
 \begin{itemize}
-	\item \textit{e\_action\_stop}
-	..
-	\item \textit{e\_action\_restart}
-	..
+	\item \textit{e\_action\_stop}\\
+	
+	\item \textit{e\_action\_restart}\\
+	
+\end{itemize}
+
+\subsection{ItemFilterProxy}
+TODO:Description
+\subsubsection{Methods}
+\begin{itemize}
+  %??
+  %\item \textit{public void \_\_init\_\_(QObject)}\\
+  
+  \item \textit{public ItemFilterProxy get\_instance()}\\
+  returns the instance
+  \item \textit{public bool filterAcceptsRow(bool, ????)}\\
+  
+  \item \textit{public bool lessThan(QModelIndex, QModelIndex)}\\
+  
+\end{itemize}
+
+\subsection{LogFilterProxy}
+TODO:Description
+\subsubsection{Methods}
+\begin{itemize}
+  %??
+  %\item \textit{public void \_\_init\_\_(QObject)}\\
+  
+  \item \textit{public ItemFilterProxy get\_instance()}\\
+  returns the instance
+  \item \textit{public bool filterAcceptsRow(bool, ????)}\\
+  
+  \item \textit{public bool lessThan(QModelIndex, QModelIndex)}\\
+  
+\end{itemize}
+
+\subsection{SizeDelegate: QtGui.QStyledItemDelegate}
+TODO:Description
+\subsubsection{Attributes}
+\begin{itemize}
+  \item \textit{private current\_font\_size: int}\\
+  the size displayed font
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+  \item \textit{public void paint(QPainter, QStyleOptionViewItem,
+  QModelIndex)}\\
+  
+  \item \textit{public void set\_bigger\_font\_size()}\\
+  increases the displayed font-size
+  \item \textit{public void set\_smaller\_font\_size()}\\
+  decreases the displayed font-size
 \end{itemize}
 
 \newpage
@@ -186,6 +295,17 @@ contains most of the relevant information in a small and fancy area.
   \item \textit{public log\_tab: QWidget}\\
   shows actual errors and warnings 
 \end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+  \item \textit{public void \_\_init\_\_(context)}\\
+  ..
+  \item \textit{public void connect\_slots()}\\
+  initializes the slots from the widget
+  \item \textit{public void update()}\\
+  updates the widget
+  \item \textit{public void eventFilter(QObject, QEvent)}\\
+  ..
+\end{itemize}
 
 \subsection{SelectionPlugin}
 A Plugin which shows detailed information in different tabs about the currently
@@ -212,6 +332,19 @@ selected host or node.
   \item \textit{public actions\_tab: QWidget}\\
   includes buttons to restart and stop nodes  
 \end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+  \item \textit{public void \_\_init\_\_(context)}\\
+  ..
+  \item \textit{public void connect\_slots()}\\
+  initializes the slots from the widget
+  \item \textit{public void set\_selected\_item(item)}\\
+  ..
+  \item \textit{public void update()}\\
+  updates the widget
+  \item \textit{public void eventFilter(QObject, QEvent)}\\
+  ..
+\end{itemize}
 
 \subsection{TreePlugin}
 TreePlugin is very simply and shows only the actual active hosts
@@ -233,5 +366,12 @@ nodes are displayed.
   and zoom out
   \item \textit{public filter\_line\_edit: QLineEdit}\\
   a textfield where you can define a filter for the output
+\end{itemize}
+\subsubsection{Methods}
+\begin{itemize}
+  \item \textit{public void \_\_init\_\_(context)}\\
+  ..
+  \item \textit{public void connect\_slots()}
+  initializes the slots from the widget
 \end{itemize}
 

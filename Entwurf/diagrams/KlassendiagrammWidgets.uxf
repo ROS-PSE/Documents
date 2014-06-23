@@ -169,7 +169,7 @@ bg=orange
       <x>1687</x>
       <y>525</y>
       <w>146</w>
-      <h>531</h>
+      <h>538</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>21;525;77;518;77;21;133;21</additional_attributes>
@@ -251,16 +251,16 @@ bg=orange
 - monitoring_proxy: rospy.ServiceProxy
 - host_proxy: rospy.ServiceProxy
 - model_lock:threading.Lock
-- log:list&lt;TimeStampedData&lt;list&lt;string&gt;&gt;&gt;
+- log:list&lt;list&lt;string&gt;&gt;
 - root_item: AbstractItem
 *- item_delegate:SizeDelegate*
 *- log_model:QStandardItemModel *
 --
 + __init__(data:list, )
 *_+ get_instance(): ROSModel_*
-+ get_log():list&lt;TimeStampedData&lt;list&lt;string&gt;&gt;&gt;
++ get_log():list&lt;list&lt;strings&gt;&gt;
 + data(index:QModelIndex, role:int):QVariant
-+ ItemFlags flags(index:QModelIndex ):ItemFlags
++ flags(index:QModelIndex ):ItemFlags
 + headerData(section:int, orientation:Orientation, role:int):QVariant
 + index(row:int, column:int, parent:QModelIndex):QModelIndex
 + parent(index:QModelIndex):QModelIndex
@@ -455,7 +455,7 @@ bg=orange
     </coordinates>
     <panel_attributes>lt=&lt;-
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>133;21;105;21;105;280;21;280</additional_attributes>
+    <additional_attributes>133;21;91;21;91;280;21;280</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -784,11 +784,11 @@ _+ get_instance(): HostLookUp_</panel_attributes>
       <x>105</x>
       <y>231</y>
       <w>419</w>
-      <h>475</h>
+      <h>482</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>203;462;203;413;42;413;42;21;406;21</additional_attributes>
+    <additional_attributes>203;469;203;413;42;413;42;21;406;21</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -855,18 +855,18 @@ QSortFilterProxyModel</panel_attributes>
     <coordinates>
       <x>392</x>
       <y>427</y>
-      <w>643</w>
+      <w>594</w>
       <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>630;147;630;147;56;147;56;21;21;21</additional_attributes>
+    <additional_attributes>581;147;56;147;56;21;21;21</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1022</x>
+      <x>973</x>
       <y>511</y>
-      <w>147</w>
+      <w>252</w>
       <h>133</h>
     </coordinates>
     <panel_attributes>*&lt;&lt;Singleton&gt;&gt; ItemFilterProxy*
@@ -934,14 +934,14 @@ index:QModelIndex)
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1148</x>
+      <x>1204</x>
       <y>581</y>
-      <w>349</w>
+      <w>293</w>
       <h>356</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>21;21;189;21;189;343;336;343</additional_attributes>
+    <additional_attributes>21;21;133;21;133;343;280;343</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -969,9 +969,9 @@ index:QModelIndex)
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1022</x>
+      <x>973</x>
       <y>658</y>
-      <w>147</w>
+      <w>252</w>
       <h>133</h>
     </coordinates>
     <panel_attributes>*&lt;&lt;Singleton&gt;&gt; LogFilterProxy*
@@ -987,25 +987,25 @@ _+ get_instance(): LogFiterProxy_
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1148</x>
+      <x>1204</x>
       <y>721</y>
-      <w>349</w>
+      <w>293</w>
       <h>230</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>21;21;175;21;175;217;336;217</additional_attributes>
+    <additional_attributes>21;21;119;21;119;217;280;217</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1148</x>
+      <x>1204</x>
       <y>385</y>
-      <w>349</w>
+      <w>293</w>
       <h>146</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>21;133;238;133;238;21;336;21</additional_attributes>
+    <additional_attributes>21;133;182;133;182;21;280;21</additional_attributes>
   </element>
 </diagram>
