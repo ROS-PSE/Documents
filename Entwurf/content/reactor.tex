@@ -1,3 +1,17 @@
+\newpage
+\section{Countermeasure}
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.0\linewidth]{./diagram_pictures/reactor.jpg}
+\caption{The UML diagram of the countermeasure package}
+\end{center}
+\end{figure}
+
+\mbox{}
+
+\newpage
+
+
 \subsection{CountermeasureNode}
 a ROS node. Evaluates incoming rated statistics with a list of constraints. If those constraints turn out to be true appropriate action is taken.
 \subsubsection{Attributes}
@@ -167,7 +181,6 @@ Contains an actual constraint.
 \end{itemize}
 
 \subsection{Enum Outcome }
-TODO: Description
 
 \subsubsection{Types}
 \begin{itemize}
@@ -186,17 +199,17 @@ TODO: Description
 	Abstract Reaction to an Constraint
 \subsubsection{Attributes}
 \begin{itemize}
-	\item \textbf{ private string host\_id }\\
+	\item \textbf{ protected string host\_id }\\
 		contains the host on which the node is run on.
-	\item \textbf{ private string node\_id }\\
+	\item \textbf{ protected string node\_id }\\
 		the id of the node the reaction is ment to act upon.
-	\item \textbf{ private int autonomy\_level }\\
+	\item \textbf{ protected int autonomy\_level }\\
 		this constraint only gets evaluatet if 
 		the autonomy\_level is <= reaction\_autonomy\_level
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public void \_\_init\_\_(string node\_id)
+	\item \textbf{ public void \_\_init\_\_(string node\_id) }\\
 		initializes the reaction. sets the node to execute the reaction on. finds the corresponding host to the given node.
 	\item \textbf{ public void execute\_reaction() }\\
 		executes the reaction as a service call to the HostStatistic Node.
@@ -207,12 +220,12 @@ TODO: Description
 	An Reaction which runs a command as action 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private string command
+	\item \textbf{ private string command }\\
 	\\ contains the command
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public \_\_init\_\_(string node\_id,string command)
+	\item \textbf{ public void \_\_init\_\_(string node\_id,string command) }\\
 		initializes the reaction. set the command to be executed.
 	\item \textbf{ public void executeReaction() }\\
 \end{itemize}
@@ -221,7 +234,7 @@ TODO: Description
 \subsection{ReactionDefault}
 \subsubsection{attributes}
 \begin{itemize}
-	\item \textbf{ protected ReactionDefaultType reaction\_type}\\
+	\item \textbf{ private ReactionDefaultType reaction\_type}\\
 		containts the type this reaction is of.
 \end{itemize}
 \subsubsection{Methods}
