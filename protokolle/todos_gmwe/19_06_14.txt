@@ -1,3 +1,8 @@
+Essen gehen.
+Schlafen.
+Für Klausuren lernen.
+Volleyballn.
+
 schnittstelle hoststatistics:
 	- annahme von reaktion und ausführen dieser (+ messagetypes dafür)
 
