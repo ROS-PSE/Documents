@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>100%</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>270</x>
+      <y>140</y>
+      <w>240</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>*MonitoringNode*
+--
+- storage: MetadataStorage
+- spec_handler: SpecificationHandler
+--
+// Receives data incoming from the Subscriber and converts them to Metadata objects.
+- receive_data(): Metadata
+// Returns the specHandler's compare result
+- process_data(Metadata): RatedStatistics
+// Publishes results of the comparison as rated Metadata
+- publish_data(RatedStatistics): void
+// Listen for the GUI Model service calls and returns requested metadata from the storage
+- storage_server(MetadataStorageRequest): MetadataStorageResponse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>150</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>rospy.Subscriber
+see ros</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>110</x>
+      <y>130</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;30;100;30;100;80;160;80</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>540</x>
+      <y>140</y>
+      <w>260</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>// Saves recieved metadata packages for a given period of time and can provide them on request.
+*MetadataStorage*
+--
+// Datastructure to store Packages by key and timestamp
+- storage: dict(string, dict(int, StorageContainer[]))
+// Duration in seconds for data to be stored
+- duration: int
+--
+// Deletes Metadata exceeding the duration to store
+- clean_up(): void
+// Stores a given Metadata
++ store(StorageContainer): boolean
+// Returns all Metadata packages for the given connection/host of the given amount of time.
++ get(string, int): StorageContainer[]
+// Clears the whole storage
++ clear(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>840</x>
+      <y>320</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>// Wraps metadata of exactly one host or node, a topic or a node-topic-combination.
+*Metadata*
+--
+// Collection of Metadata regarding multiple meassurements.
+- values: MetadataTuple[]
+--
+// Add a MetadataTuple of information to the bundle.
++ add_tuple(MetadataTuple): void
+// Returns the value of the MetadataTuple with the given key. False, if the key does not exist.
++ get(String): object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>770</x>
+      <y>150</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>540</x>
+      <y>460</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>*Specification*
+--
+// Collection of MetadataTuple objects providing limits for multiple fields.
+- values: MetadataTuple[]
+--
+// Adds a MetadataTuple to the bundle
++ add_tuple(MetadataTuple): void
+// Returns the value of the MetadataTuple with the given key. The returned value would be a list containing limit values for the most measured fields. False, if the key does not exist.
++ get(String): Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>270</x>
+      <y>330</y>
+      <w>240</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>// Loads the specifications from the parameter server and compares them to the actual metadata.
+*SpecificationHandler*
+--
+// Datastructure to keep all loaded Specification objects
+- specifications: dict(string, Specification)
+--
+// Loads the specifications from configuration files into Specification objects and stores them
+- load_Specifications(): void
+// Compares a given Metadata object with a given Specification object regarding all available fields. Returns a RatedStatistics object wrapping potential divergences.
++ compare(Metadata, Specification): RatedStatistics
+// Returns the specification for a given identifier
++ get(string): Specification</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>480</x>
+      <y>350</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= </panel_attributes>
+    <additional_attributes>190;110;190;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>250</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= </panel_attributes>
+    <additional_attributes>30;80;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>270</x>
+      <y>460</y>
+      <w>240</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>// Wraps the result of the comparison between the actual metadata and the specificaton.
+*RatedStatistics*
+--
+// Identifies the node/host/connection
++ seuid: string
+// The metadata that was out of bounds
++ metatype: string[]
+// The actual values
++ actual: string[]
+// The expected values
++ expected: string[]
+// State of the metadata from the node/host/connection : state: { 0 = high ; 1 = low ; 2 = unknown}
++ state: int[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>480</x>
+      <y>310</y>
+      <w>380</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>360;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>840</x>
+      <y>460</y>
+      <w>140</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>// Stores any kind of value for a certain key. Specifications storing values indicating limits, Metadata storing absolute actual values.
+*MetadataTuple*
+--
+- key: String
+- value: Object
+--
++ get_key(): String
++ get_value(): Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>870</x>
+      <y>380</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;80</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>730</x>
+      <y>450</y>
+      <w>130</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;110;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>400</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-</panel_attributes>
+    <additional_attributes>30;30;30;60</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>480</x>
+      <y>150</y>
+      <w>80</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>360</x>
+      <y>40</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;network&gt;&gt;
+model
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>70</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+</panel_attributes>
+    <additional_attributes>30;30;30;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>240</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>rospy.Publisher
+see ros</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>110</x>
+      <y>180</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;80;100;80;100;30;160;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>840</x>
+      <y>140</y>
+      <w>240</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>// Wraps Metadata in raw and rated form with an identifier and a timestamp. Object to be returned on request by the GUI model.
+*StorageContainer*
+--
+// Time when the data came from the subscriber
++ timestamp: int
+// Host/Node/Connection identifier
++ identifier: string
+// The data as it reaches the subscriber from nodes and hosts.
++ data_raw: object
+// The data like it would be published after being rated.
++ data_rated: object</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
