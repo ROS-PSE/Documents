@@ -39,9 +39,9 @@
 // Receives data incoming from the Subscriber and converts them to Metadata objects.
 - receive_data(): Metadata
 // Returns the specHandler's compare result
-- process_data(Metadata): ComparisonResult
+- process_data(Metadata): RatedStatistics
 // Publishes results of the comparison as rated Metadata
-- publish_data(ComparisonResult): void
+- publish_data(RatedStatistics): void
 // Listen for the GUI Model service calls and returns requested metadata from the storage
 - storage_server(MetadataStorageRequest): MetadataStorageResponse</panel_attributes>
     <additional_attributes/>
@@ -151,18 +151,20 @@ Metadata
       <x>270</x>
       <y>330</y>
       <w>240</w>
-      <h>90</h>
+      <h>100</h>
     </coordinates>
     <panel_attributes>// Loads the specifications from the parameter server and compares them to the actual metadata.
 SpecificationHandler
 --
 // Datastructure to keep all loaded Specification objects
-- specifications: Specification[]
+- specifications: dict(string, Specification)
 --
 // Loads the specifications from configuration files into Specification objects and stores them
 - load_Specifications(): void
 // Compares a given Metadata object with a given Specification object regarding all available fields. Returns a RatedStatistics object wrapping potential divergences.
-+ compare(Metadata, Specification): RatedStatistics</panel_attributes>
++ compare(Metadata, Specification): RatedStatistics
+// Returns the specification for a given identifier
++ get(string): Specification</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -267,12 +269,12 @@ MetadataTuple
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>370</x>
-      <y>390</y>
+      <y>400</y>
       <w>50</w>
-      <h>90</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&gt;-</panel_attributes>
-    <additional_attributes>30;30;30;70</additional_attributes>
+    <additional_attributes>30;30;30;60</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
