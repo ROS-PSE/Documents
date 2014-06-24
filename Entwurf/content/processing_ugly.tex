@@ -11,9 +11,9 @@ Main Class wrapping the processing functionality.
 \begin{itemize}
 	\item \textbf{private Metadata receive\_data()}\\
 	Receives data incoming from the Subscriber and converts them to Metadata objects.
-	\item \textbf{private ComparisonResult process\_data(Metadata)}\\
+	\item \textbf{private RatedStatistics process\_data(Metadata)}\\
 	Returns the specHandler's compare result
-	\item \textbf{private void publish\_data(ComparisonResult)}\\
+	\item \textbf{private void publish\_data(RatedStatistics)}\\
 	Publishes results of the comparison as rated Metadata
 	\item \textbf{private MetadataStorageResponse storage\_server(MetadataStorageRequest)}\\
 	Listen for the GUI Model service calls and returns requested metadata from the storage
