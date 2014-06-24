@@ -67,8 +67,6 @@
       <h>90</h>
     </coordinates>
     <panel_attributes>qt_gui.plugin
-bg=orange
-
 
 </panel_attributes>
     <additional_attributes/>
@@ -161,8 +159,8 @@ bg=orange
 + plus_push_button: QPushButton
 + show_nodes_check_box: QCheckBox
 + show_hosts_check_box: QCheckBox
-*+ show_topics_check_box: QCheckBox*
-*+ show_connections_check_box: QCheckBox*
++ show_topics_check_box: QCheckBox
++ show_connections_check_box: QCheckBox
 + filter_horizontal_layout: QHBoxLayout
 + apply_push_button: QPushButton
 + filter_label: QLabel
@@ -201,7 +199,6 @@ bg=orange
       <h>1494</h>
     </coordinates>
     <panel_attributes>view
-bg=orange
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -213,8 +210,7 @@ bg=orange
       <w>1152</w>
       <h>972</h>
     </coordinates>
-    <panel_attributes>model
-bg=orange</panel_attributes>
+    <panel_attributes>model</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -237,8 +233,6 @@ bg=orange</panel_attributes>
       <h>153</h>
     </coordinates>
     <panel_attributes>python_qt_binding
-bg=orange
-
 
 </panel_attributes>
     <additional_attributes/>
@@ -269,11 +263,11 @@ bg=orange
 - model_lock:threading.Lock
 - log:list&lt;list&lt;string&gt;&gt;
 - root_item: AbstractItem
-*- item_delegate:SizeDelegate*
-*- log_model:QStandardItemModel *
+- item_delegate:SizeDelegate
+- log_model:QStandardItemModel
 --
 + __init__(data:list, )
-*_+ get_instance(): ROSModel_*
+_+ get_instance(): ROSModel_
 + get_log():list&lt;list&lt;strings&gt;&gt;
 + data(index:QModelIndex, role:int):QVariant
 + flags(index:QModelIndex ):ItemFlags
@@ -379,7 +373,7 @@ bg=orange
       <w>234</w>
       <h>180</h>
     </coordinates>
-    <panel_attributes>BufferThread
+    <panel_attributes>*BufferThread*
 --
 //This thrad should buffer the incoming data and regulary update the model and hence also the model.
 - buffer_lock:threading.Lock
@@ -392,7 +386,7 @@ bg=orange
 + start()
 + update_model()
 + add_buffer_item(object)
-*+ add_buffer_item(RatedStatistics)*</panel_attributes>
++ add_buffer_item(RatedStatistics)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -520,7 +514,6 @@ fg=black
       <h>90</h>
     </coordinates>
     <panel_attributes>threading
-bg=orange
 
 
 </panel_attributes>
@@ -615,8 +608,6 @@ e_action_restart</panel_attributes>
       <h>126</h>
     </coordinates>
     <panel_attributes>msgs
-bg=orange
-
 
 </panel_attributes>
     <additional_attributes/>
@@ -1009,8 +1000,6 @@ index:QModelIndex)
       <h>126</h>
     </coordinates>
     <panel_attributes>rospy
-bg=orange
-
 
 </panel_attributes>
     <additional_attributes/>
