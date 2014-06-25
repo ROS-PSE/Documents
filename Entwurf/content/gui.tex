@@ -110,7 +110,7 @@ Represents the data as a QtModel. This enables automated updates of the View.
   it returns a StaticHistory item which can then be integrated in the model via this method
   \item \textbf{public void trigger\_node\_action(string, RemoteAction)}\\
   triggers the RemoteAction to start,stop or restart a node
-  \item\textbf{public void set\_log\_item(list<string>)}\\
+  \item\textbf{public void add\_log\_item(list<string>)}\\
   adds the given lists as a log entry to the model
   \end{itemize}
 
@@ -141,10 +141,12 @@ Provides a unified interface to access the items of a model.
   return the latest data of the data\_list
   \item \textbf{public AbstractItem parent()}\\ 
   returns the parent of this or None if there is none (TODO:is that correct)
-  \item \textbf{public AbstractItem get\_oldest\_item()}\\ 
-  return the oldest data item in data\_list
-  \item \textbf{public void delete\_oldest\_item((age:int))}\\ 
-  delets the oldest item in data\_list. Optional if age is set: if the age of the oldest data item is greater equal to the age definded it will be deleted
+  \item \textbf{public AbsractItem get\_items\_older\_than(rospy.Time)}\\
+  returns all items wich are older than \textit{rospy.Time}
+  \item \textbf{public void delete\_items\_older\_than(rospy.Time})\\
+  deletes all items wich are older than \textit{rospy.Time}
+  \item \textbf{public AbstractItem get\_items\_younger\_than(rospy.Time)}\\
+  returns all items wich are younger than \textit{rospy.Time}
   \item \textbf{public abstract void execute\_action(RemoteAction)}\\ 
   executes a action on the current item like stop or restart. Calls to this
   method should be redirected to the remote host on executed there.
@@ -152,7 +154,8 @@ Provides a unified interface to access the items of a model.
 
 \subsection{HostItem}
 A HostItem represents a host with all its data.
-The data\_list will contain TimeStampedData whereas the data is a dict containing ...
+The data\_list will contain TimeStampedData whereas the data is a dict
+containing ...
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textbf{public \_\_init(list, parent=None)\_\_}
@@ -221,6 +224,17 @@ Gives a predefinition for a remote interaction with hosts and nodes.
 
 \subsection{ItemFilterProxy}
 TODO:Description
+\subsection{Attributes}
+\begin{itemize}
+  \item \textbf{private show\_hosts: bool}\\
+  true if show\_hosts\_check\_box is selected
+  \item \textbf{private show\_nodes: bool}\\
+  true if show\_nodes\_check\_box is selected
+  \item \textbf{private show\_connections}\\
+  true if show\_connections\_check\_box is selected
+  \item \textbf{private show\_topics: bool}\\
+  true if show\_topics\_check\_box is selected
+\end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
   %??
@@ -232,21 +246,36 @@ TODO:Description
   
   \item \textbf{public bool lessThan(QModelIndex, QModelIndex)}\\
   
+  \item \textbf{public void show\_hosts()}\\
+  
+  \item \textbf{public void show\_nodes()}\\
+  
+  \item \textbf{public void show\_connections()}\\
+  
+  \item \textbf{public void show\_topics()}\\
+  
 \end{itemize}
 
 \subsection{LogFilterProxy}
 TODO:Description
+\subsection{Attributes}
+\begin{itemize}
+  \item \textbf{private current\_item: AbstractItem}\\
+  the currently selected item
+\end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
   %??
   %\item \textbf{public void \_\_init\_\_(QObject)}\\
   
   \item \textbf{public ItemFilterProxy get\_instance()}\\
-  returns the instance
+  returns the instance of ItemFilterProxy
   \item \textbf{public bool filterAcceptsRow(int, QModelIndex)}\\
   
   \item \textbf{public bool lessThan(QModelIndex, QModelIndex)}\\
   
+  \item \textbf{public void filter\_by\_item(AbstractItem)}\\
+  filters the content by AbstractItem
 \end{itemize}
 
 \subsection{SizeDelegate: QtGui.QStyledItemDelegate}
@@ -298,6 +327,18 @@ contains most of the relevant information in a small and fancy area.
   \item \textbf{public draw\_graphs: bool}\\
   when the graph tab is selected, draw\_graphs is set on true an the graph will
   appear
+  \item \textbf{public last\_update: rospy.Time}\\
+  the time of the latest update
+  \item \textbf{public graph\_layout: pyqtgraph.GraphicsLayoutWidget}\\
+  
+  \item \textbf{public graph\_dict: dict<string, pyqtgraph.PlotItem>}\\
+  
+  \item \textbf{public values\_dict: dict<string, numpy.ndarray>}\\
+  
+  \item \textbf{public model: ROSModel}\\
+  
+  \item \textbf{public log\_fiter\_proxy: LogFilterProxy}\\
+  
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -308,6 +349,8 @@ contains most of the relevant information in a small and fancy area.
   \item \textbf{public void update()}\\
   updates the widget
   \item \textbf{public void on\_current\_tab\_changed(int)}\\
+  
+  \item \textbf{public void update\_graphs()}\\
   
 \end{itemize}
 
@@ -333,8 +376,16 @@ nodes are displayed.
   makes it for, a better clarity, possible to zoom in  
   \item \textbf{public minus\_push\_button: QPushButton}\\
   and zoom out
+  \item \textbf{public selection\_widget: SelectionWidget}\\
+  the object of the SelectionWidget
   \item \textbf{public filter\_line\_edit: QLineEdit}\\
   a textfield where you can define a filter for the output
+  \item \textbf{public model: ROSModel}\\
+  the connection to the ROSModel
+  \item \textbf{public filter\_proxy: ItemFilterProxy}\\
+  
+  \item \textbf{public size\_delegate: SizeDelegte}\\
+  
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -363,6 +414,9 @@ nodes are displayed.
   \item \textbf{public void on\_minus\_push\_button\_clicked()}\\
   checks if the minus\_push\_button is clicked and zoomes out (decreases the
   size of the font)
+  \item \textbf{public void on\_item\_in\_tree\_view\_double\_clicked()}\\
+  handels the double-click action and opens the clicked host or node in the
+  SelectionWidget
 \end{itemize}
 
 \subsection{SelectionWidget}
@@ -394,6 +448,18 @@ in different tabs about the currently selected host or node.
   \item \textbf{public draw\_graphs: bool}\\
   when the graph tab is selected, draw\_graphs is set on true an the graph will
   appear
+  \item \textbf{public last\_updated: rospy.Time}\\
+  the time of the last update
+  \item \textbf{public graph\_layout: pygraph.GraphicsLayoutWidget}\\
+  
+  \item \textbf{public graph\_dict: dict<string, pyqtgraph.PlotItem>}\\
+  
+  \item \textbf{public values\_dict: dict<tring, numpy.ndarray}\\
+  
+  \item \textbf{public model: ROSModel}\\
+  the connection to the RPSModel
+  \item \textbf{public log\_filter\_proxy: LogFilterProxy}\\
+  
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -413,6 +479,12 @@ in different tabs about the currently selected host or node.
   handels the stop button and stops a host or node
   \item \textbf{public void on\_start\_push\_button\_clicked()}\\
   handels the start button and starts ahost or node
+  \item \textbf{public void on\_range\_combo\_box\_index\_changed(int)}\\
+  handels the change of the graph range
+  \item \textbf{public void on\_changed\_selected\_item(QModelIndex)}\\
+  handels the change of the selected item
+  \item \textbf{public void update\_graphs()}\\
+  updates the graph plot
 \end{itemize}
 
 
