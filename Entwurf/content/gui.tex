@@ -15,13 +15,27 @@
 \section{GUI - Model}
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=1.0\linewidth]{./bilder/model.png}
+\includegraphics[width=1.0\linewidth]{./diagram_pictures/model.png}
 \caption{The model class diagram}
 \end{center}
 \end{figure}
 
+\newpage
 \subsection{BufferThread}
-This thread should buffer the incoming data from the topics and regulary update the model.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/BufferThread.pdf}
+		\caption{The BufferThread}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		This thread should buffer the incoming data from the topics and regulary
+		update the model.
+	\end{minipage}
+\end{figure}
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{private buffer\_lock: threading.Lock} \\
@@ -53,7 +67,19 @@ This thread should buffer the incoming data from the topics and regulary update 
 \end{itemize}
 
 \subsection{ROSModel}
-Represents the data as a QtModel. This enables automated updates of the View.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/ROSModel.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{6cm}
+		\vspace{10pt}		
+		Represents the data as a QtModel. This enables automated updates of the View.
+	\end{minipage}
+\end{figure}
 \subsubsection{Attributes}
 \begin{itemize}
  % \item \textbf{private item\_list: list}
@@ -115,7 +141,19 @@ Represents the data as a QtModel. This enables automated updates of the View.
   \end{itemize}
 
 \subsection{AbstractItem}
-Provides a unified interface to access the items of a model.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/AbstractItem.pdf}
+		\caption{The AbstractItem}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{6cm}
+		\vspace{10pt}		
+		Provides a unified interface to access the items of a model.
+	\end{minipage}
+\end{figure}
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{private data\_list: list<dict>}\\ 
@@ -153,9 +191,21 @@ Provides a unified interface to access the items of a model.
 \end{itemize}
 
 \subsection{HostItem}
-A HostItem represents a host with all its data.
-The data\_list will contain TimeStampedData whereas the data is a dict
-containing ...
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/HostItem.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}		
+		A HostItem represents a host with all its data.
+		The data\_list will contain TimeStampedData whereas the data is a dict
+		containing ...
+	\end{minipage}
+\end{figure}
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textbf{public \_\_init(list, parent=None)\_\_}
@@ -164,8 +214,21 @@ containing ...
 \end{itemize}
 
 \subsection{NodeItem}
- A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
- The data\_list will contain TimeStampedData whereas the data is a dict containing ...
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/NodeItem.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}		
+		A NodeItem represents a node with all of its data. It also has a interface to
+		start/stop/restart nodes. The data\_list will contain TimeStampedData whereas
+		the data is a dict containing ...
+	\end{minipage}
+\end{figure} 
 \subsubsection{Methods}
 \begin{itemize}
  % \item \textbf{public \_\_init(list, parent=None)\_\_}
@@ -174,8 +237,22 @@ containing ...
 \end{itemize}
 
 \subsection{TopicItem}
-A ConnectionItem reprensents the connection between a publisher and a subscriber and the topic they are puglishing / listenening on.
-The data\_list will contain TimeStampedData whereas the data is a dict containing ...
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/TopicItem.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		A ConnectionItem reprensents the connection between a publisher and a
+		subscriber and the topic they are puglishing / listenening on.
+		The data\_list will contain TimeStampedData whereas the data is a dict
+		containing ...
+	\end{minipage}
+\end{figure} 
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textbf{public \_\_init(list, parent=None)\_\_}
@@ -184,8 +261,22 @@ The data\_list will contain TimeStampedData whereas the data is a dict containin
 \end{itemize}
 
 \subsection{ConnectionItem}
- A NodeItem represents a node with all of its data. It also has a interface to start/stop/restart nodes.
- The data\_list will contain TimeStampedData whereas the data is a dict containing ...
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/ConnectionItem.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		A ConnectionItem reprensents the connection between a publisher and a
+		subscriber and the topic they are puglishing / listenening on.
+		The data\_list will contain TimeStampedData whereas the data is a dict
+		containing ...
+	\end{minipage}
+\end{figure}  
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textbf{public \_\_init(list, parent=None)\_\_}
@@ -213,7 +304,19 @@ The data\_list will contain TimeStampedData whereas the data is a dict containin
 % \end{itemize}
 
 \subsection{Enum RemoteAction}
-Gives a predefinition for a remote interaction with hosts and nodes.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/RemoteAction.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Gives a predefinition for a remote interaction with hosts and nodes.
+	\end{minipage}
+\end{figure}  
 \subsubsection{Types}
 \begin{itemize}
 	\item \textbf{e\_action\_stop}\\
@@ -222,7 +325,16 @@ Gives a predefinition for a remote interaction with hosts and nodes.
 	the action that should restart a host or node
 \end{itemize}
 
+\newpage
 \subsection{ItemFilterProxy}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/ItemFilter.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+\end{figure} 
 TODO:Description
 \subsection{Attributes}
 \begin{itemize}
@@ -257,7 +369,15 @@ TODO:Description
 \end{itemize}
 
 \subsection{LogFilterProxy}
-TODO:Description
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/LogFilter.pdf}
+		\caption{The LogFilterProxy}
+	\end{minipage}
+\end{figure} 
+TODO:Description	
 \subsection{Attributes}
 \begin{itemize}
   \item \textbf{private current\_item: AbstractItem}\\
@@ -279,7 +399,19 @@ TODO:Description
 \end{itemize}
 
 \subsection{SizeDelegate: QtGui.QStyledItemDelegate}
-Makes it possible to change the font size of the Gui-Plugin content
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/SizeDelegate.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{7cm}
+		\vspace{10pt}
+		Makes it possible to change the font size of the Gui-Plugin content
+	\end{minipage}
+\end{figure} 
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{private current\_font\_size: int}\\
@@ -300,14 +432,26 @@ Makes it possible to change the font size of the Gui-Plugin content
 \section{GUI - View}
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.8\linewidth]{./bilder/view.png}
+\includegraphics[width=0.8\linewidth]{./diagram_pictures/view.png}
 \caption{The view class diagram}
 \end{center}
 \end{figure}
 
 \subsection{OverviewPlugin}
-The OverviewPlugin is the core of the graphical user interface, which
-contains most of the relevant information in a small and fancy area.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/Overview.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		The OverviewPlugin is the core of the graphical user interface, which
+		contains most of the relevant information in a small and fancy area.
+	\end{minipage}
+\end{figure} 
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{public overview\_widget: QWidget}\\
@@ -354,10 +498,23 @@ contains most of the relevant information in a small and fancy area.
   
 \end{itemize}
 
+\newpage
 \subsection{TreePlugin}
-TreePlugin is very simply and shows only the actual active hosts
-and nodes. It is possible to filter the output, e.g. only erroneus hosts or
-nodes are displayed.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/Tree.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{7cm}
+		\vspace{10pt}
+		TreePlugin is very simply and shows only the actual active hosts
+		and nodes. It is possible to filter the output, e.g. only erroneus hosts or
+		nodes are displayed.
+	\end{minipage}
+\end{figure} 
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{public tree\_widget: QWidget}\\
@@ -419,9 +576,22 @@ nodes are displayed.
   SelectionWidget
 \end{itemize}
 
+\newpage
 \subsection{SelectionWidget}
-A Widget wich is a part of the TreePlugin. It shows detailed information
-in different tabs about the currently selected host or node.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/Selection.pdf}
+		\caption{The ROSModel}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{6.5cm}
+		\vspace{10pt}
+		A Widget wich is a part of the TreePlugin. It shows detailed information
+		in different tabs about the currently selected host or node.
+	\end{minipage}
+\end{figure} 
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{public selection\_widget: QWidget}\\
