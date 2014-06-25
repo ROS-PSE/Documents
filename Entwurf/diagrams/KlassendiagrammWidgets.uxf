@@ -48,7 +48,7 @@
 + range_horizontal_layout: QHBoxLayout
 + range_label: QLabel
 + log_tab: QWidget
-+ log_tab_tree_widget: QTreeWidget
++ log_tab_tree_widget: QTReeView
 + range_combo_box: QComboBox
 + draw_graphs: bool
 + last_updated: rospy.Time
@@ -180,7 +180,7 @@
       <x>1648</x>
       <y>216</y>
       <w>744</w>
-      <h>1096</h>
+      <h>1104</h>
     </coordinates>
     <panel_attributes>view</panel_attributes>
     <additional_attributes/>
@@ -202,7 +202,7 @@
       <x>552</x>
       <y>184</y>
       <w>1856</w>
-      <h>1136</h>
+      <h>1152</h>
     </coordinates>
     <panel_attributes>gui_widgets</panel_attributes>
     <additional_attributes/>
@@ -281,7 +281,7 @@
       <x>584</x>
       <y>248</y>
       <w>208</w>
-      <h>176</h>
+      <h>184</h>
     </coordinates>
     <panel_attributes>*BufferThread:threading.Thread*
 --
@@ -292,8 +292,9 @@
 - buffer:list
 - rated_buffer:list&lt;RatedStatistics&gt;
 - running: bool
+- monitoring_proxy: rospy.ServiceProxy
 --
-+ __init__()
++ __init__(model: ROSModel)
 + start()
 + update_model()
 + add_buffer_item(object)
@@ -304,13 +305,13 @@
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>624</x>
-      <y>400</y>
+      <y>408</y>
       <w>94</w>
-      <h>336</h>
+      <h>360</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>48;320;48;24</additional_attributes>
+    <additional_attributes>48;344;48;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -351,11 +352,11 @@
       <x>960</x>
       <y>384</y>
       <w>208</w>
-      <h>352</h>
+      <h>384</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>192;24;144;24;144;272;24;272;24;336</additional_attributes>
+    <additional_attributes>192;24;144;24;144;272;24;272;24;368</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -363,11 +364,11 @@
       <x>760</x>
       <y>272</y>
       <w>96</w>
-      <h>464</h>
+      <h>496</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>80;40;48;40;48;448</additional_attributes>
+    <additional_attributes>80;40;48;40;48;480</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -375,11 +376,11 @@
       <x>776</x>
       <y>568</y>
       <w>94</w>
-      <h>168</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>64;40;48;40;48;152</additional_attributes>
+    <additional_attributes>64;40;48;40;48;184</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -444,11 +445,11 @@ e_action_restart</panel_attributes>
       <x>768</x>
       <y>376</y>
       <w>94</w>
-      <h>360</h>
+      <h>392</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>72;40;48;40;48;344</additional_attributes>
+    <additional_attributes>72;40;48;40;48;376</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -501,7 +502,7 @@ _+ get_instance(): HostLookUp_</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>1048</x>
-      <y>888</y>
+      <y>880</y>
       <w>528</w>
       <h>176</h>
     </coordinates>
@@ -513,7 +514,7 @@ _+ get_instance(): HostLookUp_</panel_attributes>
 - show_topics: bool
 --
 + __init__(parent:QObject)
-+ bool filterAcceptsRow(sourceRow:bool filterAcceptsRow(source_row:int, source_parent:QModelIndex )
++ bool filterAcceptsRow(source_row:int, source_parent:QModelIndex )
 + bool lessThan(left:QModelIndex, right:QModelIndext)
 + show_hosts(show_hosts:bool)
 + show_nodes(show_nodes:bool)
@@ -545,17 +546,17 @@ index:QModelIndex)
       <x>960</x>
       <y>632</y>
       <w>240</w>
-      <h>104</h>
+      <h>136</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>224;40;48;40;48;88</additional_attributes>
+    <additional_attributes>224;40;48;40;48;120</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>1552</x>
-      <y>888</y>
+      <y>880</y>
       <w>144</w>
       <h>56</h>
     </coordinates>
@@ -567,16 +568,16 @@ index:QModelIndex)
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>1048</x>
-      <y>720</y>
+      <y>752</y>
       <w>528</w>
-      <h>152</h>
+      <h>96</h>
     </coordinates>
     <panel_attributes>*LogFilterProxy:QSortFilterProxyModel *
 --
 - current_item:AbstractItem
 --
 + __init__(parent:QObject)
-+ bool filterAcceptsRow(sourceRow:bool filterAcceptsRow(source_row:int, source_parent:QModelIndex )
++ bool filterAcceptsRow(source_row:int, source_parent:QModelIndex )
 + bool lessThan(left:QModelIndex, right:QModelIndext)
 + filter_by_item(item:AbstractItem)</panel_attributes>
     <additional_attributes/>
@@ -587,11 +588,11 @@ index:QModelIndex)
       <x>1552</x>
       <y>504</y>
       <w>144</w>
-      <h>408</h>
+      <h>400</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>24;392;72;392;72;24;128;24</additional_attributes>
+    <additional_attributes>24;384;72;384;72;24;128;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -610,7 +611,7 @@ index:QModelIndex)
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>1552</x>
-      <y>816</y>
+      <y>800</y>
       <w>144</w>
       <h>56</h>
     </coordinates>
@@ -646,14 +647,13 @@ index:QModelIndex)
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>584</x>
-      <y>720</y>
+      <y>752</y>
       <w>440</w>
-      <h>328</h>
+      <h>304</h>
     </coordinates>
     <panel_attributes>*&lt;&lt;Singleton&gt;&gt; ROSModel*
 --
 //Represents the data as a QtModel. This enables automated updates of the View.
-- monitoring_proxy: rospy.ServiceProxy
 - model_lock:threading.Lock
 - root_item: AbstractItem
 - item_delegate:SizeDelegate
@@ -668,7 +668,7 @@ _+ get_instance(): ROSModel_
 + parent(index:QModelIndex):QModelIndex
 + rowCount(parent:QModelIndex):int
 + columnCount(parent:QModelIndex):int
-+ update_model(data:list)
++ update_model(data:list, rated_data:list)
 + transform_data(data:AbstractItem)
 + transform_data(data:Statistics)
 + transform_data(data:HostStatistics)
