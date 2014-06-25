@@ -21,8 +21,16 @@ Erroneous results will be marked in a new RatedStatistics object. Bundled with t
 \subsection*{Providing data for the GUI}
 Answering a request for all data or a special identifier describing a connection/node/host since a given point of time, the MonitoringNode will return the matching data from the MetadataStorage.
 A result of that will contain raw data, rated data, a timestamp and the identifier mentioned above.
+ 
+\newpage 
+\section{Countermeasures} 
+\begin{figure}[!ht] 
+	\begin{center} 
+		\includegraphics[width=1.0\linewidth]{./diagram_pictures/reactor/reactor_seq.pdf} 
+		\caption{Initialisation of Constraints and evaluating and executing countermeasures.} 
+	\end{center} 
+\end{figure}
 
-<<<<<<< HEAD
 \section{GUI}
 \begin{figure}[!ht]
 	\begin{center}
@@ -38,15 +46,3 @@ Finally the widgets connect their slots so that e.g. the view gets updated when 
 When the GUI is running everything is getting updated with Qt's signal and slot mechanism. The BufferThread gets all actual data as a Subscriber of all topics and then regularily redirects this data by updating the model. The changes are then transmitted to the view aka the widgets which then show this incoming data.
 \\
 \\Any other information on how the classes work and interact can often be discovered by looking at the class diagram.
-=======
-
-
-\newpage
-\section{Countermeasures}
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=1.0\linewidth]{./diagram_pictures/reactor/reactor_seq.pdf}
-		\caption{Initialisation of Constraints and evaluating and executing countermeasures.}
-	\end{center}
-\end{figure}
->>>>>>> origin/master
