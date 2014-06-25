@@ -29,7 +29,7 @@
       <x>1890</x>
       <y>315</y>
       <w>333</w>
-      <h>414</h>
+      <h>450</h>
     </coordinates>
     <panel_attributes>*OverviewPlugin*
 --
@@ -54,6 +54,8 @@
 *+ graph_layout: GraphicsLayoutWidget*
 *+ graph_dict: dict&lt;string,PlotItem&gt;*
 *+ values_dict: dict&lt;string,ndarray&gt;*
+*+ model:ROSModel*
+*+ log_filer_proxy:LogFilterProxy*
 --
 + __init__(context)
 + connect_slots()
@@ -92,7 +94,7 @@
       <x>2295</x>
       <y>801</y>
       <w>333</w>
-      <h>603</h>
+      <h>630</h>
     </coordinates>
     <panel_attributes>*SelectionWidget*
 --
@@ -112,7 +114,7 @@
 + range_combo_box: QComboBox
 + range_label: QLabel
 + log_tab: QWidget
-+ log_tab_list_widget: QListWidget
+*Fehler behoben+ log_tree_view: QTreeView*
 + actions_tab: QWidget
 + restart_push_button: QPushButton
 + start_push_button: QPushButton
@@ -123,6 +125,8 @@
 *+ graph_layout: GraphicsLayoutWidget*
 *+ graph_dict: dict&lt;string,PlotItem&gt;*
 *+ values_dict: dict&lt;string,ndarray&gt;*
+*+ model:ROSModel*
+*+ log_filer_proxy:LogFilterProxy*
 --
 + __init__(context)
 + connect_slots()
@@ -155,7 +159,7 @@
       <x>1890</x>
       <y>801</y>
       <w>333</w>
-      <h>423</h>
+      <h>513</h>
     </coordinates>
     <panel_attributes>*TreePlugin*
 --
@@ -173,8 +177,13 @@
 + filter_horizontal_layout: QHBoxLayout
 + apply_push_button: QPushButton
 + filter_label: QLabel
+*+ splitter:QSplitter*
+*+ selection_widget: SelectionWidget*
 + filter_line_edit: QLineEdit
-+ tree_widget_tree_widget: QTreeWidget
+*+ Fehler entfernt: item_tree_view: QTreeView*
+*+ model:ROSModel*
+*+ filter_proxy: ItemFilterProxy*
+*+ size_delegate:SizeDelegate*
 --
 + __init__(context)
 + connect_slots()
@@ -185,7 +194,8 @@
 + on_apply_push_button_clicked()
 + on_erroneous_check_box_state_changed()
 + on_minus_push_buton_clicked()
-+ on_plus_push_button_clicked()</panel_attributes>
++ on_plus_push_button_clicked()
+*+ on_item_in_item_tree_view_double_clicked()*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -466,7 +476,7 @@ _+ get_instance(): ROSModel_
       <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>27;27;27;153;450;153;450;36</additional_attributes>
+    <additional_attributes>27;27;27;153;450;153;450;126</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -855,7 +865,7 @@ QSortFilterProxyModel</panel_attributes>
       <h>782</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>783;630;783;765;72;765;72;198;72;27;27;27</additional_attributes>
+    <additional_attributes>783;657;783;765;72;765;72;198;72;27;27;27</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -863,15 +873,22 @@ QSortFilterProxyModel</panel_attributes>
       <x>1179</x>
       <y>999</y>
       <w>594</w>
-      <h>171</h>
+      <h>198</h>
     </coordinates>
     <panel_attributes>*ItemFilterProxy*
 --
-
+*- show_hosts: bool
+*- show_nodes: bool
+*- show_connections: bool
+*- show_topics: bool
 --
 + __init__(parent:QObject)
 + bool filterAcceptsRow(sourceRow:bool filterAcceptsRow(source_row:int, source_parent:QModelIndex )
-+ bool lessThan(left:QModelIndex, right:QModelIndext)</panel_attributes>
++ bool lessThan(left:QModelIndex, right:QModelIndext)
+*+ show_hosts()*
+*+ show_nodes()*
+*+ show_connections()*
+*+ show_topics()*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -971,11 +988,12 @@ index:QModelIndex)
     </coordinates>
     <panel_attributes>*LogFilterProxy*
 --
-
+*- current_item:AbstractItem*
 --
 + __init__(parent:QObject)
 + bool filterAcceptsRow(sourceRow:bool filterAcceptsRow(source_row:int, source_parent:QModelIndex )
-+ bool lessThan(left:QModelIndex, right:QModelIndext)</panel_attributes>
++ bool lessThan(left:QModelIndex, right:QModelIndext)
+*+ filter_by_item(item:AbstractItem)*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -1220,8 +1238,8 @@ huge size</panel_attributes>
     <coordinates>
       <x>2601</x>
       <y>819</y>
-      <w>179</w>
-      <h>89</h>
+      <w>171</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
@@ -1238,5 +1256,41 @@ huge size</panel_attributes>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
     <additional_attributes>567;234;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>2196</x>
+      <y>954</y>
+      <w>118</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>99;45;27;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1746</x>
+      <y>1071</y>
+      <w>161</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>27;45;144;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1629</x>
+      <y>657</y>
+      <w>278</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>27;27;261;243</additional_attributes>
   </element>
 </diagram>
