@@ -2,7 +2,7 @@
 \section{Countermeasure}
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=1.0\linewidth]{./diagram_pictures/reactor.jpg}
+\includegraphics[width=1.0\linewidth]{./diagram_pictures/reactor/reactor.jpg}
 \caption{The UML diagram of the countermeasure package}
 \end{center}
 \end{figure}
@@ -36,7 +36,7 @@ Manages all constraints, checks if they are true and executes appropriate reacti
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item \textbf{ private list<Constraint> constraint }\\
+	\item \textbf{ private list<Constraint> constraint\_list }\\
 		contains a list of all constraints
 	\item \textbf{ private  RatedStatisticStorage rated\_statistic\_storage }\\
 		contains all incoming rated statistic
@@ -284,4 +284,6 @@ Singleton. Contains a dictionary of all nodes which are on an host who has an Ho
 		removes an node from the dictionary
 	\item \textbf{ public static HostLookUp get\_instance() }\\
 		returns the instance of HostLookUp
+	\item \textbf{ public void callback\_rated(RatedStatistics msg)}\\
+		callback for rated statistics. adds unseen nodes to the dictionary.
 \end{itemize}

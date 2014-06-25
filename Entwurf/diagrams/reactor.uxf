@@ -26,7 +26,7 @@
       <w>280</w>
       <h>105</h>
     </coordinates>
-    <panel_attributes>/ConstraintItem/
+    <panel_attributes>*/ConstraintItem/*
 --
 --
 /+evaluate_constraint(RatedStatisticStorage): boolean/</panel_attributes>
@@ -40,7 +40,7 @@
       <w>119</w>
       <h>84</h>
     </coordinates>
-    <panel_attributes>ConstraintLeaf
+    <panel_attributes>*ConstraintLeaf*
 --
 - name: string
 - outcome: Outcome
@@ -56,7 +56,7 @@
       <h>168</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
-Outcome
+*Outcome*
 --
 ok
 high
@@ -71,8 +71,8 @@ out_of_bounds
     <coordinates>
       <x>1141</x>
       <y>896</y>
-      <w>56</w>
-      <h>126</h>
+      <w>62</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>49;21;49;119;21;119</additional_attributes>
@@ -82,8 +82,8 @@ out_of_bounds
     <coordinates>
       <x>924</x>
       <y>833</y>
-      <w>203</w>
-      <h>154</h>
+      <w>202</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>21;21;21;126;189;126;189;140</additional_attributes>
@@ -96,7 +96,7 @@ out_of_bounds
       <w>133</w>
       <h>84</h>
     </coordinates>
-    <panel_attributes>ConstraintAnd
+    <panel_attributes>*ConstraintAnd*
 --
 - constraint[]: Constraint</panel_attributes>
     <additional_attributes/>
@@ -109,7 +109,7 @@ out_of_bounds
       <w>133</w>
       <h>84</h>
     </coordinates>
-    <panel_attributes>ConstraintOr
+    <panel_attributes>*ConstraintOr*
 --
 - constraint[]:Constraint</panel_attributes>
     <additional_attributes/>
@@ -122,7 +122,7 @@ out_of_bounds
       <w>119</w>
       <h>84</h>
     </coordinates>
-    <panel_attributes>ConstraintNot
+    <panel_attributes>*ConstraintNot*
 --
 -constraint: Constraint</panel_attributes>
     <additional_attributes/>
@@ -132,8 +132,8 @@ out_of_bounds
     <coordinates>
       <x>924</x>
       <y>833</y>
-      <w>63</w>
-      <h>154</h>
+      <w>62</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>21;21;21;126;49;126;49;140</additional_attributes>
@@ -143,8 +143,8 @@ out_of_bounds
     <coordinates>
       <x>805</x>
       <y>833</y>
-      <w>154</w>
-      <h>154</h>
+      <w>153</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>140;21;140;126;21;126;21;140</additional_attributes>
@@ -154,8 +154,8 @@ out_of_bounds
     <coordinates>
       <x>658</x>
       <y>833</y>
-      <w>301</w>
-      <h>154</h>
+      <w>300</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>287;21;287;126;21;126;21;140</additional_attributes>
@@ -168,7 +168,7 @@ out_of_bounds
       <w>301</w>
       <h>154</h>
     </coordinates>
-    <panel_attributes>RatedStatisticStorage
+    <panel_attributes>*RatedStatisticStorage*
 --
 - statistic_storage: dict {seuid: string -
 dict {statistic_type: string -  
@@ -188,7 +188,7 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
       <w>238</w>
       <h>154</h>
     </coordinates>
-    <panel_attributes>ConstraintHandler
+    <panel_attributes>*ConstraintHandler*
 --
 - constraint: list&lt;Constraint&gt;
 - rated_statistic_storage: RatedStatisticStorage
@@ -244,7 +244,7 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
       <w>154</w>
       <h>119</h>
     </coordinates>
-    <panel_attributes>/Reaction/
+    <panel_attributes>*/Reaction/*
 --
 # host_id: string
 # node_id: string
@@ -262,7 +262,7 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
       <w>238</w>
       <h>140</h>
     </coordinates>
-    <panel_attributes>Constraint
+    <panel_attributes>*Constraint*
 --
 - constraint: ConstraintItem
 - true_since: int
@@ -315,7 +315,7 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
       <w>119</w>
       <h>42</h>
     </coordinates>
-    <panel_attributes>rospy
+    <panel_attributes>*rospy*
 --
 + get_param(string)
 ...</panel_attributes>
@@ -329,7 +329,7 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
       <w>119</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>rospy.Subscriber</panel_attributes>
+    <panel_attributes>*rospy.Subscriber*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -352,7 +352,7 @@ tuple {outcome: Outcome,  timestamp: date.timestamp}}}
       <w>189</w>
       <h>161</h>
     </coordinates>
-    <panel_attributes>ReactionRun
+    <panel_attributes>*ReactionRun*
 --
 - command: string
 --
@@ -391,7 +391,7 @@ command: string)
       <w>189</w>
       <h>161</h>
     </coordinates>
-    <panel_attributes>ReactionDefault
+    <panel_attributes>*ReactionDefault*
 --
 - reaction_type: string
 
@@ -413,7 +413,7 @@ command: string)
       <h>77</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
-ReactionDefaultType
+*ReactionDefaultType*
 --
 restart
 stop
@@ -439,7 +439,7 @@ output</panel_attributes>
       <w>119</w>
       <h>21</h>
     </coordinates>
-    <panel_attributes>rospy.Service</panel_attributes>
+    <panel_attributes>*rospy.Service*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -459,11 +459,11 @@ output</panel_attributes>
     <coordinates>
       <x>511</x>
       <y>714</y>
-      <w>161</w>
+      <w>189</w>
       <h>168</h>
     </coordinates>
     <panel_attributes>&lt;&lt;singleton&gt;&gt;
-HostLookUp
+*HostLookUp*
 --
 - node_dict: dict
 {node: string - host: string}
@@ -475,7 +475,8 @@ string
 host: string)
 + get_node_list(host: string)
 + remove_node(node: string)
-_+ get_instance(): HostLookUp_</panel_attributes>
+_+ get_instance(): HostLookUp_
++ callback_rated(msg: RatedStatistics)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
