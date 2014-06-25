@@ -10,3 +10,4 @@ GUI Änderungen
 
 Offene Fragen:
 - wie füttere ich den HostLookup
+- welche form  hat der timestamp
