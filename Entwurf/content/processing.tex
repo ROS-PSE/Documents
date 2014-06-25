@@ -1,6 +1,28 @@
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.0\linewidth]{./diagram_pictures/processing.pdf}
+\caption{The UML diagram of the processing package}
+\end{center}
+\end{figure}
+
+\mbox{}
+
+\newpage
 
 \subsection{MonitoringNode}
-Main Class wrapping the processing functionality.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/MonitoringNode.pdf}
+		\caption{The MonitoringNode}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Main Class wrapping the processing functionality.
+	\end{minipage}
+\end{figure}
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -21,7 +43,19 @@ Main Class wrapping the processing functionality.
 
 
 \subsection{MetadataStorage}
-Saves recieved metadata packages for a given period of time and can provide them on request.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/MetadataStorage.pdf}
+		\caption{The MetadataStorage}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Saves received metadata packages for a given period of time and can provide them on request.
+	\end{minipage}
+\end{figure}
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -44,7 +78,19 @@ Saves recieved metadata packages for a given period of time and can provide them
 
 
 \subsection{StorageContainer}
-Wraps Metadata in raw and rated form with an identifier and a timestamp. Object to be returned on request by the GUI model.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/StorageContainer.pdf}
+		\caption{The StorageContainer}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Wraps Metadata in raw and rated form with an identifier and a timestamp. Object to be returned on request by the GUI model.
+	\end{minipage}
+\end{figure}
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -60,7 +106,19 @@ Wraps Metadata in raw and rated form with an identifier and a timestamp. Object 
 
 
 \subsection{Metadata}
-Wraps metadata of exactly one host or node, a topic or a node-topic-combination.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/Metadata.pdf}
+		\caption{The Metadata}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Wraps metadata of exactly one host or node, a topic or a node-topic-combination.
+	\end{minipage}
+\end{figure}
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -77,7 +135,19 @@ Wraps metadata of exactly one host or node, a topic or a node-topic-combination.
 
 
 \subsection{Specification}
-An object loaded from the specification configurations and basis for comparison of Metadata with desired values.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/Specification.pdf}
+		\caption{The Specification}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		An object loaded from the specification configurations and basis for comparison of Metadata with desired values.
+	\end{minipage}
+\end{figure}
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -94,7 +164,19 @@ An object loaded from the specification configurations and basis for comparison 
 
 
 \subsection{SpecificationHandler}
-Loads the specifications from the parameter server and compares them to the actual metadata.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/SpecificationHandler.pdf}
+		\caption{The SpecificationHandler}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Loads the specifications from the parameter server and compares them to the actual metadata.
+	\end{minipage}
+\end{figure}
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -113,7 +195,19 @@ Loads the specifications from the parameter server and compares them to the actu
 
 
 \subsection{RatedStatistics}
-Wraps the result of the comparison between the actual metadata and the specificaton.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/RatedStatistics.pdf}
+		\caption{The RatedStatistics}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Wraps the result of the comparison between the actual metadata and the specificaton.
+	\end{minipage}
+\end{figure}
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -131,15 +225,27 @@ Wraps the result of the comparison between the actual metadata and the specifica
 
 
 \subsection{MetadataTuple}
-Stores any kind of value for a certain key. Specifications storing values indicating limits, Metadata storing absolute actual values.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/MetadataTuple.pdf}
+		\caption{The MetadataTuple}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Stores any kind of value for a certain key. Specifications storing values indicating limits, Metadata storing absolute actual values.
+	\end{minipage}
+\end{figure}
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private String key
-	\item private Object value
+	\item \textbf{private String key}
+	\item \textbf{private Object value}
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item public String get\_key()
-	\item public Object get\_value()
+	\item \textbf{public String get\_key()}
+	\item \textbf{public Object get\_value()}
 \end{itemize}
