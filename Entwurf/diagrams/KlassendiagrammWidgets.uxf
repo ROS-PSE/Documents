@@ -32,7 +32,7 @@
       <w>296</w>
       <h>408</h>
     </coordinates>
-    <panel_attributes>*OverviewPlugin*
+    <panel_attributes>*OverviewPlugin:Plugin*
 --
 + overview_widget: QWidget
 + widget_vertical_layout: QVBoxLayout
@@ -137,7 +137,7 @@
       <w>344</w>
       <h>464</h>
     </coordinates>
-    <panel_attributes>*TreePlugin*
+    <panel_attributes>*TreePlugin:Plugin*
 --
 + tree_widget: QWidget
 + widget_vertical_layout: QVBoxLayout
@@ -651,12 +651,13 @@ index:QModelIndex)
       <w>440</w>
       <h>304</h>
     </coordinates>
-    <panel_attributes>*&lt;&lt;Singleton&gt;&gt; ROSModel*
+    <panel_attributes>*&lt;&lt;Singleton&gt;&gt; ROSModel:QAbstractItemModel*
 --
 //Represents the data as a QtModel. This enables automated updates of the View.
 - model_lock:threading.Lock
 - root_item: AbstractItem
 - item_delegate:SizeDelegate
+_- instance:ROSModel_
 - log_model:QStandardItemModel
 --
 + __init__(data:list, )

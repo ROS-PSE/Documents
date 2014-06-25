@@ -70,7 +70,7 @@
 \begin{itemize}
 %  \item \textbf{public \_\_init\_\_()} 
   \item \textbf{public void start()}\\
-  starts the thread and also the timer for regulary updates of the model
+  starts the thread and also the timer for regulary updates of the model. It is ensured via the running attribute that this function cannot be called multiple times.
   \item \textbf{public void update\_model()}\\ 
   starts the update of the model. Will be called regulary by the timer. Will first read the data from the buffer and add the according data items to the items of the model and afterwards use the rated\_buffer to add a rating to these entries.
   \item \textbf{public void add\_buffer\_item(object message)}\\ 
