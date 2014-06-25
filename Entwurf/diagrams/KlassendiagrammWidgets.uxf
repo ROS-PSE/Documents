@@ -68,14 +68,13 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>2048</x>
+      <x>2064</x>
       <y>752</y>
       <w>296</w>
-      <h>560</h>
+      <h>536</h>
     </coordinates>
-    <panel_attributes>*SelectionWidget*
+    <panel_attributes>*SelectionWidget:QWidget*
 --
-+ selection_widget: QWidget
 + widget_vertical_layout: QVBoxLayout
 + status_horizontal_layout: QHBoxLayout
 + labels_vertical_layout: QVBoxLayout
@@ -98,12 +97,12 @@
 + stop_push_button: QPushButton
 + selected_item: item
 + draw_graphs: bool
-+ last_updated: rospy.Time*
-+ graph_layout: pyqtgraph.GraphicsLayoutWidget*
-+ graph_dict: dict&lt;string,pyqtgraph.PlotItem&gt;*
-+ values_dict: dict&lt;string,numpy.ndarray&gt;*
-+ model:ROSModel*
-+ log_filer_proxy:LogFilterProxy*
++ last_updated: rospy.Time
++ graph_layout: pyqtgraph.GraphicsLayoutWidget
++ graph_dict: dict&lt;string,pyqtgraph.PlotItem&gt;
++ values_dict: dict&lt;string,numpy.ndarray&gt;
++ model:ROSModel
++ log_filer_proxy:LogFilterProxy
 --
 + __init__(context)
 + connect_slots()
@@ -115,7 +114,7 @@
 + on_start_push_button_clicked()
 + on_range_combo_box_index_changed(index:int)
 + on_changed_selected_item(item_index:QModelIndex)
-*+ update_graphs()*</panel_attributes>
++ update_graphs()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -123,8 +122,8 @@
     <coordinates>
       <x>1664</x>
       <y>720</y>
-      <w>696</w>
-      <h>608</h>
+      <w>712</w>
+      <h>584</h>
     </coordinates>
     <panel_attributes>tree
 </panel_attributes>
@@ -135,7 +134,7 @@
     <coordinates>
       <x>1680</x>
       <y>752</y>
-      <w>296</w>
+      <w>344</w>
       <h>464</h>
     </coordinates>
     <panel_attributes>*TreePlugin*
@@ -164,12 +163,12 @@
 --
 + __init__(context)
 + connect_slots()
-+ on_show_nodes_check_box_state_changed()
-+ on_show_hosts_check_box_state_changed()
-+ on_show_topics_check_box_state_changed()
-+ on_show_connections_check_box_state_changed()
++ on_show_nodes_check_box_state_changed(activated:bool)
++ on_show_hosts_check_box_state_changed(activated:bool)
++ on_show_topics_check_box_state_changed(activated:bool)
++ on_show_connections_check_box_state_changed(activated:bool)
 + on_apply_push_button_clicked()
-+ on_erroneous_check_box_state_changed()
++ on_erroneous_check_box_state_changed(activated:bool)
 + on_minus_push_buton_clicked()
 + on_plus_push_button_clicked()
 + on_item_in_item_tree_view_double_clicked()</panel_attributes>
@@ -180,8 +179,8 @@
     <coordinates>
       <x>1648</x>
       <y>216</y>
-      <w>728</w>
-      <h>1120</h>
+      <w>744</w>
+      <h>1096</h>
     </coordinates>
     <panel_attributes>view</panel_attributes>
     <additional_attributes/>
@@ -202,8 +201,8 @@
     <coordinates>
       <x>552</x>
       <y>184</y>
-      <w>1840</w>
-      <h>1160</h>
+      <w>1856</w>
+      <h>1136</h>
     </coordinates>
     <panel_attributes>gui_widgets</panel_attributes>
     <additional_attributes/>
@@ -252,13 +251,12 @@
 - data_list:list&lt;dict&gt;
 - child_items:list&lt;AbstractItem&gt;
 - parent_item: AbstractItem
-- log:list&lt;list&lt;string&gt;&gt;
 --
 + __init__(list, parent=None)
 + append_child(child: AbstractItem)
 + append_data(data: object)
 + get_child(row: int): AbstractItem
-+ get_latest_data(): object
++ get_latest_data(): dict
 + parent(): AbstractItem
 + get_items_older_than(time:rospy.Time): AbstractItem
 + delete_items_older_than(time:rospy.Time)
@@ -283,7 +281,7 @@
       <x>584</x>
       <y>248</y>
       <w>208</w>
-      <h>160</h>
+      <h>176</h>
     </coordinates>
     <panel_attributes>*BufferThread:threading.Thread*
 --
@@ -292,48 +290,49 @@
 - model:ROSModel
 - timer:rospy.Timer
 - buffer:list
-- rated_buffer:list&lt;msgs.RatedStatistics&gt;
+- rated_buffer:list&lt;RatedStatistics&gt;
+- running: bool
 --
 + __init__()
 + start()
 + update_model()
 + add_buffer_item(object)
-+ add_buffer_item(msgs.RatedStatistics)</panel_attributes>
++ add_buffer_item(RatedStatistics)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>624</x>
-      <y>384</y>
+      <y>400</y>
       <w>94</w>
-      <h>352</h>
+      <h>336</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>48;336;48;24</additional_attributes>
+    <additional_attributes>48;320;48;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>1312</x>
       <y>488</y>
-      <w>712</w>
+      <w>744</w>
       <h>752</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;592;24;736;696;736;696;24;664;24</additional_attributes>
+    <additional_attributes>24;592;24;736;728;736;728;24;664;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>1296</x>
       <y>1056</y>
-      <w>768</w>
+      <w>784</w>
       <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;24;24;184;752;184</additional_attributes>
+    <additional_attributes>24;24;24;184;768;184</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -506,20 +505,20 @@ _+ get_instance(): HostLookUp_</panel_attributes>
       <w>528</w>
       <h>176</h>
     </coordinates>
-    <panel_attributes>*ItemFilterProxy*
+    <panel_attributes>*ItemFilterProxy:QSortFilterProxyModel *
 --
-*- show_hosts: bool
-*- show_nodes: bool
-*- show_connections: bool
-*- show_topics: bool
+- show_hosts: bool
+- show_nodes: bool
+- show_connections: bool
+- show_topics: bool
 --
 + __init__(parent:QObject)
 + bool filterAcceptsRow(sourceRow:bool filterAcceptsRow(source_row:int, source_parent:QModelIndex )
 + bool lessThan(left:QModelIndex, right:QModelIndext)
-+ show_hosts()
-+ show_nodes()
-+ show_connections()
-+ show_topics()</panel_attributes>
++ show_hosts(show_hosts:bool)
++ show_nodes(show_nodes:bool)
++ show_connections(show_connections:bool)
++ show_topics(show_topics:bool)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -572,7 +571,7 @@ index:QModelIndex)
       <w>528</w>
       <h>152</h>
     </coordinates>
-    <panel_attributes>*LogFilterProxy*
+    <panel_attributes>*LogFilterProxy:QSortFilterProxyModel *
 --
 - current_item:AbstractItem
 --
@@ -620,31 +619,16 @@ index:QModelIndex)
     <additional_attributes>24;40;128;40</additional_attributes>
   </element>
   <element>
-    <type>com.umlet.element.Note</type>
-    <coordinates>
-      <x>2392</x>
-      <y>200</y>
-      <w>176</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>Note:
-some functions (especially 
-in the GUI) might be 
-splitted later because of their 
-huge size</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1952</x>
+      <x>1992</x>
       <y>888</y>
-      <w>112</w>
+      <w>94</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>96;40;24;40</additional_attributes>
+    <additional_attributes>72;40;32;40</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -664,21 +648,19 @@ huge size</panel_attributes>
       <x>584</x>
       <y>720</y>
       <w>440</w>
-      <h>344</h>
+      <h>328</h>
     </coordinates>
     <panel_attributes>*&lt;&lt;Singleton&gt;&gt; ROSModel*
 --
 //Represents the data as a QtModel. This enables automated updates of the View.
 - monitoring_proxy: rospy.ServiceProxy
 - model_lock:threading.Lock
-- log:list&lt;list&lt;string&gt;&gt;
 - root_item: AbstractItem
 - item_delegate:SizeDelegate
 - log_model:QStandardItemModel
 --
 + __init__(data:list, )
 _+ get_instance(): ROSModel_
-+ get_log():list&lt;list&lt;strings&gt;&gt;
 + data(index:QModelIndex, role:int):QVariant
 + flags(index:QModelIndex ):ItemFlags
 + headerData(section:int, orientation:Orientation, role:int):QVariant
@@ -688,11 +670,10 @@ _+ get_instance(): ROSModel_
 + columnCount(parent:QModelIndex):int
 + update_model(data:list)
 + transform_data(data:AbstractItem)
-+ transform_data(data:msgs.statistics)
-+ transform_data(data:msgs.HostStatistics)
-+ transform_data(data:msgs.RatedStatistics)
-+ transform_data(data:msgs.StatisticHistory)
-+ trigger_node_action(node:string, action:RemoteAction)
++ transform_data(data:Statistics)
++ transform_data(data:HostStatistics)
++ transform_data(data:RatedStatistics)
++ transform_data(data:StatisticHistory)
 + add_log_item(list&lt;string&gt;)</panel_attributes>
     <additional_attributes/>
   </element>
