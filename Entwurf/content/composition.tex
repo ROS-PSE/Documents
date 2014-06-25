@@ -9,7 +9,7 @@
 \end{figure}
 
 Figure ~\ref{fig:architecture} shows the general architecture of our software. It is divided into two parts, one for the graphical user interface and one for the monitoring aspect.
-The right part depicts the GUI. It is designed using the MVC architecture, consisting of the usual three elements: model, view and controller. It will handle user-interaction.
+The right part depicts the GUI. It is designed using the Qt MVC architecture, consisting of only two elements because Qt takes care of the controller: model and view. It will handle user-interaction.
 The left part depicts the monitoring aspect. It consists of three elements : NodeInterface, Countermeasure and Processing. It will take care of collecting metadata, processing it and taking appropriate action in case of an error.
 
 \subsection{Monitoring}
@@ -43,5 +43,6 @@ The left part depicts the monitoring aspect. It consists of three elements : Nod
 		\item Also contains the controller (via Qt's signal/slot mechanism)
 		\item Shows the data of the model
 		\item Uses Qt's Model/View interface to display the data
+		\item Also uses pyqtgraph to dynamically plot the incoming data
 		\end{itemize}
 \end{description}
