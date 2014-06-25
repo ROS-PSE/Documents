@@ -13,20 +13,20 @@
 
 
 \subsection{CountermeasureNode}
-a ROS node. Evaluates incoming rated statistics with a list of constraints. If those constraints turn out to be true appropriate action is taken.
+A ROS node. Evaluates incoming rated statistics with a list of constraints. If those constraints turn out to be true appropriate action is taken.
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private ConstraintHandler constraint\_handler}\\
-		the handler for all constraints
+		The handler for all constraints.
 	\item \textbf{ private RatedStatisticStorage rated\_statistic\_storage}\\
-		the storage of all incoming rated statistic
+		The storage of all incoming rated statistic.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public void \_\_main\_\_() }\\\\
-		periodically (threads) evaluates the constraints and cleans old statistics
+		Periodically (threading) evaluates the constraints and cleans old statistics.
 	\item \textbf{ private void register\_subscriber() }\\
-		registers to the rated statistics
+		Registers to the rated statistics.
 \end{itemize}
 
 
@@ -37,28 +37,28 @@ Manages all constraints, checks if they are true and executes appropriate reacti
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private list<Constraint> constraint\_list }\\
-		contains a list of all constraints
+		Contains a list of all constraints.
 	\item \textbf{ private  RatedStatisticStorage rated\_statistic\_storage }\\
-		contains all incoming rated statistic
+		Contains all incoming rated statistic.
 	\item \textbf{ private  int reaction\_autonomy\_level }\\
-		only reactions with an autonomy\_level <= reaction\_autonomy\_level get executed
+		Only reactions with an autonomy\_level <= reaction\_autonomy\_level get executed.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public void add\_constraint(Constraint)  }\\
-		adds an constraint to this list
+		Adds an constraint to this list.
 	\item \textbf{ public void set\_statistic(RatedStatisticStorage)  }\\
-		sets the Statistic to use. Should only be needed on initialisation
+		Sets the Statistic to use. Should only be needed on initialisation.
 	\item \textbf{ public void evaluate\_constraints()  }\\
-		evaluates every constraint
+		Evaluates every constraint.
 	\item \textbf{ public void execute\_reactions()  }\\
-		checks if there are any new reactions to do and executes them.
+		Checks if there are any new reactions to do and executes them.
 	\item \textbf{ private void react\_to\_constraint(Constraint)  }\\
-		executes an single Reaction and updates the attributes of the Constraint
+		Executes an single Reaction and updates the attributes of the Constraint.
 	\item \textbf{ private void read\_param\_constraints()  }\\
-		reads all constraints from the parameter server
+		Reads all constraints from the parameter server.
 	\item \textbf{ private void read\_param\_reaction\_autonomy\_level()  }\\
-		reads the reaction\_autonomy\_level from the parameter server
+		Reads the reaction\_autonomy\_level from the parameter server.
 \end{itemize}
 
 
@@ -67,56 +67,56 @@ A database which contains the current state of all rated statistics.
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private dict\{string seuid - dict\{string statistic\_type - tuple\{Outcome outcome,date.timestamp timestamp\}\}\} statistic\_dict }\\
-		a dictionary containing all rated statistic information with their outcome and an timestamp when they got added / updated to the dictionary.
+		A dictionary containing all rated statistic information with their outcome and an timestamp when they got added / updated to the dictionary.
 	\item \textbf{ private int timeout }\\
-		the timeout after which an item in ratedstatistic is declared too old and should be removed from the dict.
+		The timeout after which an item in ratedstatistic is declared too old and should be removed from the dict.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public void clean\_old\_statistic() }\\
-		checks the complete dictionary for statistics older than timeout seconds and removes them.
+		Checks the complete dictionary for statistics older than timeout seconds and removes them.
 	\item \textbf{ public void callback\_rated\_statistic(RatedStatistics msg) }\\
-		callback for incoming rated statistics. adds them to the dictionary or removes items from the dictionary if the rated statistic says that its within bounds again. 
+		Callback for incoming rated statistics. Adds them to the dictionary or removes items from the dictionary if the rated statistic says that its within bounds again. 
 	\item \textbf{ public Outcome get\_outcome(string seuid, string statistic\_type) }\\
-		returns the outcome of the specific seuid and statistic\_type.
+		Returns the outcome of the specific seuid and statistic\_type.
 \end{itemize}
 
 \subsection{Constraint }
-contains the whole constraint with corresponding reactions.
+Contains the whole constraint with corresponding reactions.
 
 
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private ConstraintItem constraint }\\
-	first constraint in the chain of ConstraintItems.
+	First constraint in the chain of ConstraintItems.
 	\item \textbf{ private int true\_since }\\
-	epoch time in milliseconds since the constraint is true,
-	if the constraint is not true it is 0
+	Epoch time in milliseconds since the constraint is true,
+	if the constraint is not true it is 0.
 	\item \textbf{ private list<Reaction> planned\_reaction }\\
-	an list of reactions that should be executed if the constraint has been true longer than min\_reaction\_interval milliseconds
+	An list of reactions that should be executed if the constraint has been true longer than min\_reaction\_interval milliseconds.
 	\item \textbf{ private int min\_reaction\_interval }\\
-	the minimum time needed in ms that the constraint needs to be true to execute the planned\_reaction
+	The minimum time needed in ms that the constraint needs to be true to execute the planned\_reaction.
 	\item \textbf{ private int last\_reaction }\\
-	contains the epoch time in ms when the reaction corresponding to this constraint has been executed for the last time.
-		is 0 if it has never been executed
+	Contains the epoch time in ms when the reaction corresponding to this constraint has been executed for the last time.
+		It is 0 if it has never been executed.
 	\item \textbf{ private int reaction\_timeout }\\
-	minimum durotation in ms needed before an reaction can happen again
+	Minimum durotation in ms needed before an reaction can happen again.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public void evaluate\_constraint(RatedStatisticStorage)  }\\
-	evaluates this constraint and sets the attributes according to the result of the evaluation
+	Evaluates this constraint and sets the attributes according to the result of the evaluation.
 \end{itemize}
 
 
 
 \subsection{ConstraintItem}
-	Abstract description of a Constraint, can be an logical operation on constraints or an actual constraint
+	Abstract description of a Constraint, can be an logical operation on constraints or an actual constraint.
 \subsubsection{Attributes}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public abstract boolean evaluate\_constraint(RatedStatisticStorage) }\\
-	evaluates if this constraint, given the available RatedStatisticStorage, is true. 
+	Evaluates if this constraint, given the available RatedStatisticStorage, is true. 
 \end{itemize}		
 
 
@@ -126,16 +126,16 @@ Contains an actual constraint.
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private string name }\\
-	contains the name of the statistic data
+	Contains the name of the statistic data.
 	\item \textbf{ private Outcome outcome }\\
-	contains the outcome needed for this constraint to be true
+	Contains the outcome needed for this constraint to be true.
 	\item \textbf{ private string seuid }\\
-	contains the unique identifier of the corresponding StatisticEntity
+	Contains the unique identifier of the corresponding StatisticEntity.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public abstract boolean evaluate\_constraint(RatedStatisticStorage) }\\
-	returns true if this constrain is true for the RatedStatisticStorage
+	Returns true if this constrain is true for the RatedStatisticStorage.
 \end{itemize}
 
 
@@ -144,12 +144,12 @@ Contains an actual constraint.
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private Constraint[] constraint }\\
-	contains constraints to be evaluated with a logical and	
+	Contains constraints to be evaluated with an logical and.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public boolean evaluate\_constraint(RatedStatisticStorage) }\\
-	returns true if the evaluation of both constains returns true
+	Returns true if the evaluation of all constains in the array returns true.
 \end{itemize}
 
 
@@ -158,12 +158,12 @@ Contains an actual constraint.
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private Constraint[] constraint }\\
-	contains constraints to be evaluated with an logical or
+	Contains constraints to be evaluated with an logical or.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public boolean evaluate\_constraint(RatedStatisticStorage) }\\
-	returns true if the evaluation of at least one constraint returns true
+	Returns true if the evaluation of at least one constraint returns true.
 \end{itemize}
 
 
@@ -172,12 +172,12 @@ Contains an actual constraint.
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private Constraint constraint }\\
-	the constraint to be evaluated negated
+	The constraint to be evaluated negated.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public boolean evaluate\_constraint(RatedStatisticStorage) }\\
-	returns true if the evaluation of the constraint returns false
+	Returns true if the evaluation of the constraint returns false.
 \end{itemize}
 
 \subsection{Enum Outcome }
@@ -185,48 +185,48 @@ Contains an actual constraint.
 \subsubsection{Types}
 \begin{itemize}
 	\item \textbf{ high }\\
-	data value is too high
+	Data value is too high.
 	\item \textbf{ low }\\
-	data value is too low
+	Data value is too low.
 	\item \textbf{ unknown }\\
-	data value is unknown
+	Data value is unknown.
 	\item \textbf{ out\_of\_bounds }\\
-	data value is either too high or too low
+	Data value is either too high or too low.
 \end{itemize}
 
 
 \subsection{Reaction}
-	Abstract Reaction to an Constraint
+	Abstract Reaction to an Constraint.
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ protected string host\_id }\\
-		contains the host on which the node is run on.
+		Contains the host on which the node is run on.
 	\item \textbf{ protected string node\_id }\\
-		the id of the node the reaction is ment to act upon.
+		The id of the node the reaction is ment to act upon.
 	\item \textbf{ protected int autonomy\_level }\\
-		this constraint only gets evaluatet if 
-		the autonomy\_level is <= reaction\_autonomy\_level
+		This constraint only gets evaluatet if 
+		the autonomy\_level is <= reaction\_autonomy\_level.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public void \_\_init\_\_(string node\_id) }\\
-		initializes the reaction. sets the node to execute the reaction on. finds the corresponding host to the given node.
+		Initializes the reaction. Sets the node to execute the reaction on. finds the corresponding host to the given node.
 	\item \textbf{ public void execute\_reaction() }\\
-		executes the reaction as a service call to the HostStatistic Node.
+		Executes the reaction as a service call to the HostStatistic node.
 \end{itemize}
 
 
 \subsection{ReactionRun}
-	An Reaction which runs a command as action 
+	An Reaction which executes a command on the remote machine the specified node runs on. 
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private string command }\\
-	\\ contains the command
+	Contains the command to be executed.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public void \_\_init\_\_(string node\_id,string command) }\\
-		initializes the reaction. set the command to be executed.
+		Initializes the reaction. Set the command to be executed.
 	\item \textbf{ public void executeReaction() }\\
 \end{itemize}
 
@@ -235,19 +235,19 @@ Contains an actual constraint.
 \subsubsection{attributes}
 \begin{itemize}
 	\item \textbf{ private ReactionDefaultType reaction\_type}\\
-		containts the type this reaction is of.
+		Contains the type this reaction is of.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public void \_\_init\_\_(string node\_id, string reactionType) }\\
-		initializes the reaction. sets the reactiontype of this reaction.
+		Initializes the reaction. sets the reactiontype of this reaction.
 	\item \textbf{ public void exececute\_reaction() }\\
 	\item \textbf{ private void restart\_node() }\\
-		restarts the Node
+		Restarts the Node.
 	\item \textbf{ private void stop\_node() }\\
-		stops the Node
+		Stops the Node.
 	\item \textbf{ private void publish\_on\_rosout() }\\
-		publishes the cause of the reaction on rosout.
+		Publishes the cause of the reaction on rosout.
 \end{itemize}
 
 
@@ -255,11 +255,11 @@ Contains an actual constraint.
 \subsubsection{Types}
 \begin{itemize}
 	\item \textbf{ restart }\\
-		reaction is a restart of an entity
+		Reaction is a restart of an entity.
 	\item \textbf{ stop }\\
-		reaction is stopping an entity
+		Reaction is stopping an entity.
 	\item \textbf{ output }\\
-		reaction is publishing the reaction on rosout
+		Reaction is publishing the reaction on rosout.
 \end{itemize}
 
 
@@ -270,20 +270,20 @@ Singleton. Contains a dictionary of all nodes which are on an host who has an Ho
 	\item \textbf{ private dict\{string node - string host\} node\_dict }\\
 		Contains all nodes which are on an host who has an HostStatisticNode running. Host is the host the node runs on.
 	\item \textbf{ private static HostLookUp instance }\\
-		the singleton instance
+		The singleton instance.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{ public string get\_host(string node) }\\
-		returns the host the node runs on
+		Returns the host the node runs on.
 	\item \textbf{ public void add\_node(string node, string host) }\\
-		adds an node - host tuple to the dictionary
+		Adds an node - host tuple to the dictionary.
 	\item \textbf{ public list<string> get\_node\_list(string host\_id) }\\
-		returns all nodes of a specifid host
+		Returns all nodes of a specifid host.
 	\item \textbf{ public void remove\_node(string node) }\\
-		removes an node from the dictionary
+		Removes an node from the dictionary.
 	\item \textbf{ public static HostLookUp get\_instance() }\\
-		returns the instance of HostLookUp
+		Returns the instance of HostLookUp.
 	\item \textbf{ public void callback\_rated(RatedStatistics msg)}\\
-		callback for rated statistics. adds unseen nodes to the dictionary.
+		Callback for rated statistics. Adds unseen nodes to the dictionary.
 \end{itemize}
