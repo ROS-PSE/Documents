@@ -46,13 +46,13 @@
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{private threading.Lock buffer\_lock} \\
-  the lock that guards the buffer from getting modified parallely
+  The lock that guards the buffer from getting modified parallely
   \item \textbf{private ROSModel model}\\ 
-  the model of the hosts/nodes/topics/connections
+  The model of the hosts/nodes/topics/connections
   \item \textbf{private rospy.Timer timer} \\
   ROS Timer which regularily calls update\_model()
   \item \textbf{private list buffer}\\
-  buffers the tons of incomming data by
+  Buffers the tons of incomming data by
   simply storing it here together with a timestamp for later usage
 %   \item \textbf{private okcdob\_oqq:rospy.OkcdobOqq}\\ 
 %   Drsc sc kx okcdob oqq. Myxqbkdevkdsyxc.
@@ -60,9 +60,9 @@
   A list for the incoming RatedStatistics items, stored here for later
   processing.
   \item \textbf{private bool running}\\
-  is true if the thread is running
+  Is true if the thread is running
   \item \textbf{private rospy.ServiceProxy monitoring\_proxy}\\ 
-  the proxy to the monitoring node for obtaining statistics and rated
+  The proxy to the monitoring node for obtaining statistics and rated
   statistics of the past minutes. To be called only once when the GUI started
   and the MonitoringNode has been running for a while
 \end{itemize}
@@ -70,14 +70,14 @@
 \begin{itemize}
 %  \item \textbf{public \_\_init\_\_()} 
   \item \textbf{public void start()}\\
-  starts the thread and also the timer for regulary updates of the model. It is ensured via the running attribute that this function cannot be called multiple times.
+  Starts the thread and also the timer for regulary updates of the model. It is ensured via the running attribute that this function cannot be called multiple times.
   \item \textbf{public void update\_model()}\\ 
-  starts the update of the model. Will be called regulary by the timer. Will first read the data from the buffer and add the according data items to the items of the model and afterwards use the rated\_buffer to add a rating to these entries.
+  Starts the update of the model. Will be called regulary by the timer. Will first read the data from the buffer and add the according data items to the items of the model and afterwards use the rated\_buffer to add a rating to these entries.
   \item \textbf{public void add\_buffer\_item(object message)}\\ 
-  adds the item to the buffer list. Will be called whenever data from the topics
+  Adds the item to the buffer list. Will be called whenever data from the topics
   is available.
   \item \textbf{public void add\_buffer\_item(RatedStatistics message)}\\
-  adds the RatedStatistics item to the rated\_buffer
+  Adds the RatedStatistics item to the rated\_buffer
 \end{itemize}
 
 \subsection{ROSModel}
@@ -98,50 +98,52 @@
 \begin{itemize}
  % \item \textbf{private item\_list: list}
   \item \textbf{private threading.Lock model\_lock}\\ 
-  protects the model from parallel modification
+  Protects the model from parallel modification
   \item \textbf{private AbstractItem root\_item}\\
-  contains the list of headers
+  Contains the list of headers
   \item \textbf{private SizeDelegate item\_delegate}\\
-  the item\_delegate is responsible for 
-  \item \textbf{private QStandardItemModel log\_model}\\
+  The item\_delegate is responsible for painting the rows in a specific manner e.g. to make the font bigger.
+  \item \textbf{private QStandardItemModel log\_model}\\ The model which is used for representing the log data
+  \item \textbf{private static ROSModel instance}\\
+   The static instance for the Singleton
    
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
   \item \textbf{public \_\_init\_\_()}\\ 
-  defines the class attributes especially the root\_item which later contains the list of headers e.g. for a TreeView representation
+  Defines the class attributes especially the root\_item which later contains the list of headers e.g. for a TreeView representation
   \item \textbf{public ROSModel get\_instance()}\\
-  returns the instance of the ROSModel
+  Returns the instance of the ROSModel
   \item \textbf{public QVariant data(QModelIndex index, int role)}\\
-  returns the data of an item at the given index
+  Returns the data of an item at the given index
   \item \textbf{public ItemFlags flags(QModelIndex index)}\\
-  returns the flags of the item at the given index (like Qt::ItemIsEnabled)
+  Returns the flags of the item at the given index (like Qt::ItemIsEnabled)
   \item \textbf{public QVariant headerData(int section, Orientation orientation, int role)}\\ 
-  returns the headerData  at the given section
+  Returns the headerData  at the given section
   \item \textbf{public QModelIndex index(int row, int column, QModelIndex parent)}\\
-  returns the index of an item at the given column/row
+  Returns the index of an item at the given column/row
   \item \textbf{public QModelIndex parent(QModelIndex index)}\\ 
-  returns the QModelIndex of the parent of the child item specified via its index
+  Returns the QModelIndex of the parent of the child item specified via its index
   \item \textbf{public int rowCount(QModelIndex index)}\\ 
-  returns the amount of rows in the model
+  Returns the amount of rows in the model
   \item \textbf{public int columnCount(QModelIndex index)}\\
-  returns the amount of columns in the model
+  Returns the amount of columns in the model
   \item \textbf{public void update\_model(list data, list ratd\_data)}\\ 
-  updates the model by using the items of the list. The items will be of the message types 
+  Updates the model by using the items of the list. The items will be of the message types 
   \item \textbf{public void transform\_data(Statistics data)}\\ 
-  integrates a TopicStatistics in the model by modifing its item/s by adding a new dict to the corresponding item (especially the TopicItem and the ConnectionItem)
+  Integrates a TopicStatistics in the model by modifing its item/s by adding a new dict to the corresponding item (especially the TopicItem and the ConnectionItem)
   \item \textbf{public void transform\_data(NodeStatistics data)}\\ 
-  integrates a NodeStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
+  Integrates a NodeStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
   \item \textbf{public void transform\_data(HostStatistics data)}\\ 
-  integrates a HostStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
+  Integrates a HostStatistics in the model by modifing its item/s by adding a new dict with the entries of the given parameter
   \item \textbf{public void transform\_data(RatedStatistics data)}\\ 
-  add the rating to an existing entry by modifing the dict of the corresponding
+  Add the rating to an existing entry by modifing the dict of the corresponding
   item/s
   \item \textbf{public void transform\_data(StatisticHistory data)}\\ 
   When using the monitor\_proxy to receive about the last minutes from the monitoring node
   it returns a StaticHistory item which can then be integrated in the model via this method
   \item\textbf{public void add\_log\_item(list<string>)}\\
-  adds the given list as a log entry to the model
+  Adds the given list as a log entry to the model
   \end{itemize}
 
 \subsection{AbstractItem}
@@ -161,34 +163,34 @@
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{private list<dict> data\_list}\\ 
-  contains the data of the abstract item including a time stamp so that
+  Contains the data of the abstract item including a time stamp so that
   the progress in time can be shown
   \item \textbf{private list<AbstractItem> child\_items}\\ 
-  the childs of this item
+  The childs of this item
   \item \textbf{private AbstractItem parent\_item}\\ 
-  the parent of this item
+  The parent of this item
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textbf{public \_\_init(list, parent=None)\_\_}
    \item \textbf{public void append\_child(AbstractItem child)}\\ 
-   append a child to the list of childs
+   Append a child to the list of childs
   \item \textbf{public void append\_data(oject data)}\\ 
-  append data to the data\_list of the AbstractItem
+  Append data to the data\_list of the AbstractItem
   \item \textbf{public AbstractItem get\_child(int row)}\\ 
-  return the child at the position row
+  Returns the child at the position row
   \item \textbf{public dict get\_latest\_data()}\\ 
-  return the latest dict of the data\_list 
+  Returns the latest dict of the data\_list 
   \item \textbf{public AbstractItem parent()}\\ 
-  returns the parent of this or None if there is none
+  Returns the parent of this or None if there is none
   \item \textbf{public AbstractItem get\_items\_older\_than(rospy.Time time)}\\
-  returns all items wich are older than \textit{rospy.Time}
+  Returns all items wich are older than \textit{rospy.Time}
   \item \textbf{public void delete\_items\_older\_than(rospy.Time time})\\
-  deletes all items wich are older than \textit{rospy.Time}
-  \item \textbf{public AbstractItem get\_items\_younger\_than(rospy.Time time)}\\
-  returns all items wich are younger than \textit{rospy.Time time}
+  Deletes all items wich are older than \textit{rospy.Time}
+  \item \textbf{public AbstractItem get\_items\_younger\_than(rospy.Time)}\\
+  Returns all items wich are younger than \textit{rospy.Time time}
   \item \textbf{public abstract void execute\_action(RemoteAction action)}\\ 
-  executes a action on the current item like stop or restart. Calls to this
+  Executes a action on the current item like stop or restart. Calls to this
   method should be redirected to the remote host on executed there.
 \end{itemize}
 
@@ -205,14 +207,13 @@
 	\begin{minipage}[t]{8cm}
 		\vspace{10pt}		
 		A HostItem represents a host with all its data.
-		The data\_list will contain dicts of entries including 
 	\end{minipage}
 \end{figure}
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textbf{public \_\_init(list, parent=None)\_\_}
   \item \textbf{public execute\_action(RemoteAction action)}\\
-  sends a signal to stop or restart a node
+  Sends a signal to stop or restart a node
 \end{itemize}
 
 \subsection{NodeItem}
@@ -227,14 +228,14 @@
 	\begin{minipage}[t]{8cm}
 		\vspace{10pt}		
 		A NodeItem represents a node with all of its data. It also has a interface to
-		start/stop/restart nodes. The data\_list will contain dicts of entries including 
+		start/stop/restart nodes.
 	\end{minipage}
 \end{figure} 
 \subsubsection{Methods}
 \begin{itemize}
  % \item \textbf{public \_\_init(list, parent=None)\_\_}
   \item \textbf{public execute\_action(RemoteAction action)}\\
-  sends a signal to stop or restart the node
+  Sends a signal to stop or restart the node
 \end{itemize}
 
 \subsection{TopicItem}
@@ -249,14 +250,13 @@
 	\begin{minipage}[t]{8cm}
 		\vspace{10pt}		
 		A TopicItem reprensents a specific topic which contains many connections and has attributes like the number of sent messages.
-		The data\_list will contain dicts of entries including 
 	\end{minipage}
 \end{figure} 
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textbf{public \_\_init(list, parent=None)\_\_}
   \item \textbf{public execute\_action(RemoteAction action)}\\ 
-  not senseful, throws an exception
+  Not senseful, throws an exception
 \end{itemize}
 
 \subsection{ConnectionItem}
@@ -272,14 +272,13 @@
 		\vspace{10pt}
 		A ConnectionItem reprensents the connection between a publisher and a
 		subscriber and the topic they are puglishing / listenening on.
-		The data\_list will contain dicts of entries including 
 	\end{minipage}
 \end{figure}  
 \subsubsection{Methods}
 \begin{itemize}
 %  \item \textbf{public \_\_init(list, parent=None)\_\_}
   \item \textbf{public execute\_action(RemoteAction action)}\\ 
-  not senseful, throws an exception
+  Not senseful, throws an exception
 \end{itemize}
 
 % \subsection{TimeStampedData}
@@ -318,9 +317,9 @@
 \subsubsection{Types}
 \begin{itemize}
 	\item \textbf{e\_action\_stop}\\
-	the action that should stop a host or node
+	The action that should stop a host or node
 	\item \textbf{e\_action\_restart}\\
-	the action that should restart a host or node
+	The action that should restart a host or node
 \end{itemize}
 
 \newpage
@@ -337,13 +336,13 @@ The ItemFilterProxy which is a QSortFilterProxyModel helps to filter the data go
 \subsection{Attributes}
 \begin{itemize}
   \item \textbf{private bool show\_hosts}\\
-  true if hosts should be shown
+  True if hosts should be shown
   \item \textbf{private bool show\_nodes}\\
-  true if nodes should be shown
+  True if nodes should be shown
   \item \textbf{private bool show\_connections}\\
-  true if connections should be shown
+  True if connections should be shown
   \item \textbf{private bool show\_topics}\\
-  true if topics should be shown
+  True if topics should be shown
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -351,17 +350,17 @@ The ItemFilterProxy which is a QSortFilterProxyModel helps to filter the data go
   %\item \textbf{public void \_\_init\_\_(QObject)}\\
   \item \textbf{public bool filterAcceptsRow(int source\_row, QModelIndex
   source\_parent)}\\
-  tells by analysing the given row if it should be shown or not. This behaviour can be modified via the show\_* methods or the setFilterRegExp method.
+  Tells by analysing the given row if it should be shown or not. This behaviour can be modified via the show\_* methods or the setFilterRegExp method.
   \item \textbf{public bool lessThan(QModelIndex left, QModelIndex right)}\\
-  defines the sorting behaviour when comparing two entries of model item by telling how to compare these.
+  Defines the sorting behaviour when comparing two entries of model item by telling how to compare these.
   \item \textbf{public void show\_hosts(bool show\_hosts)}\\
-  set true if hosts should be shown
+  Set true if hosts should be shown
   \item \textbf{public void show\_nodes(bool show\_nodes)}\\
-  set true if nodes should be shown
+  Set true if nodes should be shown
   \item \textbf{public void show\_connections(bool show\_connections)}\\
-  set true if connections should be shown
+  Set true if connections should be shown
   \item \textbf{public void show\_topics(bool show\_topics)}\\
-  set true if topics should be shown
+  Set true if topics should be shown
 \end{itemize}
 
 \subsection{LogFilterProxy}
@@ -379,7 +378,7 @@ only the log of the current selection should be shown.
 \subsection{Attributes}
 \begin{itemize}
   \item \textbf{private current\_item: AbstractItem}\\
-  the currently selected item
+  The currently selected item
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -387,11 +386,11 @@ only the log of the current selection should be shown.
   %\item \textbf{public void \_\_init\_\_(QObject)}\\
   \item \textbf{public bool filterAcceptsRow(int source\_row, QModelIndex
   source\_parent)}\\
-  tells by analysing the given row if it should be shown or not. This behaviour can be modified via setFilterRegExp method so that e.g. only the entries of a specific host can be shown.
+  Tells by analysing the given row if it should be shown or not. This behaviour can be modified via setFilterRegExp method so that e.g. only the entries of a specific host can be shown.
   \item \textbf{public bool lessThan(QModelIndex left, QModelIndex right)}\\
-    defines the sorting behaviour when comparing two entries of model item by telling how to compare these.
+    Defines the sorting behaviour when comparing two entries of model item by telling how to compare these.
   \item \textbf{public void filter\_by\_item(AbstractItem item)}\\
-  used to tell the filter by which item it should filter. If the AbstractItem is None all log entries should be shown.
+  Used to tell the filter by which item it should filter. If the AbstractItem is None all log entries should be shown.
 \end{itemize}
 
 \subsection{SizeDelegate: QtGui.QStyledItemDelegate}
@@ -411,7 +410,7 @@ only the log of the current selection should be shown.
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{private int current\_font\_size}\\
-  the size displayed font
+  The size displayed font
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -419,9 +418,9 @@ only the log of the current selection should be shown.
   QModelIndex index)}\\
   Defines how the items of the model will be painted in the view. Can be used to draw e.g. bigger or smaller fonts.
   \item \textbf{public void set\_bigger\_font\_size()}\\
-  increases the displayed font-size
+  Increases the displayed font-size
   \item \textbf{public void set\_smaller\_font\_size()}\\
-  decreases the displayed font-size
+  Decreases the displayed font-size
 \end{itemize}
 
 \newpage
@@ -451,34 +450,34 @@ only the log of the current selection should be shown.
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{public QWidget overview\_widget}\\
-  the object which holds the widget
+  The object which holds the widget
   \item \textbf{public QLabel status\_light\_label}\\
-  a status ligth wich shows if everything is ok or not
+  A status ligth wich shows if everything is ok or not
   \item \textbf{public QTabWidget tab\_widget}\\
-  the object wich holds the different tabs of the widget
+  The object wich holds the different tabs of the widget
   \item \textbf{public QWidget information\_tab}\\
-  a tab wich gives general information about the network 
+  A tab wich gives general information about the network 
   \item \textbf{public QWidget graphs\_tab}\\
-  displays graphs about the network
+  Displays graphs about the network
   \item \textbf{public QComboBox range\_combo\_box}\\
-  makes it possible to set the range of the graphs
+  Makes it possible to set the range of the graphs
   \item \textbf{public QWidget log\_tab}\\
-  shows actual errors and warnings
+  Shows actual errors and warnings
   \item \textbf{public bool draw\_graphs}\\
-  when the graph tab is selected, draw\_graphs is set on true an the graph will
+  When the graph tab is selected, draw\_graphs is set on true an the graph will
   appear
   \item \textbf{public rospy.Time last\_update}\\
-  the time of the latest update
+  The time of the latest update
   \item \textbf{public pyqtgraph.GraphicsLayoutWidget graph\_layout}\\
-  the layout where the graphs will be plotted. Graphs are modelled as PlotItems.
-  \item \textbf{public dict<string, pyqtgraph.PlotItem> graph\_dict}\\
-  dict of the names of the values together with the graphs represented as PlotItems.
-  \item \textbf{public dict<string, numpy.ndarray> values\_dict}\\
-  dictionary of the names of the values together with the values as an array for fast plotting
+  The layout where the graphs will be plotted. Graphs are modelled as PlotItems.
+  \item \textbf{public dict\{string, pyqtgraph.PlotItem\} graph\_dict}\\
+  Dictionary of the names of the values together with the graphs represented as PlotItems.
+  \item \textbf{public dict\{string, numpy.ndarray\} values\_dict}\\
+  Dictionary of the names of the values together with the values as an array for fast plotting
   \item \textbf{public ROSModel model}\\
-  the model used to show the content
+  The model used to show the content
   \item \textbf{public LogFilterProxy log\_fiter\_proxy}\\
-  the LogFilterProxy which is currently used for sorting the logs.
+  The LogFilterProxy which is currently used for sorting the logs.
   
 \end{itemize}
 \subsubsection{Methods}
@@ -486,13 +485,13 @@ only the log of the current selection should be shown.
 %   \item \textbf{public void \_\_init\_\_(context)}\\
 %   ..
   \item \textbf{public void connect\_slots()}\\
-  initializes the slots of the widget
+  Initializes the slots of the widget
   \item \textbf{public void update()}\\
-  updates the widget and draws the graphs if draw\_graphs is true. 
+  Updates the widget and draws the graphs if draw\_graphs is true. 
   \item \textbf{public void on\_current\_tab\_changed(int tab)}\\
-  the widget wants to get notified when the tab changed so it can e.g. draw the graphs etc.
+  The widget wants to get notified when the tab changed so it can e.g. draw the graphs etc.
   \item \textbf{public void update\_graphs()}\\
-  updates and redraws the graphs
+  Updates and redraws the graphs
 \end{itemize}
 
 \newpage
@@ -515,30 +514,31 @@ only the log of the current selection should be shown.
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{public QWidget tree\_widget}\\
-  the object wich holds the widget
+  The object wich holds the widget
   \item \textbf{public QCheckBox erroneous\_check\_box}\\
-  only erroneous hosts and nodes will be displayed
+  Only erroneous hosts and nodes will be displayed
   \item \textbf{public QCheckBox show\_node\_check\_box}\\
-  displays the activ nodes
+  Displays the activ nodes
   \item \textbf{public QCheckBox show\_host\_check\_box}\\
-  displays the activ hosts
+  Displays the activ hosts
   \item \textbf{public QCheckBox show\_topics\_check\_box}\\
-  displays the actual topics
+  Displays the actual topics
   \item \textbf{pubic QCheckBox show\_connects\_check\_box}\\
-  displays the actual connections
+  Displays the actual connections
   \item \textbf{public QPushButton plus\_push\_button}\\
-  makes it for, a better clarity, possible to zoom in  
+  Makes it for, a better clarity, possible to zoom in  
   \item \textbf{public QPushButton minus\_push\_button}\\
   and zoom out
   \item \textbf{public SelectionWidget selection\_widget}\\
-  the SelectionWidget which opens on double-click on the TreeView
+  The SelectionWidget which opens on double-click on the TreeView
   \item \textbf{public QLineEdit filter\_line\_edit}\\
-  a textfield where you can define a filter for the output
+  A textfield where you can define a filter for the output
   \item \textbf{public ROSModel model}\\
-  the connection to the ROSModel
+  The connection to the ROSModel
   \item \textbf{public ItemFilterProxy filter\_proxy}\\
-  
-  \item \textbf{public size\_delegate: SizeDelegte}\\
+  The filter which will be used to filter the items of the TreeViews e.g. by a search text or according to other criteria selectable by CheckBoxes like show\_hosts.
+  \item \textbf{private size\_delegate: SizeDelegte}\\
+  The size\_delegate is responsible for painting the rows in a specific manner e.g. to make the font bigger.
   
 \end{itemize}
 \subsubsection{Methods}
@@ -546,30 +546,30 @@ only the log of the current selection should be shown.
 %   \item \textbf{public void \_\_init\_\_(context)}\\
 %   ..
   \item \textbf{public void connect\_slots()}\\
-  initializes the slots from the widget
+  Initializes the slots from the widget
   \item \textbf{public void on\_show\_nodes\_check\_box\_state\_changed(bool activated)}\\
-  displays or delete the nodes in the box wether the check box is set or unset
+  Displays or delete the nodes in the box wether the check box is set or unset
   \item \textbf{public void on\_show\_hosts\_check\_box\_state\_changed(bool activated)}\\
-  displays or delete the host in the box wether the check box is set or unset
+  Displays or delete the host in the box wether the check box is set or unset
   \item \textbf{public void on\_show\_topics\_check\_box\_state\_changed(bool activated)}\\
-  displays or delete the topics in the box wether the check box is set or unset
+  Displays or delete the topics in the box wether the check box is set or unset
   \item \textbf{public void
   on\_show\_connections\_check\_box\_state\_changed(bool activated)}\\
-  displays or delete the connections in the box wether the check box is set or
+  Displays or delete the connections in the box wether the check box is set or
   unset
   \item \textbf{public void on\_apply\_push\_button\_clicked()}\\
-  filters the content in the box according to the content of the
+  Filters the content in the box according to the content of the
   filter\_line\_edit
   \item \textbf{public void on\_erroneus\_check\_box\_state\_changed()}\\
-  if this check box is set, only erroneus hosts and nodes will be displayed  
+  If this check box is set, only erroneus hosts and nodes will be displayed  
   \item \textbf{public void on\_plus\_push\_button\_clicked()}\\
-  checks if the plus\_push\_button is clicked and zoomes in (increases the size
+  Checks if the plus\_push\_button is clicked and zoomes in (increases the size
   of the font)
   \item \textbf{public void on\_minus\_push\_button\_clicked()}\\
-  checks if the minus\_push\_button is clicked and zoomes out (decreases the
+  Checks if the minus\_push\_button is clicked and zoomes out (decreases the
   size of the font)
   \item \textbf{public void on\_item\_in\_tree\_view\_double\_clicked()}\\
-  handels the double-click action and opens the clicked item in the SelectionWidget
+  Handels the double-click action and opens the clicked item in the SelectionWidget
 \end{itemize}
 
 \newpage
@@ -590,37 +590,37 @@ only the log of the current selection should be shown.
 \subsubsection{Attributes}
 \begin{itemize}
   \item \textbf{public QLabel host\_node\_label}\\
-  the name of the actual selected item
+  The name of the actual selected item
   \item \textbf{public QLabel status\_light\_label}\\
-  a status-light about the status of the current item
+  A status-light about the status of the current item
   \item \textbf{public QTabWidget tab\_widget}\\
-  the object wich holds the different tabs of the widget
+  The object wich holds the different tabs of the widget
   \item \textbf{public QWidget information\_tab}\\
-  a tab wich gives general information about hosts or nodes 
+  A tab wich gives general information about hosts or nodes 
   \item \textbf{public QWidget graphs\_tab}\\
-  displays graphs about the actual selected item, e.g the Network- and
+  Displays graphs about the actual selected item, e.g the Network- and
   CPU-Load
   \item \textbf{public QComboBox range\_combo\_box}\\
-  makes it possible to set the range of the graphs
+  Makes it possible to set the range of the graphs
   \item \textbf{public QWidget log\_tab}\\
-  shows actual errors and warnings
+  Shows actual errors and warnings
   \item \textbf{public QWidget actions\_tab}\\
-  includes buttons to restart and stop nodes
+  Includes buttons to restart and stop nodes
   \item \textbf{public item selected\_item}\\
-  the selected item
+  The selected item
   \item \textbf{public bool draw\_graphs}\\
-  when the graph tab is selected, draw\_graphs is set on true an the graph will
+  When the graph tab is selected, draw\_graphs is set on true an the graph will
   appear
   \item \textbf{public rospy.Time last\_updated}\\
-  the time of the last update
-  \item \textbf{public dict<string, pyqtgraph.PlotItem> graph\_dict}\\
-  dict of the names of the values together with the graphs represented as PlotItems.
-  \item \textbf{public dict<string, numpy.ndarray> values\_dict}\\
-  dictionary of the names of the values together with the values as an array for fast plotting
+  The time of the last update
+  \item \textbf{public dict\{string, pyqtgraph.PlotItem\} graph\_dict}\\
+  Dict of the names of the values together with the graphs represented as PlotItems.
+  \item \textbf{public dict\{string, numpy.ndarray\} values\_dict}\\
+  Dictionary of the names of the values together with the values as an array for fast plotting
   \item \textbf{public ROSModel model}\\
-  the model used to show the content
+  The model used to show the content
   \item \textbf{public LogFilterProxy log\_filter\_proxy}\\
-  the filterproxy which will be used to show only the entries of the current item in the log\_tab
+  The filterproxy which will be used to show only the entries of the current item in the log\_tab
   
 \end{itemize}
 \subsubsection{Methods}
@@ -628,23 +628,23 @@ only the log of the current selection should be shown.
 %   \item \textbf{public void \_\_init\_\_(context)}\\
 %   ..
   \item \textbf{public void connect\_slots()}\\
-  initializes the slots from the widget
+  Initializes the slots from the widget
   \item \textbf{public void set\_selected\_item(item selected\_item)}\\
-  set the selected item
+  Set the selected item
   \item \textbf{public void update()}\\
-  updates the widget
+  Updates the widget
   \item \textbf{public void on\_current\_tab\_changed(int tab)}\\
-  will be called when you switch between tabs
+  Will be called when you switch between tabs
   \item \textbf{public void on\_restart\_push\_button\_clicked()}\\
-  handels the retart button and restarts a host or node
+  Handels the retart button and restarts a host or node
   \item \textbf{public void on\_stop\_push\_button\_clicked()}\\
-  handels the stop button and stops a host or node
+  Handels the stop button and stops a host or node
   \item \textbf{public void on\_start\_push\_button\_clicked()}\\
-  handels the start button and starts ahost or node
+  Handels the start button and starts ahost or node
   \item \textbf{public void on\_range\_combo\_box\_index\_changed(int index)}\\
-  handels the change of the graph range
+  Handels the change of the graph range
   \item \textbf{public void on\_changed\_selected\_item(QModelIndex)}\
-  item\_index\ handels the change of the selected item
+  Item\_index\ handels the change of the selected item
   \item \textbf{public void update\_graphs()}\\
-  updates the graph plot
+  Updates the graph plot
 \end{itemize}
