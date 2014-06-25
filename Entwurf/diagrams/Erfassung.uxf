@@ -19,7 +19,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
 --
 +__init__(id:String)
 +update_status()
--publish_status()
+-publish_status(topic : String )
 +execute_reaction(reaction : NodeReaction) :String
 +add_node(nodeID : String)
 +remove_node(nodeID : String)
@@ -85,19 +85,19 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
     <coordinates>
       <x>440</x>
       <y>300</y>
-      <w>490</w>
-      <h>50</h>
+      <w>250</w>
+      <h>230</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;30;470;30</additional_attributes>
+    <additional_attributes>30;30;230;30;230;210</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>580</x>
       <y>510</y>
-      <w>370</w>
-      <h>130</h>
+      <w>390</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>*NodeStatisticsHandler*
 --
@@ -107,7 +107,8 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
 --
 +__init__(hostID:string, nodeID:string)
 +update_status()
--publish_status()
+-publish_status(topic : String)
+-receive_statistics()
 //Usage Statistics of individuall nodes
 </panel_attributes>
     <additional_attributes/>
@@ -239,9 +240,9 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>920</x>
+      <x>940</x>
       <y>250</y>
-      <w>740</w>
+      <w>720</w>
       <h>372</h>
     </coordinates>
     <panel_attributes>        &lt;&lt;uses&gt;&gt;
@@ -250,7 +251,7 @@ lt=&lt;.
        
         
    </panel_attributes>
-    <additional_attributes>670;30;670;300;30;300</additional_attributes>
+    <additional_attributes>650;30;650;300;30;300</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
@@ -262,5 +263,16 @@ lt=&lt;.
     </coordinates>
     <panel_attributes>*rospy*</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>440</x>
+      <y>290</y>
+      <w>490</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;</panel_attributes>
+    <additional_attributes>30;30;470;30</additional_attributes>
   </element>
 </diagram>

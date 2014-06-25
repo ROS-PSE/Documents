@@ -28,7 +28,7 @@ Represents a host . Limited to one instance per host. Collects statistics about 
 \begin{itemize}
 	\item \textbf{public void update\_status()}\\
 			collects statistics about the host's current status using psutils.
-	\item \textbf{private void publish\_status()}\\
+	\item \textbf{private void publish\_status(String topic)}\\
 			publishes the current status to a topic using ROS's publisher-subscriber mechanism.
 	\item \textbf{public String execute\_reaction(NodeReaction reaction)}\\
 			parses through the reaction and calls the appropriate method from the NodeManager.
@@ -58,6 +58,8 @@ Holds the statistics of an individual Node.
 	collects statistics about the node's current status using psutils and rospy.statistics
 	\item \textbf{private void publish\_status()}\\
 	publishes the current status to a topic using ROS's publisher-subscriber mechanism.
+	\item \textbf{private void receive\_statistics()}\\
+	receives the statistics published by ROS Topic statistics
 \end{itemize}
 
 \subsection{NodeManager}
