@@ -34,9 +34,10 @@
 
 \subsubsection{Methods}
 \begin{itemize}
-\item \textbf{public void update\_status()}\\
+\item \textbf{public void measure\_status()}\\
 			Collects information about the current status using psutils.
-\item \textbf{protected void publish\_status(String topic)}\\
+			Triggered periodically.
+\item \textbf{public void publish\_status(String topic)}\\
 			Publishes the current status to a topic using ROS's publisher-subscriber mechanism.
 \end{itemize}
 
@@ -69,10 +70,12 @@
 
 \subsubsection{Methods}
 \begin{itemize}
-	\item \textbf{public void update\_status()}\\
+	\item \textbf{public void measure\_status()}\\
 			Collects information about the host's current status using psutils.
-	\item \textbf{private void publish\_status(String topic)}\\
+			Triggered periodically.
+	\item \textbf{public void publish\_status(String topic)}\\
 			Publishes the current status to a topic using ROS's publisher-subscriber mechanism.
+			Triggered periodically.
 	\item \textbf{public String execute\_reaction(NodeReaction reaction)}\\
 			Parses through the reaction and calls the appropriate method from the NodeManager.
 			Returns a message about operation's success.
@@ -110,8 +113,10 @@
 \begin{itemize}
 	\item \textbf{public void measure\_status()}\\
 	Collects information about the node's current status using psutils and rospy.statistics
-	\item \textbf{private void publish\_status()}\\
+	Triggered periodically.
+	\item \textbf{public void publish\_status()}\\
 	Publishes the current status to a topic using ROS's publisher-subscriber mechanism.
+	Triggered periodically.
 	\item \textbf{private void receive\_statistics()}\\
 	Receives the statistics published by ROS Topic statistics
 	\item \textbf{private NodeStatistic calc\_statistics}\\
@@ -247,10 +252,8 @@
 \begin{itemize}
 	\item \textbf{public void add\_node\_bandwidth(int byte)}\\
 	Adds another measured value  to node\_bandwidth.
-	\item \textbf{public void add\_node\_read(int byte)}\\
-	Adds another measured value to node\_read.
-	\item \textbf{public void add\_node\_write(int byte)}\\
-	Adds another measured value  to node\_write.
+	\item \textbf{public void add\_node\_io(int read, int write)}\\
+	Adds another pair of measured read and write values to node\_read and node\_write.
 	\item \textbf{reset()}\\
 	Resets the status.
 \end{itemize}
