@@ -1,7 +1,7 @@
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width = 1.0 \linewidth]{./diagram_pictures/erfassung.jpg}
+\includegraphics[width = 1.0 \linewidth]{./diagram_pictures/NodeInterface/erfassung.pdf}
 \caption{UML diagram of the NodeInterface package}
 \end{center}
 \end{figure}
@@ -9,7 +9,19 @@
 
 
 \subsection{StatisticsHandler}
-Abstract Class to Handle Statistics of Hosts or Nodes.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/NodeInterface/StatisticsHandler.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Abstract Class to Handle Statistics of Hosts or Nodes.
+	\end{minipage}
+\end{figure}
+
 
 
 \subsubsection{Attributes}
@@ -31,7 +43,19 @@ Abstract Class to Handle Statistics of Hosts or Nodes.
 
 
 \subsection{HostStatisticsHandler}
-Represents a host . Limited to one instance per host. Collects statistics about the current state of the host and sends them using the publisher-subscriber mechanism.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/NodeInterface/HostStatisticsHandler.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{5cm}
+		\vspace{10pt}
+		Represents a host . Limited to one instance per host. Collects statistics about the current state of the host and sends them using the 				publisher-subscriber mechanism.
+	\end{minipage}
+\end{figure}
+
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -62,7 +86,19 @@ Represents a host . Limited to one instance per host. Collects statistics about 
 \end{itemize}
 
 \subsection{NodeStatisticsHandler}
-Holds the statistics of an individual Node.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/NodeInterface/NodeStatisticsHandler.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{6cm}
+		\vspace{10pt}
+		Holds the statistics of an individual Node.
+	\end{minipage}
+\end{figure}
+
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -84,7 +120,19 @@ Holds the statistics of an individual Node.
 \end{itemize}
 
 \subsection{Status}
-Container Class to Store information about the current status.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/NodeInterface/Status.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Container Class to Store information about the current status.
+	\end{minipage}
+\end{figure}
+
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -119,7 +167,20 @@ Container Class to Store information about the current status.
 \end{itemize}
 
 \subsection{HostStatus}
-Extension of Status.
+
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/NodeInterface/HostStatus.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Extension of Status , to store additional information used by hosts.
+	\end{minipage}
+\end{figure}
+
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -158,7 +219,19 @@ Extension of Status.
 \end{itemize}
 
 \subsection{NodeStatus}
-Extension of Status
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/NodeInterface/NodeStatus.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{7cm}
+		\vspace{10pt}
+		Extension of Status , to store additional information used by nodes.
+	\end{minipage}
+\end{figure}
+
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -183,7 +256,19 @@ Extension of Status
 \end{itemize}
 
 \subsection{NodeManager}
-can restart or stop nodes or execute a countermeasure 
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/NodeInterface/NodeManager.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+		Can restart or stop nodes or execute a countermeasure.
+	\end{minipage}
+\end{figure}
+
 
 \subsubsection{Methods}
 \begin{itemize}
@@ -199,7 +284,19 @@ can restart or stop nodes or execute a countermeasure
 \end{itemize}
 
 \subsection{ReactionHandler}
-Delegates the countermeasure to the concerned host.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{7cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/NodeInterface/ReactionHandler.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{7cm}
+		\vspace{10pt}
+		Delegates the countermeasure to the concerned host.
+	\end{minipage}
+\end{figure}
+
 
 \subsubsection{Attributes}
 \begin{itemize}
