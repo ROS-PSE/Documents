@@ -1,7 +1,8 @@
 # get all statistics where timestamp in ms is > than timestamp
 time timestamp
 ---
-# each statistic has its own rated statistic. timestamps can be found at the time windows of each statistic
+# each statistic has its own rated statistic. 
+# timestamps can be found at the time windows of each statistic
 
 HostStatistics[] host_statistics
 RatedStatistics[] rated_host_statistics

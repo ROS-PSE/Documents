@@ -4,7 +4,7 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1040</x>
+      <x>860</x>
       <y>430</y>
       <w>470</w>
       <h>210</h>
@@ -17,7 +17,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
 --
 +__init__(id:String)
 +measure_status()
--publish_status(topic : String )
++publish_status(topic : String )
 -calc_statistics() : HostStatistics
 +execute_reaction(reaction : NodeReaction) :String
 +add_node(nodeID : String)
@@ -30,7 +30,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>980</x>
+      <x>800</x>
       <y>0</y>
       <w>100</w>
       <h>30</h>
@@ -41,7 +41,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>950</x>
+      <x>770</x>
       <y>0</y>
       <w>150</w>
       <h>130</h>
@@ -53,7 +53,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1300</x>
+      <x>1120</x>
       <y>780</y>
       <w>290</w>
       <h>100</h>
@@ -70,7 +70,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>250</x>
+      <x>70</x>
       <y>170</y>
       <w>120</w>
       <h>30</h>
@@ -82,7 +82,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>490</x>
+      <x>270</x>
       <y>530</y>
       <w>390</w>
       <h>140</h>
@@ -93,7 +93,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
 --
 +__init__(hostID:string, nodeID:string)
 +measure_status()
--publish_status(topic : String)
++publish_status(topic : String)
 -receive_statistics()
 -calc_statistics() : NodeStatistics
 //Usage Statistics of individuall nodes
@@ -103,7 +103,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>250</x>
+      <x>70</x>
       <y>200</y>
       <w>120</w>
       <h>30</h>
@@ -114,19 +114,19 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>340</x>
+      <x>160</x>
       <y>180</y>
-      <w>170</w>
+      <w>130</w>
       <h>400</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>30;30;90;30;90;380;150;380</additional_attributes>
+    <additional_attributes>30;30;70;30;70;380;110;380</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1000</x>
+      <x>820</x>
       <y>970</y>
       <w>140</w>
       <h>50</h>
@@ -138,7 +138,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>880</x>
+      <x>700</x>
       <y>790</y>
       <w>390</w>
       <h>100</h>
@@ -155,7 +155,7 @@ _-instances : dict{hostID : String - host_statistic: HostStatisticsHandler}_
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1140</x>
+      <x>960</x>
       <y>610</y>
       <w>50</w>
       <h>200</h>
@@ -168,7 +168,7 @@ m2=   1</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1050</x>
+      <x>870</x>
       <y>860</y>
       <w>50</w>
       <h>130</h>
@@ -179,7 +179,7 @@ m2=   1</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1360</x>
+      <x>1180</x>
       <y>610</y>
       <w>50</w>
       <h>190</h>
@@ -190,7 +190,7 @@ m2=   1</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>250</x>
+      <x>70</x>
       <y>230</y>
       <w>120</w>
       <h>30</h>
@@ -203,7 +203,7 @@ m2=   1</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>270</x>
+      <x>90</x>
       <y>230</y>
       <w>630</w>
       <h>610</h>
@@ -214,20 +214,20 @@ m2=   1</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>770</x>
+      <x>550</x>
       <y>470</y>
-      <w>290</w>
+      <w>330</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 m1= 1
 m2= n</panel_attributes>
-    <additional_attributes>270;30;30;30;30;60</additional_attributes>
+    <additional_attributes>310;30;30;30;30;60</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>210</x>
+      <x>30</x>
       <y>120</y>
       <w>190</w>
       <h>150</h>
@@ -238,7 +238,7 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>340</x>
+      <x>160</x>
       <y>150</y>
       <w>610</w>
       <h>50</h>
@@ -249,7 +249,7 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>930</x>
+      <x>750</x>
       <y>110</y>
       <w>200</w>
       <h>110</h>
@@ -260,13 +260,13 @@ m2= n</panel_attributes>
 #status : Status
 --
 /+measure_status()/
-/#publish_status(topic : String)/</panel_attributes>
+/+publish_status(topic : String)/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1010</x>
+      <x>830</x>
       <y>190</y>
       <w>250</w>
       <h>260</h>
@@ -277,18 +277,18 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>640</x>
+      <x>420</x>
       <y>190</y>
-      <w>420</w>
+      <w>460</w>
       <h>360</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>400;30;400;160;30;160;30;340</additional_attributes>
+    <additional_attributes>440;30;440;160;30;160;30;340</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1200</x>
+      <x>1020</x>
       <y>80</y>
       <w>260</w>
       <h>260</h>
@@ -314,7 +314,7 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1100</x>
+      <x>920</x>
       <y>120</y>
       <w>120</w>
       <h>50</h>
@@ -325,7 +325,7 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1530</x>
+      <x>1350</x>
       <y>20</y>
       <w>370</w>
       <h>250</h>
@@ -351,26 +351,25 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1530</x>
+      <x>1350</x>
       <y>270</y>
       <w>370</w>
-      <h>140</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>*NodeStatus*
 --
 -node_bandwidth : int
--node_read : int[]
--node_write : int[]
+-node_read : int
+-node_write : int
 --
 +add_node_bandwidth(val : int)
-+add_node_read(val: int)
-+add_node_write(val: int)</panel_attributes>
++add_node_io(read : int, write : int)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1430</x>
+      <x>1250</x>
       <y>40</y>
       <w>120</w>
       <h>190</h>
@@ -381,7 +380,7 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1430</x>
+      <x>1250</x>
       <y>180</y>
       <w>120</w>
       <h>160</h>
@@ -392,18 +391,18 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1660</x>
+      <x>1480</x>
       <y>430</y>
       <w>100</w>
-      <h>40</h>
+      <h>30</h>
     </coordinates>
-    <panel_attributes>PySensors</panel_attributes>
+    <panel_attributes>*PySensors*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1480</x>
+      <x>1300</x>
       <y>400</y>
       <w>200</w>
       <h>70</h>
