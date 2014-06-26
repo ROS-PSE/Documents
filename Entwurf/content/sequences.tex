@@ -3,7 +3,7 @@
 \section{Data Acquisition}
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=1.0\linewidth]{./diagram_pictures/NodeInterface/erfassung_seq.pdf}
+		\includegraphics[width=0.8\linewidth]{./diagram_pictures/NodeInterface/erfassung_seq.pdf}
 		\caption{Used psutils calls to collect data and publishing to topics.}
 	\end{center}
 \end{figure}
@@ -16,7 +16,7 @@ The nodes use psutils and ROS Topic Statistics to collect data and write it into
 After the time window has passed the publishing process is triggered. The HostStatisticsHandler again triggers asynchronous calls to all of it's nodes to publish their status. During the publishing process, the statistical values are calculated and transformed into a ROS message.
 After publishing the data, the status of the host or node is resetted.
 
-
+\newpage
 \section{Dataprocessing and -storage}
 \begin{figure}[!ht]
 	\begin{center}
