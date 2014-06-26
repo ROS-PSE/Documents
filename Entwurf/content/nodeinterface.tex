@@ -7,19 +7,38 @@
 \end{figure}
 \newpage
 
+
+\subsection{StatisticsHandler}
+Abstract Class to Handle Statistics of Hosts or Nodes.
+
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item \textbf{protected String id}\\
+	Id of the Host or Node.	
+	\item \textbf{protected Status status}\\
+	Holds the current status.
+\end{itemize}
+
+\subsubsection{Methods}
+\begin{itemize}
+\item \textbf{public void update\_status()}\\
+			Collects information about the current status using psutils.
+\item \textbf{protected void publish\_status(String topic)}\\
+			Publishes the current status to a topic using ROS's publisher-subscriber mechanism.
+\end{itemize}
+
+
+
 \subsection{HostStatisticsHandler}
 Represents a host . Limited to one instance per host. Collects statistics about the current state of the host and sends them using the publisher-subscriber mechanism.
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item \textbf{private string id}\\
-			ip of the host.
 	\item \textbf{private NodeManager node\_manager}\\
 			NodeManager providing function to restart and stop Nodes.
 	\item \textbf{private  dict\{String nodeID  - NodesStatisticsHandler node\_statistic  \} node\_list}\\
 			Dictionary holding all Nodes and their statistics, currently running on the host.
-	\item \textbf{private HostStatistics status}\\
-			Holds the current statistics about the  status of the host.
 	\item \textbf{private static dict\{String hostID   - HostStatisticsHandler host\_statistic \}}\\
 			Holds references to all initiated host, to prevent multiple instances of a single host.
 \end{itemize}
@@ -27,16 +46,19 @@ Represents a host . Limited to one instance per host. Collects statistics about 
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{public void update\_status()}\\
-			collects statistics about the host's current status using psutils.
+			Collects information about the host's current status using psutils.
 	\item \textbf{private void publish\_status(String topic)}\\
-			publishes the current status to a topic using ROS's publisher-subscriber mechanism.
+			Publishes the current status to a topic using ROS's publisher-subscriber mechanism.
 	\item \textbf{public String execute\_reaction(NodeReaction reaction)}\\
-			parses through the reaction and calls the appropriate method from the NodeManager.
+			Parses through the reaction and calls the appropriate method from the NodeManager.
 			Returns a message about operation's success.
 	\item \textbf{public void add\_node(String nodeID)}\\
-			adds a Node with the given id to the host.
+			Adds a Node with the given id to the host.
 	\item \textbf{public void remove\_node(String nodeID)}\\
-			removes the Node with the given id from the host.
+			Removes the Node with the given id from the host.
+	\item \textbf{private HostStatistics calc\_statistics}\\
+			Calculates statistics like mean, standard deviation and max from the status.
+			Returns an instance of HostStatistics which can be published.
 \end{itemize}
 
 \subsection{NodeStatisticsHandler}
@@ -45,21 +67,119 @@ Holds the statistics of an individual Node.
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{private String hostID}\\
-	id of the host this node runs on
-	\item \textbf{private String nodeID}\\
-	identifier of this node
-	\item \textbf{private NodeStatistics status}\\
-	current statistcs about the status of the node
+	Id of the host this node runs on.
 \end{itemize}
 
 \subsubsection{Methods}
 \begin{itemize}
-	\item \textbf{public void update\_status()}\\
-	collects statistics about the node's current status using psutils and rospy.statistics
+	\item \textbf{public void measure\_status()}\\
+	Collects information about the node's current status using psutils and rospy.statistics
 	\item \textbf{private void publish\_status()}\\
-	publishes the current status to a topic using ROS's publisher-subscriber mechanism.
+	Publishes the current status to a topic using ROS's publisher-subscriber mechanism.
 	\item \textbf{private void receive\_statistics()}\\
-	receives the statistics published by ROS Topic statistics
+	Receives the statistics published by ROS Topic statistics
+	\item \textbf{private NodeStatistic calc\_statistics}\\
+	Calculates statistics like mean, standard deviation and max from the status.
+	Returns an instance of NodeStatistic which can be published.
+\end{itemize}
+
+\subsection{Status}
+Container Class to Store information about the current status.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item \textbf{protected float[] cpu\_usage }\\
+	Percentage of the cpu used.
+	\item \textbf{protected float[][] cpu\_usage\_core}\\
+	Percentage of the cpu used per core.
+	\item \textbf{protected float[] ram\_usage}\\
+	Percentage of ram used.
+	\item \textbf{protected int msg\_frequency}\\
+	Frequency of network calls.
+	\item \textbf{protected time time\_start}\\
+	Time of the start of the measurements.
+	\item \textbf{protected time time\_end}\\
+	Time of the end of the measurements.
+\end{itemize}
+
+\subsubsection{Methods}
+\begin{itemize}
+	\item \textbf{public void add\_cpu\_usage(float value}\\
+	Adds another measured value to cpu\_usage.
+	\item \textbf{public void add\_cpu\_usage\_core(float[] values)}\\
+	Adds another measured value to per core cpu\_usage\_core.
+	\item \textbf{public void add\_gpu\_usage(float[] values}\\
+	Adds another measured value per card to gpu\_usage.
+	\item \textbf{public void add\_ram\_usage(float value)}\\
+	Adds another measured value to ram\_usage.
+	\item \textbf{public void add\_msg\_frequency(float value)}\\
+	Adds another measured value to msg\_frequency.
+	\item \textbf{public void reset()}\\
+	Resets the status.
+\end{itemize}
+
+\subsection{HostStatus}
+Extension of Status.
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item \textbf{private float[] cpu\_temp}\\
+	Current CPU temperature in Celsius.
+	\item \textbf{private float[][] cpu\_temp\_core}\\
+	Current CPU temperature per core in Celsius.
+	\item \textbf{private float[][] gpu\_temp\_core}\\
+	Current GPU temperature per GPU in Celsius.
+	\item \textbf{private dict\{String interface - int[] bytes\} bandwidth }\\
+	Bytes sent through a NIC since the start of the time window.
+	\item \textbf{private dict\{String drive - int[] free\_space\} bandwidth}\\
+	Free Space per drive.
+	\item \textbf{private int[] drive\_write}\\
+	Bytes written per drive since the start of the time window.
+	\item \textbf{private int[] drive\_read}\\
+	Bytes read per drive since the start of the time window.
+\end{itemize}
+
+\subsubsection{Methods}
+\begin{itemize}
+	\item \textbf{public void add\_cpu\_temp(float temp)}\\
+	Adds another measured value to cpu\_temp.
+	\item \textbf{public void add\_cpu\_temp\_core(float[] temps)}\\
+	Adds another measured value per core to cpu\_temp\_core.
+	\item \textbf{public void add\_gpu\_temp(float[] temps)}\\
+	Adds another measured value per card to gpu\_temp.
+	\item \textbf{public void add\_bandwidth(String[] Interface, int[] bandwidth)}\\
+	Adds another measured value to bandwidth.
+	\item \textbf{public void add\_drive\_write(int[] byte)}\\
+	Adds another measured value per drive to drive\_write.
+	\item \textbf{public void add\_drive\_read(int[] byte)}\\
+	Adds another measured value per drive to drive\_read.
+	\item \textbf{reset()}\\
+	Resets the status.
+\end{itemize}
+
+\subsection{NodeStatus}
+Extension of Status
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item \textbf{private int node\_bandwidth}\\
+	Bytes the node has sent through the network.
+	\item \textbf{private int node\_read}\\
+	Bytes the node has read from a hard drive since the start of the time window.
+	\item \textbf{private int node\_write}\\
+	Bytes the node has written to a hard drive since the start of the time window.
+\end{itemize}
+
+\subsubsection{Methods}
+\begin{itemize}
+	\item \textbf{public void add\_node\_bandwidth(int byte)}\\
+	Adds another measured value  to node\_bandwidth.
+	\item \textbf{public void add\_node\_read(int byte)}\\
+	Adds another measured value to node\_read.
+	\item \textbf{public void add\_node\_write(int byte)}\\
+	Adds another measured value  to node\_write.
+	\item \textbf{reset()}\\
+	Resets the status.
 \end{itemize}
 
 \subsection{NodeManager}
@@ -68,18 +188,18 @@ can restart or stop nodes or execute a countermeasure
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{public String stop\_node(String nodeID)}\\
-	stops the node with the given id.
+	Stops the node with the given id.
 	Returns a message about operation's success.
 	\item \textbf{public String restart\_node(String nodeID)}\\
-	restarts a node with the given id.
+	Restarts a node with the given id.
 	Returns a message about operation's success.
 	\item \textbf{public String execute\_command(String[] args)}\\
-	executes a system call with the given arguments.
+	Executes a system call with the given arguments.
 	Returns a message about operation's success.
 \end{itemize}
 
 \subsection{ReactionHandler}
-delegates the countermeasure to the concerned host.
+Delegates the countermeasure to the concerned host.
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -90,16 +210,17 @@ delegates the countermeasure to the concerned host.
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{public String send\_reaction(NodeReaction reaction)}\\
-	parses the reaction and delegates it to the concerned host.
+	Parses the reaction and delegates it to the concerned host.
 	Returns a message about operation's success using rospy.Service
 	\item \textbf{public void add\_host(HostStatisticsHandler host)}\\
-	adds a host to the dictionary
+	Adds a host to the dictionary
 	\item \textbf{public void remove\_host(HostStatisticsHandler host)}\\
-	removes a host from the dictionary
+	Removes a host from the dictionary
 \end{itemize}
+
 	
 \subsection{psutils}
-library to acquire the system's usage statistics. For a more in-depth documentation, see the official psutils documentation.
+Library to acquire the system's usage statistics. For a more in-depth documentation, see the official psutils documentation.
 
 \subsubsection{Used methods}
 \begin{itemize}
