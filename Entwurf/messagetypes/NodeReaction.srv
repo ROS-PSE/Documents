@@ -7,8 +7,8 @@ string node
 # action  [restart, stop, command]
 string action
 
-# command-line arguments (for action command)
-string[] args
+# command (for action command)
+string command
 ---
 # message returned upon completion
 string returnmessage
