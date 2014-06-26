@@ -30,6 +30,14 @@ A result of that will contain raw data, rated data, a timestamp and the identifi
 		\caption{Initialisation of Constraints and evaluating and executing countermeasures.} 
 	\end{center} 
 \end{figure}
+This sequence diagram shows how constraints get initialised from the parameter server. Additionally it states how an constraint first gets evaluated periodically and then executes it's reaction when necessary.
+\subsection*{Initialisation of Constraints}
+First the ConstraintHandler asks for all constraints from the parameter server. Then the class parses them into Constraints, building an tree for efficient evaluation. Each constraint has its own array of reactions to take when necessary.
+
+\subsection*{Evaluation and reacting}
+The CountermeasureNode regularily asks the ConstraintHandler to evaluate the constraints again. Each evaluate call in an ConstraintItem gets passed on to the objects branches until the leafes are reached. Each leaf then evaluates if the specific contraint for one specific statistic datapoint is true and passes its result on back on its way to the root of the tree.\\
+After the evaluation the ConstraintHandler checks if there is the need to react. The reaction creates a new NodeReaction object and sends it to the remote ReactionHandler.
+
 
 \newpage
 \section{GUI}
@@ -39,10 +47,12 @@ A result of that will contain raw data, rated data, a timestamp and the identifi
 		\caption{A example GUI sequence.}
 	\end{center}
 \end{figure}
+
 \subsection*{Setup}
 In this sequence diagramm it is exemplary shown how the GUI part of the Software initializes.
 All widgets do whenever startet proceed the following steps: Initialize their own data, create or get the model, synchronize with an additional proxy model and then create and start the BufferThread so data is flowing in. The BufferThread then connects via the services to the MonitoringNode and gets a history of the last messages.
 Finally the widgets connect their slots so that e.g. the view gets updated when the model changes.
+
 \subsection*{Running}
 When the GUI is running everything is getting updated with Qt's signal and slot mechanism. The BufferThread gets all actual data as a Subscriber of all topics and then regularily redirects this data by updating the model. The changes are then transmitted to the view aka the widgets which then show this incoming data.
 \\
