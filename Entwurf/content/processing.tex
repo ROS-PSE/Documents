@@ -26,8 +26,8 @@
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item private MetadataStorage storage
-	\item private SpecificationHandler specHandler
+	\item \textbf{private MetadataStorage storage}
+	\item \textbf{private SpecificationHandler specHandler}
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -38,7 +38,7 @@
 	\item \textbf{private void publish\_data(RatedStatistics)}\\
 	Publishes results of the comparison as rated Metadata
 	\item \textbf{private StatisticHistoryResponse storage\_server(StatisticHistoryRequest)}\\
-	Listen for the GUI Model service calls and returns requested metadata from the storage
+	Listens for the GUI Model service calls and returns requested metadata from the storage
 \end{itemize}
 
 \newpage
@@ -60,9 +60,9 @@
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{private dict(string, dict(int, StorageContainer[])) storage}\\
-	Datastructure to store Packages by key and timestamp
+	Datastructure to store Packages by key and timestamp.
 	\item \textbf{private int duration}\\
-	Duration in seconds for data to be stored
+	The duration in seconds for data to be stored.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
@@ -95,7 +95,7 @@
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{public int timestamp}\\
-	Time when the data came from the subscriber
+	Time when the data came from the subscriber.
 	\item \textbf{public string identifier}\\
 	Host/Node/Connection identifier
 	\item \textbf{public object data\_raw}\\
