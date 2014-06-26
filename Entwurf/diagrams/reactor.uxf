@@ -367,10 +367,10 @@ command: string)
       <x>238</x>
       <y>539</y>
       <w>209</w>
-      <h>34</h>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>196;21;21;21</additional_attributes>
+    <additional_attributes>196;35;42;35;42;21;21;21</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -389,47 +389,13 @@ command: string)
       <x>70</x>
       <y>658</y>
       <w>189</w>
-      <h>161</h>
+      <h>63</h>
     </coordinates>
-    <panel_attributes>*ReactionDefault*
+    <panel_attributes>*ReactionStopNode*
 --
-- reaction_type: string
-
 --
-+ __init__(node_id:
- string, reaction_type: string)
-+ execute_reaction()
-- restart_node()
-- stop_node()
-- publish_on_rosout()</panel_attributes>
++ execute_reaction()</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>308</x>
-      <y>749</y>
-      <w>147</w>
-      <h>77</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;enum&gt;&gt;
-*ReactionDefaultType*
---
-restart
-stop
-output</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>238</x>
-      <y>777</y>
-      <w>83</w>
-      <h>34</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>70;21;21;21</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -525,6 +491,59 @@ _+ get_instance(): HostLookUp_
     <panel_attributes>rospy
 fg=blue</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>70</x>
+      <y>742</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>*ReactionRestartNode*
+--
+--
++ execute_reaction()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>70</x>
+      <y>826</y>
+      <w>189</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>*ReactionPublishRosoutNode*
+--
+- msg: string
+--
++ __init__(node_id: string, 
+msg: string)
++ execute_reaction()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>238</x>
+      <y>553</y>
+      <w>209</w>
+      <h>237</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>196;21;42;21;42;224;21;224</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>238</x>
+      <y>553</y>
+      <w>209</w>
+      <h>321</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>196;21;42;21;42;308;21;308</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>

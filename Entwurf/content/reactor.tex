@@ -398,66 +398,74 @@
 
 
 \newpage
-\subsection{ReactionDefault}
+\subsection{ReactionStopNode}
 \begin{figure}[htbp]
 	\begin{minipage}[t]{8cm}
 		\vspace{0pt}
 		\centering
-		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ReactionDefault.png}
-		\caption{The ReactionDefault class}
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ReactionStopNode.png}
+		\caption{The ReactionStopNode class.}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{8cm}
 		\vspace{10pt}
-			A Class that executes an specific default Reaction like restart or stop.
+			A reaction that is able to stop an node.
 	\end{minipage}
 \end{figure}  
 
-\subsubsection{attributes}
+\subsubsection{Methods}
 \begin{itemize}
-	\item \textbf{ private ReactionDefaultType reaction\_type}\\
-		Contains the type this reaction is of.
+	\item \textbf{ public void exececute\_reaction() }\\
+\end{itemize}
+
+\newpage
+\subsection{ReactionRestartNode}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ReactionRestartNode.png}
+		\caption{The ReactionRestartNode class.}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			A reaction that is able to restart an node.
+	\end{minipage}
+\end{figure}  
+
+\subsubsection{Methods}
+\begin{itemize}
+	\item \textbf{ public void exececute\_reaction() }\\
+\end{itemize}
+
+\newpage
+\subsection{ReactionPublishRosoutNode}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ReactionPublishRosoutNode.png}
+		\caption{The ReactionPublishRosoutNode class.}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			A reaction that is able to publish a message on rosout.
+	\end{minipage}
+\end{figure}  
+
+
+\subsubsection{Attributes}
+\begin{itemize}
+	\item \textbf{ private string msg }\\
+		The message to be published.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
-	\item \textbf{ public void \_\_init\_\_(string node\_id, string reactionType) }\\
-		Initializes the reaction. sets the reactiontype of this reaction.
+	\item \textbf{ public void \_\_init\_\_(string node\_id,string msg) }\\
+		Initializes the reaction. Set the message to be published on rosout.
 	\item \textbf{ public void exececute\_reaction() }\\
-	\item \textbf{ private void restart\_node() }\\
-		Restarts the Node.
-	\item \textbf{ private void stop\_node() }\\
-		Stops the Node.
-	\item \textbf{ private void publish\_on\_rosout() }\\
-		Publishes the cause of the reaction on rosout.
-\end{itemize}
-
-
-
-\newpage
-\subsection{Enum ReactionDefaultType}
-\begin{figure}[htbp]
-	\begin{minipage}[t]{8cm}
-		\vspace{0pt}
-		\centering
-		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ReactionDefaultType.png}
-		\caption{The ReactionDefaultType enum}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{8cm}
-		\vspace{10pt}
-			An Enumeration of default types the ReactionDefault has.
-	\end{minipage}
-\end{figure}  
-
-
-\subsubsection{Types}
-\begin{itemize}
-	\item \textbf{ restart }\\
-		Reaction is a restart of an entity.
-	\item \textbf{ stop }\\
-		Reaction is stopping an entity.
-	\item \textbf{ output }\\
-		Reaction is publishing the reaction on rosout.
 \end{itemize}
 
 
