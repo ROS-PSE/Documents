@@ -332,7 +332,7 @@
 		\caption{The ItemFilterProxy}
 	\end{minipage}
 \end{figure} 
-The ItemFilterProxy which is a QSortFilterProxyModel helps to filter the data going to the view so the user only sees what he wants to see (which he can modify by telling the view). 
+The ItemFilterProxy which is a QSortFilterProxyModel helps to filter the data going to the view so the user only sees what he wants to see (which he can modified by telling the view). 
 \subsection{Attributes}
 \begin{itemize}
   \item \textbf{private bool show\_hosts}\\
@@ -643,8 +643,8 @@ only the log of the current selection should be shown.
   Handels the start button and starts ahost or node
   \item \textbf{public void on\_range\_combo\_box\_index\_changed(int index)}\\
   Handels the change of the graph range
-  \item \textbf{public void on\_changed\_selected\_item(QModelIndex)}\
-  Item\_index\ handels the change of the selected item
+  \item \textbf{public void on\_changed\_selected\_item(QModelIndex index)}\\
+  Index handels the change of the selected item
   \item \textbf{public void update\_graphs()}\\
   Updates the graph plot
 \end{itemize}
