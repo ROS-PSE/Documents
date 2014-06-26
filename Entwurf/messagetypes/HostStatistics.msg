@@ -51,8 +51,6 @@ int32[] bandwith_mean
 int32[] bandwith_stddev
 int32[] bandwith_max
 
-time uptime
-
 # drive  
 string[] drive_name  
 int32[] drive_free_space  
