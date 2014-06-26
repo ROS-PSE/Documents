@@ -8,11 +8,11 @@
 	\end{center}
 \end{figure}
 
-\subsection{Acquisition}
+\subsection*{Acquisition}
 The Acquisition is triggered by a timer. The HostStatisticsHandler uses psutils and PySensors to collect data about it's current state and write it into the HostStatus instance. It also triggers an asynchronous call of measure\_status to all of it's node's executed in individual threads.
 The nodes use psutils and ROS Topic Statistics to collect data and write it into the NodeStatus instance.
 
-\subsection{Publishing}
+\subsection*{Publishing}
 After the time window has passed the publishing process is triggered. The HostStatisticsHandler again triggers asynchronous calls to all of it's nodes to publish their status. During the publishing process, the statistical values are calculated and transformed into a ROS message.
 After publishing the data, the status of the host or node is resetted.
 
