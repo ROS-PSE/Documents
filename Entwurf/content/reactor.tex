@@ -2,7 +2,7 @@
 \section{Countermeasure}
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=1.0\linewidth]{./diagram_pictures/reactor/reactor.jpg}
+\includegraphics[width=1.0\linewidth]{./diagram_pictures/reactor/reactor.png}
 \caption{The UML diagram of the countermeasure package}
 \end{center}
 \end{figure}
@@ -12,8 +12,23 @@
 \newpage
 
 
+\newpage
 \subsection{CountermeasureNode}
-A ROS node. Evaluates incoming rated statistics with a list of constraints. If those constraints turn out to be true appropriate action is taken.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/CountermeasureNode.png}
+		\caption{The CountermeasureNode}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			A ROS node. Evaluates incoming rated statistics with a list of constraints. If those constraints turn out to be true appropriate action is taken.
+	\end{minipage}
+\end{figure}  
+
+
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private ConstraintHandler constraint\_handler}\\
@@ -30,9 +45,22 @@ A ROS node. Evaluates incoming rated statistics with a list of constraints. If t
 \end{itemize}
 
 
-
+\newpage
 \subsection{ConstraintHandler}
-Manages all constraints, checks if they are true and executes appropriate reactions if neccessary.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ConstraintHandler.png}
+		\caption{The ConstraintHandler}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			Manages all constraints, checks if they are true and executes appropriate reactions if neccessary.
+	\end{minipage}
+\end{figure}  
+
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -61,9 +89,22 @@ Manages all constraints, checks if they are true and executes appropriate reacti
 		Reads the reaction\_autonomy\_level from the parameter server.
 \end{itemize}
 
-
+\newpage
 \subsection{RatedStatisticStorage}
-A database which contains the current state of all rated statistics.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{10cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/RatedStatisticStorage.png}
+		\caption{The RatedStatisticStorage}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{6cm}
+		\vspace{10pt}
+			A database which contains the current state of all rated statistics.
+	\end{minipage}
+\end{figure}  
+
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private dict\{string seuid - dict\{string statistic\_type - tuple\{Outcome outcome,date.timestamp timestamp\}\}\} statistic\_dict }\\
@@ -81,8 +122,21 @@ A database which contains the current state of all rated statistics.
 		Returns the outcome of the specific seuid and statistic\_type.
 \end{itemize}
 
-\subsection{Constraint }
-Contains the whole constraint with corresponding reactions.
+\newpage
+\subsection{Constraint}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/Constraint.png}
+		\caption{The Constraint class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			Contains the whole constraint with corresponding reactions
+	\end{minipage}
+\end{figure}  
 
 
 \subsubsection{Attributes}
@@ -110,8 +164,23 @@ Contains the whole constraint with corresponding reactions.
 
 
 
+\newpage
 \subsection{ConstraintItem}
-	Abstract description of a Constraint, can be an logical operation on constraints or an actual constraint.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ConstraintItem.png}
+		\caption{The ConstraintItem class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{6.5cm}
+		\vspace{10pt}
+			Abstract description of a Constraint, can be an logical operation on constraints or an actual constraint.
+	\end{minipage}
+\end{figure}  
+
+
 \subsubsection{Attributes}
 \subsubsection{Methods}
 \begin{itemize}
@@ -120,8 +189,21 @@ Contains the whole constraint with corresponding reactions.
 \end{itemize}		
 
 
-\subsection{ConstraintLeaf }
-Contains an actual constraint.
+\newpage
+\subsection{ConstraintLeaf}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ConstraintLeaf.png}
+		\caption{The ConstraintLeaf class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			Contains an actual constraint.
+	\end{minipage}
+\end{figure}  
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -139,7 +221,21 @@ Contains an actual constraint.
 \end{itemize}
 
 
-\subsection{ConstraintAnd }
+\newpage
+\subsection{ConstraintAnd}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ConstraintAnd.png}
+		\caption{The ConstraintAnd class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			
+	\end{minipage}
+\end{figure}  
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -153,7 +249,21 @@ Contains an actual constraint.
 \end{itemize}
 
 
-\subsection{ConstraintOr }
+\newpage
+\subsection{ConstraintOr}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ConstraintOr.png}
+		\caption{The ConstraintOr class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			
+	\end{minipage}
+\end{figure}  
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -167,7 +277,21 @@ Contains an actual constraint.
 \end{itemize}
 
 
-\subsection{ConstraintNot }
+\newpage
+\subsection{ConstraintNot}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ConstraintNot.png}
+		\caption{The ConstraintNot class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			
+	\end{minipage}
+\end{figure}  
 
 \subsubsection{Attributes}
 \begin{itemize}
@@ -180,7 +304,22 @@ Contains an actual constraint.
 	Returns true if the evaluation of the constraint returns false.
 \end{itemize}
 
-\subsection{Enum Outcome }
+
+\newpage
+\subsection{Enum Outcome}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/Outcome.png}
+		\caption{The Outcome enum}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			
+	\end{minipage}
+\end{figure}  
 
 \subsubsection{Types}
 \begin{itemize}
@@ -195,8 +334,22 @@ Contains an actual constraint.
 \end{itemize}
 
 
+\newpage
 \subsection{Reaction}
-	Abstract Reaction to an Constraint.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/Reaction.png}
+		\caption{The Reaction class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			Abstract Reaction to an Constraint.
+	\end{minipage}
+\end{figure}  
+
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ protected string host\_id }\\
@@ -215,9 +368,22 @@ Contains an actual constraint.
 		Executes the reaction as a service call to the HostStatistic node.
 \end{itemize}
 
-
+\newpage
 \subsection{ReactionRun}
-	An Reaction which executes a command on the remote machine the specified node runs on. 
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ReactionRun.png}
+		\caption{The ReactionRun class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			An Reaction which executes a command on the remote machine the specified node runs on. 
+	\end{minipage}
+\end{figure}
+
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private string command }\\
@@ -231,7 +397,22 @@ Contains an actual constraint.
 \end{itemize}
 
 
+\newpage
 \subsection{ReactionDefault}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ReactionDefault.png}
+		\caption{The ReactionDefault class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			
+	\end{minipage}
+\end{figure}  
+
 \subsubsection{attributes}
 \begin{itemize}
 	\item \textbf{ private ReactionDefaultType reaction\_type}\\
@@ -251,7 +432,24 @@ Contains an actual constraint.
 \end{itemize}
 
 
+
+\newpage
 \subsection{Enum ReactionDefaultType}
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/ReactionDefaultType.png}
+		\caption{The ReactionDefaultType enum}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			
+	\end{minipage}
+\end{figure}  
+
+
 \subsubsection{Types}
 \begin{itemize}
 	\item \textbf{ restart }\\
@@ -263,8 +461,23 @@ Contains an actual constraint.
 \end{itemize}
 
 
+\newpage
 \subsection{HostLookUp}
-Singleton. Contains a dictionary of all nodes which are on an host who has an HostStatisticNode running and the hosts they run on.
+\begin{figure}[htbp]
+	\begin{minipage}[t]{8cm}
+		\vspace{0pt}
+		\centering
+		\includegraphics[scale=0.6]{./diagram_pictures/reactor/HostLookUp.png}
+		\caption{The HostLookUp class}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{8cm}
+		\vspace{10pt}
+			Singleton. Contains a dictionary of all nodes which are on an host who has an HostStatisticNode running and the hosts they run on.
+	\end{minipage}
+\end{figure}  
+
+
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{ private dict\{string node - string host\} node\_dict }\\
