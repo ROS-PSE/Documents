@@ -40,13 +40,14 @@ float32 ram_usage_stddev
 float32 ram_usage_max
   
 # network
- 
-int32 message_frequency_mean
-int32 message_frequency_stddev
-int32 message_frequency_max
+
+string[] interface_name 
+int32[] message_frequency_mean
+int32[] message_frequency_stddev
+int32[] message_frequency_max
 
 # bandwith of each network interface
-string[] interface_name
+
 int32[] bandwith_mean
 int32[] bandwith_stddev
 int32[] bandwith_max
