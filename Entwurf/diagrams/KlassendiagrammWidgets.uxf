@@ -251,6 +251,7 @@
 - data_list:list&lt;dict&gt;
 - child_items:list&lt;AbstractItem&gt;
 - parent_item: AbstractItem
+- identifier:string
 --
 + __init__(list, parent=None)
 + append_child(child: AbstractItem)
@@ -318,8 +319,8 @@
     <coordinates>
       <x>1312</x>
       <y>488</y>
-      <w>744</w>
-      <h>752</h>
+      <w>736</w>
+      <h>744</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>24;592;24;736;728;736;728;24;664;24</additional_attributes>
@@ -329,8 +330,8 @@
     <coordinates>
       <x>1296</x>
       <y>1056</y>
-      <w>784</w>
-      <h>200</h>
+      <w>776</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>24;24;24;184;768;184</additional_attributes>
@@ -340,8 +341,8 @@
     <coordinates>
       <x>1328</x>
       <y>1056</y>
-      <w>368</w>
-      <h>168</h>
+      <w>360</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>24;24;24;152;352;152</additional_attributes>
@@ -557,7 +558,7 @@ index:QModelIndex)
     <coordinates>
       <x>1552</x>
       <y>880</y>
-      <w>144</w>
+      <w>136</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -587,8 +588,8 @@ index:QModelIndex)
     <coordinates>
       <x>1552</x>
       <y>504</y>
-      <w>144</w>
-      <h>400</h>
+      <w>136</w>
+      <h>392</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
@@ -612,7 +613,7 @@ index:QModelIndex)
     <coordinates>
       <x>1552</x>
       <y>800</y>
-      <w>144</w>
+      <w>136</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -624,7 +625,7 @@ index:QModelIndex)
     <coordinates>
       <x>1992</x>
       <y>888</y>
-      <w>94</w>
+      <w>88</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -636,8 +637,8 @@ index:QModelIndex)
     <coordinates>
       <x>1448</x>
       <y>584</y>
-      <w>248</w>
-      <h>192</h>
+      <w>240</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
@@ -683,12 +684,35 @@ _+ get_instance(): ROSModel_
     <coordinates>
       <x>1448</x>
       <y>264</y>
-      <w>142</w>
-      <h>96</h>
+      <w>136</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;
 </panel_attributes>
     <additional_attributes>96;80;96;40;24;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>752</x>
+      <y>456</y>
+      <w>104</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>88;40;48;40;48;296</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1024</x>
+      <y>328</y>
+      <w>144</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>128;24;40;24;40;176;24;176</additional_attributes>
   </element>
 </diagram>
