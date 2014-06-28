@@ -156,7 +156,7 @@
 + splitter:QSplitter
 + selection_widget: SelectionWidget
 + filter_line_edit: QLineEdit
-+ Fehler entfernt: item_tree_view: QTreeView
++ item_tree_view: QTreeView
 + model:ROSModel
 + filter_proxy: ItemFilterProxy
 + size_delegate:SizeDelegate
@@ -319,8 +319,8 @@
     <coordinates>
       <x>1312</x>
       <y>488</y>
-      <w>736</w>
-      <h>744</h>
+      <w>744</w>
+      <h>752</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>24;592;24;736;728;736;728;24;664;24</additional_attributes>
@@ -330,8 +330,8 @@
     <coordinates>
       <x>1296</x>
       <y>1056</y>
-      <w>776</w>
-      <h>192</h>
+      <w>784</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>24;24;24;184;768;184</additional_attributes>
@@ -341,8 +341,8 @@
     <coordinates>
       <x>1328</x>
       <y>1056</y>
-      <w>360</w>
-      <h>160</h>
+      <w>368</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>24;24;24;152;352;152</additional_attributes>
@@ -558,7 +558,7 @@ index:QModelIndex)
     <coordinates>
       <x>1552</x>
       <y>880</y>
-      <w>136</w>
+      <w>144</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -588,8 +588,8 @@ index:QModelIndex)
     <coordinates>
       <x>1552</x>
       <y>504</y>
-      <w>136</w>
-      <h>392</h>
+      <w>144</w>
+      <h>400</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
@@ -613,7 +613,7 @@ index:QModelIndex)
     <coordinates>
       <x>1552</x>
       <y>800</y>
-      <w>136</w>
+      <w>144</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -625,7 +625,7 @@ index:QModelIndex)
     <coordinates>
       <x>1992</x>
       <y>888</y>
-      <w>88</w>
+      <w>94</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -637,8 +637,8 @@ index:QModelIndex)
     <coordinates>
       <x>1448</x>
       <y>584</y>
-      <w>240</w>
-      <h>184</h>
+      <w>248</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
@@ -685,7 +685,7 @@ _+ get_instance(): ROSModel_
       <x>1448</x>
       <y>264</y>
       <w>136</w>
-      <h>88</h>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;
