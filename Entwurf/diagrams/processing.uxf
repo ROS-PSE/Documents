@@ -26,7 +26,7 @@
 - spec_handler: SpecificationHandler
 --
 // Receives data incoming from the Subscriber and converts them to Metadata objects.
-- receive_data(): Metadata
+- receive_data(): void
 // Returns the specHandler's compare result
 - process_data(Metadata): RatedStatistics
 // Publishes results of the comparison as rated Metadata
