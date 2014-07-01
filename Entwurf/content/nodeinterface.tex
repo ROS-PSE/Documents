@@ -53,7 +53,7 @@
 	\hfill
 	\begin{minipage}[t]{5cm}
 		\vspace{10pt}
-		Represents a host . Limited to one instance per host. Collects statistics about the current state of the host and sends them using the 				publisher-subscriber mechanism.
+		Represents a host , limited to one instance per host. Collects statistics about the current state of the host and sends them using the 				publisher-subscriber mechanism.
 	\end{minipage}
 \end{figure}
 
@@ -64,8 +64,6 @@
 			NodeManager providing function to restart and stop Nodes.
 	\item \textbf{private  dict\{String nodeID  - NodesStatisticsHandler node\_statistic  \} node\_list}\\
 			Dictionary holding all Nodes and their statistics, currently running on the host.
-	\item \textbf{private static dict\{String hostID   - HostStatisticsHandler host\_statistic \}}\\
-			Holds references to all initiated host, to prevent multiple instances of a single host.
 \end{itemize}
 
 \subsubsection{Methods}
@@ -77,7 +75,7 @@
 			Publishes the current status to a topic using ROS's publisher-subscriber mechanism.
 			Triggered periodically.
 	\item \textbf{public String execute\_reaction(NodeReaction reaction)}\\
-			Parses through the reaction and calls the appropriate method from the NodeManager.
+			Parses through the reaction and calls the appropriate method from the NodeManager. Uses ROS Services.
 			Returns a message about operation's success.
 	\item \textbf{public void add\_node(String nodeID)}\\
 			Adds a Node with the given id to the host.
@@ -147,8 +145,6 @@
 	Percentage of the cpu used per core.
 	\item \textbf{protected float[] ram\_usage}\\
 	Percentage of ram used.
-	\item \textbf{protected int msg\_frequency}\\
-	Frequency of network calls.
 	\item \textbf{protected time time\_start}\\
 	Time of the start of the measurements.
 	\item \textbf{protected time time\_end}\\
@@ -165,8 +161,6 @@
 	Adds another measured value per card to gpu\_usage.
 	\item \textbf{public void add\_ram\_usage(float value)}\\
 	Adds another measured value to ram\_usage.
-	\item \textbf{public void add\_msg\_frequency(float value)}\\
-	Adds another measured value to msg\_frequency.
 	\item \textbf{public void reset()}\\
 	Resets the status.
 \end{itemize}
@@ -197,11 +191,13 @@
 	Current GPU temperature per GPU in Celsius.
 	\item \textbf{private dict\{String interface - int[] bytes\} bandwidth }\\
 	Bytes sent through a NIC since the start of the time window.
+	\item \textbf{private dict\{String interface - int[] msg\_freq\} msg\_frequency}\\
+	Frequency of network calls by NIC.
 	\item \textbf{private dict\{String drive - int[] free\_space\} bandwidth}\\
 	Free Space per drive.
-	\item \textbf{private int[] drive\_write}\\
+	\item \textbf{private int[][] drive\_write}\\
 	Bytes written per drive since the start of the time window.
-	\item \textbf{private int[] drive\_read}\\
+	\item \textbf{private int[][] drive\_read}\\
 	Bytes read per drive since the start of the time window.
 \end{itemize}
 
@@ -215,6 +211,8 @@
 	Adds another measured value per card to gpu\_temp.
 	\item \textbf{public void add\_bandwidth(String[] Interface, int[] bandwidth)}\\
 	Adds another measured value to bandwidth.
+	\item \textbf{public void add\_msg\_freq(String[] Interface, int[] msg\_freq)}\\
+	Adds another measured value to msg\_frequency.
 	\item \textbf{public void add\_drive\_write(int[] byte)}\\
 	Adds another measured value per drive to drive\_write.
 	\item \textbf{public void add\_drive\_read(int[] byte)}\\
@@ -240,12 +238,14 @@
 
 \subsubsection{Attributes}
 \begin{itemize}
-	\item \textbf{private int node\_bandwidth}\\
+	\item \textbf{private int[] node\_bandwidth}\\
 	Bytes the node has sent through the network.
-	\item \textbf{private int node\_read}\\
+	\item \textbf{private int[] node\_read}\\
 	Bytes the node has read from a hard drive since the start of the time window.
-	\item \textbf{private int node\_write}\\
+	\item \textbf{private int[] node\_write}\\
 	Bytes the node has written to a hard drive since the start of the time window.
+	\item \textbf{private int[] node\_msg\_frequency}\\
+	Frequency of networks calls done by node.
 \end{itemize}
 
 \subsubsection{Methods}
@@ -286,39 +286,7 @@
 	Returns a message about operation's success.
 \end{itemize}
 
-\subsection{ReactionHandler}
-\begin{figure}[htbp]
-	\begin{minipage}[t]{7cm}
-		\vspace{0pt}
-		\centering
-		\includegraphics[scale=0.6]{./diagram_pictures/NodeInterface/ReactionHandler.pdf}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{7cm}
-		\vspace{10pt}
-		Delegates the countermeasure to the concerned host.
-	\end{minipage}
-\end{figure}
 
-
-\subsubsection{Attributes}
-\begin{itemize}
-	\item \textbf{private  dict\{String host\_id  - HostStatisticsHandler host  \} host\_dict}\\
-	Dictionary of all hosts running on the network
-\end{itemize}
-
-\subsubsection{Methods}
-\begin{itemize}
-	\item \textbf{public String send\_reaction(NodeReaction reaction)}\\
-	Parses the reaction and delegates it to the concerned host.
-	Returns a message about operation's success using rospy.Service
-	\item \textbf{public void add\_host(HostStatisticsHandler host)}\\
-	Adds a host to the dictionary
-	\item \textbf{public void remove\_host(HostStatisticsHandler host)}\\
-	Removes a host from the dictionary
-\end{itemize}
-
-	
 \subsection{psutils}
 Library to acquire the system's usage statistics. For a more in-depth documentation, see the official psutils documentation.
 

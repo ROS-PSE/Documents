@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="12.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>12</zoom_level>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>704</x>
-      <y>344</y>
-      <w>376</w>
-      <h>168</h>
+      <x>996</x>
+      <y>516</y>
+      <w>564</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>*HostStastisticsHandler*
 --
@@ -29,10 +29,10 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>656</x>
+      <x>924</x>
       <y>0</y>
-      <w>80</w>
-      <h>24</h>
+      <w>120</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*psutils*</panel_attributes>
     <additional_attributes/>
@@ -40,22 +40,22 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>632</x>
+      <x>888</x>
       <y>0</y>
-      <w>118</w>
-      <h>104</h>
+      <w>176</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
         &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>64;24;64;88</additional_attributes>
+    <additional_attributes>96;36;96;132</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>912</x>
-      <y>624</y>
-      <w>232</w>
-      <h>80</h>
+      <x>1308</x>
+      <y>936</y>
+      <w>348</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>*NodeManager*
 --
@@ -69,10 +69,10 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>72</x>
-      <y>136</y>
-      <w>96</w>
-      <h>24</h>
+      <x>48</x>
+      <y>204</y>
+      <w>144</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*rospy.Publisher*
 //see ros</panel_attributes>
@@ -81,10 +81,10 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>232</x>
-      <y>424</y>
-      <w>312</w>
-      <h>112</h>
+      <x>288</x>
+      <y>636</y>
+      <w>468</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>*NodeStatisticsHandler*
 --
@@ -102,10 +102,10 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>72</x>
-      <y>160</y>
-      <w>96</w>
-      <h>24</h>
+      <x>48</x>
+      <y>240</y>
+      <w>144</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*rospy.statistics*</panel_attributes>
     <additional_attributes/>
@@ -113,85 +113,33 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>144</x>
-      <y>144</y>
-      <w>104</w>
-      <h>320</h>
+      <x>156</x>
+      <y>216</y>
+      <w>156</w>
+      <h>480</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>24;24;56;24;56;304;88;304</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>672</x>
-      <y>776</y>
-      <w>112</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;network&gt;&gt;
-*Countermeasure*</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>576</x>
-      <y>632</y>
-      <w>312</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>*ReactionHandler*
---
--host_id : String
---
-+send_reaction(reaction; NodeReaction) : String
-+add_host(host : HostStatisticsHandler)
-+remove_host(host : HostStatisticsHandler)</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes>36;36;84;36;84;456;132;456</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>784</x>
-      <y>488</y>
-      <w>40</w>
-      <h>160</h>
-    </coordinates>
-    <panel_attributes>lt= -&gt;
-</panel_attributes>
-    <additional_attributes>24;144;24;24</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>712</x>
-      <y>688</y>
-      <w>40</w>
-      <h>104</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-&gt;</panel_attributes>
-    <additional_attributes>24;88;24;24</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>960</x>
-      <y>488</y>
-      <w>40</w>
-      <h>152</h>
+      <x>1380</x>
+      <y>732</y>
+      <w>60</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;136;24;24</additional_attributes>
+    <additional_attributes>36;204;36;36</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>72</x>
-      <y>184</y>
-      <w>96</w>
-      <h>24</h>
+      <x>48</x>
+      <y>276</y>
+      <w>144</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*rospy.Service*
 
@@ -201,34 +149,34 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>88</x>
-      <y>184</y>
-      <w>504</w>
-      <h>488</h>
+      <x>72</x>
+      <y>276</y>
+      <w>1140</w>
+      <h>732</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>24;24;24;472;488;472</additional_attributes>
+    <additional_attributes>36;36;36;708;1116;708;1116;492</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>456</x>
-      <y>376</y>
-      <w>264</w>
-      <h>64</h>
+      <x>624</x>
+      <y>564</y>
+      <w>396</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 m1= 1
 m2= n</panel_attributes>
-    <additional_attributes>248;24;24;24;24;48</additional_attributes>
+    <additional_attributes>372;36;36;36;36;72</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Package</type>
     <coordinates>
-      <x>40</x>
-      <y>96</y>
-      <w>152</w>
-      <h>120</h>
+      <x>0</x>
+      <y>144</y>
+      <w>228</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>*rospy*</panel_attributes>
     <additional_attributes/>
@@ -236,21 +184,21 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>144</x>
-      <y>120</y>
-      <w>488</w>
-      <h>40</h>
+      <x>156</x>
+      <y>180</y>
+      <w>732</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;</panel_attributes>
-    <additional_attributes>24;24;472;24</additional_attributes>
+    <additional_attributes>36;36;708;36</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>616</x>
-      <y>88</y>
-      <w>160</w>
-      <h>88</h>
+      <x>864</x>
+      <y>132</y>
+      <w>240</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>*/StatisticsHandler/*
 --
@@ -264,32 +212,32 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>680</x>
-      <y>152</y>
-      <w>200</w>
-      <h>208</h>
+      <x>960</x>
+      <y>228</y>
+      <w>300</w>
+      <h>312</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>24;24;24;128;184;128;184;192</additional_attributes>
+    <additional_attributes>36;36;36;192;276;192;276;288</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>352</x>
-      <y>152</y>
-      <w>368</w>
-      <h>288</h>
+      <x>468</x>
+      <y>228</y>
+      <w>552</w>
+      <h>432</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>352;24;352;128;24;128;24;272</additional_attributes>
+    <additional_attributes>528;36;528;192;36;192;36;408</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>832</x>
-      <y>64</y>
-      <w>208</w>
-      <h>208</h>
+      <x>1188</x>
+      <y>96</y>
+      <w>312</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>*Status*
 --
@@ -297,7 +245,6 @@ m2= n</panel_attributes>
 #cpu_usage_core: float[][]
 #gpu_usage : float[][]
 #ram_usage : float []
-#msg_frequency : float
 #time_start : time
 #time_end : time
 --
@@ -305,28 +252,27 @@ m2= n</panel_attributes>
 +add_cpu_usage_core(vals : float[])
 +add_gpu_usage(vals : float[])
 +add_ram_usage(val : float)
-+add_msg_frequency(val : float)
 +reset()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>752</x>
-      <y>96</y>
-      <w>96</w>
-      <h>40</h>
+      <x>1068</x>
+      <y>144</y>
+      <w>144</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>24;24;80;24</additional_attributes>
+    <additional_attributes>36;36;120;36</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1096</x>
-      <y>16</y>
-      <w>296</w>
-      <h>200</h>
+      <x>1584</x>
+      <y>0</y>
+      <w>444</w>
+      <h>360</h>
     </coordinates>
     <panel_attributes>*HostStatus*
 --
@@ -335,6 +281,7 @@ m2= n</panel_attributes>
 -gpu_temp : float [][]
 -bandwidth : dict{interface : String - val : int[]}
 - drive_space : dict{drive_name : String - free_space : int }
+-msg_frequency : dict{interface : String - val : int[]}
 -drive_write : int[]
 -drive_read : int[]
 --
@@ -342,57 +289,62 @@ m2= n</panel_attributes>
 +add_cpu_temp_core(temps : float[])
 +add_gpu_temp(temps : float[])
 +add_bandwidth(interface : string[], val : int[])
++add_msg_frequency(iinterface: string[] - val : int[])
 +add_drive_write(val : int[])
-+add_drive_read(val: int[])</panel_attributes>
++add_drive_read(val: int[])
++reset()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1096</x>
-      <y>216</y>
-      <w>296</w>
-      <h>104</h>
+      <x>1584</x>
+      <y>360</y>
+      <w>444</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>*NodeStatus*
 --
 -node_bandwidth : int
 -node_read : int
 -node_write : int
+-node_msg_freq : int[]
 --
 +add_node_bandwidth(val : int)
-+add_node_io(read : int, write : int)</panel_attributes>
++add_node_io(read : int, write : int)
++add_node_msg_freq(freq : int)
++reset()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1016</x>
-      <y>32</y>
-      <w>96</w>
-      <h>152</h>
+      <x>1464</x>
+      <y>48</y>
+      <w>144</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>24;136;56;136;56;24;80;24</additional_attributes>
+    <additional_attributes>36;204;84;204;84;36;120;36</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1016</x>
-      <y>144</y>
-      <w>96</w>
-      <h>128</h>
+      <x>1464</x>
+      <y>216</y>
+      <w>144</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>24;24;56;24;56;112;80;112</additional_attributes>
+    <additional_attributes>36;36;84;36;84;204;120;204</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1200</x>
-      <y>344</y>
-      <w>80</w>
-      <h>24</h>
+      <x>1752</x>
+      <y>576</y>
+      <w>120</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*PySensors*</panel_attributes>
     <additional_attributes/>
@@ -400,13 +352,13 @@ m2= n</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>1056</x>
-      <y>320</y>
-      <w>160</w>
-      <h>56</h>
+      <x>1524</x>
+      <y>540</y>
+      <w>252</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
  &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>144;40;24;40</additional_attributes>
+    <additional_attributes>228;60;36;60</additional_attributes>
   </element>
 </diagram>
