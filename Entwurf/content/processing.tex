@@ -1,7 +1,7 @@
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.0\linewidth]{./diagram_pictures/processing.pdf}
-\caption{The UML diagram of the processing package}
+\caption{The UML diagram of the processing package.}
 \end{center}
 \end{figure}
 
@@ -15,7 +15,7 @@
 		\vspace{0pt}
 		\centering
 		\includegraphics[scale=0.6]{./diagram_pictures/MonitoringNode.pdf}
-		\caption{The MonitoringNode}
+		\caption{The MonitoringNode.}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{8cm}
@@ -34,11 +34,11 @@
 	\item \textbf{private void receive\_data()}\\
 	Receives data incoming from the Subscriber and converts them to Metadata objects.
 	\item \textbf{private RatedStatistics process\_data(Metadata)}\\
-	Returns the specHandler's compare result
+	Returns the specHandler's compare result.
 	\item \textbf{private void publish\_data(RatedStatistics)}\\
-	Publishes results of the comparison as rated Metadata
+	Publishes results of the comparison as rated Metadata.
 	\item \textbf{private StatisticHistoryResponse storage\_server(StatisticHistoryRequest)}\\
-	Listens for the GUI Model service calls and returns requested metadata from the storage
+	Listens for the GUI Model service calls and returns requested metadata from the storage.
 \end{itemize}
 
 \newpage
@@ -48,7 +48,7 @@
 		\vspace{0pt}
 		\centering
 		\includegraphics[scale=0.6]{./diagram_pictures/MetadataStorage.pdf}
-		\caption{The MetadataStorage}
+		\caption{The MetadataStorage.}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{8cm}
@@ -67,13 +67,13 @@
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{private void clean\_up()}\\
-	Deletes Metadata exceeding the duration to store
+	Deletes Metadata exceeding the duration to store.
 	\item \textbf{public boolean store(StorageContainer)}\\
-	Stores a given Metadata
+	Stores a given Metadata.
 	\item \textbf{public StorageContainer[] get(string, int)}\\
 	Returns all Metadata packages for the given connection/host of the given amount of time.
 	\item \textbf{public boolean clear()}\\
-	Clears the whole storage
+	Clears the whole storage.
 \end{itemize}
 
 \newpage
@@ -83,7 +83,7 @@
 		\vspace{0pt}
 		\centering
 		\includegraphics[scale=0.6]{./diagram_pictures/StorageContainer.pdf}
-		\caption{The StorageContainer}
+		\caption{The StorageContainer.}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{8cm}
@@ -97,7 +97,7 @@
 	\item \textbf{public int timestamp}\\
 	Time when the data came from the subscriber.
 	\item \textbf{public string identifier}\\
-	Host/Node/Connection identifier
+	Host/Node/Connection identifier.
 	\item \textbf{public object data\_raw}\\
 	The data as it reaches the subscriber from nodes and hosts.
 	\item \textbf{public object data\_rated}\\
@@ -111,7 +111,7 @@
 		\vspace{0pt}
 		\centering
 		\includegraphics[scale=0.6]{./diagram_pictures/Metadata.pdf}
-		\caption{The Metadata}
+		\caption{The Metadata.}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{8cm}
@@ -140,7 +140,7 @@
 		\vspace{0pt}
 		\centering
 		\includegraphics[scale=0.6]{./diagram_pictures/Specification.pdf}
-		\caption{The Specification}
+		\caption{The Specification.}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{8cm}
@@ -157,7 +157,7 @@
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{public void add\_tuple(MetadataTuple)}\\
-	Adds a MetadataTuple to the bundle
+	Adds a MetadataTuple to the bundle.
 	\item \textbf{public Object get(String)}\\
 	Returns the value of the MetadataTuple with the given key. The returned value would be a list containing limit values for the most measured fields. False, if the key does not exist.
 \end{itemize}
@@ -169,7 +169,7 @@
 		\vspace{0pt}
 		\centering
 		\includegraphics[scale=0.6]{./diagram_pictures/SpecificationHandler.pdf}
-		\caption{The SpecificationHandler}
+		\caption{The SpecificationHandler.}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{8cm}
@@ -181,16 +181,16 @@
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{private dict(string, Specification) specifications}\\
-	Datastructure to keep all loaded Specification objects
+	Datastructure to keep all loaded Specification objects.
 \end{itemize}
 \subsubsection{Methods}
 \begin{itemize}
 	\item \textbf{private void load\_specifications()}\\
-	Loads the specifications from configuration files into Specification objects and stores them
+	Loads the specifications from configuration files into Specification objects and stores them.
 	\item \textbf{public RatedStatistics compare(Metadata, Specification)}\\
 	Compares a given Metadata object with a given Specification object regarding all available fields. Returns a RatedStatistics object wrapping potential divergences.
 	\item \textbf{public Specification get(string)}\\
-	Returns the specification for a given identifier
+	Returns the specification for a given identifier.
 \end{itemize}
 
 
@@ -200,7 +200,7 @@
 		\vspace{0pt}
 		\centering
 		\includegraphics[scale=0.6]{./diagram_pictures/RatedStatistics.pdf}
-		\caption{The RatedStatistics}
+		\caption{The RatedStatistics.}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{8cm}
@@ -212,13 +212,13 @@
 \subsubsection{Attributes}
 \begin{itemize}
 	\item \textbf{public string seuid}\\
-	Identifies the node/host/connection
+	Identifies the node/host/connection.
 	\item \textbf{public string[] metatype}\\
-	The metadata that was out of bounds
+	The metadata that was out of bounds.
 	\item \textbf{public string[] actual}\\
-	The actual values
+	The actual values.
 	\item \textbf{public string[] expected}\\
-	The expected values
+	The expected values.
 	\item \textbf{public int[] state}\\
 	State of the metadata from the node/host/connection : state: { 0 = high ; 1 = low ; 2 = unknown}
 \end{itemize}
@@ -230,7 +230,7 @@
 		\vspace{0pt}
 		\centering
 		\includegraphics[scale=0.6]{./diagram_pictures/MetadataTuple.pdf}
-		\caption{The MetadataTuple}
+		\caption{The MetadataTuple.}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{8cm}
