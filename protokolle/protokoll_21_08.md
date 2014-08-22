@@ -1,4 +1,4 @@
-##Protokoll 21.08.1
+##Protokoll 21.08.14
 
 ###Paper?
 Auf die nächsten Konferenzen zu spät.
@@ -15,7 +15,7 @@ informatik2014.de/registration_de.html
 - punkte mit unterstrichen ersetzen bei den services, da punkte nicht im namespace erlaubt sind.
 
 
-####arni_processing:
+####arni_countermeasure:
 - seuid in yaml ändern zu value um problemen vorzubeugen mit nicht erlaubtem namespace
 
 - logdebug kurz nach nodestart kommt nicht an? --> sollte ab init_node gehen
