@@ -1,0 +1,3 @@
+- install coverage "pip install coverage"
+- run   "coverage run /opt/ros/indigo/lib/rqt_gui/rqt_gui"
+- results via "coverage report" or "coverage html" --> results are then in htmlcov

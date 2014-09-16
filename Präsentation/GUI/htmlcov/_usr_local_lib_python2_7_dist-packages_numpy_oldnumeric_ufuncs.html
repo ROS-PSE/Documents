@@ -1,0 +1,124 @@
+<!doctype html PUBLIC "-//W3C//DTD html 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    
+    
+    <meta http-equiv='X-UA-Compatible' content='IE=emulateIE7' />
+    <title>Coverage for /usr/local/lib/python2.7/dist-packages/numpy/oldnumeric/ufuncs: 100%</title>
+    <link rel='stylesheet' href='style.css' type='text/css'>
+    
+    <script type='text/javascript' src='jquery.min.js'></script>
+    <script type='text/javascript' src='jquery.hotkeys.js'></script>
+    <script type='text/javascript' src='jquery.isonscreen.js'></script>
+    <script type='text/javascript' src='coverage_html.js'></script>
+    <script type='text/javascript' charset='utf-8'>
+        jQuery(document).ready(coverage.pyfile_ready);
+    </script>
+</head>
+<body id='pyfile'>
+
+<div id='header'>
+    <div class='content'>
+        <h1>Coverage for <b>/usr/local/lib/python2.7/dist-packages/numpy/oldnumeric/ufuncs</b> :
+            <span class='pc_cov'>100%</span>
+        </h1>
+        <img id='keyboard_icon' src='keybd_closed.png'>
+        <h2 class='stats'>
+            3 statements &nbsp;
+            <span class='run hide_run shortkey_r button_toggle_run'>3 run</span>
+            <span class='mis shortkey_m button_toggle_mis'>0 missing</span>
+            <span class='exc shortkey_x button_toggle_exc'>0 excluded</span>
+            
+        </h2>
+    </div>
+</div>
+
+<div class='help_panel'>
+    <img id='panel_icon' src='keybd_open.png'>
+<p class='legend'>Hot-keys on this page</p>
+    <div>
+<p class='keyhelp'>
+        <span class='key'>r</span>
+        <span class='key'>m</span>
+        <span class='key'>x</span>
+        <span class='key'>p</span> &nbsp; toggle line displays
+    </p>
+<p class='keyhelp'>
+        <span class='key'>j</span>
+        <span class='key'>k</span> &nbsp; next/prev highlighted chunk
+    </p>
+<p class='keyhelp'>
+        <span class='key'>0</span> &nbsp; (zero) top of page
+    </p>
+<p class='keyhelp'>
+        <span class='key'>1</span> &nbsp; (one) first highlighted chunk
+    </p>
+    </div>
+</div>
+
+<div id='source'>
+    <table cellspacing='0' cellpadding='0'>
+        <tr>
+            <td class='linenos' valign='top'>
+<p id='n1' class='stm run hide_run'><a href='#n1'>1</a></p>
+<p id='n2' class='pln'><a href='#n2'>2</a></p>
+<p id='n3' class='stm run hide_run'><a href='#n3'>3</a></p>
+<p id='n4' class='pln'><a href='#n4'>4</a></p>
+<p id='n5' class='pln'><a href='#n5'>5</a></p>
+<p id='n6' class='pln'><a href='#n6'>6</a></p>
+<p id='n7' class='pln'><a href='#n7'>7</a></p>
+<p id='n8' class='pln'><a href='#n8'>8</a></p>
+<p id='n9' class='pln'><a href='#n9'>9</a></p>
+<p id='n10' class='pln'><a href='#n10'>10</a></p>
+<p id='n11' class='pln'><a href='#n11'>11</a></p>
+<p id='n12' class='pln'><a href='#n12'>12</a></p>
+<p id='n13' class='pln'><a href='#n13'>13</a></p>
+<p id='n14' class='stm run hide_run'><a href='#n14'>14</a></p>
+<p id='n15' class='pln'><a href='#n15'>15</a></p>
+<p id='n16' class='pln'><a href='#n16'>16</a></p>
+<p id='n17' class='pln'><a href='#n17'>17</a></p>
+<p id='n18' class='pln'><a href='#n18'>18</a></p>
+<p id='n19' class='pln'><a href='#n19'>19</a></p>
+<p id='n20' class='pln'><a href='#n20'>20</a></p>
+<p id='n21' class='pln'><a href='#n21'>21</a></p>
+                
+            </td>
+            <td class='text' valign='top'>
+<p id='t1' class='stm run hide_run'><span class='key'>from</span> <span class='nam'>__future__</span> <span class='key'>import</span> <span class='nam'>division</span><span class='op'>,</span> <span class='nam'>absolute_import</span><span class='op'>,</span> <span class='nam'>print_function</span><span class='strut'>&nbsp;</span></p>
+<p id='t2' class='pln'><span class='strut'>&nbsp;</span></p>
+<p id='t3' class='stm run hide_run'><span class='nam'>__all__</span> <span class='op'>=</span> <span class='op'>[</span><span class='str'>&#39;less&#39;</span><span class='op'>,</span> <span class='str'>&#39;cosh&#39;</span><span class='op'>,</span> <span class='str'>&#39;arcsinh&#39;</span><span class='op'>,</span> <span class='str'>&#39;add&#39;</span><span class='op'>,</span> <span class='str'>&#39;ceil&#39;</span><span class='op'>,</span> <span class='str'>&#39;arctan2&#39;</span><span class='op'>,</span> <span class='str'>&#39;floor_divide&#39;</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t4' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class='str'>&#39;fmod&#39;</span><span class='op'>,</span> <span class='str'>&#39;hypot&#39;</span><span class='op'>,</span> <span class='str'>&#39;logical_and&#39;</span><span class='op'>,</span> <span class='str'>&#39;power&#39;</span><span class='op'>,</span> <span class='str'>&#39;sinh&#39;</span><span class='op'>,</span> <span class='str'>&#39;remainder&#39;</span><span class='op'>,</span> <span class='str'>&#39;cos&#39;</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t5' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class='str'>&#39;equal&#39;</span><span class='op'>,</span> <span class='str'>&#39;arccos&#39;</span><span class='op'>,</span> <span class='str'>&#39;less_equal&#39;</span><span class='op'>,</span> <span class='str'>&#39;divide&#39;</span><span class='op'>,</span> <span class='str'>&#39;bitwise_or&#39;</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t6' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class='str'>&#39;bitwise_and&#39;</span><span class='op'>,</span> <span class='str'>&#39;logical_xor&#39;</span><span class='op'>,</span> <span class='str'>&#39;log&#39;</span><span class='op'>,</span> <span class='str'>&#39;subtract&#39;</span><span class='op'>,</span> <span class='str'>&#39;invert&#39;</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t7' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class='str'>&#39;negative&#39;</span><span class='op'>,</span> <span class='str'>&#39;log10&#39;</span><span class='op'>,</span> <span class='str'>&#39;arcsin&#39;</span><span class='op'>,</span> <span class='str'>&#39;arctanh&#39;</span><span class='op'>,</span> <span class='str'>&#39;logical_not&#39;</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t8' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class='str'>&#39;not_equal&#39;</span><span class='op'>,</span> <span class='str'>&#39;tanh&#39;</span><span class='op'>,</span> <span class='str'>&#39;true_divide&#39;</span><span class='op'>,</span> <span class='str'>&#39;maximum&#39;</span><span class='op'>,</span> <span class='str'>&#39;arccosh&#39;</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t9' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class='str'>&#39;logical_or&#39;</span><span class='op'>,</span> <span class='str'>&#39;minimum&#39;</span><span class='op'>,</span> <span class='str'>&#39;conjugate&#39;</span><span class='op'>,</span> <span class='str'>&#39;tan&#39;</span><span class='op'>,</span> <span class='str'>&#39;greater&#39;</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t10' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class='str'>&#39;bitwise_xor&#39;</span><span class='op'>,</span> <span class='str'>&#39;fabs&#39;</span><span class='op'>,</span> <span class='str'>&#39;floor&#39;</span><span class='op'>,</span> <span class='str'>&#39;sqrt&#39;</span><span class='op'>,</span> <span class='str'>&#39;arctan&#39;</span><span class='op'>,</span> <span class='str'>&#39;right_shift&#39;</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t11' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class='str'>&#39;absolute&#39;</span><span class='op'>,</span> <span class='str'>&#39;sin&#39;</span><span class='op'>,</span> <span class='str'>&#39;multiply&#39;</span><span class='op'>,</span> <span class='str'>&#39;greater_equal&#39;</span><span class='op'>,</span> <span class='str'>&#39;left_shift&#39;</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t12' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class='str'>&#39;exp&#39;</span><span class='op'>,</span> <span class='str'>&#39;divide_safe&#39;</span><span class='op'>]</span><span class='strut'>&nbsp;</span></p>
+<p id='t13' class='pln'><span class='strut'>&nbsp;</span></p>
+<p id='t14' class='stm run hide_run'><span class='key'>from</span> <span class='nam'>numpy</span> <span class='key'>import</span> <span class='nam'>less</span><span class='op'>,</span> <span class='nam'>cosh</span><span class='op'>,</span> <span class='nam'>arcsinh</span><span class='op'>,</span> <span class='nam'>add</span><span class='op'>,</span> <span class='nam'>ceil</span><span class='op'>,</span> <span class='nam'>arctan2</span><span class='op'>,</span> <span class='nam'>floor_divide</span><span class='op'>,</span> <span class='xx'>\</span><span class='strut'>&nbsp;</span></p>
+<p id='t15' class='pln'>&nbsp; &nbsp;&nbsp; <span class='nam'>fmod</span><span class='op'>,</span> <span class='nam'>hypot</span><span class='op'>,</span> <span class='nam'>logical_and</span><span class='op'>,</span> <span class='nam'>power</span><span class='op'>,</span> <span class='nam'>sinh</span><span class='op'>,</span> <span class='nam'>remainder</span><span class='op'>,</span> <span class='nam'>cos</span><span class='op'>,</span> <span class='xx'>\</span><span class='strut'>&nbsp;</span></p>
+<p id='t16' class='pln'>&nbsp; &nbsp;&nbsp; <span class='nam'>equal</span><span class='op'>,</span> <span class='nam'>arccos</span><span class='op'>,</span> <span class='nam'>less_equal</span><span class='op'>,</span> <span class='nam'>divide</span><span class='op'>,</span> <span class='nam'>bitwise_or</span><span class='op'>,</span> <span class='nam'>bitwise_and</span><span class='op'>,</span> <span class='xx'>\</span><span class='strut'>&nbsp;</span></p>
+<p id='t17' class='pln'>&nbsp; &nbsp;&nbsp; <span class='nam'>logical_xor</span><span class='op'>,</span> <span class='nam'>log</span><span class='op'>,</span> <span class='nam'>subtract</span><span class='op'>,</span> <span class='nam'>invert</span><span class='op'>,</span> <span class='nam'>negative</span><span class='op'>,</span> <span class='nam'>log10</span><span class='op'>,</span> <span class='nam'>arcsin</span><span class='op'>,</span> <span class='xx'>\</span><span class='strut'>&nbsp;</span></p>
+<p id='t18' class='pln'>&nbsp; &nbsp;&nbsp; <span class='nam'>arctanh</span><span class='op'>,</span> <span class='nam'>logical_not</span><span class='op'>,</span> <span class='nam'>not_equal</span><span class='op'>,</span> <span class='nam'>tanh</span><span class='op'>,</span> <span class='nam'>true_divide</span><span class='op'>,</span> <span class='nam'>maximum</span><span class='op'>,</span> <span class='xx'>\</span><span class='strut'>&nbsp;</span></p>
+<p id='t19' class='pln'>&nbsp; &nbsp;&nbsp; <span class='nam'>arccosh</span><span class='op'>,</span> <span class='nam'>logical_or</span><span class='op'>,</span> <span class='nam'>minimum</span><span class='op'>,</span> <span class='nam'>conjugate</span><span class='op'>,</span> <span class='nam'>tan</span><span class='op'>,</span> <span class='nam'>greater</span><span class='op'>,</span> <span class='nam'>bitwise_xor</span><span class='op'>,</span> <span class='xx'>\</span><span class='strut'>&nbsp;</span></p>
+<p id='t20' class='pln'>&nbsp; &nbsp;&nbsp; <span class='nam'>fabs</span><span class='op'>,</span> <span class='nam'>floor</span><span class='op'>,</span> <span class='nam'>sqrt</span><span class='op'>,</span> <span class='nam'>arctan</span><span class='op'>,</span> <span class='nam'>right_shift</span><span class='op'>,</span> <span class='nam'>absolute</span><span class='op'>,</span> <span class='nam'>sin</span><span class='op'>,</span> <span class='xx'>\</span><span class='strut'>&nbsp;</span></p>
+<p id='t21' class='pln'>&nbsp; &nbsp;&nbsp; <span class='nam'>multiply</span><span class='op'>,</span> <span class='nam'>greater_equal</span><span class='op'>,</span> <span class='nam'>left_shift</span><span class='op'>,</span> <span class='nam'>exp</span><span class='op'>,</span> <span class='nam'>divide</span> <span class='key'>as</span> <span class='nam'>divide_safe</span><span class='strut'>&nbsp;</span></p>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id='footer'>
+    <div class='content'>
+        <p>
+            <a class='nav' href='index.html'>&#xab; index</a> &nbsp; &nbsp; <a class='nav' href='http://nedbatchelder.com/code/coverage'>coverage.py v3.7.1</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
