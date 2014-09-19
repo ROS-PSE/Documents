@@ -1,0 +1,59 @@
+%------�ndern von Schriftschnitten - (Muss ganz am Anfang stehen !) -------------
+\usepackage{fix-cm}
+
+%------Umlaute ------------------------------------------------------------------
+% 	Umlaute/Sonderzeichen wie ���� k�nnen direkt im Quelltext verwenden werden.
+%		Erlaubt automatische Trennung von Worten mit Umlauten.
+\usepackage[T1]{fontenc}								 
+\usepackage[latin1]{inputenc}
+
+%------Anpassung der Landessprache-----------------------------------------------
+\usepackage{ngerman}
+
+%------Einfache Definition der Zeilenabst�nde und Seitenr�nder-------------------
+\usepackage{geometry}
+\usepackage{setspace}
+
+%------Schriftgr��enanpassung von einzelnen Textpassagen-------------------------
+\usepackage{relsize}
+
+%------Trennlinien in Kopf- und Fusszeile
+\usepackage[headsepline, footsepline, ilines]{scrpage2}
+
+%------Grafiken------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{float}
+
+%------Packet zum Sperren, Unterstreichen und Hervorheben von Texten------------
+\usepackage{soul}
+
+%------erg�nzende Schriftart----------------------------------------------------
+\usepackage{helvet}
+
+%------Lange Tabellen-----------------------------------------------------------
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{lscape}
+
+%------PDF-Optionen-------------------------------------------------------------
+\usepackage[
+	bookmarks,
+	bookmarksopen=true,
+	colorlinks=true,
+	linkcolor=black,				% einfache interne Verkn�pfungen
+	anchorcolor=black,			% Ankertext
+	citecolor=black, 				% Verweise auf Literaturverzeichniseintr�ge im Text
+	filecolor=black, 				% Verkn�pfungen, die lokale Dateien �ffnen
+	menucolor=black, 				% Acrobat-Men�punkte
+	urlcolor=black, 				% Farbe f�r URL-Links
+	backref,								% Zur�cktext nach jedem Bibliografie-Eintrag als Liste von �berschriftsnummern
+	pagebackref,						% Zur�cktext nach jedem Bibliografie-Eintrag als Liste von Seitenzahlen
+	plainpages=false,				% zur korrekten Erstellung der Bookmarks
+	pdfpagelabels,					% zur korrekten Erstellung der Bookmarks
+	hypertexnames=false,		% zur korrekten Erstellung der Bookmarks
+	% linktocpage 						% Seitenzahlen anstatt Text im Inhaltsverzeichnis verlinken
+	]{hyperref}
+
+
+
