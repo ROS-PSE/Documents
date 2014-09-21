@@ -1,0 +1,17 @@
+\NewDocumentEnvironment{unittest}{ m o }{
+	\textbf{#1}\\
+}{
+	\begin{flushright}
+		\IfNoValueTF {#2}
+			{\colorbox{Red}{\textit{Fehlgeschlagen}}}
+			{\colorbox{ForestGreen}{\textit{Bestanden}}}
+	\end{flushright}
+}
+
+\chapter{Unittests}
+
+\section{Arni\_Core}
+\input{inhalt/unittests_core}
+
+\section{Arni\_Processing}
+\input{inhalt/unittests_processing}

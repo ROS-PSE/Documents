@@ -1,0 +1,43 @@
+\subsection*{TestSeuid}
+
+\begin{unittest}{test\_valid\_noarg}[pass]
+	Kein Argument ist keine gültige SEUID.
+\end{unittest}
+\begin{unittest}{test\_valid\_override}[pass]
+	Die Methode is\_valid() funktioniert statisch auf einem gültigen SEUID Objekt.
+\end{unittest}
+\begin{unittest}{test\_valid\_from\_class}[pass]
+	Erstellen eines SEUID Objektes mit ungültiger SEUID wirft einen NameError.\\
+	Die Methode is\_valid() gibt auf einem gültig initialisiertem SEUID Objekt den richtigen Wert zurück.
+\end{unittest}
+\begin{unittest}{test\_valid\_from\_fn}[pass]
+	Die Methode is\_valid() funktioniert statisch auf einem SEUID Objekt ohne eigene SEUID.
+\end{unittest}
+\begin{unittest}{test\_valid\_types}[pass]
+	Überprüft verschiedene gültige und ungültige SEUIDs.
+\end{unittest}
+\begin{unittest}{test\_valid\_from\_serialization}[pass]
+	Testet die Konstruktion mit einem serialisierten SEUID Objekt.
+\end{unittest}
+\begin{unittest}{test\_fields\_node}[pass]
+	Testet, ob die öffentlichen Attribute des Objektes mit einer Node-SEUID richtig gesetzt werden.
+\end{unittest}
+\begin{unittest}{test\_fields\_override}[pass]
+	Überprüft, ob die öffentlichen Attribute des Objektes zurückgesetzt werden, wenn es mit einem anderen Typ SEUID initialisiert wird.
+\end{unittest}
+\begin{unittest}{test\_fields\_connection}[pass]
+	Überprüft die öffentlichen Attribute eines Connection-SEUID Objektes.
+\end{unittest}
+\begin{unittest}{test\_msg\_invalid}[pass]
+	Die Konstruktion mit einem Objekt, das kein gültiger Nachrichtentyp ist, wirft einen TypeError.
+\end{unittest}
+\begin{unittest}{test\_msg\_hostmsg}[pass]
+	Testet die Konstruktion anhand einer HostMessage.
+\end{unittest}
+\begin{unittest}{test\_get\_seuid}[pass]
+	Die Methode get\_seuid() liefert für eine SEUID falls vorhanden die SEUID des enthaltenen Hosts/Nodes/Publishers/Subscribers.
+\end{unittest}
+\begin{unittest}{test\_get\_seuid\_invalid}[pass]
+	Die Methode get\_seuid() wirft einen AttributeError, wenn das Objekt nicht mit einer SEUID initalisiert wurde.\\
+	Die Methode get\_seuid() wirft einen KeyError, wenn die angefragte SEUID nicht im Objekt vorhanden ist.
+\end{unittest}

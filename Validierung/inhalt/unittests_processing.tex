@@ -1,0 +1,21 @@
+\subsection*{TestLoadingSpecifications}
+
+\begin{unittest}{test\_no\_specifications}[pass]
+	Der Specificationhandler ist am Anfang leer, wenn er keine Spezifikationen im Namespace findet.
+\end{unittest}
+\begin{unittest}{test\_load\_spec}[pass]
+	Testet, ob eine Spezifikation mit der angegebenen SEUID nach dem Laden vorhanden ist.\\
+	Verwendet das format \texttt{[seuid1:{}]}.
+\end{unittest}
+\begin{unittest}{test\_load\_new\_specs}[pass]
+	Überprüft, dass auch das format \texttt{section: [seuid1:{}]} geladen wird.
+\end{unittest}
+\begin{unittest}{test\_reload\_spec}[pass]
+	Überprüft, dass Spezifikationen zu SEUIDs in den Bestand geladen wurden, nachdem sie auf den Parameterserver geladen und die reload-Methode aufgerufen wurde.
+\end{unittest}
+\begin{unittest}{test\_invalid\_seuid}[pass]
+	Überprüft, dass keine Spezifikationen geladen werden, die keine gÃ¼ltige SEUID haben.
+\end{unittest}
+\begin{unittest}{test\_existing\_fields}[pass]
+	Überprüft, alle Felder der Definition durch den Parameterserver gekommen sind und im Specification Objekt vorhanden sind.
+\end{unittest}
