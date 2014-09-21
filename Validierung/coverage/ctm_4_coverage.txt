@@ -1,0 +1,151 @@
+Name                                                                                                           Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------------------------------------------------------------------------
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_core/__init__                                   28      1    96%   22
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_countermeasure/__init__                         28      1    96%   22
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_msgs/__init__                                    0      0   100%   
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_msgs/msg/_HostStatistics                       771    750     3%   98-206, 212, 219-340, 347-551, 560-681, 689-893
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_msgs/msg/_NodeStatistics                       356    335     6%   85-172, 178, 185-233, 240-318, 327-375, 383-461
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_msgs/msg/_RatedStatistics                      317    218    31%   65-76, 88, 95-158, 167, 169, 171, 179, 188, 207, 221, 236, 250-251, 260-323, 331-417
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_msgs/msg/_RatedStatisticsEntity                203    176    13%   55-64, 75, 82-122, 129-178, 187-227, 235-284
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_msgs/msg/__init__                                4      0   100%   
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_msgs/srv/_NodeReaction                         219    178    19%   39-51, 57, 64-93, 100-131, 140-169, 177-208, 243-249, 255, 262-273, 280-293, 302-313, 321-334
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_msgs/srv/_StatisticHistory                    2204   2153     2%   34-40, 46, 53-57, 64-75, 84-88, 96-107, 347-368, 374, 381-826, 833-1484, 1493-1938, 1946-2597
+/home/virtubuntu/catkin_ws/devel/lib/python2.7/dist-packages/arni_msgs/srv/__init__                                2      0   100%   
+/home/virtubuntu/catkin_ws/src/arni/arni_core/src/arni_core/helper                                                98     61    38%   32-39, 44-64, 76-86, 96-105, 119, 121, 127, 130, 138, 146-150, 157-161, 182-185, 197-202
+/home/virtubuntu/catkin_ws/src/arni/arni_core/src/arni_core/host_lookup                                           39     19    51%   37-45, 59, 70-75, 79, 87, 98, 110-112
+/home/virtubuntu/catkin_ws/src/arni/arni_core/src/arni_core/singleton                                              6      0   100%   
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/scripts/arni_countermeasure                                4      0   100%   
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/constraint                        26      0   100%   
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/constraint_and                    10      0   100%   
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/constraint_handler               155     41    74%   56, 65, 106-109, 162, 178-182, 185-186, 190-207, 243-244, 253-254, 278, 281-285, 313, 329-333, 343, 373-376, 383-386, 394-399
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/constraint_item                    7      1    86%   20
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/constraint_leaf                   15      1    93%   46
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/constraint_not                     7      3    57%   9-13, 23
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/constraint_or                     10      6    40%   11-13, 24-28
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/countermeasure_node               55      8    85%   59-61, 71-72, 77, 118-119, 123
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/helper                            26     12    54%   18-27, 48-54
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/outcome                           13      1    92%   22
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/rated_statistic_storage           57      6    89%   86, 158-159, 164, 182-183
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/reaction                          13      2    85%   28, 32
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/reaction_publish_rosout_node      21      7    67%   19, 21, 24-32, 39
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/reaction_restart_node             19     10    47%   16-33
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/reaction_run                      19     12    37%   14-16, 19-38
+/home/virtubuntu/catkin_ws/src/arni/arni_countermeasure/src/arni_countermeasure/reaction_stop_node                18     11    39%   12, 15-32
+/opt/ros/indigo/lib/python2.7/dist-packages/catkin/__init__                                                        0      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/catkin/find_in_workspaces                                             66     60     9%   49-75, 110-163
+/opt/ros/indigo/lib/python2.7/dist-packages/catkin/workspace                                                      23     14    39%   61-75
+/opt/ros/indigo/lib/python2.7/dist-packages/genmsg/__init__                                                        6      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/genmsg/base                                                           27      8    70%   56, 60-62, 65-68
+/opt/ros/indigo/lib/python2.7/dist-packages/genmsg/gentools                                                       63     45    29%   48-49, 69-90, 102-109, 119, 125-129, 143-156, 168-174
+/opt/ros/indigo/lib/python2.7/dist-packages/genmsg/msg_loader                                                    229    192    16%   47-48, 73-84, 98, 113-124, 139-145, 157-181, 187-209, 217-233, 236, 249-266, 278-284, 298-326, 343-350, 364-366, 369, 372, 379-380, 387, 390-397, 401-405, 408-412, 422-427, 433-438, 441, 454-467, 478-484
+/opt/ros/indigo/lib/python2.7/dist-packages/genmsg/msgs                                                          148    108    27%   55-59, 76-84, 95-111, 120-142, 148, 154, 178-183, 186-188, 191, 194, 212-216, 219-222, 226, 243-267, 273, 279, 286, 289-291, 297-299, 302-305, 308, 324, 349
+/opt/ros/indigo/lib/python2.7/dist-packages/genmsg/names                                                          36     25    31%   38-41, 62-64, 77, 89-91, 103-110, 128-132, 141-144
+/opt/ros/indigo/lib/python2.7/dist-packages/genmsg/srvs                                                           27     18    33%   47-58, 62-64, 72-74, 77
+/opt/ros/indigo/lib/python2.7/dist-packages/genpy/__init__                                                         3      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/genpy/base                                                             4      1    75%   64
+/opt/ros/indigo/lib/python2.7/dist-packages/genpy/message                                                        305    255    16%   55, 63-66, 99-146, 153-157, 184-250, 273, 275-278, 283, 297, 303-304, 307, 315-318, 325, 331, 333, 335, 338-352, 362-379, 389-449, 464-490, 517-530, 541-586, 602-607, 623-627
+/opt/ros/indigo/lib/python2.7/dist-packages/genpy/rostime                                                        194     82    58%   40, 72, 83, 92-93, 119, 122, 125, 131, 137, 145-146, 153-154, 161-162, 167-170, 172, 174-181, 183-185, 204, 210, 216, 226-228, 238, 241, 250, 261-264, 272, 277, 288, 292, 315, 321, 324, 333-335, 343, 349-351, 361, 365, 373, 385-388, 396-402, 415-418, 426-429, 433, 438, 442-444, 447
+/opt/ros/indigo/lib/python2.7/dist-packages/roscpp/__init__                                                        0      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/roscpp/msg/_Logger                                                   107     89    17%   33-42, 48, 55-75, 82-104, 113-133, 141-163
+/opt/ros/indigo/lib/python2.7/dist-packages/roscpp/msg/__init__                                                    1      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/roscpp/srv/_Empty                                                     83     42    49%   31-32, 38, 45-48, 55-59, 68-71, 79-83, 116-117, 123, 130-133, 140-144, 153-156, 164-168
+/opt/ros/indigo/lib/python2.7/dist-packages/roscpp/srv/_GetLoggers                                               173    131    24%   31-32, 38, 45-48, 55-59, 68-71, 79-83, 123-129, 135, 142-165, 172-203, 212-235, 243-274
+/opt/ros/indigo/lib/python2.7/dist-packages/roscpp/srv/_SetLoggerLevel                                           151    110    27%   33-42, 48, 55-75, 82-104, 113-133, 141-163, 196-197, 203, 210-213, 220-224, 233-236, 244-248
+/opt/ros/indigo/lib/python2.7/dist-packages/roscpp/srv/__init__                                                    3      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph/__init__                                                     10      3    70%   48-50
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph/masterapi                                                    91     47    48%   80, 98-104, 112-121, 133-137, 150-156, 169, 190, 206, 233, 246, 259, 269, 279, 292, 302, 315, 327, 345, 364, 382, 400, 418, 433, 447, 458, 481
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph/names                                                       119     45    62%   55-56, 79, 93, 107, 109, 111, 151, 153, 155, 157, 173, 175, 177, 179, 195-205, 228, 231, 242, 254, 258, 275, 280-284, 290, 304-312, 321-328
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph/network                                                     214    118    45%   53-55, 67-71, 87-97, 105, 116-120, 125-142, 144-161, 169-177, 183-197, 207-239, 255-260, 263, 279-280, 282, 297, 323, 330, 333, 338, 342, 362, 404-405
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph/rosenv                                                       26     10    62%   60-71, 73-74
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph/roslogging                                                   80     28    65%   66, 72-77, 79, 82, 95, 99-101, 116-130, 149-151, 157, 163
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph/xmlrpc                                                      137     80    42%   73-76, 80, 95-112, 118-121, 129, 142, 148, 173, 208, 211-219, 223-273, 281-293
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph_msgs/__init__                                                 0      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph_msgs/msg/_Clock                                              60     40    33%   36-42, 48, 55-59, 66-77, 86-90, 98-109
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph_msgs/msg/_Log                                               309    235    24%   82, 84, 86, 88, 90, 92, 94-103, 109, 122-123, 125, 132-133, 135, 141-142, 144, 150-151, 153, 159-160, 162, 171-172, 174, 177-178, 185-261, 270-332, 340-416
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph_msgs/msg/_TopicStatistics                                   237    184    22%   65-94, 115, 126-127, 129, 135-136, 138, 144-145, 147, 152-153, 160-219, 228-259, 267-326
+/opt/ros/indigo/lib/python2.7/dist-packages/rosgraph_msgs/msg/__init__                                             3      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/roslib/__init__                                                        9      1    89%   68
+/opt/ros/indigo/lib/python2.7/dist-packages/roslib/exceptions                                                      3      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/roslib/launcher                                                       45     35    22%   51-52, 60-62, 71-82, 89-112
+/opt/ros/indigo/lib/python2.7/dist-packages/roslib/manifest                                                       41     24    41%   64, 71, 85-98, 115-118, 129, 139, 149-152
+/opt/ros/indigo/lib/python2.7/dist-packages/roslib/manifestlib                                                   316    252    20%   61, 68-80, 87-101, 108-115, 122-136, 143-148, 155-160, 163-166, 169-175, 178-184, 187-204, 221-223, 230, 236-240, 258-264, 267, 269, 274-276, 282-285, 299-301, 303, 305, 307-309, 315, 328-331, 334, 336, 338-340, 346-349, 363-365, 371, 386-397, 403-406, 420-431, 434, 440, 446-476, 482, 494-503, 515-580
+/opt/ros/indigo/lib/python2.7/dist-packages/roslib/message                                                        55     40    27%   58-87, 96-105, 108-117
+/opt/ros/indigo/lib/python2.7/dist-packages/roslib/packages                                                      211    177    16%   98-106, 134-193, 212-233, 250-253, 269-272, 281-288, 293, 313-331, 351-385, 398-400, 403-407, 413-458, 491-511
+/opt/ros/indigo/lib/python2.7/dist-packages/roslib/stack_manifest                                                 30     16    47%   62, 74-85, 97-98, 108, 118-120
+/opt/ros/indigo/lib/python2.7/dist-packages/roslib/stacks                                                         96     72    25%   68-78, 95-100, 107-112, 125-126, 146-173, 187-192, 202-203, 216-227, 230-236
+/opt/ros/indigo/lib/python2.7/dist-packages/rosnode/__init__                                                     492    440    11%   79-82, 97-106, 109-115, 125-141, 153-172, 185-222, 231-257, 272-280, 293, 308-371, 379-399, 409-425, 435-453, 461-478, 481-516, 520-555, 565-584, 593-609, 615-621, 629-641, 649-700, 708-711, 719-752, 759-774, 782-811
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/__init__                                                        14      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/client                                                         200     86    57%   82-84, 100-103, 105-106, 115, 124, 129-131, 145-150, 164-171, 184-185, 258, 262, 264-265, 272-275, 286, 292-295, 300, 316-317, 330-332, 356, 370-373, 377, 379-380, 399-418, 453-457, 469-474, 490-491, 508-509, 522-523
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/core                                                           211     61    71%   83-90, 106-117, 136, 139, 164-166, 183-188, 226-227, 234, 313, 315-317, 321, 328-341, 352, 389, 392, 397-401, 407-408, 418-419, 430, 442, 462, 472, 475
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/exceptions                                                      17      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/__init__                                                    0      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/init                                                       39      4    90%   68-69, 92, 111
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/masterslave                                               211     80    62%   117-118, 120, 125-126, 135, 138-142, 149-158, 206, 217-223, 239-250, 265-268, 279, 287, 306-308, 317, 328-331, 360-366, 377, 391, 402, 418, 420, 428, 449-453, 457-458, 460, 466, 482-486, 501-504, 531, 538
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/paramserver                                                30     19    37%   46-48, 52-53, 62, 79-84, 95-96, 105-106, 114-116
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/registration                                              257     77    70%   90, 102, 134-139, 154-155, 162-163, 219-220, 235-239, 241-247, 249-253, 264, 268-273, 322-325, 342, 347, 373-380, 401-418, 433, 445, 454, 459, 462-468
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/rosout                                                     51      7    86%   73-75, 94-99
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/simtime                                                    39     11    72%   62, 67, 69, 83-88, 91-93
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/statistics                                                101     17    83%   65-67, 80, 97, 102, 113-114, 185-188, 212, 251-255
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/tcpros                                                     11      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/tcpros_base                                               402    136    66%   41-43, 80, 83, 133-135, 150, 154-160, 162, 166-170, 188, 228, 250, 285-288, 298, 323, 327-330, 339-340, 344-354, 376, 403, 432, 445-446, 475, 500, 524-528, 535, 560-569, 580, 583, 588, 599, 615, 633-635, 644, 646, 652-675, 687, 705, 710-711, 714-719, 725-743, 761, 767-774, 777-789, 794, 803-804
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/tcpros_pubsub                                             167     43    74%   112-115, 154, 169-175, 181-189, 213, 236, 238, 259-260, 292, 315, 322, 324, 326-339, 348, 388, 395-397, 400, 422-424
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/tcpros_service                                            313    239    24%   68-69, 95-159, 183-206, 222-249, 276, 294-297, 303-310, 321-339, 353-359, 369-377, 404-415, 418, 435, 443-472, 491-530, 535-536, 547, 550-551, 556, 574, 582-589, 597-601, 611, 621-634, 646-668
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/transport                                                  62     18    71%   90, 110, 115, 124-133, 137, 171, 182, 189, 196, 210
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/impl/validators                                                 12      3    75%   40, 43, 49
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/msg                                                             97     31    68%   65-67, 71-74, 78-79, 103, 105, 117-124, 148, 153-154, 190, 212, 217, 225, 233-245
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/msproxy                                                         76     46    39%   93-107, 123, 126-137, 158-168, 176-183, 197, 204-209
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/names                                                          107     45    58%   58-59, 72, 98, 113-116, 129-142, 160, 180, 195, 214-218, 235-237, 248, 252, 257-263, 276-280, 289-294
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/rostime                                                         74     29    61%   93, 141, 168, 182-184, 190-200, 209, 212, 226, 246, 254, 270-275, 291-294
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/service                                                         50      9    82%   77, 108, 116, 126-132, 141
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/timer                                                           76     23    70%   74, 84, 101, 105-133, 182, 191, 196
+/opt/ros/indigo/lib/python2.7/dist-packages/rospy/topics                                                         519    197    62%   73-78, 127, 130, 133-134, 136, 138, 140, 143-144, 149, 170, 179-182, 196-209, 212, 215-217, 228-229, 232, 235-238, 241-243, 286-295, 300, 308-310, 315-316, 328-329, 352-353, 376-377, 394-397, 441-442, 446, 512, 514, 526, 528, 535-541, 578, 588-595, 604-608, 620-625, 638, 648-649, 660-672, 686, 689-693, 726, 736, 782, 784, 788, 792-793, 813, 815, 820-823, 843, 865, 867, 879, 901-902, 911, 937, 939, 954, 977-980, 1013-1019, 1026-1041, 1045-1050, 1078-1082, 1091-1092, 1129, 1142-1150, 1162-1168, 1195, 1219-1236, 1263
+/opt/ros/indigo/lib/python2.7/dist-packages/rostopic/__init__                                                   1090    994     9%   82-85, 88-94, 101-112, 120-143, 149-177, 180, 190-205, 209-214, 218-229, 233-258, 261-266, 273-286, 296-326, 329-356, 359-362, 370-409, 424-435, 445-451, 458-462, 467-500, 514-528, 533-572, 580-584, 604-640, 644-646, 657-718, 725-730, 737-751, 762-810, 821-831, 839-869, 872-906, 914-935, 950-978, 988-1034, 1042, 1048-1126, 1129-1138, 1141-1149, 1152, 1155-1189, 1192-1212, 1220-1225, 1232-1240, 1250-1252, 1266-1277, 1288-1296, 1308-1314, 1328-1365, 1376-1450, 1459-1471, 1474-1480, 1484-1486, 1489-1492, 1498-1502, 1505-1521, 1529-1578, 1584-1628, 1635-1668, 1674-1713, 1719-1732, 1735-1749, 1752-1795
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/__init__                                                      0      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Bool                                                    51     32    37%   31-37, 43, 50-53, 60-68, 77-80, 88-96
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Byte                                                    49     30    39%   32-38, 44, 51-54, 61-68, 77-80, 88-95
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_ByteMultiArray                                         143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Char                                                    49     30    39%   31-37, 43, 50-53, 60-67, 76-79, 87-94
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_ColorRGBA                                               62     43    31%   35-50, 56, 63-67, 74-82, 91-95, 103-111
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Duration                                                60     40    33%   33-39, 45, 52-56, 63-74, 83-87, 95-106
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Empty                                                   39     21    46%   31-32, 38, 45-48, 55-59, 68-71, 79-83
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Float32                                                 49     30    39%   31-37, 43, 50-53, 60-67, 76-79, 87-94
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Float32MultiArray                                      143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Float64                                                 49     30    39%   31-37, 43, 50-53, 60-67, 76-79, 87-94
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Float64MultiArray                                      143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Header                                                  98     74    24%   48-55, 65, 72-85, 92-112, 121-134, 142-162
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Int16                                                   49     30    39%   32-38, 44, 51-54, 61-68, 77-80, 88-95
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Int16MultiArray                                        143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Int32                                                   49     30    39%   31-37, 43, 50-53, 60-67, 76-79, 87-94
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Int32MultiArray                                        143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Int64                                                   49     30    39%   31-37, 43, 50-53, 60-67, 76-79, 87-94
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Int64MultiArray                                        143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Int8                                                    49     30    39%   32-38, 44, 51-54, 61-68, 77-80, 88-95
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Int8MultiArray                                         143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_MultiArrayDimension                                     91     72    21%   33-45, 51, 58-71, 78-95, 104-117, 125-142
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_MultiArrayLayout                                       121    101    17%   62-71, 77, 84-101, 108-137, 146-163, 171-200
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_String                                                  72     54    25%   32-38, 44, 51-62, 69-82, 91-102, 110-123
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_Time                                                    60     40    33%   33-39, 45, 52-56, 63-74, 83-87, 95-106
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_UInt16                                                  49     30    39%   32-38, 44, 51-54, 61-68, 77-80, 88-95
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_UInt16MultiArray                                       143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_UInt32                                                  48     30    38%   31-37, 43, 50-53, 60-67, 76-79, 87-94
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_UInt32MultiArray                                       143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_UInt64                                                  49     30    39%   31-37, 43, 50-53, 60-67, 76-79, 87-94
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_UInt64MultiArray                                       143    123    14%   71-80, 86, 93-114, 121-157, 166-187, 195-231
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_UInt8                                                   49     30    39%   32-38, 44, 51-54, 61-68, 77-80, 88-95
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/_UInt8MultiArray                                        143    123    14%   71-80, 86, 93-117, 124-159, 168-192, 200-235
+/opt/ros/indigo/lib/python2.7/dist-packages/std_msgs/msg/__init__                                                 32      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/std_srvs/__init__                                                      0      0   100%   
+/opt/ros/indigo/lib/python2.7/dist-packages/std_srvs/srv/_Empty                                                   83     42    49%   31-32, 38, 45-48, 55-59, 68-71, 79-83, 116-117, 123, 130-133, 140-144, 153-156, 164-168
+/opt/ros/indigo/lib/python2.7/dist-packages/std_srvs/srv/__init__                                                  1      0   100%   
+/usr/share/pyshared/catkin_pkg/__init__                                                                            2      0   100%   
+/usr/share/pyshared/catkin_pkg/package                                                                           324    274    15%   82-105, 108-114, 117-119, 122-123, 126-129, 138, 149-150, 159, 167-235, 242-249, 252-254, 257, 264-266, 269-276, 283-284, 287-293, 296-299, 306-307, 310, 314-319, 335, 349-363, 375-534, 538, 542-545, 549-552, 556-562, 566-569, 576-580, 584-590
+/usr/share/pyshared/catkin_pkg/packages                                                                           44     37    16%   53-68, 83-93, 106-110, 122-128
+/usr/share/pyshared/rospkg/__init__                                                                                7      0   100%   
+/usr/share/pyshared/rospkg/_version                                                                                1      0   100%   
+/usr/share/pyshared/rospkg/common                                                                                 15      7    53%   48-49, 52-56
+/usr/share/pyshared/rospkg/environment                                                                            68     26    62%   64-66, 77-78, 99, 111, 127, 143, 145, 162-168, 193-200, 211-216
+/usr/share/pyshared/rospkg/manifest                                                                              254    206    19%   57, 65-77, 85-98, 105-110, 117-129, 137-143, 146-149, 152-156, 162-169, 186-188, 194, 209-215, 218, 221, 227-229, 237, 255-260, 263, 266, 269-271, 279, 293-295, 315-329, 338-344, 350, 366-415, 426-491
+/usr/share/pyshared/rospkg/rospack                                                                               215    140    35%   59-60, 76-82, 118, 134-146, 149, 156-159, 163, 168, 179-180, 190, 198-199, 213-233, 248-284, 323-327, 337-353, 361-367, 386, 393, 400, 413-430, 442-458, 464-475, 489-501
+/usr/share/pyshared/rospkg/stack                                                                                 123     99    20%   54, 62-70, 78-85, 92-93, 100-111, 114-117, 123-126, 142-156, 162, 174-178, 189-243
+--------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                          17192  12236    29%   
