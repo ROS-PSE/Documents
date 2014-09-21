@@ -190,8 +190,8 @@ Der Knoten in diesem Test sendet nach 100 Sekunden mit stark reduzierter Frequen
     \begin{minipage}[t]{16cm}
         \vspace{0pt}
         \centering
-        \includegraphics[scale=0.3]{./bilder/integrationstests/test_3_nodegraph.png} % TODO: neues bild
-        \caption{jumping\_tower publiziert für 100 Sekunden mit 100Hz auf /street, sturbacks abonniert street.}
+        \includegraphics[scale=0.3]{./bilder/integrationstests/test_4_graph.png} % TODO: neues bild
+        \caption{jumping\_tower publiziert für 100 Sekunden mit ~100Hz auf /street, sturbacks abonniert street.}
     \end{minipage}
     \hfill
 \end{figure}  
@@ -213,12 +213,22 @@ Der Knoten in diesem Test sendet nach 100 Sekunden mit stark reduzierter Frequen
     \begin{minipage}[t]{16cm}
         \vspace{0pt}
         \centering
-        \includegraphics[scale=0.5]{./bilder/integrationstests/test_3_log.png}
-        \caption{fluctuation\_tide publiziert mit 10 - 190Hz auf /ocean. sailing\_boat hört zu.}
+        \includegraphics[scale=0.5]{./bilder/integrationstests/test_4_log.png}
+        \caption{Es ist zu sehen das die Frequenz nach dem neustarten des Knotens wieder Ok ist.}
     \end{minipage}
     \hfill
 \end{figure}  
+\newpage
+    \item Öffnen des Arni-Widgets: Analog zu Test 3.
 
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.5]{./bilder/integrationstests/test_4_gui.png}
+        \caption{Es ist zu sehen wie die Frequenz auf 10Hz sinkt und durch den neustart des Knotens wieder auf knapp 100Hz steigt.}
+    \end{minipage}
+    \hfill
+\end{figure} 
 
-    Es ist zu sehen, dass sich \textit{[...] is ok}, \textit{[...] is too high}, \textit{[...] is ok}, \textit{[...] is too low}, etc. abwechseln.
 \end{enumerate}
