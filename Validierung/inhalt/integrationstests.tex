@@ -32,7 +32,7 @@ Dieser Test prüft, ob bei stetigem Publizieren die Frequenz korrekt bewertet wir
 \newpage
     \item Öffnen der GUI:
     In die Konsole wird \texttt{rosrun rqt\_gui rqt\_gui} eingegeben und ausgeführt.\\
-    \item Öffnen der Widgets:
+    \item Öffnen des Console Widgets:
     Auswählen des Widgets \textit{Logging > Console},\\
     Debug Messages ausblenden\\
 
@@ -48,6 +48,21 @@ Dieser Test prüft, ob bei stetigem Publizieren die Frequenz korrekt bewertet wir
 
 
     Es ist zu sehen, dass die Nachricht des Countermeasure-Knotens alle 10 Sekunden publiziert wird.
+
+    \item Öffnen des Arni-Detail Widgets:
+    Auswahl des Widgets \textit{Introspection > Arni-Detail}
+
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.5]{./bilder/integrationstests/test_1_gui.png}
+        \caption{Topic forest ist OK, da es eine Spezifikation für das Topic gibt welche mit OK bewertet wird.}
+    \end{minipage}
+    \hfill
+\end{figure}  
+
+
 \end{enumerate}
 
 
@@ -100,6 +115,20 @@ Dieser Test prüft das Verhalten beim Publizieren mit geringerer Frequenz als dur
 
 
     Es ist zu sehen, dass die Nachricht des Countermeasure-Knotens alle 5 Sekunden publiziert wird.
+
+    \item Öffnen des Arni-Detail Widgets:
+    Auswahl des Widgets \textit{Introspection > Arni-Detail}
+
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.5]{./bilder/integrationstests/test_2_gui.png}
+        \caption{Topic forest wird als ERROR angezeigt, da es eine Spezifikation für das Topic gibt welche mit LOW bewertet wird.}
+    \end{minipage}
+    \hfill
+\end{figure}  
+
 \end{enumerate}
 
 
@@ -124,14 +153,14 @@ Dieser Test prüft das Verhalten beim Publizieren mit variierender Frequenz in ei
     \begin{minipage}[t]{16cm}
         \vspace{0pt}
         \centering
-        \includegraphics[scale=0.3]{./bilder/integrationstests/test_3_nodegraph.png} % TODO: neues bild
+        \includegraphics[scale=0.3]{./bilder/integrationstests/test_3_nodegraph.png}
         \caption{fluctuation\_tide publiziert mit einer Frequenz zwischen 10 und 190 auf /ocean, sailing\_boat abonniert ocean.}
     \end{minipage}
     \hfill
 \end{figure}  
 
     Die Frequenz von /ocean wird unter 70Hz als LOW und über 130Hz als HIGH bewertet.
-    Unterschreitet die aufgezeichnete Frequenz die Grenze, wird \textit{frequency of ocean is too low} auszugeben, \textit{frequency of ocean is too high}, wenn die Frequenz 130Hz überschreitet und \textit{frequency of ocean is ok} sonst.
+    Unterschreitet die aufgezeichnete Frequenz die Grenze, wird \textit{frequency of ocean is too low} ausgegeben, \textit{frequency of ocean is too high}, wenn die Frequenz 130Hz überschreitet und \textit{frequency of ocean is ok} sonst.
 
 \newpage
     \item Öffnen der GUI:
@@ -144,7 +173,7 @@ Dieser Test prüft das Verhalten beim Publizieren mit variierender Frequenz in ei
     \begin{minipage}[t]{16cm}
         \vspace{0pt}
         \centering
-        \includegraphics[scale=0.5]{./bilder/integrationstests/test_1_rqt_freq_ok.png} % TODO: neues bild
+        \includegraphics[scale=0.5]{./bilder/integrationstests/test_1_rqt_freq_ok.png}
         \caption{fluctuation\_tide publiziert mit 10 - 190Hz auf /ocean. sailing\_boat hört zu.}
     \end{minipage}
     \hfill
@@ -170,7 +199,7 @@ Dieser Test prüft das Verhalten beim Publizieren mit variierender Frequenz in ei
 
 
 \newpage
-\section{Test 4 - Neustarten eines Knotens}
+\section{Test 4 - Neustarten eines Knotens mit behobenem Fehler}
 Der Knoten in diesem Test sendet nach 100 Sekunden mit stark reduzierter Frequenz und wird daraufhin vom Countermeasure Knoten neugestartet.
 
 \begin{enumerate}
@@ -190,17 +219,16 @@ Der Knoten in diesem Test sendet nach 100 Sekunden mit stark reduzierter Frequen
     \begin{minipage}[t]{16cm}
         \vspace{0pt}
         \centering
-        \includegraphics[scale=0.3]{./bilder/integrationstests/test_4_graph.png} % TODO: neues bild
+        \includegraphics[scale=0.3]{./bilder/integrationstests/test_4_graph.png}
         \caption{jumping\_tower publiziert für 100 Sekunden mit ~100Hz auf /street, sturbacks abonniert street.}
     \end{minipage}
     \hfill
 \end{figure}  
 
-    Die Frequenz von /ocean wird unter 80Hz als LOW bewertet.
-    Unterschreitet die aufgezeichnete Frequenz die Grenze, wird \textit{frequency of street is too low - trying to restart} auszugeben und der Knoten wird neugestartet.\\
-    Bis dahin und danach wird \textit{frequency of street is ok} geloggt.
-
-    % TODO: bis hierhin und nicht weiter :D
+    Die Frequenz von /street wird unter 80Hz als LOW bewertet.
+    Ist die Frequenz zwischen 80Hz und 120Hz wird alle 7 Sekunden eine Reaction des Countermeasure Knotens ausgelößt und \textit{frequency of street is ok} geloggt.
+    Unterschreitet die aufgezeichnete Frequenz die Grenze, wird \textit{frequency of street is too low - trying to restart} ausgegeben und der Knoten wird neugestartet.\\
+    Danach ist die Frequenz wieder Ok und es wird \textit{frequency of street is ok} geloggt.
 
 \newpage
 	\item Öffnen der GUI:
@@ -226,9 +254,63 @@ Der Knoten in diesem Test sendet nach 100 Sekunden mit stark reduzierter Frequen
         \vspace{0pt}
         \centering
         \includegraphics[scale=0.5]{./bilder/integrationstests/test_4_gui.png}
-        \caption{Es ist zu sehen wie die Frequenz auf 10Hz sinkt und durch den neustart des Knotens wieder auf knapp 100Hz steigt.}
+        \caption{Es ist zu sehen wie die Frequenz auf 10Hz sinkt und durch den neustart des Knotens wieder auf ~90Hz steigt.}
     \end{minipage}
     \hfill
 \end{figure} 
 
 \end{enumerate}
+
+
+
+
+\newpage
+\section{Test 5 - Neustarten eines Knotens mit bestehendem Fehler}
+Der Knoten in diesem Test sendet mit reduzierter Frequenz und wird daraufhin vom Countermeasure Knoten neugestartet. Daraufhin sendet der Knoten weiterhin mit reduzierter Frequenz.
+
+\begin{enumerate}
+    \item Test-Launchfile starten:
+    Mit \texttt{roslaunch test\_5\_restart\_not\_helping.launch} wird das Launchfile gestartet.\\
+    Man sieht, dass dabei folgende Knoten gestartet werden:
+    \begin{verbatim}
+        airplane (arni_core/predefined_subscriber.py)
+        countermeasure (arni_countermeasure/arni_countermeasure)
+        hawk (arni_core/predefined_publisher.py)
+        node_manager (arni_nodeinterface/arni_nodeinterface)
+        processing (arni_processing/arni_processing)
+    \end{verbatim}
+    Debei besteht folgende Verbindung der Knoten (Debugging-Knoten zur Übersichtlichkeit ausgenommen):\\
+
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.5]{./bilder/integrationstests/test_5_graph.png}
+        \caption{hawk publiziert mit ~476Hz auf /storm, airplane abonniert storm.}
+    \end{minipage}
+    \hfill
+\end{figure}  
+
+    Die Frequenz von /storm wird unter 800Hz als LOW bewertet.
+    Da auf dem Topic /storm mit weniger als 800Hz publiziert wird publiziert der Countermeasure Knoten \textit{frequency of storm is too low}.
+    Alle 60 Sekunden startet der Countermeasure Knoten den Knoten hawk neu (und loggt dies mittels der Nachricht \textit{frequency of storm is too low - trying to restart}). Nach dem neustart publiziert hawk daraufhin weiter mit ~500Hz.
+
+\newpage
+    \item Öffnen der GUI:
+    In die Konsole wird \texttt{rosrun rqt\_gui rqt\_gui} eingegeben und ausgeführt.\\
+    \item Öffnen der Widgets:
+    Auswählen des Widgets \textit{Logging > Console},\\
+    Debug Messages ausblenden\\
+
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.5]{./bilder/integrationstests/test_5_log.png}
+        \caption{Es ist zu sehen das die Frequenz nach dem neustarten des Knotens weiterhin zu gering ist.}
+    \end{minipage}
+    \hfill
+\end{figure}  
+
+\end{enumerate}
+
