@@ -1,67 +1,67 @@
 \subsection*{Test parsing of constraints}
 
 \begin{unittest}{test\_empty\_reaction}[pass]
-    Simuliert eine leere reaction in einem constraint und erwartet das dies keine Exception verursacht.  
+    Simuliert eine leere Reaction in einem Constraint und erwartet das dies keine Exception verursacht.
 \end{unittest}
 
 \begin{unittest}{test\_interval\_timeout\_not\_existing}[pass]
-    Testet ob die standart Werte von min\_reaction\_interval und reaction\_timeout geladen werden wenn ein constraint diese nicht angibt.
+    Testet, ob die Standartwerte von min\_reaction\_interval und Reaction\_timeout geladen werden, wenn ein Constraint diese nicht angibt.
 \end{unittest}
 
 \begin{unittest}{test\_interval\_valid\_values}[pass]
-    Testet ob das setzen von min\_reaction\_interval und reaction\_timeout erfolgreich interpretiert werden.
+    Testet, ob das Setzen von min\_reaction\_interval und Reaction\_timeout erfolgreich interpretiert wird.
 \end{unittest}
 
 \begin{unittest}{test\_interval\_wrong\_value}[pass]
-    Testet ob bei invalider Eingabe für min\_reaction\_interval auf den standart Wert zurückgegriffen wird.
+    Testet, ob bei ungültiger Eingabe für min\_reaction\_interval auf den Standartwert zurückgegriffen wird.
 \end{unittest}
 
 \begin{unittest}{test\_missing\_reactions}[pass]
-    Simuliert fehlende reactions in einem constraint und erwartet das dies keine Exception verursacht.    
+    Simuliert fehlende Reactions in einem Constraint und erwartet, dass dies keine Exception verursacht.    
 \end{unittest}
 
 \begin{unittest}{test\_reaction\_autonomy\_level\_not\_set}[pass]
-    Testet ob eine reaction welche kein autonomy level gesetzt hat erfolgreich interpretiert wird.
+    Testet, ob eine Reaction, welche kein Autonomy-Level gesetzt hat, erfolgreich interpretiert wird.
 \end{unittest}
 
 \begin{unittest}{test\_reaction\_multiple\_reactions}[pass]
-    Testet ob zwei reactions in einem constraint als zwei reactions interpretiert werden.
+    Testet, ob zwei Reactions in einem Constraint als zwei Reactions interpretiert werden.
 \end{unittest}
 
 \begin{unittest}{test\_reaction\_parse\_empty\_reaction}[pass]
-    Testet ob eine leere reaction interpretiert weiterhin eine leere reaction ist.
+    Testet, ob eine leere Reaction interpretiert weiterhin eine leere Reaction ist.
 \end{unittest}
 
 \begin{unittest}{test\_reaction\_parse\_publish\_reaction}[pass]
-    Testet ob eine publish reaction erfolgreich interpretiert wird.
+    Testet, ob eine publish-reaction erfolgreich interpretiert wird.
 \end{unittest}
 
 \begin{unittest}{test\_reaction\_parse\_wrong\_action}[pass]
-    Testet ob die Interpretation einer reaction mit falscher action eine leere reaction zurückgibt.
+    Testet, ob die Interpretation einer Reaction mit falscher action eine leere Reaction zurückgibt.
 \end{unittest}
 
 \begin{unittest}{test\_traverse\_empty\_and}[pass]
-    Testet ob eine leere Und-Verknüpfung erfolgreich interpretiert wird.
+    Testet, ob eine leere Und-Verknüpfung erfolgreich interpretiert wird.
 \end{unittest}
 
 \begin{unittest}{test\_traverse\_simple\_and}[pass]
-    Testet ob eine einfach Und-Verknüpfung korrekt interpretiert wird.
+    Testet, ob eine einfach Und-Verknüpfung korrekt interpretiert wird.
 \end{unittest}
 
 \begin{unittest}{test\_traverse\_simple\_and\_or}[pass]
-    Testet ob eine Or-Verknüpfung in einer Und-Verknüpfung korrekt interpretiert wird.
+    Testet, ob eine Or-Verknüpfung in einer Und-Verknüpfung korrekt interpretiert wird.
 \end{unittest}
 
 \begin{unittest}{test\_traverse\_simple\_not}[pass]
-    Testet ob eine logische Invertierung korrekt interpretiert wird.
+    Testet, ob eine logische Invertierung korrekt interpretiert wird.
 \end{unittest}
 
 \begin{unittest}{test\_traverse\_wrong\_format}[pass]
-    Testet ob eine Verknüpfung bei der Interpretation ignoriert wird wenn sie von falschem Format ist.
+    Testet, ob eine Verknüpfung bei der Interpretation ignoriert wird, wenn sie von falschem Format ist.
 \end{unittest}
 
 \begin{unittest}{test\_traverse\_wrong\_outcome}[pass]
-    Testet ob ein constraint Eintrag dessen Outcome kein String ist bei der interpretation ignoriert wird.
+    Testet, ob ein Constraint-Eintrag, dessen Outcome kein String ist, bei der Interpretation ignoriert wird.
 \end{unittest}
 
 
@@ -69,37 +69,37 @@
 \subsection*{Test Reaction}
 
 \begin{unittest}{test\_reaction\_restart}[pass]
-    Testet ob die Aktion einen Knoten neuzustarten erfolgreich ausgeführt wird.
+    Testet, ob die Aktion, einen Knoten neuzustarten, erfolgreich ausgeführt wird.
 \end{unittest}
 
 
 \begin{unittest}{test\_restart\_no\_host}[pass]
-    Testet ob eine reaction eine korrekte Fehlermeldung ausgibt falls sie keinen Host zu dem Knoten, der neugestartet werden soll, findet.
+    Testet, ob eine Reaction eine korrekte Fehlermeldung ausgibt, falls sie keinen Host zu dem neuzustartenden Knoten findet.
 \end{unittest}
 
 
 \begin{unittest}{test\_restart\_no\_service}[pass]
-    Testet ob eine reaction eine korrekte Fehlermeldung ausgibt falls der Service zum neustarten eines Knotens nicht verfügbar ist.
+    Testet, ob eine Reaction eine korrekte Fehlermeldung ausgibt, falls der Service zum Neustarten eines Knotens nicht verfügbar ist.
 \end{unittest}
 
 
 \begin{unittest}{test\_run\_no\_host}[pass]
-    Testet ob eine reaction eine korrekte Fehlermeldung ausgibt falls sie keinen Host zu dem Knoten, auf dessen Host ein Befehl ausgeführt werden soll, findet.
+    Testet, ob eine Reaction eine korrekte Fehlermeldung ausgibt, falls sie keinen Host zu dem Knoten, auf dessen Host ein Befehl ausgeführt werden soll, findet.
 \end{unittest}
 
 
 \begin{unittest}{test\_run\_no\_service}[pass]
-    Testet ob eine reaction eine korrekte Fehlermeldung ausgibt falls der Service zum ausführen eines Befehls nicht verfügbar ist.
+    Testet, ob eine Reaction eine korrekte Fehlermeldung ausgibt, falls der Service zum Ausführen eines Befehls nicht verfügbar ist.
 \end{unittest}
 
 
 \begin{unittest}{test\_shutdown\_no\_host}[pass]
-    Testet ob eine reaction eine korrekte Fehlermeldung ausgibt falls sie keinen Host zu dem Knoten, der gestoppt werden soll, findet.
+    Testet, ob eine Reaction eine korrekte Fehlermeldung ausgibt, falls sie keinen Host zu dem zu stoppenden Knoten findet.
 \end{unittest}
 
 
 \begin{unittest}{test\_shutdown\_no\_service}[pass]
-    Testet ob eine reaction eine korrekte Fehlermeldung ausgibt falls der Service zum stoppen eines Knotens nicht verfügbar ist.
+    Testet, ob eine Reaction eine korrekte Fehlermeldung ausgibt, falls der Service zum Stoppen eines Knotens nicht verfügbar ist.
 \end{unittest}
 
 
@@ -109,22 +109,22 @@
 
 
 \begin{unittest}{test\_constraint\_timeout}[pass]
-    Testet ob nach dem Ausführen einer Reaction solange zu nächsten Ausführung gewartet wird wie der Timeout ist.
+    Testet, ob nach dem Ausführen einer Reaction solange zur nächsten Ausführung gewartet wird, wie der Timeout angibt.
 \end{unittest}
 
 
 \begin{unittest}{test\_high\_cpu}[pass]
-    Testet ob eine Reaction in einem Constraint erfolgreich ausgeführt wird, wenn Outcome HIGH für cpu\_usage\_max über /statistics\_rated empfangen wird.
+    Testet, ob eine Reaction in einem Constraint erfolgreich ausgeführt wird, wenn Outcome HIGH für cpu\_usage\_max über /statistics\_rated empfangen wird.
 \end{unittest}
 
 
 \begin{unittest}{test\_high\_cpu\_too\_short}[pass]
-    Testet ob eine Reaction in einem Constraint nicht ausgeführt wird, wenn Outcome HIGH für cpu\_usage\_max über /statistics\_rated nicht lange genug empfangen wird.
+    Testet, ob eine Reaction in einem Constraint nicht ausgeführt wird, wenn Outcome HIGH für cpu\_usage\_max über /statistics\_rated nicht lange genug empfangen wird.
 \end{unittest}
 
 
 \begin{unittest}{test\_reaction\_autonomy\_level\_too\_high}[pass]
-    Testet ob eine Reaction in einem Constraint nicht ausgeführt wird, wenn das autonomy\_level zu hoch ist.
+    Testet, ob eine Reaction in einem Constraint nicht ausgeführt wird, wenn das autonomy\_level zu hoch ist.
 \end{unittest}
 
 
@@ -134,30 +134,30 @@
 
 
 \begin{unittest}{test\_add\_new\_than\_old}[pass]
-    Testet ob eine zeitlich ältere Statistik keine zeitlich neueren Statistiken überschreibt. (Obwohl die ältere später hinzugefügt wird)
+    Testet, ob eine zeitlich ältere Statistik keine zeitlich neueren Statistiken überschreibt, wenn die Ältere später hinzugefügt wird.
 \end{unittest}
 
 
 \begin{unittest}{test\_add\_old}[pass]
-    Testet ob das hinzufügen einer zu alten Statistik verworfen wird.
+    Testet, ob das Hinzufügen einer zu alten Statistik verworfen wird.
 \end{unittest}
 
 
 \begin{unittest}{test\_callback\_multiple\_entries}[pass]
-    Testet ob ein Aufruf mit einem bewerteten Statistik-Eintrag, welcher ein Array enthält, erfolgreich gespeichert wird.
+    Testet, ob ein Aufruf mit einem bewerteten Statistik-Eintrag, welcher ein Array enthält, erfolgreich gespeichert wird.
 \end{unittest}
 
 
 \begin{unittest}{test\_callback\_multiple\_rated\_entities}[pass]
-    Testet ob ein Aufruf mit mehreren bewerteten Statistik-Einträgen erfolgreich gespeichert wird.
+    Testet, ob ein Aufruf mit mehreren bewerteten Statistik-Einträgen erfolgreich gespeichert wird.
 \end{unittest}
 
 
 \begin{unittest}{test\_callback\_single\_entry}[pass]
-    Testet ob ein Aufruf mit einem bewerteten Statistik-Eintrag erfolgreich gespeichert wird.
+    Testet, ob ein Aufruf mit einem bewerteten Statistik-Eintrag erfolgreich gespeichert wird.
 \end{unittest}
 
 
 \begin{unittest}{test\_remove\_through\_timeout}[pass]
-    Testet ob eine hinzugefügte Statistik nach dem Timeout nicht mehr vorhanden ist.
+    Testet, ob eine hinzugefügte Statistik nach dem Timeout nicht mehr vorhanden ist.
 \end{unittest}

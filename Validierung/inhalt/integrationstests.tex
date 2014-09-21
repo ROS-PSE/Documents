@@ -1,11 +1,11 @@
 \chapter{Integrationstests}
 
 \section{Test 1 - Gleichmäßiges Publizieren }
-Dieser Test prüft ob bei Stetigem Publizieren die Frequenz korrekt Bewertet wird, und ob auf die Bewertung korrekt Reagiert wird.
+Dieser Test prüft, ob bei stetigem Publizieren die Frequenz korrekt bewertet wird und ob auf die Bewertung korrekt reagiert wird.
 
 \begin{enumerate}
-	\item Test Launchfile starten:
-	Mittels \texttt{roslaunch arni\_core test\_1\_steady.launch} wird das Launchfile gestartet.\\
+	\item Test-Launchfile starten:
+	Mit \texttt{roslaunch arni\_core test\_1\_steady.launch} wird das Launchfile gestartet.\\
 	Folgende Knoten werden dabei gestartet:
 	\begin{verbatim}
 	    countermeasure (arni_countermeasure/arni_countermeasure)
@@ -14,26 +14,26 @@ Dieser Test prüft ob bei Stetigem Publizieren die Frequenz korrekt Bewertet wird
 	    processing (arni_processing/arni_processing)
 	    steady_tree (arni_core/predefined_publisher.py)
 	\end{verbatim}
-	Debei besteht folgende Verbindung der Knoten (Debugging Knoten ausgenommen für Übersichtlichkeit):\\
+	Debei besteht folgende Verbindung der Knoten (Debugging-Knoten zur Übersichtlichkeit ausgenommen):\\
 
 \begin{figure}[htbp]
     \begin{minipage}[t]{16cm}
         \vspace{0pt}
         \centering
         \includegraphics[scale=0.3]{./bilder/integrationstests/test_1_nodegraph.png}
-        \caption{steady\_tree publiziert mit 100Hz auf forest, ninja\_turtle aboniert forest.}
+        \caption{steady\_tree publiziert mit 100Hz auf /forest, ninja\_turtle abonniert forest.}
     \end{minipage}
     \hfill
 \end{figure}  
 
     Die Frequenz von /forest wird unter 80Hz als LOW und über 120Hz als HIGH bewertet.
-    Der Countermeasure hat das Constraint alle 10 Sekunden \textit{frequency of forest is ok} auszugeben falls die Frequenz als OK bewertet wurde.
+    Der Countermeasure-Knoten hat das Constraint alle 10 Sekunden \textit{frequency of forest is ok} auszugeben, falls die Frequenz mit OK bewertet wurde.
 
 \newpage
 	\item Öffnen der GUI:
 	In die Konsole wird \texttt{rosrun rqt\_gui rqt\_gui} eingegeben und ausgeführt.\\
 	\item Öffnen der Widgets:
-	Auswählen des Widgets Logging->Console\\
+	Auswählen des Widgets \textit{Logging > Console},\\
     Debug Messages ausblenden\\
 
 \begin{figure}[htbp]
@@ -41,11 +41,11 @@ Dieser Test prüft ob bei Stetigem Publizieren die Frequenz korrekt Bewertet wird
         \vspace{0pt}
         \centering
         \includegraphics[scale=0.5]{./bilder/integrationstests/test_1_rqt_freq_ok.png}
-        \caption{steady tree publiziert mit 100Hz auf forest. Ninja\_turtle hört zu.}
+        \caption{steady\_tree publiziert mit 100Hz auf forest. ninja\_turtle hört zu.}
     \end{minipage}
     \hfill
 \end{figure}  
 
 
-    Es ist zu sehen das die Nachricht des Countermeasure alle 10 Sekunden publiziert wird.
+    Es ist zu sehen, dass die Nachricht des Countermeasure-Knotens alle 10 Sekunden publiziert wird.
 \end{enumerate}
