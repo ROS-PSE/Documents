@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2csv</title>
+</head>
+<body>
+<script type="text/javascript">
+	function toCSV(raw){
+		var output = document.getElementById("output");
+		output.innerHTML = "";
+		
+		var regex = /^(.+?)\s+\d+\s+\d+\s+(\d+)%/gm;
+		match = regex.exec(raw);
+		while (match != null) {
+			console.info(match);
+			output.innerHTML += match[1] + ";" + match[2] + "\n"
+			match = regex.exec(raw);
+		}
+	}
+</script>
+<textarea cols="80" rows="60" onblur="toCSV(this.value);" placeholder="unittests" style="float:left;"></textarea>
+<textarea id="output" readonly="readonly" cols="80" rows="60"></textarea>
+</body>
+</html>
