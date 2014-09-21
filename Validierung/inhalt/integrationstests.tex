@@ -108,17 +108,17 @@ Dieser Test prüft das Verhalten beim Publizieren mit geringerer Frequenz als dur
 Dieser Test prüft das Verhalten beim Publizieren mit variierender Frequenz in einer Sinuskurve, wobei hohe Werte als zu hoch und niedrige Werte als zu niedrig bewertet werden.
 
 \begin{enumerate}
-	\item Test-Launchfile starten:
-	Mit \texttt{roslaunch arni\_core test\_3\_fluctuation.launch} wird das Launchfile gestartet.\\
-	Man sieht, dass dabei folgende Knoten gestartet werden:
-	\begin{verbatim}
-	    countermeasure (arni_countermeasure/arni_countermeasure)
-	    sailing_boat (arni_core/predefined_subscriber.py)
-	    node_manager (arni_nodeinterface/arni_nodeinterface)
-	    processing (arni_processing/arni_processing)
-	    fluctuation_tide (arni_core/predefined_publisher.py)
-	\end{verbatim}
-	Debei besteht folgende Verbindung der Knoten (Debugging-Knoten zur Übersichtlichkeit ausgenommen):\\
+    \item Test-Launchfile starten:
+    Mit \texttt{roslaunch arni\_core test\_3\_fluctuation.launch} wird das Launchfile gestartet.\\
+    Man sieht, dass dabei folgende Knoten gestartet werden:
+    \begin{verbatim}
+        countermeasure (arni_countermeasure/arni_countermeasure)
+        sailing_boat (arni_core/predefined_subscriber.py)
+        node_manager (arni_nodeinterface/arni_nodeinterface)
+        processing (arni_processing/arni_processing)
+        fluctuation_tide (arni_core/predefined_publisher.py)
+    \end{verbatim}
+    Debei besteht folgende Verbindung der Knoten (Debugging-Knoten zur Übersichtlichkeit ausgenommen):\\
 
 \begin{figure}[htbp]
     \begin{minipage}[t]{16cm}
@@ -132,6 +132,66 @@ Dieser Test prüft das Verhalten beim Publizieren mit variierender Frequenz in ei
 
     Die Frequenz von /ocean wird unter 70Hz als LOW und über 130Hz als HIGH bewertet.
     Unterschreitet die aufgezeichnete Frequenz die Grenze, wird \textit{frequency of ocean is too low} auszugeben, \textit{frequency of ocean is too high}, wenn die Frequenz 130Hz überschreitet und \textit{frequency of ocean is ok} sonst.
+
+\newpage
+    \item Öffnen der GUI:
+    In die Konsole wird \texttt{rosrun rqt\_gui rqt\_gui} eingegeben und ausgeführt.\\
+    \item Öffnen der Widgets:
+    Auswählen des Widgets \textit{Logging > Console},\\
+    Debug Messages ausblenden\\
+
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.5]{./bilder/integrationstests/test_1_rqt_freq_ok.png} % TODO: neues bild
+        \caption{fluctuation\_tide publiziert mit 10 - 190Hz auf /ocean. sailing\_boat hört zu.}
+    \end{minipage}
+    \hfill
+\end{figure}
+
+    \item Öffnen der Arni-Widgets:
+    Auswählen des Widgets \textit{Introspection > Arni-Detail}, bei Filter wird \texttt{ocean} eingegeben und die Eingabe bestätigt. Im Baum wird \texttt{t!/ocean} ausgewählt.
+    Im Fenster auf der rechten Seite wird der Reiter \textit{Graphs} ausgewählt. Darunter wird Range auf \texttt{60 Seconds} und Selected auf \texttt{delivered_msgs, frequency} gestellt.
+    Man sieht eine stufige Sinuskurve, die sich langsam ausbreitet.
+
+
+    Es ist zu sehen, dass sich \textit{[...] is ok}, \textit{[...] is too high}, \textit{[...] is ok}, \textit{[...] is too low}, etc. abwechseln.
+\end{enumerate}
+
+
+\newpage
+\section{Test 4 - Neustarten eines Knotens}
+Der Knoten in diesem Test sendet nach 100 Sekunden mit stark reduzierter Frequenz und wird daraufhin vom Countermeasure Knoten neugestartet.
+
+\begin{enumerate}
+	\item Test-Launchfile starten:
+	Mit \texttt{roslaunch arni\_core test\_4\_restarting.launch} wird das Launchfile gestartet.\\
+	Man sieht, dass dabei folgende Knoten gestartet werden:
+	\begin{verbatim}
+	    countermeasure (arni_countermeasure/arni_countermeasure)
+	    sturbacks (arni_core/predefined_subscriber.py)
+	    node_manager (arni_nodeinterface/arni_nodeinterface)
+	    processing (arni_processing/arni_processing)
+	    jumping_tower (arni_core/predefined_publisher.py)
+	\end{verbatim}
+	Debei besteht folgende Verbindung der Knoten (Debugging-Knoten zur Übersichtlichkeit ausgenommen):\\
+
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.3]{./bilder/integrationstests/test_3_nodegraph.png} % TODO: neues bild
+        \caption{jumping\_tower publiziert für 100 Sekunden mit 100Hz auf /street, sturbacks abonniert street.}
+    \end{minipage}
+    \hfill
+\end{figure}  
+
+    Die Frequenz von /ocean wird unter 80Hz als LOW bewertet.
+    Unterschreitet die aufgezeichnete Frequenz die Grenze, wird \textit{frequency of street is too low - trying to restart} auszugeben und der Knoten wird neugestartet.\\
+    Bis dahin und danach wird \textit{frequency of street is ok} geloggt.
+
+    % TODO: bis hierhin und nicht weiter :D
 
 \newpage
 	\item Öffnen der GUI:
