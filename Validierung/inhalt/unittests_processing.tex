@@ -14,8 +14,34 @@
 	Überprüft, dass Spezifikationen zu SEUIDs in den Bestand geladen wurden, nachdem sie auf den Parameterserver geladen und die reload-Methode aufgerufen wurde.
 \end{unittest}
 \begin{unittest}{test\_invalid\_seuid}[pass]
-	Überprüft, dass keine Spezifikationen geladen werden, die keine gÃ¼ltige SEUID haben.
+	Überprüft, dass keine Spezifikationen geladen werden, die keine gültige SEUID haben.
 \end{unittest}
 \begin{unittest}{test\_existing\_fields}[pass]
 	Überprüft, alle Felder der Definition durch den Parameterserver gekommen sind und im Specification Objekt vorhanden sind.
+\end{unittest}
+
+
+\subsection*{TestRatingData}
+
+\begin{unittest}{test\_no\_data}[pass]
+	Wird versucht None zu bewerten, wird None als Verleichsergebnis zurückgegeben.
+\end{unittest}
+\begin{unittest}{test\_invalid\_ident}[pass]
+	Ist der Identifier der Eingabedaten ungültig, wird None als Verleichsergebnis zurückgegeben.
+\end{unittest}
+\begin{unittest}{test\_no\_ident}[pass]
+	Wird kein Identifier mitgegeben, wird None als Verleichsergebnis zurückgegeben.
+\end{unittest}
+\begin{unittest}{test\_no\_spec}[pass]
+	Ist keine Spezifikation für die angegebene Nachricht geladen, haben die bewerteten Felder den Status 2 (Unknown).
+\end{unittest}
+\begin{unittest}{test\_spec3}[pass]
+	Werden die Spezifikationen erfüllt, wird für die jeweiligen Felder der Status 3 (OK) zurückgegeben.
+\end{unittest}
+\begin{unittest}{test\_spec2}[pass]
+	Sind einzelne Felder nicht spezifiziert, wird für diese der Status 2 (Unknown) zurückgegeben.
+\end{unittest}
+\begin{unittest}{test\_spec10}[pass]
+	Felder, die Werte über ihren Limits liefern, werden mit dem Status 0 (High) bewertet.\\
+	Felder, die Werte unter ihren Limits liefern, werden mit dem Status 1 (Low) bewertet.
 \end{unittest}
