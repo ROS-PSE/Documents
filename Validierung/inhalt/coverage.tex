@@ -1,0 +1,38 @@
+\chapter{Code-Abdeckung}
+Da sich die Code-Abdeckung unter ROS nur sehr bedingt testen lässt, konnten nur die nachfolgenden Ergebnisse gesammelt werden. Automatische Tests können nicht analysiert werden, sodass wir unsere Daten lediglich beim Durchprobieren von Testszenarien erheben konnten, was in einigen Bereichen die von Unittests abgedeckten Abschnitte nicht vollständig erreicht.
+
+\section{Nodeinterface}
+
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.3]{./bilder/coverage/coverage_nodeinterface.jpg}
+        \caption{Die dargestellten Daten wurden im Normalbetrieb des Nodeinterface Knotens erhoben, wobei äußere Zugriffe auf die Services nicht dargestellt werden konnten, weshalb entsprechende Bereiche unterrepräsentiert sind.}
+    \end{minipage}
+    \hfill
+\end{figure}  
+
+\section{Processing}
+
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.3]{./bilder/coverage/coverage_processing.jpg}
+        \caption{Zur Erhebung der dargestellten Daten liefen mehrere Knoten (arni\_core/tutorial\_*) und ein Nodeinterface. Nachträglich wurde die GUI gestartet, die sich Daten über einen Service holte. Außerdem wurden verzögert Spezifikationen geladen, die auch einen Service bnuzten. Nach einer Weile wurde ein Knoten abgeschaltet, woraufhin Nachrichten über seine Fehlfunktion gesendet wurden.}
+    \end{minipage}
+    \hfill
+\end{figure}  
+
+\section{Countermeasure}
+
+\begin{figure}[htbp]
+    \begin{minipage}[t]{16cm}
+        \vspace{0pt}
+        \centering
+        \includegraphics[scale=0.3]{./bilder/coverage/coverage_countermeasure4.jpg}
+        \caption{Die dargestellten Werte wurden erreicht, indem Integrationstest 4 durchgeführt wurde.}
+    \end{minipage}
+    \hfill
+\end{figure}  
