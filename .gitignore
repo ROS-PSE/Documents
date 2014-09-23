@@ -12,3 +12,5 @@ pflichtenheft/Pflichtenheft.synctex.gz(busy)
 Entwurf/Design.synctex.gz
 *.log
 Entwurf/Design.pdf
+*.sublime-workspace
+Validierung/Validierung.sublime-workspace
